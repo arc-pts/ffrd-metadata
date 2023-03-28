@@ -1,0 +1,125 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix kanawha: <http://ffrd.fema.gov/models/kanawha/> .
+@prefix rascat: <http://ffrd.fema.gov/rascat/1.0#> .
+@prefix usgs_gages: <https://waterdata.usgs.gov/monitoring-location/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kanawha:ElkMiddle.prj a rascat:Model ;
+    rascat:hasGeometry kanawha:ElkMiddle.g01,
+        kanawha:ElkMiddle.g02 ;
+    rascat:hasPlan kanawha:ElkMiddle.p01,
+        kanawha:ElkMiddle.p03,
+        kanawha:ElkMiddle.p04 ;
+    rascat:hasUnsteadyFlow kanawha:ElkMiddle.u02,
+        kanawha:ElkMiddle.u04,
+        kanawha:ElkMiddle.u05,
+        kanawha:ElkMiddle.u06 ;
+    rascat:rasVersion "6.3.1" ;
+    rascat:status "FINAL" ;
+    dcterms:creator [ a foaf:Person ;
+            foaf:mbox "kevan.leelum@wsp.com" ;
+            foaf:name "Kevan Leelum" ],
+        [ a foaf:Person ;
+            foaf:mbox "masoud.meshkat@wsp.com" ;
+            foaf:name "Masoud Meshkat" ],
+        [ a foaf:Person ;
+            foaf:mbox "britton.wells@wsp.com" ;
+            foaf:name "Britton Wells" ] ;
+    dcterms:description """Elk Middle watershed, Kanawha Basin, WV
+INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
+Technical Advisement to FY21 IRWA with USACE""" ;
+    dcterms:modified "2022-10-19T19:55:00"^^xsd:dateTime ;
+    dcterms:title "ElkMiddle" .
+
+kanawha:ElkMiddle.p01 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:ElkMiddle.g01 ;
+    rascat:hasUnsteadyFlow kanawha:ElkMiddle.u02 ;
+    dcterms:description "November 2003.Calibrated to Queen Shoals Gage" ;
+    dcterms:modified "None" ;
+    dcterms:title "Unsteady_Mixed_Nov2003" .
+
+kanawha:ElkMiddle.p03 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:ElkMiddle.g02 ;
+    rascat:hasUnsteadyFlow kanawha:ElkMiddle.u05 ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "Unsteady_Mixed_Jan1996" .
+
+kanawha:ElkMiddle.p04 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:ElkMiddle.g01 ;
+    rascat:hasUnsteadyFlow kanawha:ElkMiddle.u06 ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "Unsteady_Mixed_Jun2016" .
+
+kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "None" .
+
+usgs_gages:03196600 a rascat:Streamgage ;
+    dcterms:identifier "03196600" ;
+    dcterms:title "Elk River Near Frametown" .
+
+usgs_gages:03196800 a rascat:Streamgage ;
+    dcterms:identifier "03196800" ;
+    dcterms:title "Elk River at Clay" .
+
+kanawha:ElkMiddle.g02 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 100 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 761035 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 150 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:description "This geometry is the same as g01. It was created so that Infiltration is not applied to the January 1996 event since the Excess Precipitation was provided by USACE that takes snowmelt into account." ;
+    dcterms:modified "None" ;
+    dcterms:title "ElkMiddle_1996" .
+
+kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03196800 ;
+            rascat:hydrographType "STAGE" ;
+            rascat:nse 8.6802e-01 ;
+            rascat:pbias -1.3772e-01 ;
+            rascat:r2 9.3277e-01 ;
+            rascat:rsr 3.6328e-01 ;
+            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03196600 ;
+            rascat:hydrographType "STAGE" ;
+            rascat:nse 3.1117e-01 ;
+            rascat:pbias -1.6572e-01 ;
+            rascat:r2 7.701e-01 ;
+            rascat:rsr 8.2996e-01 ;
+            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ] ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "None" .
+
+kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "None" .
+
+kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "None" .
+
+kanawha:ElkMiddle.g01 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 100 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 761035 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 150 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:description "None" ;
+    dcterms:modified "None" ;
+    dcterms:title "None" .
+
