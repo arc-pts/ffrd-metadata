@@ -101,8 +101,6 @@ class Streamgage(DcatDataset):
         g.add((streamgage, DCTERMS.title, Literal(self.name)))
         g.add((streamgage, DCTERMS.identifier, Literal(self.id)))
         g.add((streamgage, DCTERMS.publisher, Literal(self.owner)))
-        # if self.link:
-        #     g.add((streamgage, DCAT.landingPage, Literal(self.link)))
         return streamgage
 
     def to_rdf(self, g: Graph):
@@ -114,11 +112,9 @@ class Streamgage(DcatDataset):
         g.add((streamgage, DCTERMS.title, Literal(self.name)))
         g.add((streamgage, DCTERMS.identifier, Literal(self.id)))
         g.add((streamgage, DCTERMS.publisher, Literal(self.owner)))
-        # if self.link:
-        #     g.add((streamgage, DCAT.landingPage, Literal(self.link)))
 
 
-def to_datetime(d: date | str) -> datetime:
+def to_datetime(d: date | str | datetime) -> datetime:
     if isinstance(d, date):
         return datetime.combine(d, time.min)
     if isinstance(d, str):
@@ -126,7 +122,8 @@ def to_datetime(d: date | str) -> datetime:
     if isinstance(d, datetime):
         return d
     else:
-        raise TypeError("d must be a date or string")
+        d_type = type(d)
+        raise TypeError(f"d must be a date or string (type: {d_type})")
 
 
 @dataclass
@@ -169,9 +166,6 @@ class Hydrograph(Hydrodata):
         hydrograph = BNode()
         g.add((hydrograph, RDF.type, RASCAT.Hydrograph))
         g.add((hydrograph, RASCAT.hydrographType, Literal(self.hydrograph_type.value)))
-        # g.add((hydrograph, RASCAT.startDatetime, Literal(self.start_datetime)))
-        # g.add((hydrograph, RASCAT.endDatetime, Literal(self.end_datetime)))
-        # streamgage = self.from_streamgage.add_bnode(g)
         super().add_hydrodata_terms(g, hydrograph)
         if self.from_streamgage:
             g.add((hydrograph, RASCAT.fromStreamgage, self.from_streamgage.uri_ref()))
@@ -260,12 +254,8 @@ class RasModel(DcatDataset):
         """Add the model to the graph."""
         model = URIRef(self.filename, base_uri)
         g.add((model, RDF.type, RASCAT.RasModel))
-        # g.add((model, DCTERMS.title, Literal(self.title)))
-        # g.add((model, DCTERMS.description, Literal(self.description)))
-        # g.add((model, DCTERMS.modified, Literal(self.modified)))
         g.add((model, RASCAT.rasVersion, Literal(self.ras_version)))
         g.add((model, RASCAT.status, Literal(self.status.value)))
-        # g.add((model, RASCAT.projection, Literal(self.projection)))
 
         super().add_dcat_terms(g, model)
 
@@ -300,96 +290,6 @@ class RasModel(DcatDataset):
             g.add((plan_uri, RASCAT.hasGeometry, self.rasfile_uri(plan.geometry.ext, base_uri)))
             g.add((plan_uri, RASCAT.hasUnsteadyFlow, self.rasfile_uri(plan.flow.ext, base_uri)))
             plan.add_dcat_terms(g, plan_uri)
-
-# # Streamgages
-# elk_river_near_frametown = Streamgage(
-#     name = "Elk River Near Frametown",
-#     id = "03196600",
-#     owner = "USGS",
-#     link = "https://waterdata.usgs.gov/wv/nwis/uv?site_no=03196600",
-# )
-# elk_river_near_frametown.to_rdf(g)
-# elk_river_at_clay = Streamgage(
-#     name = "Elk River at Clay",
-#     id = "03196800",
-#     owner = "USGS",
-#     link = "https://waterdata.usgs.gov/wv/nwis/uv?site_no=03196800",
-# )
-# elk_river_at_clay.to_rdf(g)
-
-
-# # Hydrographs
-# hydrograph1 = Hydrograph(
-#     start_datetime=datetime(2003, 11, 11),
-#     end_datetime=datetime(2003, 11, 21),
-#     from_streamgage=elk_river_near_frametown,
-#     hydrograph_type=HydrographType.STAGE,
-#     nse=0.31117,
-#     rsr=0.82996,
-#     pbias=-0.16572,
-#     r2=0.7701,
-# )
-# hydrograph2 = Hydrograph(
-#     start_datetime=datetime(2003, 11, 11),
-#     end_datetime=datetime(2003, 11, 21),
-#     from_streamgage=elk_river_at_clay,
-#     hydrograph_type=HydrographType.STAGE,
-#     nse=0.86802,
-#     rsr=0.36328,
-#     pbias=-0.13772,
-#     r2=0.93277,
-# )
-
-# # RAS files
-# mesh2d = Mesh2D(200, 50, 100, 50, 150, 761035)
-# g01 = RasGeometry("g01", mesh2d)
-# g02 = RasGeometry("g02", mesh2d)
-# g02.title = "ElkMiddle_1996"
-# g02.description = "This geometry is the same as g01. It was created so that Infiltration is not applied to the January 1996 event since the Excess Precipitation was provided by USACE that takes snowmelt into account."
-# u02 = RasUnsteadyFlow("u02")
-# u04 = RasUnsteadyFlow("u04")
-# u05 = RasUnsteadyFlow("u05")
-# u06 = RasUnsteadyFlow("u06")
-# p01 = RasPlan("p01", g01, u02)
-# p01.title = "Unsteady_Mixed_Nov2003"
-# p01.description = "November 2003.Calibrated to Queen Shoals Gage"
-# p03 = RasPlan("p03", g02, u05)
-# p03.title = "Unsteady_Mixed_Jan1996"
-# p04 = RasPlan("p04", g01, u06)
-# p04.title = "Unsteady_Mixed_Jun2016"
-# p06 = RasPlan("p06", g01, u04)
-# p06.title = "Unsteady_Mixed_Jan1995"
-
-# u02.calibration_hydrographs = [hydrograph1, hydrograph2]
-
-# # People
-# kevan_leelum = Person("Kevan Leelum", "kevan.leelum@wsp.com", "WSP, Inc.")
-# britton_wells = Person("Britton Wells", "britton.wells@wsp.com", "WSP, Inc.")
-# masoud_meshkat = Person("Masoud Meshkat", "masoud.meshkat@wsp.com", "WSP, Inc.")
-
-# # RAS Model
-# elk_middle = RasModel(
-#     filename="ElkMiddle.prj",
-#     ras_version="6.3.1",
-#     status=RasStatus.FINAL,
-#     geometries=[g01, g02],
-#     flows=[u02, u04, u05, u06],
-#     plans=[p01, p03, p04],
-#     title="ElkMiddle",
-#     description="Elk Middle watershed, Kanawha Basin, WV\nINNOVATION PROJECT #2 - 2D RAS FFRD PILOT\nTechnical Advisement to FY21 IRWA with USACE",
-#     creators=[kevan_leelum, britton_wells, masoud_meshkat],
-#     modified=datetime(2022, 10, 19, 19, 55),
-# )
-# elk_middle.to_rdf(g, base_uri=kanawha)
-
-# def to_datetime(d: union[date, datetime]) -> datetime:
-#     if isinstance(d, datetime):
-#         return d
-#     elif isinstance(d, date):
-#         return datetime.combine(d, time.min)
-#     else:
-#         raise valueerror(f"cannot convert {d} to datetime")
-
 
 with open('./streamgages.yml', 'r') as streamgages_yml:
     streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
@@ -507,4 +407,5 @@ for model in kanawha_data:
 print(g.serialize(format='turtle'))
 with open('./kanawha.ttl', 'w') as out:
     out.write(g.serialize(format='turtle'))
+print('Gages:')
 print(gages_lookup.keys(), len(gages_lookup.keys()))

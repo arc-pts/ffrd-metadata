@@ -27,7 +27,7 @@ flows:
 
       - from_streamgage: 01389100 # Gauley River Near Craigsville, WV
         hydrograph_type: "Stage"
-        start_datetime: 12/1/1994 0:30
+        start_datetime: 12/1/1994 00:30
         end_datetime:   7/31/2016 22:30
         nse:    0.77
         rsr:    0.48
@@ -54,7 +54,7 @@ flows:
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: Flow
-        start_datetime: 10/1/2003 0:30
+        start_datetime: 10/1/2003 00:30
         end_datetime:   12/31/2003 22:00
         nse:    0.88
         rsr:    0.35
@@ -72,7 +72,7 @@ flows:
 
       - from_streamgage: 03186500 # Williams River at Dyer, WV
         hydrograph_type: Flow
-        start_datetime: 10/1/2003 0:30
+        start_datetime: 10/1/2003 00:30
         end_datetime:   12/31/2003 22:00
         nse:    0.86
         rsr:    0.37
@@ -86,6 +86,42 @@ flows:
       start_datetime:  1/5/1995 12:00
       end_datetime:    1/29/1995 12:00
       spatially_varied: true
+    hydrographs:
+      - from_streamgage: "?USACE" # Summersville Lake / USACE
+        hydrograph_type: Stage
+        start_datetime: 1/1/1985 11:00
+        end_datetime:   12/31/2021 11:00
+        nse:   -0.20
+        rsr:   1.05
+        pbias: -0.27
+        r2:    0.98
+
+      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   0.88
+        rsr:   0.34
+        pbias: 0.03
+        r2:    0.98
+
+      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 1:00
+        end_datetime:   7/31/2016 23:00
+        nse:   -0.38
+        rsr:   1.18
+        pbias: -0.08
+        r2:    0.76
+
+      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   -3.13
+        rsr:   2.03
+        pbias: -0.07
+        r2:    0.89
 
   GSummersville_B.u05:
     title: GauleeSummersville_FloodPlain_Jan1996
@@ -94,6 +130,42 @@ flows:
       start_datetime: 1/14/1996 13:00
       end_datetime:   2/7/1996 10:00
       spatially_varied: true
+    hydrographs:
+      - from_streamgage: "?USACE" # Summersville Lake / USACE
+        hydrograph_type: Stage
+        start_datetime: 1/1/1985 11:00
+        end_datetime:   12/31/2021 11:00
+        nse:   -0.05
+        rsr:   1.02
+        pbias: 1.29
+        r2:    0.66
+
+      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   0.60
+        rsr:   0.64
+        pbias: -0.20
+        r2:    0.74
+
+      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 1:00
+        end_datetime:   7/31/2016 23:00
+        nse:   -0.77
+        rsr:   1.33
+        pbias: -0.17
+        r2:    0.60
+
+      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   -3.91
+        rsr:   2.22
+        pbias: -0.12
+        r2:    0.70
 
   GSummersville_B.u07:
     title: GauleeSummersville_FloodPlain_Jun2016
@@ -102,6 +174,79 @@ flows:
       start_datetime: 6/20/2016 13:00
       end_datetime:   7/4/2016 12:00
       spatially_varied: true
+    hydrographs:
+      - from_streamgage: "?USACE" # Summersville Lake / USACE
+        hydrograph_type: Stage
+        start_datetime: 1/1/1985 11:00
+        end_datetime:   12/31/2021 11:00
+        nse:   0.88
+        rsr:   0.34
+        pbias: -0.11
+        r2:    0.93
+
+      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   0.91
+        rsr:   0.31
+        pbias: -0.01
+        r2:    0.91
+
+      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 1:00
+        end_datetime:   7/31/2016 23:00
+        nse:   0.75
+        rsr:   0.50
+        pbias: -0.08
+        r2:    0.83
+
+      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
+        hydrograph_type: Stage
+        start_datetime: 12/1/1994 0:30
+        end_datetime:   7/31/2016 22:30
+        nse:   -1.33
+        rsr:   1.53
+        pbias: -0.10
+        r2:    0.84
+
+
+      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
+        hydrograph_type: Flow
+        start_datetime: 4/30/2016 18:00
+        end_datetime:   7/31/2016 17:45
+        nse:   0.96
+        rsr:   0.2
+        pbias: -5.06
+        r2:    0.96
+
+      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
+        hydrograph_type: Flow
+        start_datetime: 5/1/2016 0:15
+        end_datetime:   7/31/2016 21:45
+        nse:   0.72
+        rsr:   0.53
+        pbias: 1.20
+        r2:    0.87
+
+      - from_streamgage: 03186500 # Williams River at Dyer, WV
+        hydrograph_type: Flow
+        start_datetime: 4/30/2016 18:00
+        end_datetime:   7/31/2016 17:30
+        nse:   0.96
+        rsr:   0.19
+        pbias: -4.63
+        r2:    0.96
+
+      - from_streamgage: 03188900 # Laurel Creek Near Fenwick, WV
+        hydrograph_type: Flow
+        start_datetime: 5/1/2016 0:15
+        end_datetime:   7/31/2016 21:45
+        nse:   0.91
+        rsr:   0.3
+        pbias: 16.09
+        r2:    0.92
 
 geometries:
   GSummersville_B.g01:

@@ -19,11 +19,6 @@
 - identifier: "03190000"
   title: "Meadow River at Nallen, WV"
 
-# Summersville-Lake / Elev
-# USACE
-# GSummersville_B / GSummersville_C
-# https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug
-
 - identifier: USACE_Summersville_Lake
   title: Summersville Lake
   owner: USACE
