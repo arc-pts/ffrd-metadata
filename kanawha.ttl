@@ -16,16 +16,16 @@ kanawha:ElkMiddle.prj a rascat:Model ;
         kanawha:ElkMiddle.u05,
         kanawha:ElkMiddle.u06 ;
     rascat:rasVersion "6.3.1" ;
-    rascat:status "FINAL" ;
+    rascat:status "Final" ;
     dcterms:creator [ a foaf:Person ;
-            foaf:mbox "kevan.leelum@wsp.com" ;
-            foaf:name "Kevan Leelum" ],
+            foaf:mbox "britton.wells@wsp.com" ;
+            foaf:name "Britton Wells" ],
         [ a foaf:Person ;
             foaf:mbox "masoud.meshkat@wsp.com" ;
             foaf:name "Masoud Meshkat" ],
         [ a foaf:Person ;
-            foaf:mbox "britton.wells@wsp.com" ;
-            foaf:name "Britton Wells" ] ;
+            foaf:mbox "kevan.leelum@wsp.com" ;
+            foaf:name "Kevan Leelum" ] ;
     dcterms:description """Elk Middle watershed, Kanawha Basin, WV
 INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
 Technical Advisement to FY21 IRWA with USACE""" ;
@@ -36,27 +36,19 @@ kanawha:ElkMiddle.p01 a rascat:RasPlan ;
     rascat:hasGeometry kanawha:ElkMiddle.g01 ;
     rascat:hasUnsteadyFlow kanawha:ElkMiddle.u02 ;
     dcterms:description "November 2003.Calibrated to Queen Shoals Gage" ;
-    dcterms:modified "None" ;
     dcterms:title "Unsteady_Mixed_Nov2003" .
 
 kanawha:ElkMiddle.p03 a rascat:RasPlan ;
     rascat:hasGeometry kanawha:ElkMiddle.g02 ;
     rascat:hasUnsteadyFlow kanawha:ElkMiddle.u05 ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
     dcterms:title "Unsteady_Mixed_Jan1996" .
 
 kanawha:ElkMiddle.p04 a rascat:RasPlan ;
     rascat:hasGeometry kanawha:ElkMiddle.g01 ;
     rascat:hasUnsteadyFlow kanawha:ElkMiddle.u06 ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
     dcterms:title "Unsteady_Mixed_Jun2016" .
 
-kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
-    dcterms:title "None" .
+kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow .
 
 usgs_gages:03196600 a rascat:Streamgage ;
     dcterms:identifier "03196600" ;
@@ -75,7 +67,6 @@ kanawha:ElkMiddle.g02 a rascat:RasGeometry ;
             rascat:refinementRegionsMaxCellSize 150 ;
             rascat:refinementRegionsMinCellSize 50 ] ;
     dcterms:description "This geometry is the same as g01. It was created so that Infiltration is not applied to the January 1996 event since the Excess Precipitation was provided by USACE that takes snowmelt into account." ;
-    dcterms:modified "None" ;
     dcterms:title "ElkMiddle_1996" .
 
 kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
@@ -96,20 +87,11 @@ kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
             rascat:pbias -1.6572e-01 ;
             rascat:r2 7.701e-01 ;
             rascat:rsr 8.2996e-01 ;
-            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ] ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
-    dcterms:title "None" .
+            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ] .
 
-kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
-    dcterms:title "None" .
+kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow .
 
-kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
-    dcterms:title "None" .
+kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow .
 
 kanawha:ElkMiddle.g01 a rascat:RasGeometry ;
     rascat:hasMesh2D [ a rascat:Mesh2D ;
@@ -118,8 +100,5 @@ kanawha:ElkMiddle.g01 a rascat:RasGeometry ;
             rascat:cellCount 761035 ;
             rascat:nominalCellSize 200 ;
             rascat:refinementRegionsMaxCellSize 150 ;
-            rascat:refinementRegionsMinCellSize 50 ] ;
-    dcterms:description "None" ;
-    dcterms:modified "None" ;
-    dcterms:title "None" .
+            rascat:refinementRegionsMinCellSize 50 ] .
 

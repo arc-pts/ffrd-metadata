@@ -55,7 +55,7 @@
 
 :status a owl:ObjectProperty ;
         rdfs:domain :RasModel ;
-        rdfs:range xsd:string .
+        rdfs:range [ owl:oneOf ("Draft" "Final" "Public Release") ] .
 
 :projection a owl:ObjectProperty ;
         rdfs:domain :RasModel ;
@@ -314,6 +314,10 @@
 :isSpatiallyVaried a owl:ObjectProperty ;
         rdfs:domain :Hyetograph ;
         rdfs:range xsd:boolean .
+
+:hasHyetograph a owl:ObjectProperty ;
+        rdfs:domain :RasUnsteadyFlow ;
+        rdfs:range :Hyetograph .
 
 ### http://www.example.org/rascat#Streamgage
 :Streamgage a owl:Class ;
