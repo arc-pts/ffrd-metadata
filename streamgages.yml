@@ -18,3 +18,25 @@
 
 - identifier: "03190000"
   title: "Meadow River at Nallen, WV"
+
+# Summersville-Lake / Elev
+# USACE
+# GSummersville_B / GSummersville_C
+# https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug
+
+- identifier: USACE_Summersville_Lake
+  title: Summersville Lake
+  owner: USACE
+  link: https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug
+
+- identifier: 03189100
+  title: Gauley River Near Craigsville, WV
+
+- identifier: 03187000
+  title: Gauley River at Camden ON Gauley, WV
+
+- identifier: 03187500
+  title: Cranberry River Near Richwood, WV
+
+- identifier: 03186500
+  title: Williams River at Dyer, WV

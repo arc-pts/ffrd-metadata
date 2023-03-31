@@ -1,3 +1,4 @@
+import dateutil.parser
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
 from rdflib.namespace import DCAT, RDF, FOAF, DCTERMS, XSD
 import yaml
@@ -64,7 +65,11 @@ class DcatDataset:
     creators: Optional[List[Person]] = field(default_factory=list)
     title: Optional[str] = None
     description: Optional[str] = None
-    modified: Optional[datetime] = None
+    modified: Optional[datetime|str] = None
+
+    def __post_init__(self):
+        if isinstance(self.modified, str):
+            self.modified = dateutil.parser.parse(self.modified)
 
     def add_dcat_terms(self, g: Graph, uri: URIRef):
         for person in self.creators:
@@ -82,32 +87,68 @@ class DcatDataset:
 class Streamgage(DcatDataset):
     name: str
     id: str
-    # link: str
-    # owner: str
+    owner: str = 'USGS'
+    uri: Optional[str] = None
 
     def uri_ref(self):
-        return URIRef(self.id, usgs_gages)
+        if self.owner == 'USGS':
+            return URIRef(self.id, usgs_gages)
+        return URIRef(self.uri)
 
     def add_bnode(self, g: Graph):
         streamgage = BNode()
         g.add((streamgage, RDF.type, RASCAT.Streamgage))
         g.add((streamgage, DCTERMS.title, Literal(self.name)))
         g.add((streamgage, DCTERMS.identifier, Literal(self.id)))
-        g.add((streamgage, DCAT.landingPage, Literal(self.link)))
+        g.add((streamgage, DCTERMS.publisher, Literal(self.owner)))
+        # if self.link:
+        #     g.add((streamgage, DCAT.landingPage, Literal(self.link)))
         return streamgage
 
     def to_rdf(self, g: Graph):
-        streamgage = URIRef(self.id, usgs_gages)
+        if self.owner == 'USGS':
+            streamgage = URIRef(self.id, usgs_gages)
+        else:
+            streamgage = URIRef(self.uri)
         g.add((streamgage, RDF.type, RASCAT.Streamgage))
         g.add((streamgage, DCTERMS.title, Literal(self.name)))
         g.add((streamgage, DCTERMS.identifier, Literal(self.id)))
+        g.add((streamgage, DCTERMS.publisher, Literal(self.owner)))
+        # if self.link:
+        #     g.add((streamgage, DCAT.landingPage, Literal(self.link)))
+
+
+def to_datetime(d: date | str) -> datetime:
+    if isinstance(d, date):
+        return datetime.combine(d, time.min)
+    if isinstance(d, str):
+        return dateutil.parser.parse(d)
+    if isinstance(d, datetime):
+        return d
+    else:
+        raise TypeError("d must be a date or string")
 
 
 @dataclass
 class Hydrodata(DcatDataset):
-    start_datetime: datetime
-    end_datetime: datetime
+    start_datetime: datetime | date | str
+    end_datetime: datetime | date | str
     # from_hydroevent
+
+    def __post_init__(self):
+        self.start_datetime = to_datetime(self.start_datetime)
+        self.end_datetime = to_datetime(self.end_datetime)
+
+    def add_hydrodata_terms(self, g: Graph, uri: URIRef):
+        g.add((uri, RASCAT.startDatetime, Literal(self.start_datetime)))
+        g.add((uri, RASCAT.endDatetime, Literal(self.end_datetime)))
+
+    def add_bnode(self, g: Graph):
+        hydrodata = BNode()
+        g.add((hydrodata, RDF.type, RASCAT.Hydrodata))
+        g.add((hydrodata, RASCAT.startDatetime, Literal(self.start_datetime)))
+        g.add((hydrodata, RASCAT.endDatetime, Literal(self.end_datetime)))
+        return hydrodata
 
 
 class HydrographType(Enum):
@@ -128,10 +169,12 @@ class Hydrograph(Hydrodata):
         hydrograph = BNode()
         g.add((hydrograph, RDF.type, RASCAT.Hydrograph))
         g.add((hydrograph, RASCAT.hydrographType, Literal(self.hydrograph_type.value)))
-        g.add((hydrograph, RASCAT.startDatetime, Literal(self.start_datetime)))
-        g.add((hydrograph, RASCAT.endDatetime, Literal(self.end_datetime)))
+        # g.add((hydrograph, RASCAT.startDatetime, Literal(self.start_datetime)))
+        # g.add((hydrograph, RASCAT.endDatetime, Literal(self.end_datetime)))
         # streamgage = self.from_streamgage.add_bnode(g)
-        g.add((hydrograph, RASCAT.fromStreamgage, self.from_streamgage.uri_ref()))
+        super().add_hydrodata_terms(g, hydrograph)
+        if self.from_streamgage:
+            g.add((hydrograph, RASCAT.fromStreamgage, self.from_streamgage.uri_ref()))
         if self.nse:
             g.add((hydrograph, RASCAT.nse, Literal(self.nse, datatype=XSD.double)))
         if self.pbias:
@@ -140,6 +183,7 @@ class Hydrograph(Hydrodata):
             g.add((hydrograph, RASCAT.rsr, Literal(self.rsr, datatype=XSD.double)))
         if self.r2:
             g.add((hydrograph, RASCAT.r2, Literal(self.r2, datatype=XSD.double)))
+        super().add_dcat_terms(g, hydrograph)
         return hydrograph
 
 
@@ -215,7 +259,7 @@ class RasModel(DcatDataset):
     def to_rdf(self, g: Graph, base_uri: str):
         """Add the model to the graph."""
         model = URIRef(self.filename, base_uri)
-        g.add((model, RDF.type, RASCAT.Model))
+        g.add((model, RDF.type, RASCAT.RasModel))
         # g.add((model, DCTERMS.title, Literal(self.title)))
         # g.add((model, DCTERMS.description, Literal(self.description)))
         # g.add((model, DCTERMS.modified, Literal(self.modified)))
@@ -229,8 +273,9 @@ class RasModel(DcatDataset):
             geometry_uri = self.rasfile_uri(geometry.ext, base_uri)
             g.add((model, RASCAT.hasGeometry, geometry_uri))
             g.add((geometry_uri, RDF.type, RASCAT.RasGeometry))
-            mesh2d = geometry.mesh2d.add_bnode(g)
-            g.add((geometry_uri, RASCAT.hasMesh2D, mesh2d))
+            if geometry.mesh2d is not None:
+                mesh2d = geometry.mesh2d.add_bnode(g)
+                g.add((geometry_uri, RASCAT.hasMesh2D, mesh2d))
             geometry.add_dcat_terms(g, geometry_uri)
 
         for flow in self.flows:
@@ -337,34 +382,36 @@ class RasModel(DcatDataset):
 # )
 # elk_middle.to_rdf(g, base_uri=kanawha)
 
-def to_datetime(d: Union[date, datetime]) -> datetime:
-    if isinstance(d, datetime):
-        return d
-    elif isinstance(d, date):
-        return datetime.combine(d, time.min)
-    else:
-        raise ValueError(f"Cannot convert {d} to datetime")
+# def to_datetime(d: union[date, datetime]) -> datetime:
+#     if isinstance(d, datetime):
+#         return d
+#     elif isinstance(d, date):
+#         return datetime.combine(d, time.min)
+#     else:
+#         raise valueerror(f"cannot convert {d} to datetime")
 
 
-with open('./streamgages.yaml', 'r') as streamgages_yaml:
-    streamgages: List[dict] = yaml.load(streamgages_yaml, Loader=yaml.FullLoader)
+with open('./streamgages.yml', 'r') as streamgages_yml:
+    streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
 
 gages_lookup = {}
 for streamgage in streamgages:
     gage = Streamgage(
         name=streamgage.get('title'),
         id=streamgage.get('identifier'),
-        # owner=streamgage.get('owner', 'USGS'),
-        # link=streamgage.get('link'),
+        owner=streamgage.get('owner', 'USGS'),
+        uri=streamgage.get('link'),
     )
     gages_lookup[streamgage['identifier']] = gage
     gage.to_rdf(g)
 
-with open('./kanawha.yaml', 'r') as kanawha_yaml:
-    kanawha_data: List[dict] = yaml.load(kanawha_yaml, Loader=yaml.FullLoader)
+kanawha_data: List[dict] = []
+kanawha_yamls = os.listdir('./kanawha-yaml')
+for kanawha_yaml in kanawha_yamls:
+    with open(os.path.join('./kanawha-yaml', kanawha_yaml), 'r') as yml:
+        kanawha_data.append(yaml.load(yml, Loader=yaml.FullLoader))
 
-
-for model in kanawha_data[:2]:
+for model in kanawha_data:
     model_prj = model['model']
 
     flows = {}
@@ -372,8 +419,8 @@ for model in kanawha_data[:2]:
         hyetograph = f.get('hyetograph')
         if hyetograph is not None:
             hyetograph = Hyetograph(
-                start_datetime=to_datetime(hyetograph.get('start_datetime')),
-                end_datetime=to_datetime(hyetograph.get('end_datetime')),
+                start_datetime=hyetograph.get('start_datetime'),
+                end_datetime=hyetograph.get('end_datetime'),
                 description=hyetograph.get('description'),
                 spatially_varied=hyetograph.get('spatially_varied'),
             )
@@ -381,9 +428,11 @@ for model in kanawha_data[:2]:
         calibration_hydrographs = []
         for hydrograph in f.get('hydrographs', []):
             hyd = Hydrograph(
-                start_datetime=to_datetime(hydrograph.get('start_datetime')),
-                end_datetime=to_datetime(hydrograph.get('end_datetime')),
-                from_streamgage=gages_lookup[hydrograph['from_streamgage']],
+                title=hydrograph.get('title'),
+                description=hydrograph.get('description'),
+                start_datetime=hydrograph.get('start_datetime'),
+                end_datetime=hydrograph.get('end_datetime'),
+                from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
                 hydrograph_type=HydrographType(hydrograph['hydrograph_type']),
                 nse=hydrograph.get('nse'),
                 rsr=hydrograph.get('rsr'),
@@ -450,13 +499,12 @@ for model in kanawha_data[:2]:
         flows=flows.values(),
         plans=plans.values(),
         creators=creators,
+        modified=model.get('modified'),
     )
     ras_model.to_rdf(g, base_uri=kanawha)
-    # print(flows.values())
-    # print(geometries.values())
-    # print(plans.values())
 
 
 print(g.serialize(format='turtle'))
-# with open('./kanawha.ttl', 'w') as out:
-#     out.write(g.serialize(format='turtle'))
+with open('./kanawha.ttl', 'w') as out:
+    out.write(g.serialize(format='turtle'))
+print(gages_lookup.keys(), len(gages_lookup.keys()))
