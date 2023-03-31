@@ -1,0 +1,334 @@
+# Questions:
+# - how many Terrains can a single Geometry have?
+# - how many Roughnesses can a single Geometry have?
+
+@prefix : <http://www.example.org/rascat/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
+@base <http://www.example.org/rascat/> .
+
+<http://www.example.org/rascat> a owl:Ontology .
+
+#################################################################
+#    RAS Model
+#################################################################
+
+###  http://www.example.org/rascat#Model
+:Model a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+###  http://www.example.org/rascat#RasModel
+:RasModel a owl:Class ;
+        rdfs:subClassOf :Model ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :hasPlan ;
+                owl:minCardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :hasGeometry ;
+                owl:minCardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :extent ;
+                owl:maxCardinality 1 ] .
+
+:hasPlan a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range :RasPlan .
+
+:hasGeometry a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:domain :RasPlan ;
+        rdfs:range :RasGeometry .
+
+:hasFlow a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:domain :RasPlan ;
+        rdfs:range :RasFlow .
+
+:rasVersion a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range xsd:string .
+
+:status a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range [ owl:oneOf ("Draft" "Final" "Public Release") ] .
+
+:projection a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range xsd:string .
+
+:verticalDatum a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range xsd:string .
+
+:extent a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:domain :RasGeometry ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range sf:Polygon .
+
+#################################################################
+# Plan
+#################################################################
+
+###  http://www.example.org/rascat#RasPlan
+:RasPlan a owl:Class ;
+        rdfs:subClassOf dcat:Dataset ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :hasGeometry ;
+                owl:cardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :hasFlow ;
+                owl:cardinality 1 ] .
+
+#################################################################
+# Geometry
+#################################################################
+
+###  http://www.example.org/rascat#RasGeometry
+:RasGeometry a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasTerrain a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :Terrain .
+      
+:hasRoughness a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :Roughness .
+
+:hasPrecipLosses a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :PrecipLosses .
+
+:hasMesh2D a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :Mesh2D .
+
+:hasStructures a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :Structures .
+
+### http://www.example.org/rascat#Terrain
+:Terrain a owl:Class ;
+        rdfs:subClassOf dcat:Dataset ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :hasDEM ;
+                owl:minCardinality 1 ] .
+
+:hasDEM a owl:ObjectProperty ;
+        rdfs:domain :Terrain ;
+        rdfs:range :DEM .
+
+:hasBathymetry a owl:ObjectProperty ;
+        rdfs:domain :Terrain ;
+        rdfs:range :Bathymetry .
+
+:hasTerrainModifications a owl:ObjectProperty ;
+        rdfs:domain :Terrain ;
+        rdfs:range :TerrainModifications .
+
+### http://www.example.org/rascat#DEM
+:DEM a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+### http://www.example.org/rascat#Bathymetry
+:Bathymetry a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+### http://www.example.org/rascat#TerrainModifications
+:TerrainModifications a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+### http://www.example.org/rascat#Roughness
+:Roughness a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasRoughness a owl:ObjectProperty ;
+        rdfs:domain :RasGeometry ;
+        rdfs:range :Roughness .
+
+### http://www.example.org/rascat#LanduseLandcover
+:LanduseLandcover a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasLanduseLandcover a owl:ObjectProperty ;
+        rdfs:domain :Roughness ;
+        rdfs:domain :PrecipLosses ;
+        rdfs:range :LanduseLandcover .
+
+### http://www.example.org/rascat#PrecipLosses
+:PrecipLosses a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasSoils a owl:ObjectProperty ;
+        rdfs:domain :PrecipLosses ;
+        rdfs:range :Soils .
+
+### http://www.example.org/rascat#Soils
+:Soils a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+### http://www.example.org/rascat#Mesh2D
+:Mesh2D a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:nominalCellSize a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:double .
+
+:breaklinesMinCellSize a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:double .
+
+:breaklinesMaxCellSize a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:double .
+
+:refinementRegionsMinCellSize a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:double .
+
+:refinementRegionsMaxCellSize a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:double .
+
+:cellCount a owl:DatatypeProperty ;
+        rdfs:domain :Mesh2D ;
+        rdfs:range xsd:integer .
+
+### http://www.example.org/rascat#Structures
+:Structures a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+#################################################################
+# Flow
+#################################################################
+
+### http://www.example.org/rascat#RasFlow
+:RasFlow a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+#################################################################
+# Steady Flow
+#################################################################
+
+### http://www.example.org/rascat#RasSteadyFlow
+:RasSteadyFlow a owl:Class ;
+        rdfs:subClassOf :RasFlow ;
+        rdfs:subClassOf dcat:Dataset .
+
+#################################################################
+# Unsteady Flow
+#################################################################
+
+### http://www.example.org/rascat#RasUnsteadyFlow
+:RasUnsteadyFlow a owl:Class ;
+        rdfs:subClassOf :RasFlow ;
+        rdfs:subClassOf dcat:Dataset .
+
+### http://www.example.org/rascat#Hydrograph
+:Hydrodata a owl:Class ;
+        rdfs:subClassOf dcat:Dataset ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :startDateTime ;
+                owl:cardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :endDateTime ;
+                owl:cardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :fromStreamgage ;
+                owl:maxCardinality 1 ] ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :fromHydroEvent ;
+                owl:maxCardinality 1 ] .
+
+:Hydrograph a owl:Class ;
+        rdfs:subClassOf :Hydrodata ;
+        rdfs:subClassOf dcat:Dataset .
+
+:startDateTime a owl:ObjectProperty ;
+        rdfs:domain :HydroEvent ;
+        rdfs:domain :Hyetograph ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:dateTime .
+
+:endDateTime a owl:ObjectProperty ;
+        rdfs:domain :HydroEvent ;
+        rdfs:domain :Hyetograph ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:dateTime .
+
+:hasInflowHydrograph a owl:ObjectProperty ;
+        rdfs:domain :RasFlow ;
+        rdfs:range :Hydrograph .
+
+:hasCalibrationHydrograph a owl:ObjectProperty ;
+        rdfs:domain :RasFlow ;
+        rdfs:range :Hydrograph .
+
+:hasValidationHydrograph a owl:ObjectProperty ;
+        rdfs:domain :RasUnsteadyFlow ;
+        rdfs:range :Hydrograph .
+
+:hasObservedHydrograph a owl:ObjectProperty ;
+        rdfs:domain :RasUnsteadyFlow ;
+        rdfs:range :Hydrograph .
+
+:hasNSE a owl:ObjectProperty ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:double ;
+        rdfs:comment "Nash-Sutcliffe Efficiency" .
+
+:hasPBIAS a owl:ObjectProperty ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:double ;
+        rdfs:comment "Percent Bias" .
+
+:hasRSR a owl:ObjectProperty ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:double ;
+        rdfs:comment "Root Mean Square Error Standard Deviation Ratio" .
+
+:hasR2 a owl:ObjectProperty ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range xsd:double ;
+        rdfs:comment "Coefficient of Determination" .
+
+### http://www.example.org/rascat#Hyetograph
+:Hyetograph a owl:Class ;
+        rdfs:subClassOf :Hydrodata;
+        rdfs:subClassOf dcat:Dataset ;
+        owl:equivalentClass [ a owl:Restriction ;
+                owl:onProperty :isSpatiallyVaried ;
+                owl:cardinality 1 ] .
+
+:fromHydroEvent a owl:ObjectProperty ;
+        rdfs:domain :Hyetograph ;
+        rdfs:range :HydroEvent .
+
+:isSpatiallyVaried a owl:ObjectProperty ;
+        rdfs:domain :Hyetograph ;
+        rdfs:range xsd:boolean .
+
+:hasHyetograph a owl:ObjectProperty ;
+        rdfs:domain :RasUnsteadyFlow ;
+        rdfs:range :Hyetograph .
+
+### http://www.example.org/rascat#Streamgage
+:Streamgage a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+:fromStreamgage a owl:ObjectProperty ;
+        rdfs:domain :Hydrograph ;
+        rdfs:range :Streamgage .
+
+### http://www.example.org/rascat#HydroEvent
+:HydroEvent a owl:Class ;
+        rdfs:subClassOf dcat:Dataset .
+
+###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi
