@@ -22,11 +22,11 @@ kanawha:ElkMiddle.prj a rascat:RasModel ;
             foaf:mbox "masoud.meshkat@wsp.com" ;
             foaf:name "Masoud Meshkat" ],
         [ a foaf:Person ;
-            foaf:mbox "kevan.leelum@wsp.com" ;
-            foaf:name "Kevan Lee Lum" ],
-        [ a foaf:Person ;
             foaf:mbox "britton.wells@wsp.com" ;
-            foaf:name "Britton Wells" ] ;
+            foaf:name "Britton Wells" ],
+        [ a foaf:Person ;
+            foaf:mbox "kevan.leelum@wsp.com" ;
+            foaf:name "Kevan Lee Lum" ] ;
     dcterms:description """Elk Middle watershed, Kanawha Basin, WV
 INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
 Technical Advisement to FY21 IRWA with USACE
@@ -54,11 +54,11 @@ kanawha:GSummersville_B.prj a rascat:RasModel ;
     rascat:rasVersion "6.3.1" ;
     rascat:status "Final" ;
     dcterms:creator [ a foaf:Person ;
-            foaf:mbox "mmcbroom@mbakerintl.com" ;
-            foaf:name "Mark McBroom" ],
-        [ a foaf:Person ;
             foaf:mbox "daniyal.siddiqui@mbakerintl.com" ;
-            foaf:name "Daniyal Siddiqui" ] ;
+            foaf:name "Daniyal Siddiqui" ],
+        [ a foaf:Person ;
+            foaf:mbox "mmcbroom@mbakerintl.com" ;
+            foaf:name "Mark McBroom" ] ;
     dcterms:description "2D rain-on-mesh BLE model of the Gauley River subbasin upstream of Summerville, West Virginia. INNOVATION PROJECT #2 - 2D RAS FFRD PILOT Technical Advisement to FY21 IRWA with USACE" ;
     dcterms:modified "2022-10-20T21:43:00"^^xsd:dateTime ;
     dcterms:title "GauleySummersville_BLE_FEMA" .
@@ -77,7 +77,14 @@ kanawha:GSummersville_C.prj a rascat:RasModel ;
         kanawha:GSummersville_C.u06 ;
     rascat:rasVersion "6.3.1" ;
     rascat:status "Final" ;
-    dcterms:description "" ;
+    dcterms:creator [ a foaf:Person ;
+            foaf:mbox "mmcbroom@mbakerintl.com" ;
+            foaf:name "Mark McBroom" ],
+        [ a foaf:Person ;
+            foaf:mbox "daniyal.siddiqui@mbakerintl.com" ;
+            foaf:name "Daniyal Siddiqui" ] ;
+    dcterms:description "2D rain-on-mesh BLE model of the Gauley River subbasin upstream of Summerville, West Virginia. INNOVATION PROJECT #2 - 2D RAS FFRD PILOT Technical Advisement to FY21 IRWA with USACE" ;
+    dcterms:modified "2022-10-25T20:07:00"^^xsd:dateTime ;
     dcterms:title "GauleySummersville_BLE-C_FEMA" .
 
 kanawha:GauleyLower_BLE_FEM.prj a rascat:RasModel ;
@@ -93,13 +100,83 @@ kanawha:GauleyLower_BLE_FEM.prj a rascat:RasModel ;
     rascat:rasVersion "6.3.1" ;
     rascat:status "Final" ;
     dcterms:creator [ a foaf:Person ;
-            foaf:mbox "John.Capobianco@mbakerintl.com" ;
-            foaf:name "John Capobianco" ],
-        [ a foaf:Person ;
             foaf:mbox "mmcbroom@mbakerintl.com" ;
-            foaf:name "Mark McBroom" ] ;
+            foaf:name "Mark McBroom" ],
+        [ a foaf:Person ;
+            foaf:mbox "John.Capobianco@mbakerintl.com" ;
+            foaf:name "John Capobianco" ] ;
     dcterms:description "" ;
     dcterms:title "GauleyLower_BLE-C_FEMA" .
+
+kanawha:Kanawha_G1.prj a rascat:RasModel ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g01,
+        kanawha:Kanawha_G1.g02,
+        kanawha:Kanawha_G1.g03 ;
+    rascat:hasPlan kanawha:Kanawha_G1.p01,
+        kanawha:Kanawha_G1.p02,
+        kanawha:Kanawha_G1.p03,
+        kanawha:Kanawha_G1.p04,
+        kanawha:Kanawha_G1.p05,
+        kanawha:Kanawha_G1.p06,
+        kanawha:Kanawha_G1.p07,
+        kanawha:Kanawha_G1.p08 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u01,
+        kanawha:Kanawha_G1.u02,
+        kanawha:Kanawha_G1.u03,
+        kanawha:Kanawha_G1.u04,
+        kanawha:Kanawha_G1.u05,
+        kanawha:Kanawha_G1.u06,
+        kanawha:Kanawha_G1.u07,
+        kanawha:Kanawha_G1.u08 ;
+    rascat:rasVersion "6.3.1" ;
+    rascat:status "Final" ;
+    dcterms:creator [ a foaf:Person ;
+            foaf:mbox "julianna.villa@wsp.com" ;
+            foaf:name "Julianna Villa" ],
+        [ a foaf:Person ;
+            foaf:mbox "ben.rufenacht@wsp.com" ;
+            foaf:name "Ben Rufenacht" ],
+        [ a foaf:Person ;
+            foaf:mbox "josh.hill@wsp.com" ;
+            foaf:name "Josh Hill" ] ;
+    dcterms:description "2D rain-on-mesh BLE model of the first of nine Greenbrier River basins in south-central West Virginia." ;
+    dcterms:modified "2022-11-14T18:59:00"^^xsd:dateTime ;
+    dcterms:title "Kanawha_G1" .
+
+kanawha:Kanawha_G2.prj a rascat:RasModel ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01,
+        kanawha:Kanawha_G2.g02,
+        kanawha:Kanawha_G2.g03 ;
+    rascat:hasPlan kanawha:Kanawha_G2.p01,
+        kanawha:Kanawha_G2.p02,
+        kanawha:Kanawha_G2.p03,
+        kanawha:Kanawha_G2.p04,
+        kanawha:Kanawha_G2.p05,
+        kanawha:Kanawha_G2.p06,
+        kanawha:Kanawha_G2.p07,
+        kanawha:Kanawha_G2.p08 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u01,
+        kanawha:Kanawha_G2.u02,
+        kanawha:Kanawha_G2.u03,
+        kanawha:Kanawha_G2.u04,
+        kanawha:Kanawha_G2.u05,
+        kanawha:Kanawha_G2.u06,
+        kanawha:Kanawha_G2.u07,
+        kanawha:Kanawha_G2.u08 ;
+    rascat:rasVersion "6.3.1" ;
+    rascat:status "Final" ;
+    dcterms:creator [ a foaf:Person ;
+            foaf:mbox "josh.hill@wsp.com" ;
+            foaf:name "Josh Hill" ],
+        [ a foaf:Person ;
+            foaf:mbox "julianna.villa@wsp.com" ;
+            foaf:name "Julianna Villa" ],
+        [ a foaf:Person ;
+            foaf:mbox "ben.rufenacht@wsp.com" ;
+            foaf:name "Ben Rufenacht" ] ;
+    dcterms:description "2D rain-on-mesh BLE model of the second of nine Greenbrier River basins in south-central West Virginia. " ;
+    dcterms:modified "2022-11-14T18:59:00"^^xsd:dateTime ;
+    dcterms:title "Kanawha_G2" .
 
 kanawha:UpperKanawha.prj a rascat:RasModel ;
     rascat:hasGeometry kanawha:UpperKanawha.g01 ;
@@ -121,11 +198,11 @@ kanawha:UpperKanawha.prj a rascat:RasModel ;
             foaf:mbox "Matt.Lewis@freese.com" ;
             foaf:name "Matt Lewis" ],
         [ a foaf:Person ;
-            foaf:mbox "Dawit.Zeweldi@freese.com" ;
-            foaf:name "Dawit Zeweldi" ],
-        [ a foaf:Person ;
             foaf:mbox "Andrew.Swynenberg@freese.com" ;
-            foaf:name "Andrew Swynenberg" ] ;
+            foaf:name "Andrew Swynenberg" ],
+        [ a foaf:Person ;
+            foaf:mbox "Dawit.Zeweldi@freese.com" ;
+            foaf:name "Dawit Zeweldi" ] ;
     dcterms:description """Watershed: Upper Kanawha River
 Vertical Datum: NAVD 88
 Units: Feet
@@ -134,6 +211,59 @@ Modeler: Freese and Nichols, Inc.
 Model Version: HEC-RAS v6.3
 Date: September 30, 2022""" ;
     dcterms:title "Upper Kanawha" .
+
+kanawha:WatershedG3.prj a rascat:RasModel ;
+    rascat:hasGeometry kanawha:WatershedG3.g01,
+        kanawha:WatershedG3.g02,
+        kanawha:WatershedG3.g03 ;
+    rascat:hasPlan kanawha:WatershedG3.p01,
+        kanawha:WatershedG3.p02,
+        kanawha:WatershedG3.p03,
+        kanawha:WatershedG3.p04,
+        kanawha:WatershedG3.p05,
+        kanawha:WatershedG3.p06,
+        kanawha:WatershedG3.p07,
+        kanawha:WatershedG3.p08 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u01,
+        kanawha:WatershedG3.u02,
+        kanawha:WatershedG3.u03,
+        kanawha:WatershedG3.u04,
+        kanawha:WatershedG3.u05 ;
+    rascat:rasVersion "6.3.1" ;
+    rascat:status "Final" ;
+    dcterms:creator [ a foaf:Person ;
+            foaf:mbox "ben.rufenacht@wsp.com" ;
+            foaf:name "Ben Rufenacht" ],
+        [ a foaf:Person ;
+            foaf:mbox "jonathan.bartlotti@wsp.com" ;
+            foaf:name "Jon Bartlotti" ],
+        [ a foaf:Person ;
+            foaf:mbox "josh.hill@wsp.com" ;
+            foaf:name "Josh Hill" ] ;
+    dcterms:description "2D rain-on-mesh BLE model of the third of nine Greenbrier River basins in south-central West Virginia." ;
+    dcterms:modified "2022-11-14T18:30:00"^^xsd:dateTime ;
+    dcterms:title "Watershed G3" .
+
+kanawha:WatershedG4.prj a rascat:RasModel ;
+    rascat:hasGeometry kanawha:WatershedG4.g01,
+        kanawha:WatershedG4.g02,
+        kanawha:WatershedG4.g03 ;
+    rascat:hasPlan kanawha:WatershedG4.p01,
+        kanawha:WatershedG4.p02,
+        kanawha:WatershedG4.p03,
+        kanawha:WatershedG4.p04,
+        kanawha:WatershedG4.p05,
+        kanawha:WatershedG4.p06,
+        kanawha:WatershedG4.p07,
+        kanawha:WatershedG4.p08 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u01,
+        kanawha:WatershedG4.u02,
+        kanawha:WatershedG4.u03,
+        kanawha:WatershedG4.u04 ;
+    rascat:rasVersion "6.3.1" ;
+    rascat:status "Final" ;
+    dcterms:description "" ;
+    dcterms:title "Watershed G4" .
 
 <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> a rascat:Streamgage ;
     dcterms:identifier "USACE_Summersville_Lake" ;
@@ -231,6 +361,98 @@ kanawha:GauleyLower_BLE_FEM.p06 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha:GauleyLower_BLE_FEM.u04 ;
     dcterms:title "Unsteady_MultiHazard_Jan1996" .
 
+kanawha:Kanawha_G1.p01 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u01 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:Kanawha_G1.p02 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g03 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u02 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:Kanawha_G1.p03 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u03 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:Kanawha_G1.p04 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u04 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:Kanawha_G1.p05 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g02 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u05 ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:Kanawha_G1.p06 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g03 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u06 ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:Kanawha_G1.p07 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u07 ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:Kanawha_G1.p08 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G1.g02 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G1.u08 ;
+    dcterms:title "Jun-2016 Calibration" .
+
+kanawha:Kanawha_G2.p01 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u01 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:Kanawha_G2.p02 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u02 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:Kanawha_G2.p03 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u03 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:Kanawha_G2.p04 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u04 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:Kanawha_G2.p05 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g02 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u05 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:Kanawha_G2.p06 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g03 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u06 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:Kanawha_G2.p07 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g01 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u07 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:Kanawha_G2.p08 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:Kanawha_G2.g02 ;
+    rascat:hasUnsteadyFlow kanawha:Kanawha_G2.u08 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jun-2016 Calibration" .
+
 kanawha:UpperKanawha.p01 a rascat:RasPlan ;
     rascat:hasGeometry kanawha:UpperKanawha.g01 ;
     rascat:hasUnsteadyFlow kanawha:UpperKanawha.u11 ;
@@ -270,6 +492,94 @@ kanawha:UpperKanawha.p06 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha:UpperKanawha.u02 ;
     dcterms:title "Jan1996_InitialConditions" .
 
+kanawha:WatershedG3.p01 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g02 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u05 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:WatershedG3.p02 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g03 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u02 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:WatershedG3.p03 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u03 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:WatershedG3.p04 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u04 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:WatershedG3.p05 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g02 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u01 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:WatershedG3.p06 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g03 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u02 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:WatershedG3.p07 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u03 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:WatershedG3.p08 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG3.g02 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG3.u04 ;
+    dcterms:description "This plan was not utilized" ;
+    dcterms:title "Jun-2016 Calibration" .
+
+kanawha:WatershedG4.p01 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u01 ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:WatershedG4.p02 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u02 ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:WatershedG4.p03 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u03 ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:WatershedG4.p04 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u04 ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:WatershedG4.p05 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g02 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u01 ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:WatershedG4.p06 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g03 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u02 ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:WatershedG4.p07 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g01 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u03 ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:WatershedG4.p08 a rascat:RasPlan ;
+    rascat:hasGeometry kanawha:WatershedG4.g02 ;
+    rascat:hasUnsteadyFlow kanawha:WatershedG4.u04 ;
+    dcterms:title "Jun-2016 Calibration" .
+
 usgs_gages:03196500 a rascat:Streamgage ;
     dcterms:identifier "03196500" ;
     dcterms:publisher "USGS" ;
@@ -288,24 +598,6 @@ kanawha:ElkMiddle.g02 a rascat:RasGeometry ;
 kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03196600 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 3.1117e-01 ;
-            rascat:pbias -1.6572e-01 ;
-            rascat:r2 7.701e-01 ;
-            rascat:rsr 8.2996e-01 ;
-            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03197000 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 9.0487e-01 ;
-            rascat:pbias 1.3164e+01 ;
-            rascat:r2 9.2731e-01 ;
-            rascat:rsr 3.0843e-01 ;
-            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196800 ;
             rascat:hydrographType "Stage" ;
             rascat:nse 8.6802e-01 ;
@@ -321,6 +613,24 @@ kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
             rascat:pbias 2.4529e-01 ;
             rascat:r2 9.0156e-01 ;
             rascat:rsr 5.1156e-01 ;
+            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03196600 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 3.1117e-01 ;
+            rascat:pbias -1.6572e-01 ;
+            rascat:r2 7.701e-01 ;
+            rascat:rsr 8.2996e-01 ;
+            rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-11-21T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03197000 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 9.0487e-01 ;
+            rascat:pbias 1.3164e+01 ;
+            rascat:r2 9.2731e-01 ;
+            rascat:rsr 3.0843e-01 ;
             rascat:startDatetime "2003-11-11T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2003-11-28T00:00:00"^^xsd:dateTime ;
@@ -332,15 +642,6 @@ kanawha:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
 kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
             rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03197000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse -1.3776e+00 ;
-            rascat:pbias 2.1848e-01 ;
-            rascat:r2 6.5966e-01 ;
-            rascat:rsr 1.5419e+00 ;
-            rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196600 ;
             rascat:hydrographType "Stage" ;
             rascat:nse -8.3698e-01 ;
@@ -350,21 +651,30 @@ kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
             rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03197000 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 4.3444e-01 ;
-            rascat:pbias 7.7577e+00 ;
-            rascat:r2 6.2639e-01 ;
-            rascat:rsr 7.5204e-01 ;
-            rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196800 ;
             rascat:hydrographType "Stage" ;
             rascat:nse -1.504e-01 ;
             rascat:pbias -2.2115e-01 ;
             rascat:r2 6.714e-01 ;
             rascat:rsr 1.0726e+00 ;
+            rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03197000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse -1.3776e+00 ;
+            rascat:pbias 2.1848e-01 ;
+            rascat:r2 6.5966e-01 ;
+            rascat:rsr 1.5419e+00 ;
+            rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "1995-01-26T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03197000 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 4.3444e-01 ;
+            rascat:pbias 7.7577e+00 ;
+            rascat:r2 6.2639e-01 ;
+            rascat:rsr 7.5204e-01 ;
             rascat:startDatetime "1995-01-05T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1995-01-29T00:00:00"^^xsd:dateTime ;
@@ -375,6 +685,15 @@ kanawha:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
 
 kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "1996-01-22T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03196800 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 2.812e-01 ;
+            rascat:pbias 3.5148e-01 ;
+            rascat:r2 6.1136e-01 ;
+            rascat:rsr 8.4782e-01 ;
+            rascat:startDatetime "1996-01-15T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
             rascat:endDatetime "1996-01-22T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196600 ;
             rascat:hydrographType "Stage" ;
@@ -391,15 +710,6 @@ kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
             rascat:pbias 7.8082e-01 ;
             rascat:r2 6.1415e-01 ;
             rascat:rsr 1.4724e+00 ;
-            rascat:startDatetime "1996-01-15T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "1996-01-22T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03196800 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 2.812e-01 ;
-            rascat:pbias 3.5148e-01 ;
-            rascat:r2 6.1136e-01 ;
-            rascat:rsr 8.4782e-01 ;
             rascat:startDatetime "1996-01-15T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1996-02-07T00:00:00"^^xsd:dateTime ;
@@ -410,15 +720,6 @@ kanawha:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
 
 kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03196800 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 6.1359e-01 ;
-            rascat:pbias -2.8881e+01 ;
-            rascat:r2 9.1515e-01 ;
-            rascat:rsr 6.2162e-01 ;
-            rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196500 ;
             rascat:hydrographType "Stage" ;
@@ -447,21 +748,30 @@ kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
             rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03197000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 7.7057e-01 ;
-            rascat:pbias 1.2879e-01 ;
-            rascat:r2 8.1636e-01 ;
-            rascat:rsr 4.7899e-01 ;
-            rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03196600 ;
             rascat:hydrographType "Stage" ;
             rascat:nse -2.0927e-01 ;
             rascat:pbias -2.8261e-01 ;
             rascat:r2 7.4283e-01 ;
             rascat:rsr 1.0997e+00 ;
+            rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03196800 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 6.1359e-01 ;
+            rascat:pbias -2.8881e+01 ;
+            rascat:r2 9.1515e-01 ;
+            rascat:rsr 6.2162e-01 ;
+            rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-06-30T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03197000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 7.7057e-01 ;
+            rascat:pbias 1.2879e-01 ;
+            rascat:r2 8.1636e-01 ;
+            rascat:rsr 4.7899e-01 ;
             rascat:startDatetime "2016-06-20T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2016-07-04T00:00:00"^^xsd:dateTime ;
@@ -472,6 +782,15 @@ kanawha:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
 
 kanawha:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 4.3e-01 ;
+            rascat:pbias -1.3e-01 ;
+            rascat:r2 9.1e-01 ;
+            rascat:rsr 7.5e-01 ;
+            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-12-31T22:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03186500 ;
             rascat:hydrographType "Flow" ;
@@ -481,14 +800,13 @@ kanawha:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
             rascat:rsr 3.7e-01 ;
             rascat:startDatetime "2003-10-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2003-12-31T21:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187500 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 9.5e-01 ;
-            rascat:pbias 3.176e+01 ;
-            rascat:r2 9.8e-01 ;
-            rascat:rsr 2.2e-01 ;
-            rascat:startDatetime "2003-10-01T01:00:00"^^xsd:dateTime ],
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 5.74e-01 ;
+            rascat:pbias 1.181e+00 ;
+            rascat:r2 6.07e-01 ;
+            rascat:rsr 6.53e-01 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
@@ -516,22 +834,14 @@ kanawha:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
             rascat:rsr 3.5e-01 ;
             rascat:startDatetime "2003-10-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 5.74e-01 ;
-            rascat:pbias 1.181e+00 ;
-            rascat:r2 6.07e-01 ;
-            rascat:rsr 6.53e-01 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 4.3e-01 ;
-            rascat:pbias -1.3e-01 ;
-            rascat:r2 9.1e-01 ;
-            rascat:rsr 7.5e-01 ;
-            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ] ;
+            rascat:endDatetime "2003-12-31T21:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 9.5e-01 ;
+            rascat:pbias 3.176e+01 ;
+            rascat:r2 9.8e-01 ;
+            rascat:rsr 2.2e-01 ;
+            rascat:startDatetime "2003-10-01T01:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2003-11-28T12:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -541,15 +851,6 @@ kanawha:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
 
 kanawha:GSummersville_B.u03 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03189100 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 8.8e-01 ;
-            rascat:pbias 3e-02 ;
-            rascat:r2 9.8e-01 ;
-            rascat:rsr 3.4e-01 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187500 ;
             rascat:hydrographType "Stage" ;
@@ -574,7 +875,16 @@ kanawha:GSummersville_B.u03 a rascat:RasUnsteadyFlow ;
             rascat:pbias -2.7e-01 ;
             rascat:r2 9.8e-01 ;
             rascat:rsr 1.05e+00 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03189100 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 8.8e-01 ;
+            rascat:pbias 3e-02 ;
+            rascat:r2 9.8e-01 ;
+            rascat:rsr 3.4e-01 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -593,6 +903,14 @@ kanawha:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
             rascat:rsr 2.22e+00 ;
             rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse -5e-02 ;
+            rascat:pbias 1.29e+00 ;
+            rascat:r2 6.6e-01 ;
+            rascat:rsr 1.02e+00 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03189100 ;
             rascat:hydrographType "Stage" ;
@@ -609,15 +927,7 @@ kanawha:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
             rascat:pbias -1.7e-01 ;
             rascat:r2 6e-01 ;
             rascat:rsr 1.33e+00 ;
-            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse -5e-02 ;
-            rascat:pbias 1.29e+00 ;
-            rascat:r2 6.6e-01 ;
-            rascat:rsr 1.02e+00 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1996-02-07T10:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -627,15 +937,6 @@ kanawha:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
 
 kanawha:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T17:45:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03189100 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 9.6e-01 ;
-            rascat:pbias -5.06e+00 ;
-            rascat:r2 9.6e-01 ;
-            rascat:rsr 2e-01 ;
-            rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
             rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
             rascat:nse 8.8e-01 ;
@@ -644,13 +945,31 @@ kanawha:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
             rascat:rsr 3.4e-01 ;
             rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T17:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03186500 ;
+            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 7.5e-01 ;
+            rascat:pbias -8e-02 ;
+            rascat:r2 8.3e-01 ;
+            rascat:rsr 5e-01 ;
+            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 7.2e-01 ;
+            rascat:pbias 1.2e+00 ;
+            rascat:r2 8.7e-01 ;
+            rascat:rsr 5.3e-01 ;
+            rascat:startDatetime "2016-05-01T00:15:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T17:45:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03189100 ;
             rascat:hydrographType "Flow" ;
             rascat:nse 9.6e-01 ;
-            rascat:pbias -4.63e+00 ;
+            rascat:pbias -5.06e+00 ;
             rascat:r2 9.6e-01 ;
-            rascat:rsr 1.9e-01 ;
+            rascat:rsr 2e-01 ;
             rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
@@ -663,30 +982,21 @@ kanawha:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
             rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187500 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 7.2e-01 ;
-            rascat:pbias 1.2e+00 ;
-            rascat:r2 8.7e-01 ;
-            rascat:rsr 5.3e-01 ;
-            rascat:startDatetime "2016-05-01T00:15:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 7.5e-01 ;
-            rascat:pbias -8e-02 ;
-            rascat:r2 8.3e-01 ;
-            rascat:rsr 5e-01 ;
-            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
             rascat:hydrographType "Flow" ;
             rascat:nse 9.1e-01 ;
             rascat:pbias 1.609e+01 ;
             rascat:r2 9.2e-01 ;
             rascat:rsr 3e-01 ;
             rascat:startDatetime "2016-05-01T00:15:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T17:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03186500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 9.6e-01 ;
+            rascat:pbias -4.63e+00 ;
+            rascat:r2 9.6e-01 ;
+            rascat:rsr 1.9e-01 ;
+            rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187500 ;
@@ -705,21 +1015,14 @@ kanawha:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
 
 kanawha:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187500 ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 8.7e-01 ;
-            rascat:pbias 2.8e-01 ;
-            rascat:r2 9.9e-01 ;
-            rascat:rsr 3.5e-01 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 8.8e-01 ;
-            rascat:pbias 1.599e+01 ;
-            rascat:r2 8.9e-01 ;
-            rascat:rsr 3.4e-01 ;
-            rascat:startDatetime "2016-05-01T00:15:00"^^xsd:dateTime ],
+            rascat:nse 1e-02 ;
+            rascat:pbias -6e-02 ;
+            rascat:r2 7.7e-01 ;
+            rascat:rsr 1e+00 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187000 ;
@@ -739,23 +1042,21 @@ kanawha:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
             rascat:rsr 2.5e-01 ;
             rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03189100 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 8.4e-01 ;
-            rascat:pbias 1e-02 ;
-            rascat:r2 8.6e-01 ;
-            rascat:rsr 4.1e-01 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
+            rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 8.8e-01 ;
+            rascat:pbias 1.599e+01 ;
+            rascat:r2 8.9e-01 ;
+            rascat:rsr 3.4e-01 ;
+            rascat:startDatetime "2016-05-01T00:15:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187500 ;
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 1e-02 ;
-            rascat:pbias -6e-02 ;
-            rascat:r2 7.7e-01 ;
-            rascat:rsr 1e+00 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
+            rascat:nse 8.7e-01 ;
+            rascat:pbias 2.8e-01 ;
+            rascat:r2 9.9e-01 ;
+            rascat:rsr 3.5e-01 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T21:45:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187500 ;
@@ -773,7 +1074,16 @@ kanawha:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
             rascat:pbias 1.849e+01 ;
             rascat:r2 9.3e-01 ;
             rascat:rsr 2.9e-01 ;
-            rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "2016-04-30T18:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03189100 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 8.4e-01 ;
+            rascat:pbias 1e-02 ;
+            rascat:r2 8.6e-01 ;
+            rascat:rsr 4.1e-01 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2016-07-04T12:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -792,14 +1102,13 @@ kanawha:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
             rascat:rsr 6.7e-01 ;
             rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187000 ;
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 4.9e-01 ;
-            rascat:pbias -6e-02 ;
-            rascat:r2 6.6e-01 ;
-            rascat:rsr 7.1e-01 ;
-            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
+            rascat:nse -2.1e-01 ;
+            rascat:pbias 1.4e+00 ;
+            rascat:r2 6.4e-01 ;
+            rascat:rsr 1.1e+00 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187500 ;
@@ -810,13 +1119,14 @@ kanawha:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
             rascat:rsr 1.59e+00 ;
             rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187000 ;
             rascat:hydrographType "Stage" ;
-            rascat:nse -2.1e-01 ;
-            rascat:pbias 1.4e+00 ;
-            rascat:r2 6.4e-01 ;
-            rascat:rsr 1.1e+00 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ] ;
+            rascat:nse 4.9e-01 ;
+            rascat:pbias -6e-02 ;
+            rascat:r2 6.6e-01 ;
+            rascat:rsr 7.1e-01 ;
+            rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1996-02-07T10:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -826,6 +1136,15 @@ kanawha:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
 
 kanawha:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03191500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 5.74e-01 ;
+            rascat:pbias 1.181e+00 ;
+            rascat:r2 6.07e-01 ;
+            rascat:rsr 6.53e-01 ;
+            rascat:startDatetime "2009-08-31T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-12-31T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03192000 ;
             rascat:hydrographType "Flow" ;
@@ -842,16 +1161,7 @@ kanawha:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
             rascat:pbias -1.82e-01 ;
             rascat:r2 7.84e-01 ;
             rascat:rsr 6.12e-01 ;
-            rascat:startDatetime "1994-12-01T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03191500 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 5.74e-01 ;
-            rascat:pbias 1.181e+00 ;
-            rascat:r2 6.07e-01 ;
-            rascat:rsr 6.53e-01 ;
-            rascat:startDatetime "2009-08-31T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "1994-12-01T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2003-11-23T00:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -862,13 +1172,13 @@ kanawha:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
 kanawha:GauleyLower_BLE_FEM.u02 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03191500 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 6.67e-01 ;
-            rascat:pbias 1.26e+01 ;
-            rascat:r2 6.7e-01 ;
-            rascat:rsr 5.77e-01 ;
-            rascat:startDatetime "2009-08-31T00:00:00"^^xsd:dateTime ],
+            rascat:fromStreamgage usgs_gages:03190000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 9.12e-01 ;
+            rascat:pbias -7.4e-02 ;
+            rascat:r2 9.53e-01 ;
+            rascat:rsr 2.959e-01 ;
+            rascat:startDatetime "2014-04-02T00:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03192000 ;
@@ -898,13 +1208,13 @@ kanawha:GauleyLower_BLE_FEM.u02 a rascat:RasUnsteadyFlow ;
             rascat:startDatetime "1994-12-01T00:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03190000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 9.12e-01 ;
-            rascat:pbias -7.4e-02 ;
-            rascat:r2 9.53e-01 ;
-            rascat:rsr 2.959e-01 ;
-            rascat:startDatetime "2014-04-02T00:00:00"^^xsd:dateTime ],
+            rascat:fromStreamgage usgs_gages:03191500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 6.67e-01 ;
+            rascat:pbias 1.26e+01 ;
+            rascat:r2 6.7e-01 ;
+            rascat:rsr 5.77e-01 ;
+            rascat:startDatetime "2009-08-31T00:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2022-06-26T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03190000 ;
@@ -949,15 +1259,6 @@ kanawha:GauleyLower_BLE_FEM.u03 a rascat:RasUnsteadyFlow ;
 
 kanawha:GauleyLower_BLE_FEM.u04 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03192000 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 8.28e-01 ;
-            rascat:pbias -9.6e-02 ;
-            rascat:r2 8.75e-01 ;
-            rascat:rsr 4.15e-01 ;
-            rascat:startDatetime "1994-12-01T00:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
             rascat:endDatetime "2022-06-26T00:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03192000 ;
             rascat:hydrographType "Flow" ;
@@ -965,13 +1266,196 @@ kanawha:GauleyLower_BLE_FEM.u04 a rascat:RasUnsteadyFlow ;
             rascat:pbias 2.4806e+01 ;
             rascat:r2 7.85e-01 ;
             rascat:rsr 5.93e-01 ;
-            rascat:startDatetime "1928-10-20T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "1928-10-20T00:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03192000 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 8.28e-01 ;
+            rascat:pbias -9.6e-02 ;
+            rascat:r2 8.75e-01 ;
+            rascat:rsr 4.15e-01 ;
+            rascat:startDatetime "1994-12-01T00:00:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1996-01-22T00:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
             rascat:startDatetime "1996-01-14T00:00:00"^^xsd:dateTime ;
             dcterms:description "January 1996 applied precipitation" ] ;
     dcterms:title "GauleyLower_FloodPlain_Jan1996" .
+
+kanawha:Kanawha_G1.u01 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1995 event" ] ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:Kanawha_G1.u02 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1996-02-07T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1996 event" ] ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:Kanawha_G1.u03 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2003-11-28T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the November 2003 event" ] ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:Kanawha_G1.u04 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2016-07-04T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the June 2016 event" ] ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:Kanawha_G1.u05 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-06-26T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03180500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse -1.7704e-01 ;
+            rascat:pbias 3.2361e+01 ;
+            rascat:r2 8.9384e-01 ;
+            rascat:rsr 1.0849e+00 ;
+            rascat:startDatetime "1943-04-01T00:00:00"^^xsd:dateTime ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1995 event" ] ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:Kanawha_G1.u06 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-06-26T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03180500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 4.3346e-01 ;
+            rascat:pbias 2.2303e+01 ;
+            rascat:r2 9.242e-01 ;
+            rascat:rsr 7.5269e-01 ;
+            rascat:startDatetime "1943-04-01T00:00:00"^^xsd:dateTime ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1996-02-07T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1996 event" ] ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:Kanawha_G1.u07 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03180500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 3.1295e-01 ;
+            rascat:pbias 3.1036e+01 ;
+            rascat:r2 8.1655e-01 ;
+            rascat:rsr 8.2889e-01 ;
+            rascat:startDatetime "2003-10-01T00:00:00"^^xsd:dateTime ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2003-11-28T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the November 2003 event" ] ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:Kanawha_G1.u08 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-08-01T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03180500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 4.5906e-01 ;
+            rascat:pbias 2.6618e+01 ;
+            rascat:r2 7.3227e-01 ;
+            rascat:rsr 7.3549e-01 ;
+            rascat:startDatetime "2003-10-01T00:00:00"^^xsd:dateTime ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2016-07-04T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried "None" ;
+            rascat:startDatetime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the June 2016 event" ] ;
+    dcterms:title "Jun-2016 Calibration" .
+
+kanawha:Kanawha_G2.g03 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 318146 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G2_1996" .
+
+kanawha:Kanawha_G2.u01 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1995 event" ] ;
+    dcterms:title "Jan-1995 Initial Conditions" .
+
+kanawha:Kanawha_G2.u02 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1996-02-07T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1996 event" ] ;
+    dcterms:title "Jan-1996 Initial Conditions" .
+
+kanawha:Kanawha_G2.u03 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2003-11-28T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the November 2003 event" ] ;
+    dcterms:title "Nov-2003 Initial Conditions" .
+
+kanawha:Kanawha_G2.u04 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2016-07-04T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the June 2016 event" ] ;
+    dcterms:title "Jun-2016 Initial Conditions" .
+
+kanawha:Kanawha_G2.u05 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1995 event" ] ;
+    dcterms:title "Jan-1995 Calibration" .
+
+kanawha:Kanawha_G2.u06 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1996-02-07T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1996 event" ] ;
+    dcterms:title "Jan-1996 Calibration" .
+
+kanawha:Kanawha_G2.u07 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2003-11-28T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the November 2003 event" ] ;
+    dcterms:title "Nov-2003 Calibration" .
+
+kanawha:Kanawha_G2.u08 a rascat:RasUnsteadyFlow ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2016-07-04T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the June 2016 event" ] ;
+    dcterms:title "Jun-2016 Calibration" .
 
 kanawha:UpperKanawha.u01 a rascat:RasUnsteadyFlow ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
@@ -1001,16 +1485,6 @@ kanawha:UpperKanawha.u08 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-11-24T00:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 8.0228e-01 ;
-            rascat:pbias 6.1883e-02 ;
-            rascat:r2 8.096e-01 ;
-            rascat:rsr 4.4465e-01 ;
-            rascat:startDatetime "2003-11-12T00:00:00"^^xsd:dateTime ;
-            dcterms:description "Stage hydrograph provided by USACE." ;
-            dcterms:title "Marmet L&D Tailwater" ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2003-11-24T00:00:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
             rascat:nse 8.3132e-01 ;
             rascat:pbias 2.3509e-02 ;
             rascat:r2 9.2922e-01 ;
@@ -1028,6 +1502,16 @@ kanawha:UpperKanawha.u08 a rascat:RasUnsteadyFlow ;
             rascat:startDatetime "2003-11-12T00:00:00"^^xsd:dateTime ;
             dcterms:description "Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration." ;
             dcterms:title "London L&D Pool" ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-11-24T00:00:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 8.0228e-01 ;
+            rascat:pbias 6.1883e-02 ;
+            rascat:r2 8.096e-01 ;
+            rascat:rsr 4.4465e-01 ;
+            rascat:startDatetime "2003-11-12T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Stage hydrograph provided by USACE." ;
+            dcterms:title "Marmet L&D Tailwater" ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-11-24T00:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
@@ -1057,16 +1541,6 @@ kanawha:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 9.2097e-01 ;
-            rascat:pbias 1.2004e-01 ;
-            rascat:r2 9.2979e-01 ;
-            rascat:rsr 2.8112e-01 ;
-            rascat:startDatetime "2016-06-22T00:00:00"^^xsd:dateTime ;
-            dcterms:description "Stage hydrograph provided by USACE." ;
-            dcterms:title "Marmet L&D Tailwater" ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
             rascat:nse -1.807e+02 ;
             rascat:pbias -2.696e-01 ;
             rascat:r2 7.9179e-03 ;
@@ -1077,13 +1551,13 @@ kanawha:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 9.6292e-01 ;
-            rascat:pbias -1.3638e-01 ;
-            rascat:r2 9.8229e-01 ;
-            rascat:rsr 1.9255e-01 ;
+            rascat:nse 9.2097e-01 ;
+            rascat:pbias 1.2004e-01 ;
+            rascat:r2 9.2979e-01 ;
+            rascat:rsr 2.8112e-01 ;
             rascat:startDatetime "2016-06-22T00:00:00"^^xsd:dateTime ;
             dcterms:description "Stage hydrograph provided by USACE." ;
-            dcterms:title "London L&D Tailwater" ],
+            dcterms:title "Marmet L&D Tailwater" ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
@@ -1093,13 +1567,47 @@ kanawha:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
             rascat:rsr 7.485e-01 ;
             rascat:startDatetime "2016-06-22T00:00:00"^^xsd:dateTime ;
             dcterms:description "Stage hydrograph provided by USACE." ;
-            dcterms:title "Marmet L&D Pool" ] ;
+            dcterms:title "Marmet L&D Pool" ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 9.6292e-01 ;
+            rascat:pbias -1.3638e-01 ;
+            rascat:r2 9.8229e-01 ;
+            rascat:rsr 1.9255e-01 ;
+            rascat:startDatetime "2016-06-22T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Stage hydrograph provided by USACE." ;
+            dcterms:title "London L&D Tailwater" ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2016-06-28T00:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
             rascat:startDatetime "2016-06-22T00:00:00"^^xsd:dateTime ;
             dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ] ;
     dcterms:title "Jun2016" .
+
+kanawha:WatershedG3.u01 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-05-07T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03182500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 1.3088e-01 ;
+            rascat:pbias 3.516e+01 ;
+            rascat:r2 6.1693e-01 ;
+            rascat:rsr 9.3227e-01 ;
+            rascat:startDatetime "1930-11-18T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in January 1995" ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1995-01-29T12:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1995 event" ] ;
+    dcterms:title "Jan-1995" .
+
+kanawha:WatershedG3.u05 a rascat:RasUnsteadyFlow ;
+    dcterms:title "Jan-1995 IC" .
+
+kanawha:WatershedG4.g03 a rascat:RasGeometry ;
+    dcterms:title "LiDAR_1996" .
 
 usgs_gages:03190000 a rascat:Streamgage ;
     dcterms:identifier "03190000" ;
@@ -1108,40 +1616,6 @@ usgs_gages:03190000 a rascat:Streamgage ;
 
 kanawha:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
     rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 7.2e-01 ;
-            rascat:pbias 5e-02 ;
-            rascat:r2 8.6e-01 ;
-            rascat:rsr 5.3e-01 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2003-12-31T22:00:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03186500 ;
-            rascat:hydrographType "Flow" ;
-            rascat:nse 8.8e-01 ;
-            rascat:pbias 3.256e+01 ;
-            rascat:r2 9.5e-01 ;
-            rascat:rsr 3.5e-01 ;
-            rascat:startDatetime "2003-10-01T00:30:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 8.8e-01 ;
-            rascat:pbias 3e-02 ;
-            rascat:r2 9e-01 ;
-            rascat:rsr 3.5e-01 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03187500 ;
-            rascat:hydrographType "Stage" ;
-            rascat:nse 6.6e-01 ;
-            rascat:pbias -2e-02 ;
-            rascat:r2 8.9e-01 ;
-            rascat:rsr 5.9e-01 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
-        [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187000 ;
             rascat:hydrographType "Stage" ;
@@ -1150,6 +1624,14 @@ kanawha:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
             rascat:r2 9.2e-01 ;
             rascat:rsr 2.9e-01 ;
             rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 8.8e-01 ;
+            rascat:pbias 3e-02 ;
+            rascat:r2 9e-01 ;
+            rascat:rsr 3.5e-01 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-12-31T22:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1160,6 +1642,15 @@ kanawha:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
             rascat:rsr 4.4e-01 ;
             rascat:startDatetime "2003-10-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03187500 ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 6.6e-01 ;
+            rascat:pbias -2e-02 ;
+            rascat:r2 8.9e-01 ;
+            rascat:rsr 5.9e-01 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
             rascat:endDatetime "2003-12-31T21:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187500 ;
             rascat:hydrographType "Flow" ;
@@ -1167,7 +1658,24 @@ kanawha:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
             rascat:pbias 5.039e+01 ;
             rascat:r2 8.8e-01 ;
             rascat:rsr 4.5e-01 ;
-            rascat:startDatetime "2003-10-01T01:00:00"^^xsd:dateTime ] ;
+            rascat:startDatetime "2003-10-01T01:00:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2003-12-31T22:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03186500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 8.8e-01 ;
+            rascat:pbias 3.256e+01 ;
+            rascat:r2 9.5e-01 ;
+            rascat:rsr 3.5e-01 ;
+            rascat:startDatetime "2003-10-01T00:30:00"^^xsd:dateTime ],
+        [ a rascat:Hydrograph ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:hydrographType "Stage" ;
+            rascat:nse 7.2e-01 ;
+            rascat:pbias 5e-02 ;
+            rascat:r2 8.6e-01 ;
+            rascat:rsr 5.3e-01 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "2003-11-28T12:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
@@ -1186,14 +1694,13 @@ kanawha:GSummersville_C.u05 a rascat:RasUnsteadyFlow ;
             rascat:rsr 1.01e+00 ;
             rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
-            rascat:fromStreamgage usgs_gages:03189100 ;
+            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
             rascat:hydrographType "Stage" ;
-            rascat:nse 4.9e-01 ;
-            rascat:pbias 3e-02 ;
-            rascat:r2 7.7e-01 ;
-            rascat:rsr 7.1e-01 ;
-            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ],
+            rascat:nse -2.46e+00 ;
+            rascat:pbias 4.1e-01 ;
+            rascat:r2 8.2e-01 ;
+            rascat:rsr 1.86e+00 ;
+            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
             rascat:endDatetime "2016-07-31T23:00:00"^^xsd:dateTime ;
             rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1204,19 +1711,129 @@ kanawha:GSummersville_C.u05 a rascat:RasUnsteadyFlow ;
             rascat:rsr 1e+00 ;
             rascat:startDatetime "1994-12-01T01:00:00"^^xsd:dateTime ],
         [ a rascat:Hydrograph ;
-            rascat:endDatetime "2021-12-31T11:00:00"^^xsd:dateTime ;
+            rascat:endDatetime "2016-07-31T22:30:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03189100 ;
             rascat:hydrographType "Stage" ;
-            rascat:nse -2.46e+00 ;
-            rascat:pbias 4.1e-01 ;
-            rascat:r2 8.2e-01 ;
-            rascat:rsr 1.86e+00 ;
-            rascat:startDatetime "1985-01-01T11:00:00"^^xsd:dateTime ] ;
+            rascat:nse 4.9e-01 ;
+            rascat:pbias 3e-02 ;
+            rascat:r2 7.7e-01 ;
+            rascat:rsr 7.1e-01 ;
+            rascat:startDatetime "1994-12-01T00:30:00"^^xsd:dateTime ] ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
             rascat:endDatetime "1996-02-07T10:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried true ;
             rascat:startDatetime "1996-01-14T13:00:00"^^xsd:dateTime ;
             dcterms:description "January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff." ] ;
     dcterms:title "GauleeSummersville_FloodPlain_Jan1995" .
+
+kanawha:Kanawha_G1.g02 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 206812 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G1_2016" .
+
+kanawha:Kanawha_G1.g03 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 206812 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G1_1996" .
+
+kanawha:Kanawha_G2.g02 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 318146 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G2_2016" .
+
+kanawha:WatershedG3.g03 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 411065 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_1996" .
+
+kanawha:WatershedG3.u02 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-05-07T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03182500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 5.2781e-01 ;
+            rascat:pbias 3.5098e+01 ;
+            rascat:r2 9.1635e-01 ;
+            rascat:rsr 6.8716e-01 ;
+            rascat:startDatetime "1930-11-18T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in January 1996" ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "1996-02-07T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the January 1996 event" ] ;
+    dcterms:title "Jan-1996" .
+
+kanawha:WatershedG3.u03 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-05-07T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03182500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 6.3691e-01 ;
+            rascat:pbias 4.5403e+01 ;
+            rascat:r2 9.099e-01 ;
+            rascat:rsr 6.0257e-01 ;
+            rascat:startDatetime "1930-11-18T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in November 2003" ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2003-11-28T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the November 2003 event" ] ;
+    dcterms:title "Nov-2003" .
+
+kanawha:WatershedG3.u04 a rascat:RasUnsteadyFlow ;
+    rascat:hasCalibrationHydrograph [ a rascat:Hydrograph ;
+            rascat:endDatetime "2022-05-07T00:00:00"^^xsd:dateTime ;
+            rascat:fromStreamgage usgs_gages:03182500 ;
+            rascat:hydrographType "Flow" ;
+            rascat:nse 9.627e-01 ;
+            rascat:pbias 1.3292e+01 ;
+            rascat:r2 9.8257e-01 ;
+            rascat:rsr 1.9314e-01 ;
+            rascat:startDatetime "1930-11-18T00:00:00"^^xsd:dateTime ;
+            dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in June 2016" ] ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            rascat:endDatetime "2016-07-04T11:00:00"^^xsd:dateTime ;
+            rascat:spatiallyVaried true ;
+            rascat:startDatetime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            dcterms:description "Gridded precipitation data from the June 2016 event" ] ;
+    dcterms:title "Jun-2016" .
+
+kanawha:WatershedG4.g02 a rascat:RasGeometry ;
+    dcterms:title "LiDAR_2016" .
+
+kanawha:WatershedG4.u01 a rascat:RasUnsteadyFlow ;
+    dcterms:title "Jan-1995" .
+
+kanawha:WatershedG4.u02 a rascat:RasUnsteadyFlow ;
+    dcterms:title "Jan-1996" .
+
+kanawha:WatershedG4.u03 a rascat:RasUnsteadyFlow ;
+    dcterms:title "Nov-2003" .
+
+kanawha:WatershedG4.u04 a rascat:RasUnsteadyFlow ;
+    dcterms:title "Jun-2016" .
 
 usgs_gages:03191500 a rascat:Streamgage ;
     dcterms:identifier "03191500" ;
@@ -1232,6 +1849,36 @@ kanawha:ElkMiddle.g01 a rascat:RasGeometry ;
             rascat:refinementRegionsMaxCellSize 150 ;
             rascat:refinementRegionsMinCellSize 50 ] ;
     dcterms:title "ElkMiddle" .
+
+kanawha:WatershedG3.g01 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 411065 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR" .
+
+kanawha:WatershedG3.g02 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 411065 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_2016" .
+
+usgs_gages:03180500 a rascat:Streamgage ;
+    dcterms:identifier "03180500" ;
+    dcterms:publisher "USGS" ;
+    dcterms:title "Greenbrier River at Durbin, WV" .
+
+usgs_gages:03182500 a rascat:Streamgage ;
+    dcterms:identifier "03182500" ;
+    dcterms:publisher "USGS" ;
+    dcterms:title "Greenbrier River at Buckeye, WV" .
 
 usgs_gages:03186500 a rascat:Streamgage ;
     dcterms:identifier "03186500" ;
@@ -1263,10 +1910,33 @@ kanawha:GauleyLower_BLE_FEM.g01 a rascat:RasGeometry ;
             rascat:refinementRegionsMinCellSize 50 ] ;
     dcterms:title "Gauley_Lower" .
 
+kanawha:Kanawha_G1.g01 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 206812 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G1" .
+
 usgs_gages:03196800 a rascat:Streamgage ;
     dcterms:identifier "03196800" ;
     dcterms:publisher "USGS" ;
     dcterms:title "Elk River at Clay, WV" .
+
+kanawha:Kanawha_G2.g01 a rascat:RasGeometry ;
+    rascat:hasMesh2D [ a rascat:Mesh2D ;
+            rascat:breaklinesMaxCellSize 50 ;
+            rascat:breaklinesMinCellSize 50 ;
+            rascat:cellCount 318146 ;
+            rascat:nominalCellSize 200 ;
+            rascat:refinementRegionsMaxCellSize 100 ;
+            rascat:refinementRegionsMinCellSize 50 ] ;
+    dcterms:title "LiDAR_G2" .
+
+kanawha:WatershedG4.g01 a rascat:RasGeometry ;
+    dcterms:title "LiDAR" .
 
 kanawha:GSummersville_C.g01 a rascat:RasGeometry ;
     rascat:hasMesh2D [ a rascat:Mesh2D ;
