@@ -1,5 +1,8 @@
 description: '2D rain-on-mesh BLE model of the first of nine Greenbrier River basins in south-central West Virginia.'
 modified: 11/14/2022 18:59
+connected_models:
+  - model: Kanawha_G2.prj
+    direction: downstream
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com

@@ -1,0 +1,152 @@
+description: '2D rain-on-mesh BLE model of the ninth of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name:  Josh Hill
+    email: josh.hill@wsp.com
+  - name:  Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name:  Jonathan Bartlotti
+    email: jonathan.bartlotti@wsp.com
+modified: 11/14/2022 19:26
+connected_models:
+  - model: WatershedG8.prj
+    direction: upstream
+flows:
+  WatershedG9.u01:
+    title: Jan-1995
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+    hydrographs:
+      - from_streamgage: 03184000
+        hydrograph_type: "Flow"
+        start_datetime:   3/18/1936 0:00
+        end_datetime: 2/5/2022 0:00
+        nse: -1.5141
+        rsr: 1.5856
+        pbias: 45.535
+        r2: 0.90313
+
+  WatershedG9.u02:
+    title: Jan-1996
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
+    hydrographs:
+      - from_streamgage: 03184000
+        hydrograph_type: "Flow"
+        start_datetime:   3/18/1936 0:00
+        end_datetime: 2/5/2022 0:00
+        nse: -0.058891
+        rsr: 1.029
+        pbias: 60.35
+        r2: 0.83038
+
+  WatershedG9.u03:
+    title: Nov-2003
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
+    hydrographs:
+      - from_streamgage: 03184000
+        hydrograph_type: "Flow"
+        start_datetime:   3/18/1936 0:00
+        end_datetime: 2/5/2022 0:00
+        nse: 0.72673
+        rsr: 0.52275
+        pbias: 28.095
+        r2: 0.94184
+      
+  WatershedG9.u04:
+    title: Jun-2016
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+      spatially_varied: true
+    hydrographs:
+      - from_streamgage: 03184000
+        hydrograph_type: "Flow"
+        start_datetime:   3/18/1936 0:00
+        end_datetime: 2/5/2022 0:00
+        nse: 0.72673
+        rsr: 0.52275
+        pbias: 28.095
+        r2: 0.94184
+      
+geometries:
+  WatershedG9.g01:
+    title: LiDAR
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 273560
+  WatershedG9.g02:
+    title: LiDAR_2016
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 273560
+  WatershedG9.g03:
+    title: LiDAR_1996
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 273560
+model: WatershedG9.prj
+plans:
+  WatershedG9.p01:
+    description: This plan is not utilized
+    flow: u01
+    geom: g01
+    title: Jan-1995 Initial Conditions
+  WatershedG9.p02:
+    description: null
+    flow: u02
+    geom: g01
+    title: Jan-1996 Initial Conditions
+  WatershedG9.p03:
+    description: This plan is not utilized
+    flow: u03
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  WatershedG9.p04:
+    description: This plan is not utilized
+    flow: u04
+    geom: g01
+    title: Jun-2016 Initial Conditions
+  WatershedG9.p05:
+    description: null
+    flow: u01
+    geom: g02
+    title: Jan-1995 Calibration
+  WatershedG9.p06:
+    description: null
+    flow: u02
+    geom: g03
+    title: Jan-1996 Calibration
+  WatershedG9.p07:
+    description: null
+    flow: u03
+    geom: g01
+    title: Nov-2003 Calibration
+  WatershedG9.p08:
+    description: null
+    flow: u04
+    geom: g02
+    title: Jun-2016 Calibration
+title: WatershedG9

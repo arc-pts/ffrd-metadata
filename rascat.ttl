@@ -1,6 +1,3 @@
-# Questions:
-# - how many Terrains can a single Geometry have?
-# - how many Roughnesses can a single Geometry have?
 
 @prefix : <http://www.example.org/rascat/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,22 +6,19 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix sf: <http://www.opengis.net/ont/sf#> .
-@base <http://www.example.org/rascat/> .
+@base <http://www.example.org/rascat/0.1#> .
 
-<http://www.example.org/rascat> a owl:Ontology .
+<http://www.example.org/rascat/0.1#> a owl:Ontology .
 
 #################################################################
 #    RAS Model
 #################################################################
 
-###  http://www.example.org/rascat#Model
-:Model a owl:Class ;
-        rdfs:subClassOf dcat:Dataset .
-
 ###  http://www.example.org/rascat#RasModel
 :RasModel a owl:Class ;
-        rdfs:subClassOf :Model ;
+        rdfs:comment "A HEC-RAS model. Instances of the RasModel class should point to a valid HEC-RAS *.prj file." @en ;
         owl:equivalentClass [ a owl:Restriction ;
                 owl:onProperty :hasPlan ;
                 owl:minCardinality 1 ] ;
@@ -36,20 +30,25 @@
                 owl:maxCardinality 1 ] .
 
 :hasPlan a owl:ObjectProperty ;
+        rdfs:comment "A HEC-RAS Plan file associated with a parent RasModel." @en ;
         rdfs:domain :RasModel ;
         rdfs:range :RasPlan .
 
 :hasGeometry a owl:ObjectProperty ;
+        rdf:comment "A HEC-RAS Geometry file associated with a parent RasModel or RasPlan." @en ;
         rdfs:domain :RasModel ;
         rdfs:domain :RasPlan ;
         rdfs:range :RasGeometry .
 
 :hasFlow a owl:ObjectProperty ;
+        rdfs:comment "A HEC-RAS Flow file associated with a parent RasModel or RasPlan." @en ;
         rdfs:domain :RasModel ;
         rdfs:domain :RasPlan ;
         rdfs:range :RasFlow .
 
 :rasVersion a owl:ObjectProperty ;
+        rdfs:comment "The version of HEC-RAS used to create the model." @en ;
+        rdfs:subClassOf dcterms:hasVersion ;
         rdfs:domain :RasModel ;
         rdfs:range xsd:string .
 
@@ -58,10 +57,12 @@
         rdfs:range [ owl:oneOf ("Draft" "Final" "Public Release") ] .
 
 :projection a owl:ObjectProperty ;
+        rdfs:comment "The geographic projection of the model." @en ;
         rdfs:domain :RasModel ;
         rdfs:range xsd:string .
 
 :verticalDatum a owl:ObjectProperty ;
+        rdfs:comment "The vertical datum of the model. (e.g., NAVD88)" @en ;
         rdfs:domain :RasModel ;
         rdfs:range xsd:string .
 
@@ -77,6 +78,7 @@
 
 ###  http://www.example.org/rascat#RasPlan
 :RasPlan a owl:Class ;
+        rdfs:comment "A HEC-RAS plan file, e.g. *.p01. A plan is a grouping of one HEC-RAS Geometry file and one HEC-RAS Flow file." @en ;
         rdfs:subClassOf dcat:Dataset ;
         owl:equivalentClass [ a owl:Restriction ;
                 owl:onProperty :hasGeometry ;
@@ -88,9 +90,13 @@
 #################################################################
 # Geometry
 #################################################################
+# Questions
+# - how many Terrains can a single Geometry have?
+# - how many Roughnesses can a single Geometry have?
 
 ###  http://www.example.org/rascat#RasGeometry
 :RasGeometry a owl:Class ;
+        rdfs:comment "A HEC-RAS Geometry file. (e.g., *.g01)" @en ;
         rdfs:subClassOf dcat:Dataset .
 
 :hasTerrain a owl:ObjectProperty ;
@@ -175,29 +181,36 @@
 
 ### http://www.example.org/rascat#Mesh2D
 :Mesh2D a owl:Class ;
+        rdfs:comment "A 2D mesh contained within a HEC-RAS Geometry file." @en ;
         rdfs:subClassOf dcat:Dataset .
 
 :nominalCellSize a owl:DatatypeProperty ;
+        rdfs:comment "The nominal cell size of a 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:double .
 
 :breaklinesMinCellSize a owl:DatatypeProperty ;
+        rdfs:comment "The minimum cell size associated with breaklines for HEC-RAS 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:double .
 
 :breaklinesMaxCellSize a owl:DatatypeProperty ;
+        rdfs:comment "The maximum cell size associated with breaklines for HEC-RAS 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:double .
 
 :refinementRegionsMinCellSize a owl:DatatypeProperty ;
+        rdfs:comment "The minimum cell size associated with refinement regions for HEC-RAS 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:double .
 
 :refinementRegionsMaxCellSize a owl:DatatypeProperty ;
+        rdfs:comment "The maximum cell size associated with refinement regions for HEC-RAS 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:double .
 
 :cellCount a owl:DatatypeProperty ;
+        rdfs:comment "The number of cells in a 2D mesh." @en ;
         rdfs:domain :Mesh2D ;
         rdfs:range xsd:integer .
 
@@ -211,6 +224,7 @@
 
 ### http://www.example.org/rascat#RasFlow
 :RasFlow a owl:Class ;
+        rdfs:comment "A HEC-RAS Flow file. (e.g., *.f01 or *.u01)" @en ;
         rdfs:subClassOf dcat:Dataset .
 
 #################################################################
@@ -219,6 +233,7 @@
 
 ### http://www.example.org/rascat#RasSteadyFlow
 :RasSteadyFlow a owl:Class ;
+        rdfs:comment "A HEC-RAS Steady Flow file. (e.g., *.f01)" @en ;
         rdfs:subClassOf :RasFlow ;
         rdfs:subClassOf dcat:Dataset .
 
@@ -228,10 +243,11 @@
 
 ### http://www.example.org/rascat#RasUnsteadyFlow
 :RasUnsteadyFlow a owl:Class ;
+        rdfs:comment "A HEC-RAS Unsteady Flow file. (e.g., *.u01)" @en;
         rdfs:subClassOf :RasFlow ;
         rdfs:subClassOf dcat:Dataset .
 
-### http://www.example.org/rascat#Hydrograph
+### http://www.example.org/rascat#Hydrodata
 :Hydrodata a owl:Class ;
         rdfs:subClassOf dcat:Dataset ;
         owl:equivalentClass [ a owl:Restriction ;
@@ -247,9 +263,14 @@
                 owl:onProperty :fromHydroEvent ;
                 owl:maxCardinality 1 ] .
 
+### http://www.example.org/rascat#Hydrograph
 :Hydrograph a owl:Class ;
         rdfs:subClassOf :Hydrodata ;
         rdfs:subClassOf dcat:Dataset .
+
+:hydrographType a owl:ObjectProperty ;
+        rdfs:domain :RasModel ;
+        rdfs:range [ owl:oneOf ("Flow" "Stage") ] .
 
 :startDateTime a owl:ObjectProperty ;
         rdfs:domain :HydroEvent ;
@@ -279,24 +300,24 @@
         rdfs:domain :RasUnsteadyFlow ;
         rdfs:range :Hydrograph .
 
-:hasNSE a owl:ObjectProperty ;
+:calibrationMetric a owl:ObjectProperty ;
         rdfs:domain :Hydrograph ;
-        rdfs:range xsd:double ;
+        rdfs:range xsd:double .
+
+:nse a owl:ObjectProperty ;
+        rdfs:subClassOf :calibrationMetric ;
         rdfs:comment "Nash-Sutcliffe Efficiency" .
 
-:hasPBIAS a owl:ObjectProperty ;
-        rdfs:domain :Hydrograph ;
-        rdfs:range xsd:double ;
+:pbias a owl:ObjectProperty ;
+        rdfs:subClassOf :calibrationMetric ;
         rdfs:comment "Percent Bias" .
 
-:hasRSR a owl:ObjectProperty ;
-        rdfs:domain :Hydrograph ;
-        rdfs:range xsd:double ;
+:rsr a owl:ObjectProperty ;
+        rdfs:subClassOf :calibrationMetric ;
         rdfs:comment "Root Mean Square Error Standard Deviation Ratio" .
 
-:hasR2 a owl:ObjectProperty ;
-        rdfs:domain :Hydrograph ;
-        rdfs:range xsd:double ;
+:r2 a owl:ObjectProperty ;
+        rdfs:subClassOf :calibrationMetric ;
         rdfs:comment "Coefficient of Determination" .
 
 ### http://www.example.org/rascat#Hyetograph

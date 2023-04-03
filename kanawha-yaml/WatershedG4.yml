@@ -1,4 +1,16 @@
-description: ''
+description: '2D rain-on-mesh BLE model of the fourth of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name:  Josh Hill
+    email: josh.hill@wsp.com
+  - name:  Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name:  Jonathan Bartlotti
+    email: jonathan.bartlotti@wsp.com
+connected_models:
+  - model: WatershedG3.prj
+    direction: upstream
+  - model: G5.prj
+    direction: downstream 
 flows:
   WatershedG4.u01:
     title: Jan-1995

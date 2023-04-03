@@ -7,6 +7,11 @@ creators:
   - name: Jon Bartlotti
     email: jonathan.bartlotti@wsp.com
 modified: 11/14/2022 18:30
+connected_models:
+  - model: Kanawha_G2.prj
+    direction: upstream
+  - model: WatershedG4.prj
+    direction: downstream
 flows:
   WatershedG3.u01:
     title: Jan-1995
