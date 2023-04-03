@@ -1,0 +1,72 @@
+description: '2D rain-on-mesh BLE model of the fourth of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name:  Josh Hill
+    email: josh.hill@wsp.com
+  - name:  Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name:  Jonathan Bartlotti
+    email: jonathan.bartlotti@wsp.com
+connected_models:
+  - model: WatershedG3.prj
+    direction: upstream
+  - model: G5.prj
+    direction: downstream 
+flows:
+  WatershedG4.u01:
+    title: Jan-1995
+  WatershedG4.u02:
+    title: Jan-1996
+  WatershedG4.u03:
+    title: Nov-2003
+  WatershedG4.u04:
+    title: Jun-2016
+geometries:
+  WatershedG4.g01:
+    title: LiDAR
+  WatershedG4.g02:
+    title: LiDAR_2016
+  WatershedG4.g03:
+    title: LiDAR_1996
+model: WatershedG4.prj
+plans:
+  WatershedG4.p01:
+    description: null
+    flow: u01
+    geom: g01
+    title: Jan-1995 Initial Conditions
+  WatershedG4.p02:
+    description: null
+    flow: u02
+    geom: g01
+    title: Jan-1996 Initial Conditions
+  WatershedG4.p03:
+    description: null
+    flow: u03
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  WatershedG4.p04:
+    description: null
+    flow: u04
+    geom: g01
+    title: Jun-2016 Initial Conditions
+  WatershedG4.p05:
+    description: null
+    flow: u01
+    geom: g02
+    title: Jan-1995 Calibration
+  WatershedG4.p06:
+    description: null
+    flow: u02
+    geom: g03
+    title: Jan-1996 Calibration
+  WatershedG4.p07:
+    description: null
+    flow: u03
+    geom: g01
+    title: Nov-2003 Calibration
+  WatershedG4.p08:
+    description: null
+    flow: u04
+    geom: g02
+    title: Jun-2016 Calibration
+title: Watershed G4

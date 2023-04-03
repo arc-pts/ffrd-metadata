@@ -9,13 +9,15 @@ from enum import Enum
 import os
 from typing import List, Optional, Union
 
+RASCAT_URI = "http://www.example.org/rascat/0.1#"
+
 g = Graph()
 
 g.bind("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#")
 g.bind("dcat", "http://www.w3.org/ns/dcat#")
-g.bind("rascat", "http://ffrd.fema.gov/rascat/1.0#")
+g.bind("rascat", RASCAT_URI)
 
-RASCAT = Namespace("http://ffrd.fema.gov/rascat/1.0#")
+RASCAT = Namespace(RASCAT_URI)
 
 kanawha = URIRef("http://ffrd.fema.gov/models/kanawha/")
 usgs_gages = URIRef("https://waterdata.usgs.gov/monitoring-location/")
@@ -137,14 +139,14 @@ class Hydrodata(DcatDataset):
         self.end_datetime = to_datetime(self.end_datetime)
 
     def add_hydrodata_terms(self, g: Graph, uri: URIRef):
-        g.add((uri, RASCAT.startDatetime, Literal(self.start_datetime)))
-        g.add((uri, RASCAT.endDatetime, Literal(self.end_datetime)))
+        g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
+        g.add((uri, RASCAT.endDateTime, Literal(self.end_datetime)))
 
     def add_bnode(self, g: Graph):
         hydrodata = BNode()
         g.add((hydrodata, RDF.type, RASCAT.Hydrodata))
-        g.add((hydrodata, RASCAT.startDatetime, Literal(self.start_datetime)))
-        g.add((hydrodata, RASCAT.endDatetime, Literal(self.end_datetime)))
+        g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
+        g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
         return hydrodata
 
 
@@ -189,8 +191,8 @@ class Hyetograph(Hydrodata):
         hyetograph = BNode()
         g.add((hyetograph, RDF.type, RASCAT.Hyetograph))
         g.add((hyetograph, DCTERMS.description, Literal(self.description)))
-        g.add((hyetograph, RASCAT.startDatetime, Literal(self.start_datetime)))
-        g.add((hyetograph, RASCAT.endDatetime, Literal(self.end_datetime)))
+        g.add((hyetograph, RASCAT.startDateTime, Literal(self.start_datetime)))
+        g.add((hyetograph, RASCAT.endDateTime, Literal(self.end_datetime)))
         g.add((hyetograph, RASCAT.spatiallyVaried, Literal(self.spatially_varied)))
         return hyetograph
 

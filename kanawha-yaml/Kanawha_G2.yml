@@ -1,0 +1,151 @@
+description: '2D rain-on-mesh BLE model of the second of nine Greenbrier River basins in south-central West Virginia.
+'
+connected_models:
+  - model: Kanawha_G1.prj
+    direction: upstream
+  - model: WatershedG3.prj
+    direction: downstream
+modified: 11/14/2022 18:59
+creators:
+  - name: Josh Hill
+    email: josh.hill@wsp.com
+  - name: Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name: Julianna Villa
+    email: julianna.villa@wsp.com
+flows:
+  Kanawha_G2.u01:
+    title: Jan-1995 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+
+  Kanawha_G2.u02:
+    title: Jan-1996 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
+
+  Kanawha_G2.u03:
+    title: Nov-2003 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
+
+  Kanawha_G2.u04:
+    title: Jun-2016 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+      spatially_varied: true
+
+  Kanawha_G2.u05:
+    title: Jan-1995 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+
+  Kanawha_G2.u06:
+    title: Jan-1996 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
+
+  Kanawha_G2.u07:
+    title: Nov-2003 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
+
+  Kanawha_G2.u08:
+    title: Jun-2016 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+      spatially_varied: true
+
+geometries:
+  Kanawha_G2.g01:
+    title: LiDAR_G2
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 318146
+  Kanawha_G2.g02:
+    title: LiDAR_G2_2016
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 318146
+  Kanawha_G2.g03:
+    title: LiDAR_G2_1996
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 318146
+model: Kanawha_G2.prj
+plans:
+  Kanawha_G2.p01:
+    description: This plan was not utilized
+    flow: u01
+    geom: g01
+    title: Jan-1995 Initial Conditions
+  Kanawha_G2.p02:
+    description: This plan was not utilized
+    flow: u02
+    geom: g01
+    title: Jan-1996 Initial Conditions
+  Kanawha_G2.p03:
+    description: This plan was not utilized
+    flow: u03
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  Kanawha_G2.p04:
+    description: This plan was not utilized
+    flow: u04
+    geom: g01
+    title: Jun-2016 Initial Conditions
+  Kanawha_G2.p05:
+    description: This plan was not utilized
+    flow: u05
+    geom: g02
+    title: Jan-1995 Calibration
+  Kanawha_G2.p06:
+    description: This plan was not utilized
+    flow: u06
+    geom: g03
+    title: Jan-1996 Calibration
+  Kanawha_G2.p07:
+    description: This plan was not utilized
+    flow: u07
+    geom: g01
+    title: Nov-2003 Calibration
+  Kanawha_G2.p08:
+    description: This plan was not utilized
+    flow: u08
+    geom: g02
+    title: Jun-2016 Calibration
+title: Kanawha_G2

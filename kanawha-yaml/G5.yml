@@ -1,0 +1,130 @@
+description: '2D rain-on-mesh BLE model of the 5th of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name: Josh Hill
+    email: josh.hill@wsp.com
+  - name: Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name: Dami George
+    email: dami.george@wsp.com
+connected_models:
+  - model: WatershedG4.prj
+    direction: upstream
+  - model: BasinG6.prj
+    direction: downstream
+flows:
+  G5.u01:
+    title: Jan-1995 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+  G5.u05:
+    title: Jan-1996 Initial Conditions
+  G5.u06:
+    title: Jan-1995 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+  G5.u07:
+    title: Nov-2003 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+  G5.u08:
+    title: Nov-2003 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+  G5.u09:
+    title: Jun-2016 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+  G5.u10:
+    title: Jun-2016 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+  G5.u11:
+    title: Jan-1996 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/5/1996 12:00
+      end_datetime: 1/29/1996 12:00
+geometries:
+  G5.g01:
+    title: GreenbrierBasinG5_LiDAR
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 230930
+  G5.g02:
+    title: LiDAR_G5_2016
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 230930
+  G5.g03:
+    title: LiDAR_G5_1996
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 230930
+model: G5.prj
+plans:
+  G5.p01:
+    description: null
+    flow: u01
+    geom: g02
+    title: Jan-1995 Initial Conditions
+  G5.p04:
+    description: This plan was not utilized
+    flow: u01
+    geom: g01
+    title: Jan-1996 Initial Conditions
+  G5.p05:
+    description: null
+    flow: u07
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  G5.p06:
+    description: This plan was not utilized
+    flow: u09
+    geom: g01
+    title: Jun-2016 Initial Conditions
+  G5.p11:
+    description: null
+    flow: u06
+    geom: g02
+    title: Jan-1995 Calibration
+  G5.p12:
+    description: null
+    flow: u11
+    geom: g03
+    title: Jan-1996 Calibration
+  G5.p13:
+    description: null
+    flow: u08
+    geom: g01
+    title: Nov-2003 Calibration
+  G5.p14:
+    description: null
+    flow: u10
+    geom: g02
+    title: Jun-2016 Calibration
+title: G5

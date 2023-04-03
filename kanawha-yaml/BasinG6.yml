@@ -1,0 +1,143 @@
+description: '2D rain-on-mesh BLE model of the 6th of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name: Josh Hill
+    email: josh.hill@wsp.com
+  - name: Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name: Dami George
+    email: dami.george@wsp.com
+connected_models:
+  - model: G5.prj
+    direction: upstream
+  - model: Greenbrier_G7.prj
+    direction: downstream
+flows:
+  BasinG6.u01:
+    title: Jan-1995
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
+  BasinG6.u02:
+    title: Jan-1995 Inital Conditions
+    hyetograph: 
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+  BasinG6.u03:
+    title: Jan-1995 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+  BasinG6.u04:
+    title: Nov-2003 Initial Conditions
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
+  BasinG6.u05:
+    title: Nov-2003 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
+  BasinG6.u06:
+    title: Jun-2016 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+      spatially_varied: true
+    hydrographs:
+      - from_streamgage: 03182888 # Dry Creek at Tuckahoe, WV
+        hydrograph_type: "Stage"
+        start_datetime: 10/1/2007 0:00
+        end_datetime: 3/24/2023 0:00
+        nse: 0.64704
+        rsr: 0.59411
+        pbias: -0.11989
+        r2: 0.90879
+  BasinG6.u07:
+    title: Jan-1996 Calibration
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
+geometries:
+  BasinG6.g01:
+    title: GreenbrierBasinG6_LiDAR
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 228618
+  BasinG6.g02:
+    title: LiDAR_G6_2016
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 228618
+  BasinG6.g03:
+    title: LiDAR_G6_1996
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 228618
+model: BasinG6.prj
+plans:
+  BasinG6.p01:
+    description: Plan was not utilized
+    flow: u01
+    geom: g01
+    title: Jan-1996 Initial Conditions
+  BasinG6.p02:
+    description: null
+    flow: u04
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  BasinG6.p03:
+    description: Plan was not utilized
+    flow: u01
+    geom: g01
+    title: Jun-2016 Initial Conditions
+  BasinG6.p04:
+    description: null
+    flow: u02
+    geom: g02
+    title: Jan-1995 Initial Conditions
+  BasinG6.p05:
+    description: null
+    flow: u03
+    geom: g02
+    title: Jan-1995 Calibration
+  BasinG6.p06:
+    description: null
+    flow: u07
+    geom: g03
+    title: Jan-1996 Calibration
+  BasinG6.p07:
+    description: null
+    flow: u05
+    geom: g01
+    title: Nov-2003 Calibration
+  BasinG6.p08:
+    description: null
+    flow: u06
+    geom: g02
+    title: Jun-2016 Calibration
+title: BasinG6

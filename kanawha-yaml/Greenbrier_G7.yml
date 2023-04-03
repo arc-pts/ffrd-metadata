@@ -1,0 +1,106 @@
+description: '2D rain-on-mesh BLE model of the 7th of nine Greenbrier River basins in south-central West Virginia.'
+creators:
+  - name: Josh Hill
+    email: josh.hill@wsp.com
+  - name: Ben Rufenacht
+    email: ben.rufenacht@wsp.com
+  - name: Dami George
+    email: dami.george@wsp.com
+flows:
+  Greenbrier_G7.u01:
+    title: JAN1995 IC
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
+  Greenbrier_G7.u03:
+    title: NOV2003 IC
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+  Greenbrier_G7.u04:
+    title: JUN2016 Cal
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+  Greenbrier_G7.u05:
+    title: JAN1995 Cal
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+  Greenbrier_G7.u06:
+    title: JAN1996 Cal
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+  Greenbrier_G7.u07:
+    title: NOV2003 Cal
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+geometries:
+  Greenbrier_G7.g01:
+    title: Greenbrier_G7_LiDAR
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 100
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 250141
+  Greenbrier_G7.g02:
+    title: LiDAR_G7_2016
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 100
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 250141
+  Greenbrier_G7.g03:
+    title: LiDAR_G7_1996
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 100
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 250141
+model: Greenbrier_G7.prj
+plans:
+  Greenbrier_G7.p01:
+    flow: u01
+    geom: g02
+    title: Jan-1995 Initial Conditions
+  Greenbrier_G7.p03:
+    description: null
+    flow: u03
+    geom: g01
+    title: Nov-2003 Initial Conditions
+  Greenbrier_G7.p04:
+    description: null
+    flow: u04
+    geom: g02
+    title: Jun-2016 Calibration
+  Greenbrier_G7.p05:
+    description: null
+    flow: u05
+    geom: g02
+    title: Jan-1995 Calibration
+  Greenbrier_G7.p06:
+    description: null
+    flow: u06
+    geom: g03
+    title: Jan-1996 Calibration
+  Greenbrier_G7.p07:
+    description: null
+    flow: u07
+    geom: g01
+    title: Nov-2003 Calibration
+title: Greenbrier_G7

@@ -1,4 +1,12 @@
-description: ''
+description: "2D rain-on-mesh BLE model of the Gauley River subbasin upstream of Summerville, West Virginia.\
+\ INNOVATION PROJECT #2 - 2D RAS FFRD PILOT\
+\ Technical Advisement to FY21 IRWA with USACE"
+modified: 10/25/2022 20:07
+creators:
+  - name:  Daniyal Siddiqui 
+    email: daniyal.siddiqui@mbakerintl.com
+  - name:  Mark McBroom
+    email: mmcbroom@mbakerintl.com
 flows:
   GSummersville_C.u03:
     title: GauleeSummersville_FloodPlain_Nov2003
