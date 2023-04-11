@@ -19,7 +19,7 @@ GROUP BY ?title ?description ?model
 print(test_query)
 qres = g.query(test_query)
 for row in qres:
-    print(row)
+    # print(row)
     title = row[0]
     description = row[1]
     model = row[2]
@@ -46,7 +46,7 @@ WHERE {
 print(test_query2)
 qres = g.query(test_query2)
 for row in qres:
-    print(row)
+    # print(row)
     title = row[0]
     description = row[1]
     model = row[2]
@@ -64,28 +64,29 @@ test_query3 = """
 PREFIX rascat: <http://www.example.org/rascat/0.1#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
-SELECT ?title ?description ?model ?flow ?gage ?nse ?flowTitle ?gageTitle ?hydroType
+SELECT ?title ?description ?model ?flow ?gage ?nse ?flowTitle ?gageTitle ?hydroType ?plan ?planTitle
 WHERE {
     ?model a rascat:RasModel .
     ?model dcterms:title ?title .
     ?model dcterms:description ?description .
     ?model rascat:hasPlan ?plan .
     ?plan rascat:hasUnsteadyFlow ?flow .
-    ?flow rascat:hasCalibrationHydrograph ?hydro .
+    ?plan rascat:hasCalibrationHydrograph ?hydro .
+    ?plan dcterms:title ?planTitle .
     ?flow dcterms:title ?flowTitle .
     ?hydro rascat:fromStreamgage ?gage .
     ?hydro rascat:hydrographType ?hydroType .
     ?gage dcterms:identifier ?gageID .
     ?gage dcterms:title ?gageTitle .
     ?hydro rascat:nse ?nse .
-    FILTER (?nse > 0.9) 
+    FILTER (?nse < 0.0) 
     FILTER (?hydroType = "Flow")
 }
 """
 print(test_query3)
 qres = g.query(test_query3)
 for row in qres:
-    print(row)
+    # print(row)
     title = row[0]
     description = row[1]
     model = row[2]
@@ -95,10 +96,13 @@ for row in qres:
     flow_title = row[6]
     gage_title = row[7]
     hydro_type = row[8]
+    plan = row[9]
+    plan_title = row[10]
     print('------------------')
     print(f'MODEL: {model}')
     print(f'TITLE: {title}')
     print(f'DESCRIPTION: {description}')
+    print(f'PLAN: {plan_title} ({plan})')
     print(f'FLOW FILE: {flow_title} ({flow})')
     print(f'GAGE: {gage_title} ({gage})')
     print(f'TYPE: {hydro_type}')

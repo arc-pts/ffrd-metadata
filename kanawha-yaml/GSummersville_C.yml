@@ -15,6 +15,49 @@ flows:
       start_datetime: 11/6/2003 13:00
       end_datetime:   11/28/2003 12:00
       spatially_varied: true
+
+  GSummersville_C.u04:
+    title: GauleeSummersville_FloodPlain_Jun2016
+    hyetograph:
+      description: June 2016 applied precipitation, provided by USACE
+      start_datetime: 6/20/2016 13:00
+      end_datetime:   7/4/2016 12:00
+      spatially_varied: true
+
+  GSummersville_C.u05:
+    title: GauleeSummersville_FloodPlain_Jan1995
+    hyetograph:
+      description: January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff.
+      start_datetime: 1/14/1996 13:00
+      end_datetime:   2/7/1996 10:00
+      spatially_varied: true
+
+  GSummersville_C.u06:
+    title: GauleeSummersville_FloodPlain_Jan1996
+    hyetograph:
+      description: January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff.
+      start_datetime: 1/14/1996 13:00
+      end_datetime:   2/7/1996 10:00
+      spatially_varied: true
+
+geometries:
+  GSummersville_C.g01:
+    title: GauleySummersville_Existing
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 200
+      cell_count: 954995
+
+model: GSummersville_C.prj
+plans:
+  GSummersville_C.p02:
+    description: null
+    flow: u03
+    geom: g01
+    title: Unsteady_MultiHazard_Nov2003
     hydrographs:
       - from_streamgage: "?USACE" # Summersville Lake / USACE
         hydrograph_type: "Stage"
@@ -78,14 +121,11 @@ flows:
         rsr: 0.35
         pbias: 32.56
         r2: 0.95
-
-  GSummersville_C.u04:
-    title: GauleeSummersville_FloodPlain_Jun2016
-    hyetograph:
-      description: June 2016 applied precipitation, provided by USACE
-      start_datetime: 6/20/2016 13:00
-      end_datetime:   7/4/2016 12:00
-      spatially_varied: true
+  GSummersville_C.p03:
+    description: null
+    flow: u04
+    geom: g01
+    title: Unsteady_MultiHazard_Jun2016
     hydrographs:
       - from_streamgage: "?USACE" # Summersville Lake / USACE
         hydrograph_type: Stage
@@ -158,14 +198,16 @@ flows:
         rsr: 0.34
         pbias: 15.99
         r2: 0.89
-
-  GSummersville_C.u05:
-    title: GauleeSummersville_FloodPlain_Jan1995
-    hyetograph:
-      description: January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff.
-      start_datetime: 1/14/1996 13:00
-      end_datetime:   2/7/1996 10:00
-      spatially_varied: true
+  GSummersville_C.p04:
+    description: null
+    flow: u03
+    geom: g01
+    title: Unsteady_MultiHazard_Nov2003-RF
+  GSummersville_C.p05:
+    description: null
+    flow: u05
+    geom: g01
+    title: Unsteady_MultiHazard_Jan1995
     hydrographs:
       - from_streamgage: "?USACE" # Summersville Lake / USACE
         hydrograph_type: Stage
@@ -202,14 +244,16 @@ flows:
         rsr: 1.01
         pbias: -0.03
         r2: 0.73
-
-  GSummersville_C.u06:
-    title: GauleeSummersville_FloodPlain_Jan1996
-    hyetograph:
-      description: January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff.
-      start_datetime: 1/14/1996 13:00
-      end_datetime:   2/7/1996 10:00
-      spatially_varied: true
+  GSummersville_C.p06:
+    description: null
+    flow: u05
+    geom: g01
+    title: Unsteady_MultiHazard_Jan1995-RF
+  GSummersville_C.p07:
+    description: null
+    flow: u06
+    geom: g01
+    title: Unsteady_MultiHazard_Jan1996
     hydrographs:
       - from_streamgage: "?USACE" # Summersville Lake / USACE
         hydrograph_type: Stage
@@ -246,48 +290,4 @@ flows:
         rsr: 1.59
         pbias: -0.08
         r2: 0.70
-
-geometries:
-  GSummersville_C.g01:
-    title: GauleySummersville_Existing
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 200
-      cell_count: 954995
-
-model: GSummersville_C.prj
-plans:
-  GSummersville_C.p02:
-    description: null
-    flow: u03
-    geom: g01
-    title: Unsteady_MultiHazard_Nov2003
-  GSummersville_C.p03:
-    description: null
-    flow: u04
-    geom: g01
-    title: Unsteady_MultiHazard_Jun2016
-  GSummersville_C.p04:
-    description: null
-    flow: u03
-    geom: g01
-    title: Unsteady_MultiHazard_Nov2003-RF
-  GSummersville_C.p05:
-    description: null
-    flow: u05
-    geom: g01
-    title: Unsteady_MultiHazard_Jan1995
-  GSummersville_C.p06:
-    description: null
-    flow: u05
-    geom: g01
-    title: Unsteady_MultiHazard_Jan1995-RF
-  GSummersville_C.p07:
-    description: null
-    flow: u06
-    geom: g01
-    title: Unsteady_MultiHazard_Jan1996
 title: GauleySummersville_BLE-C_FEMA

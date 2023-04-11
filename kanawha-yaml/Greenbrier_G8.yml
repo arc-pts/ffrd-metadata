@@ -35,15 +35,6 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 4/1/2016 0:00
-        end_datetime: 7/1/2016 0:00
-        nse: 0.86125
-        rsr: 0.37249
-        pbias: 22.797
-        r2: 0.90781
   Greenbrier_G8.u05:
     title: JAN1995 Cal
     hyetograph:
@@ -51,15 +42,6 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 1/1/1900 0:00
-        end_datetime: 1/1/2022 0:00
-        nse: -1.8586
-        rsr: 1.6907
-        pbias: 40.89
-        r2: 0.42492
   Greenbrier_G8.u06:
     title: JAN1996 Cal
     hyetograph:
@@ -67,15 +49,6 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 1/1/1900 0:00
-        end_datetime: 1/1/2022 0:00
-        nse: -0.95796
-        rsr: 1.3993
-        pbias: 58.67
-        r2: 0.54692
   Greenbrier_G8.u07:
     title: NOV2003 Cal
     hyetograph:
@@ -83,15 +56,6 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 9/1/2003 0:00
-        end_datetime: 12/1/2003 0:00
-        nse: 0.75762
-        rsr: 0.49232
-        pbias: 30.033
-        r2: 0.9363
 geometries:
   Greenbrier_G8.g01:
     title: Greenbrier_G8_LiDAR
@@ -137,19 +101,55 @@ plans:
     flow: u04
     geom: g02
     title: Jun-2016 Calibration
+    hydrographs:
+      - from_streamgage: 03183500
+        hydrograph_type: Stage
+        start_datetime: 4/1/2016 0:00
+        end_datetime: 7/1/2016 0:00
+        nse: 0.86125
+        rsr: 0.37249
+        pbias: 22.797
+        r2: 0.90781
   Greenbrier_G8.p05:
     description: null
     flow: u05
     geom: g02
     title: Jan-1995 Calibration
+    hydrographs:
+      - from_streamgage: 03183500
+        hydrograph_type: Stage
+        start_datetime: 1/1/1900 0:00
+        end_datetime: 1/1/2022 0:00
+        nse: -1.8586
+        rsr: 1.6907
+        pbias: 40.89
+        r2: 0.42492
   Greenbrier_G8.p06:
     description: null
     flow: u06
     geom: g03
     title: Jan-1996 Calibration
+    hydrographs:
+      - from_streamgage: 03183500
+        hydrograph_type: Stage
+        start_datetime: 1/1/1900 0:00
+        end_datetime: 1/1/2022 0:00
+        nse: -0.95796
+        rsr: 1.3993
+        pbias: 58.67
+        r2: 0.54692
   Greenbrier_G8.p07:
     description: null
     flow: u07
     geom: g01
     title: Nov-2003 Calibration
+    hydrographs:
+      - from_streamgage: 03183500
+        hydrograph_type: Stage
+        start_datetime: 9/1/2003 0:00
+        end_datetime: 12/1/2003 0:00
+        nse: 0.75762
+        rsr: 0.49232
+        pbias: 30.033
+        r2: 0.9363
 title: Greenbrier_G8

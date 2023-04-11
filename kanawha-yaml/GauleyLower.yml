@@ -13,6 +13,47 @@ flows:
       end_datetime:   2003-11-23 00:00:00
       spatially_varied: true
 
+  GauleyLower_BLE_FEM.u02:
+    title: GauleyLower_Floodplain_Jun2016
+    hyetograph:
+      description: June 2016 applied precipitation
+      start_datetime: 2016-06-20 12:00:00
+      end_datetime:   2016-06-20 00:00:00
+      spatially_varied: true
+
+  GauleyLower_BLE_FEM.u03:
+    title: GauleyLower_FloodPlain_Jan1995
+    hyetograph:
+      description: January 1995 applied precipitation
+      start_datetime: 1995-01-05 12:00:00
+      end_datetime:   1995-01-23 12:00:00
+      spatially_varied: true
+
+  GauleyLower_BLE_FEM.u04:
+    title: GauleyLower_FloodPlain_Jan1996
+    hyetograph:
+      description: January 1996 applied precipitation
+      start_datetime: 1996-01-14 00:00:00
+      end_datetime:   1996-01-22 00:00:00
+      spatially_varied: true
+
+geometries:
+  GauleyLower_BLE_FEM.g01:
+    title: Gauley_Lower
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 50
+      cell_count: 1088388
+model: GauleyLower_BLE_FEM.prj
+plans:
+  GauleyLower_BLE_FEM.p01:
+    description: null
+    flow: u01
+    geom: g01
+    title: Unsteady_MultiHazard_Nov2003
     hydrographs:
       - start_datetime: 2009-08-31 15:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -40,14 +81,34 @@ flows:
         rsr:    0.612
         pbias:  -0.182
         r2:     0.784
+  GauleyLower_BLE_FEM.p02:
+    description: null
+    flow: u03
+    geom: g01
+    title: Unsteady_MultiHazard_Jan1995
+    hydrographs:
+      - start_datetime: 1928-10-20 00:00:00
+        end_datetime:   2022-06-26 00:00:00
+        from_streamgage: "03192000" # Gauley River Above Belva, WV
+        hydrograph_type: "Flow"
+        nse:    0.952
+        rsr:    0.218
+        pbias:  -1.5726
+        r2:     0.962
 
-  GauleyLower_BLE_FEM.u02:
-    title: GauleyLower_Floodplain_Jun2016
-    hyetograph:
-      description: June 2016 applied precipitation
-      start_datetime: 2016-06-20 12:00:00
-      end_datetime:   2016-06-20 00:00:00
-      spatially_varied: true
+      - start_datetime: 1994-12-01 05:00:00
+        end_datetime:   2016-08-01 05:00:00
+        from_streamgage: "03192000" # Gauley River Above Belva, WV
+        hydrograph_type: "Stage"
+        nse:    0.488
+        rsr:    0.715
+        pbias:  -0.195
+        r2:     0.959
+  GauleyLower_BLE_FEM.p03:
+    description: null
+    flow: u02
+    geom: g01
+    title: Unsteady_MultiHazard_Jun2016
     hydrographs:
       - start_datetime: 2009-08-31 15:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -102,42 +163,11 @@ flows:
         rsr:    0.2959
         pbias:  -0.074
         r2:     0.953
-
-  GauleyLower_BLE_FEM.u03:
-    title: GauleyLower_FloodPlain_Jan1995
-    hyetograph:
-      description: January 1995 applied precipitation
-      start_datetime: 1995-01-05 12:00:00
-      end_datetime:   1995-01-23 12:00:00
-      spatially_varied: true
-
-    hydrographs:
-      - start_datetime: 1928-10-20 00:00:00
-        end_datetime:   2022-06-26 00:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Flow"
-        nse:    0.952
-        rsr:    0.218
-        pbias:  -1.5726
-        r2:     0.962
-
-      - start_datetime: 1994-12-01 05:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Stage"
-        nse:    0.488
-        rsr:    0.715
-        pbias:  -0.195
-        r2:     0.959
-
-  GauleyLower_BLE_FEM.u04:
-    title: GauleyLower_FloodPlain_Jan1996
-    hyetograph:
-      description: January 1996 applied precipitation
-      start_datetime: 1996-01-14 00:00:00
-      end_datetime:   1996-01-22 00:00:00
-      spatially_varied: true
-
+  GauleyLower_BLE_FEM.p06:
+    description: null
+    flow: u04
+    geom: g01
+    title: Unsteady_MultiHazard_Jan1996
     hydrographs:
       - start_datetime: 1928-10-20 00:00:00
         end_datetime:   2022-06-26 00:00:00
@@ -156,37 +186,4 @@ flows:
         rsr:    0.415
         pbias:  -0.096
         r2:     0.875
-
-geometries:
-  GauleyLower_BLE_FEM.g01:
-    title: Gauley_Lower
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 50
-      cell_count: 1088388
-model: GauleyLower_BLE_FEM.prj
-plans:
-  GauleyLower_BLE_FEM.p01:
-    description: null
-    flow: u01
-    geom: g01
-    title: Unsteady_MultiHazard_Nov2003
-  GauleyLower_BLE_FEM.p02:
-    description: null
-    flow: u03
-    geom: g01
-    title: Unsteady_MultiHazard_Jan1995
-  GauleyLower_BLE_FEM.p03:
-    description: null
-    flow: u02
-    geom: g01
-    title: Unsteady_MultiHazard_Jun2016
-  GauleyLower_BLE_FEM.p06:
-    description: null
-    flow: u04
-    geom: g01
-    title: Unsteady_MultiHazard_Jan1996
 title: GauleyLower_BLE-C_FEMA

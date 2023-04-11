@@ -30,22 +30,22 @@ geometries:
 model: WatershedG4.prj
 plans:
   WatershedG4.p01:
-    description: null
+    description: This plan was not utilized
     flow: u01
     geom: g01
     title: Jan-1995 Initial Conditions
   WatershedG4.p02:
-    description: null
+    description: This plan was not utilized
     flow: u02
     geom: g01
     title: Jan-1996 Initial Conditions
   WatershedG4.p03:
-    description: null
+    description: This plan was not utilized
     flow: u03
     geom: g01
     title: Nov-2003 Initial Conditions
   WatershedG4.p04:
-    description: null
+    description: This plan was not utilized
     flow: u04
     geom: g01
     title: Jun-2016 Initial Conditions

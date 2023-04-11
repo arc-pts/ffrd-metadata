@@ -129,22 +129,22 @@ plans:
     geom: g01
     title: Jun-2016 Initial Conditions
   Kanawha_G2.p05:
-    description: This plan was not utilized
+    description: null
     flow: u05
     geom: g02
     title: Jan-1995 Calibration
   Kanawha_G2.p06:
-    description: This plan was not utilized
+    description: null
     flow: u06
     geom: g03
     title: Jan-1996 Calibration
   Kanawha_G2.p07:
-    description: This plan was not utilized
+    description: null
     flow: u07
     geom: g01
     title: Nov-2003 Calibration
   Kanawha_G2.p08:
-    description: This plan was not utilized
+    description: null
     flow: u08
     geom: g02
     title: Jun-2016 Calibration

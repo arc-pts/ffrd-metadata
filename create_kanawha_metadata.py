@@ -198,9 +198,124 @@ class Hyetograph(Hydrodata):
 
 
 @dataclass
+class DEM(DcatDataset):
+    uri: str
+
+
+@dataclass
+class Bathymetry(DcatDataset):
+    uri: Optional[str] = None
+
+
+@dataclass
+class TerrainModifications(DcatDataset):
+    uri: Optional[str] = None
+
+
+@dataclass
+class Terrain(DcatDataset):
+    dem: DEM
+    bathymetry: Optional[Bathymetry] = None
+    modifications: Optional[TerrainModifications] = None
+
+    def add_bnode(self, g: Graph):
+        terrain = BNode()
+        g.add((terrain, RDF.type, RASCAT.Terrain))
+        g.add((terrain, RASCAT.dem, self.dem.uri))
+        if self.bathymetry:
+            bathymetry = BNode()
+            g.add((bathymetry, RDF.type, RASCAT.Bathymetry))
+            if self.bathymetry.uri:
+                g.add((terrain, RASCAT.hasBathymetry, self.bathymetry.uri))
+            else:
+                g.add((terrain, RASCAT.hasBathymetry, bathymetry))
+            self.bathymetry.add_dcat_terms(g, bathymetry)
+        if self.modifications:
+            terrain_modifications = BNode()
+            if self.modifications.uri:
+                g.add((terrain, RASCAT.hasTerrainModifications, self.modifications.uri))
+            else:
+                g.add((terrain, RASCAT.hasTerrainModifications, terrain_modifications))
+            self.modifications.add_dcat_terms(g, terrain_modifications)
+        return terrain
+
+
+@dataclass
+class LanduseLandcover(DcatDataset):
+    uri: Optional[str] = None
+
+
+@dataclass
+class Roughness(DcatDataset):
+    uri: Optional[str] = None
+    landuse: Optional[LanduseLandcover] = None
+
+    def add_bnode(self, g: Graph):
+        roughness = BNode()
+        g.add((roughness, RDF.type, RASCAT.Roughness))
+        if self.uri:
+            g.add((roughness, RASCAT.uri, Literal(self.uri)))
+        if self.landuse:
+            if self.landuse.uri:
+                g.add((roughness, RASCAT.hasLanduseLandcover, URIRef(self.landuse.uri)))
+            else:
+                landuse = BNode()
+                g.add((landuse, RDF.type, RASCAT.LanduseLandcover))
+                g.add((roughness, RASCAT.hasLanduseLandcover, landuse))
+                self.landuse.add_dcat_terms(g, landuse)
+        return roughness
+
+@dataclass
+class Soils(DcatDataset):
+    uri: Optional[str] = None
+
+
+@dataclass
+class PrecipLosses(DcatDataset):
+    landuse: Optional[LanduseLandcover] = None
+    soils: Optional[Soils] = None
+
+    def add_bnode(self, g: Graph):
+        precip_losses = BNode()
+        g.add((precip_losses, RDF.type, RASCAT.PrecipLosses))
+        if self.landuse:
+            if self.landuse.uri:
+                g.add((precip_losses, RASCAT.hasLanduseLandcover, URIRef(self.landuse.uri)))
+            else:
+                landuse = BNode()
+                g.add((landuse, RDF.type, RASCAT.LanduseLandcover))
+                g.add((precip_losses, RASCAT.hasLanduseLandcover, landuse))
+                self.landuse.add_dcat_terms(g, landuse)
+        if self.soils:
+            if self.soils.uri:
+                g.add((precip_losses, RASCAT.hasSoils, URIRef(self.soils.uri)))
+            else:
+                soils = BNode()
+                g.add((soils, RDF.type, RASCAT.Soils))
+                g.add((precip_losses, RASCAT.hasSoils, soils))
+                self.soils.add_dcat_terms(g, soils)
+        return precip_losses
+
+
+@dataclass
+class Structures(DcatDataset):
+    uri: Optional[str] = None
+
+    def add_bnode(self, g: Graph):
+        structures = BNode()
+        g.add((structures, RDF.type, RASCAT.StructureData))
+        super().add_dcat_terms(g, structures)
+        return structures
+
+
+@dataclass
 class RasGeometry(DcatDataset):
     ext: str
     mesh2d: Mesh2D
+    terrain: Terrain
+    roughness: Roughness
+    precip_losses: Optional[PrecipLosses]
+    structures: Optional[Structures]
 
 
 @dataclass
@@ -215,6 +330,7 @@ class RasPlan(DcatDataset):
     ext: str
     geometry: RasGeometry
     flow: RasUnsteadyFlow
+    calibration_hydrographs: Optional[List[Hydrograph]] = None
 
 
 class RasStatus(Enum):
@@ -231,6 +347,11 @@ def replace_ext(filename: str, new_ext: str) -> str:
 
 
 @dataclass
+class Projection(DcatDataset):
+    filename: str
+
+
+@dataclass
 class RasModel(DcatDataset):
     filename: str
     ras_version: str
@@ -238,7 +359,8 @@ class RasModel(DcatDataset):
     geometries: List[RasGeometry]
     flows: List[RasUnsteadyFlow]
     plans: List[RasPlan]
-    # projection: str
+    projection: Projection
+    vertical_datum: str
 
     def basename(self):
         """Return the filename without the extension."""
@@ -258,6 +380,11 @@ class RasModel(DcatDataset):
         g.add((model, RDF.type, RASCAT.RasModel))
         g.add((model, RASCAT.rasVersion, Literal(self.ras_version)))
         g.add((model, RASCAT.status, Literal(self.status.value)))
+        projection_ref = URIRef(self.projection.filename, base_uri)
+        g.add((projection_ref, RDF.type, RASCAT.Projection))
+        self.projection.add_dcat_terms(g, projection_ref)
+        g.add((model, RASCAT.projection, projection_ref))
+        g.add((model, RASCAT.verticalDatum, Literal(self.vertical_datum)))
 
         super().add_dcat_terms(g, model)
 
@@ -268,6 +395,18 @@ class RasModel(DcatDataset):
             if geometry.mesh2d is not None:
                 mesh2d = geometry.mesh2d.add_bnode(g)
                 g.add((geometry_uri, RASCAT.hasMesh2D, mesh2d))
+            if geometry.terrain is not None:
+                terrain = geometry.terrain.add_bnode(g)
+                g.add((geometry_uri, RASCAT.hasTerrain, terrain))
+            if geometry.roughness is not None:
+                roughness = geometry.roughness.add_bnode(g)
+                g.add((geometry_uri, RASCAT.hasRoughness, roughness))
+            if geometry.precip_losses is not None:
+                precip_losses = geometry.precip_losses.add_bnode(g)
+                g.add((geometry_uri, RASCAT.hasPrecipLosses, precip_losses))
+            if geometry.structures is not None:
+                structures = geometry.structures.add_bnode(g)
+                g.add((geometry_uri, RASCAT.hasStructureData, structures))
             geometry.add_dcat_terms(g, geometry_uri)
 
         for flow in self.flows:
@@ -291,6 +430,10 @@ class RasModel(DcatDataset):
             g.add((plan_uri, RDF.type, RASCAT.RasPlan))
             g.add((plan_uri, RASCAT.hasGeometry, self.rasfile_uri(plan.geometry.ext, base_uri)))
             g.add((plan_uri, RASCAT.hasUnsteadyFlow, self.rasfile_uri(plan.flow.ext, base_uri)))
+            if plan.calibration_hydrographs:
+                for hydrograph in plan.calibration_hydrographs:
+                    hyd_bnode = hydrograph.add_bnode(g)
+                    g.add((plan_uri, RASCAT.hasCalibrationHydrograph, hyd_bnode))
             plan.add_dcat_terms(g, plan_uri)
 
 with open('./streamgages.yml', 'r') as streamgages_yml:
@@ -312,6 +455,36 @@ kanawha_yamls = os.listdir('./kanawha-yaml')
 for kanawha_yaml in kanawha_yamls:
     with open(os.path.join('./kanawha-yaml', kanawha_yaml), 'r') as yml:
         kanawha_data.append(yaml.load(yml, Loader=yaml.FullLoader))
+
+proj_albers = Projection(
+    'mmc_albers_ft.prj',
+    title='Albers Equal Area Conic (feet)',
+    description='Modified version of ESRI:102309, provided by USACE. Units are in feet, whereas EPSG:102309 is in meters.',
+)
+
+kanawha_dem = DEM(
+    URIRef('https://femahq.s3.amazonaws.com/kanawha/tiles/1m'),
+    title='Kanawha River Basin DEM',
+    description='Digital Elevation Model for the Kanawha River Basin, based on USGS 3DEP data.',
+)
+g.add((kanawha_dem.uri, RDF.type, RASCAT.DEM))
+kanawha_dem.add_dcat_terms(g, kanawha_dem.uri)
+
+nlcd = LanduseLandcover(
+    URIRef('https://www.mrlc.gov/data/nlcd-2019-land-cover-conus'),
+    title='NLCD 2019',
+    description='National Land Cover Database 2019 (CONUS);',
+)
+g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
+nlcd.add_dcat_terms(g, nlcd.uri)
+
+ssurgo = Soils(
+    URIRef('https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo'),
+    title='SSURGO',
+    description='USDA / NRCS Soil Survey Geographic Database (SSURGO)',
+)
+g.add((ssurgo.uri, RDF.type, RASCAT.Soils))
+ssurgo.add_dcat_terms(g, ssurgo.uri)
 
 for model in kanawha_data:
     model_prj = model['model']
@@ -364,22 +537,109 @@ for model in kanawha_data:
                 cell_count=mesh2d.get('cell_count'),
             )
 
+        terrain = geom.get('terrain')
+        if terrain is not None:
+            bathymetry = terrain.get('bathymetry')
+            if bathymetry is not None:
+                bathymetry = Bathymetry(
+                    title=bathymetry.get('title'),
+                    description=bathymetry.get('description'),
+                    uri=bathymetry.get('uri'),
+                )
+            modifications = terrain.get('modifications')
+            if modifications is not None:
+                modifications = TerrainModifications(
+                    title=modifications.get('title'),
+                    description=modifications.get('description'),
+                    uri=modifications.get('uri'),
+                )
+            terrain = Terrain(dem=kanawha_dem, bathymetry=bathymetry, modifications=modifications)
+        else:
+            terrain = Terrain(dem=kanawha_dem)
+
+        roughness = geom.get('roughness')
+        if roughness is not None:
+            landuse = roughness.get('landuse')
+            if landuse is not None:
+                landuse = LanduseLandcover(
+                    title=landuse.get('title'),
+                    description=landuse.get('description'),
+                    uri=landuse.get('uri'),
+                )
+            roughness = Roughness(
+                title=roughness.get('title'),
+                description=roughness.get('description'),
+                uri=roughness.get('uri'),
+                landuse=landuse,
+            )
+
+        precip_losses = geom.get('precip_losses')
+        if precip_losses is not None:
+            landuse = precip_losses.get('landuse')
+            if landuse is not None:
+                landuse = LanduseLandcover(
+                    title=landuse.get('title'),
+                    description=landuse.get('description'),
+                    uri=landuse.get('uri'),
+                )
+            soils = precip_losses.get('soils')
+            if soils is not None:
+                soils = Soils(
+                    title=soils.get('title'),
+                    description=soils.get('description'),
+                    uri=soils.get('uri'),
+                )
+            precip_losses = PrecipLosses(
+                title=precip_losses.get('title'),
+                description=precip_losses.get('description'),
+                landuse=landuse,
+                soils=soils,
+            )
+
+        structures = geom.get('structures')
+        if structures is not None:
+            structures = Structures(
+                title=structures.get('title'),
+                description=structures.get('description'),
+                uri=structures.get('uri'),
+            )
+
         geometry = RasGeometry(
             ext=get_ext(geomfile),
             title=geom.get('title'),
             description=geom.get('description'),
-            mesh2d=mesh2d
+            mesh2d=mesh2d,
+            terrain=terrain,
+            roughness=roughness,
+            precip_losses=precip_losses,
+            structures=structures,
         )
         geometries[geomfile] = geometry
 
     plans = {}
     for planfile, p in model['plans'].items():
+        calibration_hydrographs = []
+        for hydrograph in p.get('hydrographs', []):
+            hyd = Hydrograph(
+                title=hydrograph.get('title'),
+                description=hydrograph.get('description'),
+                start_datetime=hydrograph.get('start_datetime'),
+                end_datetime=hydrograph.get('end_datetime'),
+                from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
+                hydrograph_type=HydrographType(hydrograph['hydrograph_type']),
+                nse=hydrograph.get('nse'),
+                rsr=hydrograph.get('rsr'),
+                pbias=hydrograph.get('pbias'),
+                r2=hydrograph.get('r2'),
+            )
+            calibration_hydrographs.append(hyd)
         plan = RasPlan(
             ext=get_ext(planfile),
             title=p.get('title'),
             description=p.get('description'),
             geometry=geometries[replace_ext(model_prj, p.get('geom'))],
             flow=flows[replace_ext(model_prj, p.get('flow'))],
+            calibration_hydrographs=calibration_hydrographs,
         )
         plans[planfile] = plan
 
@@ -402,6 +662,8 @@ for model in kanawha_data:
         plans=plans.values(),
         creators=creators,
         modified=model.get('modified'),
+        projection=proj_albers,
+        vertical_datum='NAVD88',
     )
     ras_model.to_rdf(g, base_uri=kanawha)
 
@@ -411,3 +673,7 @@ with open('./kanawha.ttl', 'w') as out:
     out.write(g.serialize(format='turtle'))
 print('Gages:')
 print(gages_lookup.keys(), len(gages_lookup.keys()))
+
+
+# with open('./kanawha.jsonld', 'w') as out:
+#     out.write(g.serialize(format='json-ld', indent=2))
