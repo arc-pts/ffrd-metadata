@@ -54,15 +54,6 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03182888 # Dry Creek at Tuckahoe, WV
-        hydrograph_type: "Stage"
-        start_datetime: 10/1/2007 0:00
-        end_datetime: 3/24/2023 0:00
-        nse: 0.64704
-        rsr: 0.59411
-        pbias: -0.11989
-        r2: 0.90879
   BasinG6.u07:
     title: Jan-1996 Calibration
     hyetograph:
@@ -140,4 +131,13 @@ plans:
     flow: u06
     geom: g02
     title: Jun-2016 Calibration
+    hydrographs:
+      - from_streamgage: 03182888 # Dry Creek at Tuckahoe, WV
+        hydrograph_type: "Stage"
+        start_datetime: 10/1/2007 0:00
+        end_datetime: 3/24/2023 0:00
+        nse: 0.64704
+        rsr: 0.59411
+        pbias: -0.11989
+        r2: 0.90879
 title: BasinG6

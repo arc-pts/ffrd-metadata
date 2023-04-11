@@ -51,46 +51,6 @@ flows:
       start_datetime: 2003-11-12 00:00:00
       end_datetime:   2003-11-24 00:00:00
       spatially_varied: true
-    hydrographs:
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: London L&D Pool
-        description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
-        hydrograph_type: "Stage"
-        nse:    -50.493
-        rsr:    7.1759
-        pbias:  -0.18653
-        r2:     0.22156
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: London L&D Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.94446
-        rsr:    0.23567
-        pbias:  -0.14871
-        r2:     0.98069
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: Marmet L&D Pool 
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.83132
-        rsr:    0.41071
-        pbias:  0.023509
-        r2:     0.92922
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: Marmet L&D Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.80228
-        rsr:    0.44465
-        pbias:  0.061883
-        r2:     0.8096
 
   UpperKanawha.u09:
     title: Jun2016_InitialConditions
@@ -100,7 +60,6 @@ flows:
       end_datetime:   2016-06-22 00:00:00
       spatially_varied: true
 
-
   UpperKanawha.u11:
     title: Jun2016
     hyetograph:
@@ -108,6 +67,31 @@ flows:
       start_datetime: 2016-06-22 00:00:00
       end_datetime:   2016-06-28 00:00:00
       spatially_varied: true
+geometries:
+  UpperKanawha.g01:
+    title: UpperKanawha
+    structures:
+      title: USACE Kanawaha CWMS Model
+      description: London/Marmet L&D Structures and Gate operations copied from USACE CWMS Model
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 50
+      cell_count: 537254
+
+model: UpperKanawha.prj
+plans:
+  UpperKanawha.p01:
+    description: "Geometry: Upper Kanawha BLE geometry. Includes Marmet and London\
+      \ L&D. Gate operations from Kanawha CWMS. \nFlow: June 2016 AORC gridded precipitation.\
+      \ Upstream inflow from USGS Kanawha Falls. Downstream time-stage translated\
+      \ to model outlet from USGS Charleston gage based on friction slope.\nInitial\
+      \ Conditions: Restart file from p.03"
+    flow: u11
+    geom: g01
+    title: Jun2016
     hydrographs:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
@@ -149,28 +133,6 @@ flows:
         pbias:  0.12004
         r2:     0.92979
 
-geometries:
-  UpperKanawha.g01:
-    title: UpperKanawha
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 50
-      cell_count: 537254
-
-model: UpperKanawha.prj
-plans:
-  UpperKanawha.p01:
-    description: "Geometry: Upper Kanawha BLE geometry. Includes Marmet and London\
-      \ L&D. Gate operations from Kanawha CWMS. \nFlow: June 2016 AORC gridded precipitation.\
-      \ Upstream inflow from USGS Kanawha Falls. Downstream time-stage translated\
-      \ to model outlet from USGS Charleston gage based on friction slope.\nInitial\
-      \ Conditions: Restart file from p.03"
-    flow: u11
-    geom: g01
-    title: Jun2016
   UpperKanawha.p02:
     description: "Geometry: Upper Kanawha BLE geometry. Includes Marmet and London\
       \ L&D. Gate operations from Kanawha CWMS. \nFlow: Nov 2003 AORC gridded precipitation.\
@@ -180,6 +142,46 @@ plans:
     flow: u08
     geom: g01
     title: Nov2003
+    hydrographs:
+      - start_datetime: 2003-11-12 00:00:00
+        end_datetime:   2003-11-24 00:00:00
+        title: London L&D Pool
+        description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
+        hydrograph_type: "Stage"
+        nse:    -50.493
+        rsr:    7.1759
+        pbias:  -0.18653
+        r2:     0.22156
+
+      - start_datetime: 2003-11-12 00:00:00
+        end_datetime:   2003-11-24 00:00:00
+        title: London L&D Tailwater
+        description: Stage hydrograph provided by USACE.
+        hydrograph_type: "Stage"
+        nse:    0.94446
+        rsr:    0.23567
+        pbias:  -0.14871
+        r2:     0.98069
+
+      - start_datetime: 2003-11-12 00:00:00
+        end_datetime:   2003-11-24 00:00:00
+        title: Marmet L&D Pool 
+        description: Stage hydrograph provided by USACE.
+        hydrograph_type: "Stage"
+        nse:    0.83132
+        rsr:    0.41071
+        pbias:  0.023509
+        r2:     0.92922
+
+      - start_datetime: 2003-11-12 00:00:00
+        end_datetime:   2003-11-24 00:00:00
+        title: Marmet L&D Tailwater
+        description: Stage hydrograph provided by USACE.
+        hydrograph_type: "Stage"
+        nse:    0.80228
+        rsr:    0.44465
+        pbias:  0.061883
+        r2:     0.8096
   UpperKanawha.p03:
     description: null
     flow: u09

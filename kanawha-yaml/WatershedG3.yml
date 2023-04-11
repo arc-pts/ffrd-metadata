@@ -20,16 +20,6 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
-        hydrograph_type: "Flow"
-        description: Flooding at the Greenbrier River gage at Buckey, WV in January 1995
-        start_datetime: 11/18/1930 0:00
-        end_datetime: 5/7/2022 0:00
-        nse: 0.13088
-        rsr: 0.93227
-        pbias: 35.16
-        r2: 0.61693
 
   WatershedG3.u02:
     title: Jan-1996
@@ -38,16 +28,6 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
-        hydrograph_type: "Flow"
-        description: Flooding at the Greenbrier River gage at Buckey, WV in January 1996
-        start_datetime: 11/18/1930 0:00
-        end_datetime: 5/7/2022 0:00
-        nse: 0.52781
-        rsr: 0.68716
-        pbias: 35.098
-        r2: 0.91635
 
   WatershedG3.u03:
     title: Nov-2003
@@ -56,16 +36,6 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
-        hydrograph_type: "Flow"
-        description: Flooding at the Greenbrier River gage at Buckey, WV in November 2003
-        start_datetime: 11/18/1930 0:00
-        end_datetime: 5/7/2022 0:00
-        nse: 0.63691
-        rsr: 0.60257
-        pbias: 45.403
-        r2: 0.9099
 
   WatershedG3.u04:
     title: Jun-2016
@@ -74,16 +44,6 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
-    hydrographs:
-      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
-        hydrograph_type: "Flow"
-        description: Flooding at the Greenbrier River gage at Buckey, WV in June 2016
-        start_datetime: 11/18/1930 0:00
-        end_datetime: 5/7/2022 0:00
-        nse: 0.9627
-        rsr: 0.19314
-        pbias: 13.292
-        r2: 0.98257
 
   WatershedG3.u05:
     title: Jan-1995 IC
@@ -140,23 +100,62 @@ plans:
     geom: g01
     title: Jun-2016 Initial Conditions
   WatershedG3.p05:
-    description: This plan was not utilized
     flow: u01
     geom: g02
     title: Jan-1995 Calibration
+    hydrographs:
+      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
+        hydrograph_type: "Flow"
+        description: Flooding at the Greenbrier River gage at Buckey, WV in January 1995
+        start_datetime: 11/18/1930 0:00
+        end_datetime: 5/7/2022 0:00
+        nse: 0.13088
+        rsr: 0.93227
+        pbias: 35.16
+        r2: 0.61693
+
   WatershedG3.p06:
-    description: This plan was not utilized
     flow: u02
     geom: g03
     title: Jan-1996 Calibration
+    hydrographs:
+      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
+        hydrograph_type: "Flow"
+        description: Flooding at the Greenbrier River gage at Buckey, WV in January 1996
+        start_datetime: 11/18/1930 0:00
+        end_datetime: 5/7/2022 0:00
+        nse: 0.52781
+        rsr: 0.68716
+        pbias: 35.098
+        r2: 0.91635
+
   WatershedG3.p07:
-    description: This plan was not utilized
     flow: u03
     geom: g01
     title: Nov-2003 Calibration
+    hydrographs:
+      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
+        hydrograph_type: "Flow"
+        description: Flooding at the Greenbrier River gage at Buckey, WV in November 2003
+        start_datetime: 11/18/1930 0:00
+        end_datetime: 5/7/2022 0:00
+        nse: 0.63691
+        rsr: 0.60257
+        pbias: 45.403
+        r2: 0.9099
+
   WatershedG3.p08:
-    description: This plan was not utilized
     flow: u04
     geom: g02
     title: Jun-2016 Calibration
+    hydrographs:
+      - from_streamgage: 03182500 # Greenbrier River at Buckeye, WV
+        hydrograph_type: "Flow"
+        description: Flooding at the Greenbrier River gage at Buckey, WV in June 2016
+        start_datetime: 11/18/1930 0:00
+        end_datetime: 5/7/2022 0:00
+        nse: 0.9627
+        rsr: 0.19314
+        pbias: 13.292
+        r2: 0.98257
 title: Watershed G3

@@ -46,15 +46,6 @@ flows:
       description: Gridded precipitation data from the January 1995 event
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-    hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 4/1/1943 0:00
-        end_datetime: 6/26/2022 0:00
-        nse: -0.17704
-        rsr: 1.0849
-        pbias: 32.361
-        r2: 0.89384
 
   Kanawha_G1.u06:
     title: Jan-1996 Calibration
@@ -62,15 +53,6 @@ flows:
       description: Gridded precipitation data from the January 1996 event
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
-    hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 4/1/1943 0:00
-        end_datetime: 6/26/2022 0:00
-        nse: 0.43346
-        rsr: 0.75269
-        pbias: 22.303
-        r2: 0.9242
 
   Kanawha_G1.u07:
     title: Nov-2003 Calibration
@@ -78,15 +60,6 @@ flows:
       description: Gridded precipitation data from the November 2003 event
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
-    hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 10/1/2003 0:00
-        end_datetime: 8/1/2016 0:00
-        nse: 0.31295
-        rsr: 0.82889
-        pbias: 31.036
-        r2: 0.81655
 
   Kanawha_G1.u08:
     title: Jun-2016 Calibration
@@ -94,15 +67,6 @@ flows:
       description: Gridded precipitation data from the June 2016 event
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
-    hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 10/1/2003 0:00
-        end_datetime: 8/1/2016 0:00
-        nse: 0.45906
-        rsr: 0.73549
-        pbias: 26.618
-        r2: 0.73227
 
 geometries:
   Kanawha_G1.g01:
@@ -159,19 +123,55 @@ plans:
     flow: u05
     geom: g02
     title: Jan-1995 Calibration
+    hydrographs:
+      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
+        hydrograph_type: "Flow"
+        start_datetime: 4/1/1943 0:00
+        end_datetime: 6/26/2022 0:00
+        nse: -0.17704
+        rsr: 1.0849
+        pbias: 32.361
+        r2: 0.89384
   Kanawha_G1.p06:
     description: null
     flow: u06
     geom: g03
     title: Jan-1996 Calibration
+    hydrographs:
+      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
+        hydrograph_type: "Flow"
+        start_datetime: 4/1/1943 0:00
+        end_datetime: 6/26/2022 0:00
+        nse: 0.43346
+        rsr: 0.75269
+        pbias: 22.303
+        r2: 0.9242
   Kanawha_G1.p07:
     description: null
     flow: u07
     geom: g01
     title: Nov-2003 Calibration
+    hydrographs:
+      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
+        hydrograph_type: "Flow"
+        start_datetime: 10/1/2003 0:00
+        end_datetime: 8/1/2016 0:00
+        nse: 0.31295
+        rsr: 0.82889
+        pbias: 31.036
+        r2: 0.81655
   Kanawha_G1.p08:
     description: null
     flow: u08
     geom: g02
     title: Jun-2016 Calibration
+    hydrographs:
+      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
+        hydrograph_type: "Flow"
+        start_datetime: 10/1/2003 0:00
+        end_datetime: 8/1/2016 0:00
+        nse: 0.45906
+        rsr: 0.73549
+        pbias: 26.618
+        r2: 0.73227
 title: Kanawha_G1
