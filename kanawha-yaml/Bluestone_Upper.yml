@@ -1,0 +1,174 @@
+description: '2D rain-on-mesh BLE model of the upper portion of the Bluestone River Basin near Princeton, West Virginia.
+INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
+Technical Advisement to FY21 IRWA with USACE'
+ras_version: 6.3.1
+creators:
+  - name: KC Robinson
+    email: kc.robinson@aecom.com
+  - name: Ryan Phol
+    email: ryan.pohl@aecom.com
+modified: 10/18/2022 18:25
+flows:
+  Bluestone_Upper.u06:
+    title: Nov2003_ExessPrecip_Baseflow
+    hyetograph:
+      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      spatially_varied: true
+      start_datetime: 11/6/2003 13:00
+      end_datetime:   11/24/2003 0:00
+  Bluestone_Upper.u07:
+    title: Jan1995_ExcessPrecip_Baseflow
+    hyetograph:
+      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      spatially_varied: true
+      start_datetime: 1/5/1995 14:00
+      end_datetime:   1/29/1995 12:00
+  Bluestone_Upper.u08:
+    title: Jan1996_ExcessPrecip_Baseflow
+    hyetograph:
+      spatially_varied: true
+      description: January to February 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/14/1996 13:00
+      end_datetime:   2/6/1996 0:00
+  Bluestone_Upper.u09:
+    title: Jun2016_ExcessPrecip_Baseflow
+    hyetograph:
+      description: June to July 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 6/20/2016 13:00
+      end_datetime:   7/3/2016 0:00
+      spatially_varied: true
+geometries:
+  Bluestone_Upper.g07:
+    title: 400ft_Refined_100ft_NoSCS
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    terrain:
+      modifications:
+        description: Cuts made through road embankments and dam/berm embankments. LiDAR-processed DEM was hydroflattened by provider.
+    mesh2d:
+      nominal_cell_size: 400
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 400
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 318361
+model: Bluestone_Upper.prj
+plans:
+  Bluestone_Upper.p15:
+    description: 'Jan 5-29, 1995 (UTC) using excess precip from Corps HMS model plus
+      baseflow
+
+      400ft cell sizes, 100ft stream refinement, 50ft community
+
+      Some  Breaklines and Terrain mods
+
+      '
+    flow: u07
+    geom: g07
+    title: Jan1995
+    hydrographs:
+      - from_streamgage: 03179000
+        hydrograph_type: Stage
+        start_datetime: 1/5/1995 14:00
+        end_datetime:   1/29/1995 12:00
+        nse:   0.84
+        rsr:   0.39
+        pibas: 18.06
+        r2:    0.88
+
+      - from_streamgage: "03177710"
+        hydrograph_type: Stage
+        start_datetime: 1/5/1995 14:00
+        end_datetime:   1/29/1995 12:00
+        nse:   0.56
+        rsr:   0.66
+        pibas: 12.81
+        r2:    0.62
+
+  Bluestone_Upper.p16:
+    description: '14 Jan - 6 Feb 1996 (UTC) excess precip from HMS plus baseflow
+
+      400x400 ft cell sizes, 100 ft stream refinement, 50 ft towns
+
+      Somebreaklines and terrain mods
+
+      '
+    flow: u08
+    geom: g07
+    title: Jan1996
+    hydrographs:
+      - from_streamgage: 03179000
+        hydrograph_type: Stage
+        start_datetime:  1/14/1996 13:00
+        end_datetime:    2/6/1996 00:00
+        nse:   0.82
+        rsr:   0.42
+        pbias: 13.83
+        r2:    0.88
+
+      - from_streamgage: "03177710"
+        hydrograph_type: Stage
+        start_datetime:  1/14/1996 13:00
+        end_datetime:    2/6/1996 00:00
+        nse:   0.89
+        rsr:   0.33
+        pbias: 13.16
+        r2:    0.91
+
+  Bluestone_Upper.p17:
+    description: 'Jun 20 - Jul 3, 2016 (UTC) using Excess Precipitation from Corps
+      HMS model plus baseflow
+
+      400 ft cell sizes
+
+      100 ft stream refinement regions, 50 ft ref reg in towns
+
+      Some Breaklines and terrain mods'
+    flow: u09
+    geom: g07
+    title: Jun2016
+    hydrographs:
+      - from_streamgage: 03179000
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 13:00
+        end_datetime:   7/3/2016 00:00
+        nse:   0.03
+        rsr:   0.99
+        pbias: 34.29
+        r2:    0.28
+
+      - from_streamgage: "03177710"
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 13:00
+        end_datetime:   7/3/2016 00:00
+        nse:   -0.2
+        rsr:   1.09
+        pbias: 14.84
+        r2:    0.01
+
+  Bluestone_Upper.p18:
+    description: 'Nov 6-24, 2003 (UTC) using Excess Precip from calibrated HEC-HMS
+      model from Corps (2km cells) and Baseflow
+
+      400x400 ft cell sizes
+
+      100ft stream refinement , 50ft ref  in towns
+
+      Some breaklines and culvert terrain mods'
+    flow: u06
+    geom: g07
+    title: Nov2003
+    hydrographs:
+      - from_streamgage: 03179000  # Bluestone River Near Pipestem, WV
+        hydrograph_type: Stage
+        start_datetime: 11/6/2003 13:00
+        end_datetime:   11/24/2003 00:00
+        nse:   0.93
+        rsr:   0.27
+        pibas: 13.5
+        r2:    0.94
+
+title: Bluestone_Upper

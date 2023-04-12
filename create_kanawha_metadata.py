@@ -29,20 +29,24 @@ g.bind("usgs_gages", usgs_gages)
 @dataclass
 class Mesh2D:
     nominal_cell_size: float
-    breaklines_min_cell_size: float
-    breaklines_max_cell_size: float
-    refinement_regions_min_cell_size: float
-    refinement_regions_max_cell_size: float
+    breaklines_min_cell_size: Optional[float]
+    breaklines_max_cell_size: Optional[float]
+    refinement_regions_min_cell_size: Optional[float]
+    refinement_regions_max_cell_size: Optional[float]
     cell_count: int
 
     def add_bnode(self, g: Graph):
         mesh2d = BNode()
         g.add((mesh2d, RDF.type, RASCAT.Mesh2D))
         g.add((mesh2d, RASCAT.nominalCellSize, Literal(self.nominal_cell_size)))
-        g.add((mesh2d, RASCAT.breaklinesMinCellSize, Literal(self.breaklines_min_cell_size)))
-        g.add((mesh2d, RASCAT.breaklinesMaxCellSize, Literal(self.breaklines_max_cell_size)))
-        g.add((mesh2d, RASCAT.refinementRegionsMinCellSize, Literal(self.refinement_regions_min_cell_size)))
-        g.add((mesh2d, RASCAT.refinementRegionsMaxCellSize, Literal(self.refinement_regions_max_cell_size)))
+        if self.breaklines_min_cell_size is not None:
+            g.add((mesh2d, RASCAT.breaklinesMinCellSize, Literal(self.breaklines_min_cell_size)))
+        if self.breaklines_max_cell_size is not None:
+            g.add((mesh2d, RASCAT.breaklinesMaxCellSize, Literal(self.breaklines_max_cell_size)))
+        if self.refinement_regions_min_cell_size is not None:
+            g.add((mesh2d, RASCAT.refinementRegionsMinCellSize, Literal(self.refinement_regions_min_cell_size)))
+        if self.refinement_regions_max_cell_size is not None:
+            g.add((mesh2d, RASCAT.refinementRegionsMaxCellSize, Literal(self.refinement_regions_max_cell_size)))
         g.add((mesh2d, RASCAT.cellCount, Literal(self.cell_count)))
         return mesh2d
 
@@ -68,6 +72,7 @@ class DcatDataset:
     title: Optional[str] = None
     description: Optional[str] = None
     modified: Optional[datetime|str] = None
+    relation: Optional[str|List[str]] = None
 
     def __post_init__(self):
         if isinstance(self.modified, str):
@@ -83,6 +88,12 @@ class DcatDataset:
             g.add((uri, DCTERMS.description, Literal(self.description)))
         if self.modified is not None:
             g.add((uri, DCTERMS.modified, Literal(self.modified)))
+        if self.relation is not None:
+            if isinstance(self.relation, str):
+                g.add((uri, DCTERMS.relation, URIRef(self.relation)))
+            else:
+                for relation in self.relation:
+                    g.add((uri, DCTERMS.relation, URIRef(relation)))
 
 
 @dataclass
@@ -497,7 +508,7 @@ for model in kanawha_data:
                 start_datetime=hyetograph.get('start_datetime'),
                 end_datetime=hyetograph.get('end_datetime'),
                 description=hyetograph.get('description'),
-                spatially_varied=hyetograph.get('spatially_varied'),
+                spatially_varied=hyetograph.get('spatially_varied', True),
             )
 
         calibration_hydrographs = []
@@ -508,7 +519,7 @@ for model in kanawha_data:
                 start_datetime=hydrograph.get('start_datetime'),
                 end_datetime=hydrograph.get('end_datetime'),
                 from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
-                hydrograph_type=HydrographType(hydrograph['hydrograph_type']),
+                hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
                 nse=hydrograph.get('nse'),
                 rsr=hydrograph.get('rsr'),
                 pbias=hydrograph.get('pbias'),
@@ -560,7 +571,9 @@ for model in kanawha_data:
         roughness = geom.get('roughness')
         if roughness is not None:
             landuse = roughness.get('landuse')
-            if landuse is not None:
+            if landuse == 'nlcd':
+                landuse = nlcd
+            elif landuse is not None:
                 landuse = LanduseLandcover(
                     title=landuse.get('title'),
                     description=landuse.get('description'),
@@ -576,14 +589,18 @@ for model in kanawha_data:
         precip_losses = geom.get('precip_losses')
         if precip_losses is not None:
             landuse = precip_losses.get('landuse')
-            if landuse is not None:
+            if landuse == 'nlcd':
+                landuse = nlcd
+            elif landuse is not None:
                 landuse = LanduseLandcover(
                     title=landuse.get('title'),
                     description=landuse.get('description'),
                     uri=landuse.get('uri'),
                 )
             soils = precip_losses.get('soils')
-            if soils is not None:
+            if soils == 'ssurgo':
+                soils = ssurgo
+            elif soils is not None:
                 soils = Soils(
                     title=soils.get('title'),
                     description=soils.get('description'),
@@ -602,6 +619,7 @@ for model in kanawha_data:
                 title=structures.get('title'),
                 description=structures.get('description'),
                 uri=structures.get('uri'),
+                relation=structures.get('relation'),
             )
 
         geometry = RasGeometry(
@@ -626,7 +644,7 @@ for model in kanawha_data:
                 start_datetime=hydrograph.get('start_datetime'),
                 end_datetime=hydrograph.get('end_datetime'),
                 from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
-                hydrograph_type=HydrographType(hydrograph['hydrograph_type']),
+                hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
                 nse=hydrograph.get('nse'),
                 rsr=hydrograph.get('rsr'),
                 pbias=hydrograph.get('pbias'),
@@ -651,11 +669,13 @@ for model in kanawha_data:
         )
         creators.append(person)
 
+    ras_version = model.get('ras_version', '6.3.1')
+
     ras_model = RasModel(
         filename=model.get('model'),
         title=model.get('title'),
         description=model.get('description'),
-        ras_version='6.3.1',
+        ras_version=ras_version,
         status=RasStatus.FINAL,
         geometries=geometries.values(),
         flows=flows.values(),

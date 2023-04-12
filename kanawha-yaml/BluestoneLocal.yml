@@ -1,0 +1,121 @@
+description: ''
+creators:
+  - name: Pete Williams
+    email: pete.williams@aecom.com
+ras_version: 6.3.0
+modified: 10/25/2022 23:59
+flows:
+  BluestoneLocal.u01:
+    title: JAN1995
+    hyetograph:
+      spatially_varied: true
+      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/12/1995 00:00
+      end_datetime:   1/24/1995 00:00
+  BluestoneLocal.u02:
+    title: JAN1996
+    hyetograph:
+      spatially_varied: true
+      description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/15/1996 00:00
+      end_datetime:   1/30/1996 00:00
+  BluestoneLocal.u03:
+    title: NOV2003
+    hyetograph:
+      spatially_varied: true
+      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 11/7/2003 00:00
+      end_datetime:   11/27/2003 00:00
+  BluestoneLocal.u04:
+    title: JUN2016
+    hyetograph:
+      spatially_varied: true
+      description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 6/20/2016 12:00
+      end_datetime:   7/3/2016 00:00
+geometries:
+  BluestoneLocal.g01:
+    title: BL-1
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    terrain:
+      modifications:
+        description: Cuts made through road embankments and other terrain features that artificially block flow.
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 50
+      cell_count: 417852
+model: BluestoneLocal.prj
+plans:
+  BluestoneLocal.p01:
+    description: null
+    flow: u01
+    geom: g01
+    title: JAN1995
+    hydrographs:
+      - from_streamgage: 03179800
+        hydrograph_type: Stage
+        start_datetime: 1/12/1995 00:00
+        end_datetime:   1/24/1995 00:00
+        nse:   0.943
+        rsr:   0.253
+        pbias: 0.253
+        r2:    0.946
+  BluestoneLocal.p02:
+    description: null
+    flow: u02
+    geom: g01
+    title: JAN1996
+    hydrographs:
+      - from_streamgage: 03179800
+        hydrograph_type: Stage
+        start_datetime: 1/15/1996 00:00
+        end_datetime:   1/30/1996 00:00
+        nse:   0.88
+        rsr:   0.36
+        pbias: -1.896
+        r2:    0.88
+  BluestoneLocal.p03:
+    description: null
+    flow: u03
+    geom: g01
+    title: NOV2003
+    hydrographs:
+      - from_streamgage: 03179800
+        hydrograph_type: Stage
+        start_datetime: 11/7/2003 00:00
+        end_datetime:   11/27/2003 00:00
+        nse:   0.95
+        rsr:   0.23
+        pbias: 6.839
+        r2:    0.95
+  BluestoneLocal.p04:
+    description: null
+    flow: u04
+    geom: g01
+    title: JUN2016
+    hydrographs:
+      - from_streamgage: "03177120"
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/3/2016 00:00
+        nse:   0.29
+        rsr:   1.14
+        pbias: 20.672
+        r2:    0.29
+
+      - from_streamgage: 03179800
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/3/2016 00:00
+        nse:   0.04
+        rsr:   1.11
+        pbias: 35.55
+        r2:    0.01
+title: Bluestone Local - Compass 2D BLE

@@ -1,0 +1,158 @@
+description: '2D rain-on-mesh BLE model of the upper portion of the Bluestone River Basin near Princeton, West Virginia.
+INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
+Technical Advisement to FY21 IRWA with USACE'
+creators:
+  - name: Yacoub Raheem
+    email: yacoub.raheem@aecom.com
+  - name: Courtney Fournier
+    email: courtney.fournier@aecom.com
+ras_version: "6.3.1"
+modified: 10/13/2022 15:11
+flows:
+  CoalRiver.u01:
+    title: Nov2003
+    hyetograph:
+      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 11/6/2003 13:00
+      end_datetime:   11/24/2003 00:00
+  CoalRiver.u02:
+    title: Jan1995a
+    hyetograph:
+      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/6/1995 0:00
+      end_datetime:   1/25/1995 00:00
+  CoalRiver.u03:
+    title: Jan1996
+    hyetograph:
+      description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/15/1996 0:00
+      end_datetime:   2/1/1996 00:00
+  CoalRiver.u04:
+    title: Jun2016
+    hyetograph:
+      description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 6/20/2016 12:00
+      end_datetime:   7/1/2016 00:00
+geometries:
+  CoalRiver.g01:
+    title: CoalRiver
+    description: Nominal rectangular cell spacing of 500' x 500', refined along stream corridors and other breaklines areas to be approximately 100' cells. No losses (e.g. SCS CN) modeled directly in HEC-RAS.
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    mesh2d:
+      nominal_cell_size: 500
+      breaklines_min_cell_size: 100
+      breaklines_max_cell_size: 500
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 50
+      cell_count: 332739
+model: CoalRiver.prj
+plans:
+  CoalRiver.p01:
+    description: null
+    flow: u01
+    geom: g01
+    title: Nov2003
+    hydrographs:
+      - from_streamgage: "03200500"
+        start_datetime:  1/6/2003 13:00
+        end_datetime:   11/24/2003 00:00
+        nse:   0.87
+        rsr:   0.36
+        pbias: 14.17
+        r2:    0.89
+
+      - from_streamgage: 03198500
+        start_datetime:  1/6/2003 13:00
+        end_datetime:   11/24/2003 00:00
+        nse:   0.85
+        rsr:   0.39
+        pbias: 12.06
+        r2:    0.86
+
+      - from_streamgage: 03198350
+        start_datetime:  1/6/2003 13:00
+        end_datetime:   11/24/2003 00:00
+        nse:   0.89
+        rsr:   0.32
+        pbias: 4.51
+        r2:    0.90
+
+  CoalRiver.p02:
+    description: null
+    flow: u02
+    geom: g01
+    title: Jan1995
+    hydrographs:
+      - from_streamgage: "03200500"
+        start_datetime: 1/6/1995 0:00
+        end_datetime:   1/25/1995 0:00
+        nse:   0.25
+        rsr:   0.84
+        pbias: 20.36
+        r2:    0.32
+
+      - from_streamgage: 03198500
+        start_datetime: 1/6/1995 0:00
+        end_datetime:   1/25/1995 0:00
+        nse:   0.04
+        rsr:   0.95
+        pbias: 35.98
+        r2:    0.23
+
+  CoalRiver.p03:
+    description: null
+    flow: u03
+    geom: g01
+    title: Jan1996
+    hydrographs:
+      - from_streamgage: "03200500"
+        start_datetime: 1/15/1996 0:00
+        end_datetime:   2/1/1996 0:00
+        nse:   0.72
+        rsr:   0.51
+        pbias: 8.02
+        r2:    0.73
+
+      - from_streamgage: 03198500
+        start_datetime: 1/15/1996 0:00
+        end_datetime:   2/1/1996 0:00
+        nse:   -1.97
+        rsr:   1.67
+        pbias: -32.24
+        r2:    0.08
+
+  CoalRiver.p04:
+    description: null
+    flow: u04
+    geom: g01
+    title: Jun2016
+    hydrographs:
+      - from_streamgage: "03200500"
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/1/2016 0:00
+        nse:   0.07
+        rsr:   0.96
+        pbias: 38.21
+        r2:    0.27
+
+      - from_streamgage: 03198500
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/1/2016 0:00
+        nse:   0.36
+        rsr:   0.80
+        pbias: 31.69
+        r2:    0.50
+
+      - from_streamgage: 03198350
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/1/2016 0:00
+        nse:   0.57
+        rsr:   0.65
+        pbias: 25.13
+        r2:    0.73
+
+title: CoalRiver
