@@ -46,6 +46,19 @@ flows:
 geometries:
   WatershedG9.g01:
     title: LiDAR
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Calibrated CN Losses for 2003 storm event
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+      soils: ssurgo
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50
@@ -55,6 +68,19 @@ geometries:
       cell_count: 273560
   WatershedG9.g02:
     title: LiDAR_2016
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Calibrated CN Losses for 1995 and 2016 storm event
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+      soils: ssurgo
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50
@@ -64,6 +90,16 @@ geometries:
       cell_count: 273560
   WatershedG9.g03:
     title: LiDAR_1996
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50

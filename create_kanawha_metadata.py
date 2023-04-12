@@ -305,6 +305,7 @@ class PrecipLosses(DcatDataset):
                 g.add((soils, RDF.type, RASCAT.Soils))
                 g.add((precip_losses, RASCAT.hasSoils, soils))
                 self.soils.add_dcat_terms(g, soils)
+        super().add_dcat_terms(g, precip_losses)
         return precip_losses
 
 
@@ -314,7 +315,7 @@ class Structures(DcatDataset):
 
     def add_bnode(self, g: Graph):
         structures = BNode()
-        g.add((structures, RDF.type, RASCAT.StructureData))
+        g.add((structures, RDF.type, RASCAT.Structures))
         super().add_dcat_terms(g, structures)
         return structures
 
@@ -416,8 +417,11 @@ class RasModel(DcatDataset):
                 precip_losses = geometry.precip_losses.add_bnode(g)
                 g.add((geometry_uri, RASCAT.hasPrecipLosses, precip_losses))
             if geometry.structures is not None:
-                structures = geometry.structures.add_bnode(g)
-                g.add((geometry_uri, RASCAT.hasStructureData, structures))
+                if geometry.structures.uri:
+                    g.add((geometry_uri, RASCAT.hasStructures, URIRef(geometry.structures.uri)))
+                else:
+                    structures = geometry.structures.add_bnode(g)
+                    g.add((geometry_uri, RASCAT.hasStructures, structures))
             geometry.add_dcat_terms(g, geometry_uri)
 
         for flow in self.flows:
@@ -496,6 +500,14 @@ ssurgo = Soils(
 )
 g.add((ssurgo.uri, RDF.type, RASCAT.Soils))
 ssurgo.add_dcat_terms(g, ssurgo.uri)
+
+wv_clearinghouse = Structures(
+    URIRef('http://data.wvgis.wvu.edu/pub/Clearinghouse/hazards/WV_HEC_RAS_Model/'),
+    title='WV State GIS Data Clearinghouse - HEC-RAS Models',
+    description='Structures pulled from existing 1D HEC-RAS models where available.',
+)
+g.add((wv_clearinghouse.uri, RDF.type, RASCAT.Structures))
+wv_clearinghouse.add_dcat_terms(g, wv_clearinghouse.uri)
 
 for model in kanawha_data:
     model_prj = model['model']
@@ -615,12 +627,15 @@ for model in kanawha_data:
 
         structures = geom.get('structures')
         if structures is not None:
-            structures = Structures(
-                title=structures.get('title'),
-                description=structures.get('description'),
-                uri=structures.get('uri'),
-                relation=structures.get('relation'),
-            )
+            if structures == 'wv_clearinghouse':
+                structures = wv_clearinghouse
+            else:
+                structures = Structures(
+                    title=structures.get('title'),
+                    description=structures.get('description'),
+                    uri=structures.get('uri'),
+                    relation=structures.get('relation'),
+                )
 
         geometry = RasGeometry(
             ext=get_ext(geomfile),

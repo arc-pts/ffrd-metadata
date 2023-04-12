@@ -14,19 +14,96 @@ connected_models:
 flows:
   WatershedG4.u01:
     title: Jan-1995
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      start_datetime: 1/5/1995 12:00
+      end_datetime: 1/29/1995 12:00
+      spatially_varied: true
   WatershedG4.u02:
     title: Jan-1996
+    hyetograph:
+      description: Gridded precipitation data from the January 1996 event
+      start_datetime: 1/14/1996 12:00
+      end_datetime: 2/7/1996 11:00
+      spatially_varied: true
   WatershedG4.u03:
     title: Nov-2003
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      start_datetime: 11/6/2003 12:00
+      end_datetime: 11/28/2003 11:00
+      spatially_varied: true
   WatershedG4.u04:
     title: Jun-2016
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      start_datetime: 6/20/2016 12:00
+      end_datetime: 7/4/2016 11:00
+      spatially_varied: true
 geometries:
   WatershedG4.g01:
     title: LiDAR
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Calibrated CN Losses for 2003 storm event
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+      soils: ssurgo
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 319443
   WatershedG4.g02:
     title: LiDAR_2016
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Calibrated CN Losses for 1995 and 2016 storm event
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+      soils: ssurgo
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 319443
   WatershedG4.g03:
     title: LiDAR_1996
+    roughness:
+      landuse: 
+        description: Custom land cover analysis of NAIP 2022 imagery
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    terrain:
+      bathymetry:
+        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      modifications:
+        description: Cuts made through road embankments.
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
+      refinement_regions_max_cell_size: 100
+      cell_count: 319443
 model: WatershedG4.prj
 plans:
   WatershedG4.p01:
