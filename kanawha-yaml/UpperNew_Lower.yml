@@ -1,0 +1,143 @@
+description: '2D rain-on-mesh BLE model of the New River Basin in Wythe and Carroll counties, West Virginia.'
+creators:
+  - name: Elizabeth Vande Krol
+    email: elizabeth.vandekrol@aecom.com
+  - name: Reuben Cozmyer
+    email: reuben.cozmyer@aecom.com
+ras_version: 6.3.1
+modified: 1/1/2023 13:15
+flows:
+  UpperNew_Lower.u01:
+    title: Restart
+    hyetograph:
+      description: restart file
+      start_datetime: 1/1/2000 00:00
+      end_datetime:   1/5/2000 12:00
+      spatially_varied: false
+  UpperNew_Lower.u02:
+    title: Jan1995
+    hyetograph:
+      description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
+      start_datetime: 1/5/1995 14:00
+      end_datetime:   1/29/1995 12:00
+  UpperNew_Lower.u03:
+    title: Jan1996
+    hyetograph:
+      description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
+      start_datetime: 1/19/1996 5:00
+      end_datetime:   2/2/1996 4:00
+  UpperNew_Lower.u04:
+    title: Nov2003
+    hyetograph:
+      description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
+      start_datetime: 11/6/2003 13:00
+      end_datetime:   11/28/2003 10:00
+  UpperNew_Lower.u05:
+    title: Jun2016
+    hyetograph:
+      description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
+      start_datetime: 6/20/2016 13:00
+      end_datetime:   7/4/2016 10:00
+geometries:
+  UpperNew_Lower.g03:
+    title: Simplified
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    modifications:
+      description: Cuts made through road embankments
+    mesh2d:
+      nominal_cell_size: 1000
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 200
+      cell_count: 800701
+    structures:
+      description: Description of hydraulic data and water surface elevations of the dam was used to create a rating curve
+      relation:
+        - http://claytorhydro.com/lib/docs/ClaytorWaterManagementPlanJune2009asapprovedbyFERCDec2011.pdf
+        - https://hydroreform.org/wp-content/uploads/2020/09/New-River-Virginia-Final.pdf
+model: UpperNew_Lower.prj
+plans:
+  UpperNew_Lower.p01:
+    description: null
+    flow: u01
+    geom: g03
+    title: Restart
+  UpperNew_Lower.p02:
+    description: null
+    flow: u02
+    geom: g03
+    title: Jan1995
+    hydrographs:
+      - from_streamgage: 03168000
+        start_datetime: 1/5/1995 14:00
+        end_datetime:   1/29/1995 12:00
+        nse:   0.924
+        rsr:   0.276
+        pbias: 3.959
+        r2:    0.978
+
+  UpperNew_Lower.p03:
+    description: 'Start time had to change from 14JAN1996 1200 to 19JAN1996 0500 due
+      to a gap in the Upper New - Galax gage record.
+
+
+      Start time had to change from 07FEB1996 1200 to 02FEB1996 0400 due to a gap
+      in the Upper New - Galax gage record.'
+    flow: u03
+    geom: g03
+    title: Jan1996
+    hydrographs:
+      - from_streamgage: 03168000
+        start_datetime: 1/19/1996 5:00
+        end_datetime:   2/2/1996 4:00
+        nse:   0.303
+        rsr:   0.834
+        pbias: 9.689
+        r2:    0.326
+  UpperNew_Lower.p04:
+    description: null
+    flow: u04
+    geom: g03
+    title: Nov2003
+    hydrographs:
+      - from_streamgage: 03168000
+        start_datetime: 11/6/2003 13:00
+        end_datetime:   11/28/2003 10:00
+        nse:   0.692
+        rsr:   0.555
+        pbias: 26.041
+        r2:    0.984
+
+      - from_streamgage: "03165500"
+        start_datetime: 11/6/2003 13:00
+        end_datetime:   11/28/2003 10:00
+        nse:   0.879
+        rsr:   0.48
+        pbias: 7.498
+        r2:    0.935
+
+  UpperNew_Lower.p07:
+    description: null
+    flow: u05
+    geom: g03
+    title: Jun2016
+    hydrographs:
+      - from_streamgage: 03168000
+        start_datetime: 6/20/2016 13:00
+        end_datetime:   7/4/2016 10:00
+        nse:   -0.343
+        rsr:   1.302
+        pbias: 5.316
+        r2:    0.049
+
+      - from_streamgage: "03165500"
+        start_datetime: 6/20/2016 13:00
+        end_datetime:   7/4/2016 10:00
+        nse:   0.56
+        rsr:   0.723
+        pbias: 0.42
+        r2:    0.723
+title: UpperNew_Lower

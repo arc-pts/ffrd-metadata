@@ -1,0 +1,163 @@
+description: ''
+creators:
+  - name: Ryan Pohl
+    email: ryan.pohl@aecom.com
+  - name: Reuben Cozmyer
+    email: reuben.cozmyer@aecom.com
+ras_version: 6.3.0
+modified: 1/25/2023 23:59
+flows:
+  New-LittleRiver.u05:
+    title: JUN2016_HMS
+    hyetograph:
+      description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 6/20/2016 12:00
+      end_datetime:   7/4/2016 00:00
+  New-LittleRiver.u07:
+    title: JAN1996_HMS
+    hyetograph:
+      description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/14/1996 12:00
+      end_datetime:   2/7/1996 12:00
+  New-LittleRiver.u08:
+    title: NOV2003_HMS
+    hyetograph:
+      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 11/6/2003 12:00
+      end_datetime:   11/28/2003 12:00
+  New-LittleRiver.u09:
+    title: restart_file
+    hyetograph:
+      description: Small precip event run to fill in some local depressions. Hypothetical flat event for priming the model; total depth roughly equal to 2 yr 4 hr event
+      start_datetime: 11/18/2003 00:00
+      end_datetime:   11/22/2003 00:00
+      spatially_varied: false
+  New-LittleRiver.u10:
+    title: JAN1995_HMS
+    hyetograph:
+      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      start_datetime: 1/5/1995 14:00
+      end_datetime:   1/29/1995 11:00
+geometries:
+  New-LittleRiver.g01:
+    title: New_Little_River
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    terrain:
+      modifications:
+        description: Cuts made through road embankments and other terrain features that artificially block flow.
+    mesh2d:
+      nominal_cell_size: 200
+      breaklines_min_cell_size: 50
+      breaklines_max_cell_size: 100
+      cell_count: 517580
+model: New-LittleRiver.prj
+plans:
+  New-LittleRiver.p05:
+    description: null
+    flow: u05
+    geom: g01
+    title: JUN2016_HMS
+    hydrographs:
+      - from_streamgage: "03171000"
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/4/2016 00:00
+        nse:   -0.31
+        rsr:   1.14
+        pbias: 19.55
+        r2: 0.01
+
+      - from_streamgage: "03170000"
+        hydrograph_type: Stage
+        start_datetime: 6/20/2016 12:00
+        end_datetime:   7/4/2016 00:00
+        nse:   0.35
+        rsr:   0.81
+        pbias: 14.11
+        r2: 0.64
+
+  New-LittleRiver.p06:
+    description: "with rating curve at dam and initial condition\nbigger channels\
+      \ \nlower overland Manning's n values\nsmaller channel Manning's n polygons\n\
+      lower channel Manning's n \nshifted baseflow\nrestart file"
+    flow: u08
+    geom: g01
+    title: NOV2003_HMS
+    hydrographs:
+      - from_streamgage: "03171000"
+        hydrograph_type: Stage
+        start_datetime: 11/6/2003 12:00
+        end_datetime:   11/28/2003 12:00
+        nse:   0.38
+        rsr:   0.79
+        pbias: 9.42
+        r2: 0.39
+
+      - from_streamgage: "03170000"
+        hydrograph_type: Stage
+        start_datetime: 11/6/2003 12:00
+        end_datetime:   11/28/2003 12:00
+        nse:   0.94
+        rsr:   0.25
+        pbias: 5.13
+        r2:    0.94
+
+  New-LittleRiver.p07:
+    description: null
+    flow: u07
+    geom: g01
+    title: JAN1996_HMS
+    hydrographs:
+      - from_streamgage: "03171000"
+        hydrograph_type: Stage
+        start_datetime: 1/14/1996 12:00
+        end_datetime:   2/7/1996 12:00
+        nse:   0.56
+        rsr:   0.66
+        pbias: 1.31
+        r2:    0.56
+
+      - from_streamgage: "03170000"
+        hydrograph_type: Stage
+        start_datetime: 1/14/1996 12:00
+        end_datetime:   2/7/1996 12:00
+        nse:   0.90
+        rsr:   0.32
+        pbias: -2.86
+        r2:    0.95
+
+  New-LittleRiver.p17:
+    description: null
+    flow: u09
+    geom: g01
+    title: restart_file
+
+  New-LittleRiver.p19:
+    description: null
+    flow: u10
+    geom: g01
+    title: JAN1995_HMS
+    hydrographs:
+      - from_streamgage: "03171000"
+        hydrograph_type: Stage
+        start_datetime: 1/5/1995 14:00
+        end_datetime:   1/29/1995 11:00
+        nse:   0.57
+        rsr:   0.65
+        pbias: 9.25
+        r2:    0.58
+
+      - from_streamgage: "03170000"
+        hydrograph_type: Stage
+        start_datetime: 1/5/1995 14:00
+        end_datetime:   1/29/1995 11:00
+        nse:   0.95
+        rsr:   0.22
+        pbias: -5.96
+        r2:    0.96
+
+title: New-Little River

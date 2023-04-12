@@ -23,44 +23,6 @@ flows:
       end_datetime: 2003-11-28 12:00:00
       spatially_varied: true
 
-    # hydrographs:
-    #   - start_datetime: 2003-11-11
-    #     end_datetime: 2003-11-21
-    #     from_streamgage: "03196600" # Elk River Near Frametown, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.31117
-    #     rsr:    0.82996
-    #     pbias:  -0.16572
-    #     r2:     0.7701
-
-    #   - start_datetime: 2003-11-11
-    #     end_datetime: 2003-11-21
-    #     from_streamgage: "03196800" # Elk River at Clay, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.86802
-    #     rsr:    0.36328
-    #     pbias:  -0.13772
-    #     r2:     0.93277
-
-    #   - start_datetime: 2003-11-11
-    #     end_datetime: 2003-11-21
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Flow"
-    #     nse:    0.90487
-    #     rsr:    0.30843
-    #     pbias:  13.164
-    #     r2:     0.92731
-
-    #   - start_datetime: 2003-11-11
-    #     end_datetime: 2003-11-21
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.73831
-    #     rsr:    0.51156
-    #     pbias:  0.24529
-    #     r2:     0.90156
-
-
   ElkMiddle.u04:
     title: ElkMiddle_Jan1995
     hyetograph:
@@ -68,45 +30,6 @@ flows:
       start_datetime: 1995-01-05 12:00:00
       end_datetime:   1995-01-29 12:00:00
       spatially_varied: true
-    # hydrographs:
-    #   - start_datetime: 1995-01-05
-    #     end_datetime:   1995-01-26
-    #     from_streamgage: "03196600" # Elk River Near Frametown, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    -0.83698
-    #     rsr:    1.3554
-    #     pbias:  -0.11895
-    #     r2:     0.6511
-
-
-    #   - start_datetime: 1995-01-05
-    #     end_datetime:   1995-01-26
-    #     from_streamgage: "03196800" # Elk River at Clay, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    -0.1504
-    #     rsr:    1.0726
-    #     pbias:  -0.22115
-    #     r2:     0.6714
-
-
-    #   - start_datetime: 1995-01-05
-    #     end_datetime:   1995-01-26
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Flow"
-    #     nse:    0.43444
-    #     rsr:    0.75204
-    #     pbias:  7.7577
-    #     r2:     0.62639
-
-
-    #   - start_datetime: 1995-01-05
-    #     end_datetime:   1995-01-26
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    -1.3776
-    #     rsr:    1.5419
-    #     pbias:  0.21848
-    #     r2:     0.65966
 
   ElkMiddle.u05:
     title: ElkMiddle_Jan1996
@@ -116,34 +39,6 @@ flows:
       end_datetime:   1996-02-07 11:00:00
       spatially_varied: true
 
-    # hydrographs:
-    #   - start_datetime: 1996-01-15
-    #     end_datetime:   1996-01-22
-    #     from_streamgage: "03196600" # Elk River Near Frametown, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.37745
-    #     rsr:    0.78902
-    #     pbias:  0.1821
-    #     r2:     0.65615
-
-    #   - start_datetime: 1996-01-15
-    #     end_datetime:   1996-01-22
-    #     from_streamgage: "03196800" # Elk River at Clay, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.2812
-    #     rsr:    0.84782
-    #     pbias:  0.35148
-    #     r2:     0.61136
-
-    #   - start_datetime: 1996-01-15
-    #     end_datetime:   1996-01-22
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    -1.1679
-    #     rsr:    1.4724
-    #     pbias:  0.78082
-    #     r2:     0.61415
-
   ElkMiddle.u06:
     title: ElkMiddle_Jun2016
     hyetograph:
@@ -152,61 +47,6 @@ flows:
       end_datetime:   2016-07-04 12:00:00
       spatially_varied: true
 
-    # hydrographs:
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03196500" # Birch River at Herold, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.29614
-    #     rsr:    0.83896
-    #     pbias:  -0.068283
-    #     r2:     0.56463
-
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03196600" # Elk River Near Frametown, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    -0.20927
-    #     rsr:    1.0997
-    #     pbias:  -0.28261
-    #     r2:     0.74283
-
-
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03196800" # Elk River at Clay, WV
-    #     hydrograph_type: "Flow"
-    #     nse:    0.61359
-    #     rsr:    0.62162
-    #     pbias:  -28.881
-    #     r2:     0.91515
-
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03196800" # Elk River at Clay, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.60684
-    #     rsr:    0.62702
-    #     pbias:  -0.39992
-    #     r2:     0.85544
-
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Flow"
-    #     nse:    0.93616
-    #     rsr:    0.25266
-    #     pbias:  -1.8492
-    #     r2:     0.93743
-
-    #   - start_datetime: 2016-06-20
-    #     end_datetime:   2016-06-30
-    #     from_streamgage: "03197000" # Elk River at Queen Shoals, WV
-    #     hydrograph_type: "Stage"
-    #     nse:    0.77057
-    #     rsr:    0.47899
-    #     pbias:  0.12879
-    #     r2:     0.81636
 geometries:
   ElkMiddle.g01:
     title: ElkMiddle
@@ -216,8 +56,7 @@ geometries:
     precip_losses:
       landuse:
         description: Remote Sensing Data processed by WSP
-      soils:
-        uri: https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo
+      soils: ssurgo
     terrain:
       bathymetry:
         title: CWMS
