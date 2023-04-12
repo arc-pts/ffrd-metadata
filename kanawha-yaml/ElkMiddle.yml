@@ -59,7 +59,6 @@ geometries:
       soils: ssurgo
     terrain:
       bathymetry:
-        title: CWMS
         description: Channel data pulled from existing CWMS 1D HEC-RAS model. Channel raster developed and mosaiced to DEM and then incorporated into model
       modifications:
         description: Cuts made through road embankments. Hydroflattened major rivers

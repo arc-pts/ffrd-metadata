@@ -73,6 +73,17 @@ geometries:
     structures:
       title: USACE Kanawaha CWMS Model
       description: London/Marmet L&D Structures and Gate operations copied from USACE CWMS Model
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    terrain:
+      bathymetry:
+        title: USACE Kanawaha CWMS Model
+        description: Channel data merged into base LiDAR through GIS mosaic process
+      modifications:
+        description: Cuts made through road embankments, and to create connectivity for major culvert systems in populated areas
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50

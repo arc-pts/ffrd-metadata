@@ -43,6 +43,14 @@ flows:
 geometries:
   GSummersville_C.g01:
     title: GauleySummersville_Existing
+    roughness:
+      landuse:
+        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+    precip_losses:
+      landuse:
+        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      soils: ssurgo
+    structures: wv_clearinghouse
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50
@@ -50,6 +58,11 @@ geometries:
       refinement_regions_min_cell_size: 50
       refinement_regions_max_cell_size: 200
       cell_count: 954995
+    terrain:
+      bathymetry:
+        description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.
+      modifications:
+        description: Cuts made through road and dam/berm embankments.
 
 model: GSummersville_C.prj
 plans:

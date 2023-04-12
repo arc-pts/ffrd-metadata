@@ -40,6 +40,19 @@ flows:
 geometries:
   GauleyLower_BLE_FEM.g01:
     title: Gauley_Lower
+    roughness:
+      landuse:
+        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+    precip_losses:
+      landuse:
+        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      soils: ssurgo
+    structures: wv_clearinghouse
+    terrain:
+      modifications:
+        description: Cuts made through road and dam/berm embankments.
+      bathymetry:
+        description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50

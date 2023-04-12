@@ -43,6 +43,17 @@ flows:
 geometries:
   GSummersville_B.g01:
     title: GauleySummersville_Existing
+    roughness:
+      landuse: nlcd
+    precip_losses:
+      landuse: nlcd
+      soils: ssurgo
+    structures: wv_clearinghouse
+    terrain:
+      bathymetry:
+        description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.
+      modifications:
+        description: Cuts made through road and dam/berm embankments.
     mesh2d:
       nominal_cell_size: 500
       breaklines_min_cell_size: 50
