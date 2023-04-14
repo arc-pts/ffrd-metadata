@@ -2,10 +2,13 @@ description: '2D rain-on-mesh BLE model of the 6th of nine Greenbrier River basi
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name: Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name: Dami George
     email: dami.george@wsp.com
+    org: wsp
 connected_models:
   - model: G5.prj
     direction: upstream
@@ -19,6 +22,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1995
   BasinG6.u02:
     title: Jan-1995 Inital Conditions
     hyetograph: 
@@ -26,6 +30,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
   BasinG6.u03:
     title: Jan-1995 Calibration
     hyetograph:
@@ -33,6 +38,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
   BasinG6.u04:
     title: Nov-2003 Initial Conditions
     hyetograph:
@@ -40,6 +46,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
   BasinG6.u05:
     title: Nov-2003 Calibration
     hyetograph:
@@ -47,6 +54,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
   BasinG6.u06:
     title: Jun-2016 Calibration
     hyetograph:
@@ -54,6 +62,7 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
+      event: jun_2016
   BasinG6.u07:
     title: Jan-1996 Calibration
     hyetograph:
@@ -61,6 +70,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1996
 geometries:
   BasinG6.g01:
     title: GreenbrierBasinG6_LiDAR
@@ -176,4 +186,5 @@ plans:
         rsr: 0.59411
         pbias: -0.11989
         r2: 0.90879
+        event: jun_2016
 title: BasinG6

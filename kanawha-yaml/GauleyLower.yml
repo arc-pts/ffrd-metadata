@@ -2,8 +2,10 @@ description: ''
 creators:
   - name:  John Capobianco
     email: John.Capobianco@mbakerintl.com
+    org: baker
   - name:  Mark McBroom
     email: mmcbroom@mbakerintl.com
+    org: baker
 flows:
   GauleyLower_BLE_FEM.u01:
     title: GauleyLower_Floodplain_Nov2003
@@ -12,6 +14,7 @@ flows:
       start_datetime: 2003-11-06 00:00:00
       end_datetime:   2003-11-23 00:00:00
       spatially_varied: true
+      event: nov_2003
 
   GauleyLower_BLE_FEM.u02:
     title: GauleyLower_Floodplain_Jun2016
@@ -20,6 +23,7 @@ flows:
       start_datetime: 2016-06-20 12:00:00
       end_datetime:   2016-06-20 00:00:00
       spatially_varied: true
+      event: jun_2016
 
   GauleyLower_BLE_FEM.u03:
     title: GauleyLower_FloodPlain_Jan1995
@@ -28,6 +32,7 @@ flows:
       start_datetime: 1995-01-05 12:00:00
       end_datetime:   1995-01-23 12:00:00
       spatially_varied: true
+      event: jan_1995
 
   GauleyLower_BLE_FEM.u04:
     title: GauleyLower_FloodPlain_Jan1996
@@ -36,6 +41,7 @@ flows:
       start_datetime: 1996-01-14 00:00:00
       end_datetime:   1996-01-22 00:00:00
       spatially_varied: true
+      event: jan_1996
 
 geometries:
   GauleyLower_BLE_FEM.g01:
@@ -76,6 +82,7 @@ plans:
         rsr:    0.653
         pbias:  1.181
         r2:     0.607
+        event: nov_2003
 
       - start_datetime: 2003-09-30 00:00:00
         end_datetime:   2003-12-31 00:00:00
@@ -85,6 +92,7 @@ plans:
         rsr:    0.638
         pbias:  16.551
         r2:     0.666
+        event: nov_2003
 
       - start_datetime: 1994-12-01 05:00:00
         end_datetime:   2016-09-01 05:00:00
@@ -94,6 +102,7 @@ plans:
         rsr:    0.612
         pbias:  -0.182
         r2:     0.784
+        event: nov_2003
   GauleyLower_BLE_FEM.p02:
     description: null
     flow: u03
@@ -108,6 +117,7 @@ plans:
         rsr:    0.218
         pbias:  -1.5726
         r2:     0.962
+        event: jan_1995
 
       - start_datetime: 1994-12-01 05:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -117,6 +127,8 @@ plans:
         rsr:    0.715
         pbias:  -0.195
         r2:     0.959
+        event: jan_1995
+
   GauleyLower_BLE_FEM.p03:
     description: null
     flow: u02
@@ -131,6 +143,7 @@ plans:
         rsr:    0.577
         pbias:  12.6
         r2:     0.670
+        event: jun_2016
 
       - start_datetime: 2016-04-30 00:00:00
         end_datetime:   2016-07-31 23:45:00
@@ -140,6 +153,7 @@ plans:
         rsr:    0.295
         pbias:  1.5
         r2:     0.918
+        event: jun_2016
 
       - start_datetime: 1994-12-01 05:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -149,6 +163,7 @@ plans:
         rsr:    0.467
         pbias:  -0.201
         r2:     0.876
+        event: jun_2016
 
       - start_datetime: 2012-08-30 10:30:00
         end_datetime:   2022-06-26 23:30:00
@@ -158,6 +173,7 @@ plans:
         rsr:    0.376
         pbias:  -11.652
         r2:     0.878
+        event: jun_2016
 
       - start_datetime: 2009-08-31 15:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -167,6 +183,7 @@ plans:
         rsr:    0.556
         pbias:  0.031
         r2:     0.896
+        event: jun_2016
 
       - start_datetime: 2014-04-02 18:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -176,6 +193,7 @@ plans:
         rsr:    0.2959
         pbias:  -0.074
         r2:     0.953
+        event: jun_2016
   GauleyLower_BLE_FEM.p06:
     description: null
     flow: u04
@@ -190,6 +208,7 @@ plans:
         rsr:    0.593
         pbias:  24.806
         r2:     0.785
+        event: jan_1996
         
       - start_datetime: 1994-12-01 05:00:00
         end_datetime:   2016-08-01 05:00:00
@@ -199,4 +218,6 @@ plans:
         rsr:    0.415
         pbias:  -0.096
         r2:     0.875
+        event: jan_1996
+
 title: GauleyLower_BLE-C_FEMA

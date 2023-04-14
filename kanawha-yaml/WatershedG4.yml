@@ -2,10 +2,13 @@ description: '2D rain-on-mesh BLE model of the fourth of nine Greenbrier River b
 creators:
   - name:  Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name:  Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name:  Jonathan Bartlotti
     email: jonathan.bartlotti@wsp.com
+    org: wsp
 connected_models:
   - model: WatershedG3.prj
     direction: upstream
@@ -19,6 +22,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
   WatershedG4.u02:
     title: Jan-1996
     hyetograph:
@@ -26,6 +30,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1996
   WatershedG4.u03:
     title: Nov-2003
     hyetograph:
@@ -33,6 +38,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
   WatershedG4.u04:
     title: Jun-2016
     hyetograph:
@@ -40,6 +46,7 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
+      event: jun_2016
 geometries:
   WatershedG4.g01:
     title: LiDAR

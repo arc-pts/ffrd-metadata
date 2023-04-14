@@ -19,10 +19,16 @@ g.bind("rascat", RASCAT_URI)
 
 RASCAT = Namespace(RASCAT_URI)
 
-kanawha = URIRef("http://ffrd.fema.gov/models/kanawha/")
+kanawha_models = Namespace("http://example.ffrd.fema.gov/kanawha/models/")
+ffrd_people = Namespace("http://example.ffrd.fema.gov/people/")
+ffrd_orgs = Namespace("http://example.ffrd.fema.gov/orgs/")
+kanawha_events = Namespace("http://example.ffrd.fema.gov/kanawha/events/")
 usgs_gages = URIRef("https://waterdata.usgs.gov/monitoring-location/")
 
-g.bind("kanawha", kanawha)
+g.bind("kanawha_models", kanawha_models)
+g.bind("ffrd_people", ffrd_people)
+g.bind("ffrd_orgs", ffrd_orgs)
+g.bind("kanawha_events", kanawha_events)
 g.bind("usgs_gages", usgs_gages)
 
 
@@ -51,18 +57,64 @@ class Mesh2D:
         return mesh2d
 
 
+def clean_name(name: str):
+    return name.replace(' ', '_')
+
+
+@dataclass
+class Organization:
+    name: str
+    clean_name: Optional[str] = None
+    homepage: Optional[str] = None
+    organization: Optional['Organization'] = None
+
+    def add(self, g: Graph):
+        if self.clean_name is None:
+            organization = ffrd_orgs[clean_name(self.name)]
+        else:
+            organization = ffrd_orgs[self.clean_name]
+        g.add((organization, RDF.type, FOAF.Organization))
+        g.add((organization, FOAF.name, Literal(self.name)))
+        if self.homepage is not None:
+            g.add((organization, FOAF.homepage, URIRef(self.homepage)))
+        if self.organization is not None:
+            parent = self.organization.add(g)
+            g.add((organization, FOAF.Organization, parent))
+        return organization
+
+ARC = Organization('ARC JV')
+WSP = Organization('WSP, Inc.', homepage='https://www.wsp.com/', organization=ARC, clean_name='WSP')
+BAKER = Organization('Michael Baker Intl', homepage='https://mbakerintl.com/', organization=ARC, clean_name='Baker')
+COMPASS = Organization('Compass JV')
+AECOM = Organization('AECOM', homepage='https://www.aecom.com/', organization=COMPASS)
+FREESE = Organization('Freese and Nichols', homepage='https://www.freese.com/', organization=ARC, clean_name='Freese')
+
+ORGS = {
+    'wsp': WSP,
+    'arc': ARC,
+    'baker': BAKER,
+    'aecom': AECOM,
+}
+for v in ORGS.values():
+    v.add(g)
+
+
 @dataclass
 class Person:
     name: str
     email: str
-    # organization: str
+    organization: Optional[Organization]
 
-    def add_bnode(self, g: Graph):
-        person = BNode()
+    # def add_bnode(self, g: Graph):
+    def add(self, g: Graph):
+        # person = BNode()
+        person = ffrd_people[clean_name(self.name)]
         g.add((person, RDF.type, FOAF.Person))
         g.add((person, FOAF.name, Literal(self.name)))
         g.add((person, FOAF.mbox, Literal(self.email)))
-        # g.add((person, FOAF.Organization, Literal(self.organization)))
+        if self.organization is not None:
+            organization = self.organization.add(g)
+            g.add((person, FOAF.Organization, organization))
         return person
 
 
@@ -80,7 +132,8 @@ class DcatDataset:
 
     def add_dcat_terms(self, g: Graph, uri: URIRef):
         for person in self.creators:
-            person_bnode = person.add_bnode(g)
+            # person_bnode = person.add_bnode(g)
+            person_bnode = person.add(g)
             g.add((uri, DCTERMS.creator, person_bnode))
         if self.title is not None:
             g.add((uri, DCTERMS.title, Literal(self.title)))
@@ -140,10 +193,68 @@ def to_datetime(d: date | str | datetime) -> datetime:
 
 
 @dataclass
+class HydroEvent(DcatDataset):
+    start_datetime: datetime | date | str
+    end_datetime: datetime | date | str
+    clean_name: Optional[str] = None
+    uri: Optional[str] = None
+
+    def add(self, g: Graph):
+        if self.uri is not None:
+            hydroevent = URIRef(self.uri)
+        else:
+            if self.clean_name is None:
+                hydroevent = kanawha_events[clean_name(self.title)]
+            else:
+                hydroevent = kanawha_events[self.clean_name]
+        g.add((hydroevent, RDF.type, RASCAT.HydroEvent))
+        g.add((hydroevent, DCTERMS.title, Literal(self.title)))
+        g.add((hydroevent, RASCAT.startDateTime, Literal(self.start_datetime)))
+        g.add((hydroevent, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.description is not None:
+            g.add((hydroevent, DCTERMS.description, Literal(self.description)))
+        return hydroevent
+
+
+JAN_1995 = HydroEvent(
+    title="January 1995",
+    clean_name="Jan1995",
+    start_datetime=datetime(1995, 1, 6),
+    end_datetime=datetime(1995, 1, 25),
+)
+JAN_1996 = HydroEvent(
+    title="January 1996",
+    clean_name="Jan1996",
+    start_datetime=datetime(1995, 1, 15),
+    end_datetime=datetime(1995, 2, 1),
+)
+NOV_2003 = HydroEvent(
+    title="November 2003",
+    clean_name="Nov2003",
+    start_datetime=datetime(2003, 11, 6),
+    end_datetime=datetime(2003, 11, 24),
+)
+JUN_2016 = HydroEvent(
+    title="June 2016",
+    clean_name="Jun2016",
+    start_datetime=datetime(2016, 6, 20),
+    end_datetime=datetime(2016, 7, 1),
+)
+HYDROEVENTS = {
+    'jan_1995': JAN_1995,
+    'jan_1996': JAN_1996,
+    'nov_2003': NOV_2003,
+    'jun_2016': JUN_2016,
+}
+for v in HYDROEVENTS.values():
+    v.add(g)
+
+
+@dataclass(kw_only=True)
 class Hydrodata(DcatDataset):
     start_datetime: datetime | date | str
     end_datetime: datetime | date | str
-    # from_hydroevent
+    from_hydroevent: Optional[HydroEvent] = None
 
     def __post_init__(self):
         self.start_datetime = to_datetime(self.start_datetime)
@@ -158,6 +269,9 @@ class Hydrodata(DcatDataset):
         g.add((hydrodata, RDF.type, RASCAT.Hydrodata))
         g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
         g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.from_hydroevent is not None:
+            hydroevent = self.from_hydroevent.add(g)
+            g.add((hydrodata, RASCAT.fromHydroEvent, hydroevent))
         return hydrodata
 
 
@@ -190,6 +304,9 @@ class Hydrograph(Hydrodata):
             g.add((hydrograph, RASCAT.rsr, Literal(self.rsr, datatype=XSD.double)))
         if self.r2:
             g.add((hydrograph, RASCAT.r2, Literal(self.r2, datatype=XSD.double)))
+        if self.from_hydroevent:
+            hydroevent = self.from_hydroevent.add(g)
+            g.add((hydrograph, RASCAT.fromHydroEvent, hydroevent))
         super().add_dcat_terms(g, hydrograph)
         return hydrograph
 
@@ -205,6 +322,9 @@ class Hyetograph(Hydrodata):
         g.add((hyetograph, RASCAT.startDateTime, Literal(self.start_datetime)))
         g.add((hyetograph, RASCAT.endDateTime, Literal(self.end_datetime)))
         g.add((hyetograph, RASCAT.spatiallyVaried, Literal(self.spatially_varied)))
+        if self.from_hydroevent:
+            hydroevent = self.from_hydroevent.add(g)
+            g.add((hyetograph, RASCAT.fromHydroEvent, hydroevent))
         return hyetograph
 
 
@@ -488,7 +608,7 @@ kanawha_dem.add_dcat_terms(g, kanawha_dem.uri)
 nlcd = LanduseLandcover(
     URIRef('https://www.mrlc.gov/data/nlcd-2019-land-cover-conus'),
     title='NLCD 2019',
-    description='National Land Cover Database 2019 (CONUS);',
+    description='National Land Cover Database 2019 (CONUS)',
 )
 g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
 nlcd.add_dcat_terms(g, nlcd.uri)
@@ -516,15 +636,18 @@ for model in kanawha_data:
     for flowfile, f in model['flows'].items():
         hyetograph = f.get('hyetograph')
         if hyetograph is not None:
+            hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
             hyetograph = Hyetograph(
                 start_datetime=hyetograph.get('start_datetime'),
                 end_datetime=hyetograph.get('end_datetime'),
                 description=hyetograph.get('description'),
                 spatially_varied=hyetograph.get('spatially_varied', True),
+                from_hydroevent=hydroevent,
             )
 
         calibration_hydrographs = []
         for hydrograph in f.get('hydrographs', []):
+            hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
             hyd = Hydrograph(
                 title=hydrograph.get('title'),
                 description=hydrograph.get('description'),
@@ -536,6 +659,7 @@ for model in kanawha_data:
                 rsr=hydrograph.get('rsr'),
                 pbias=hydrograph.get('pbias'),
                 r2=hydrograph.get('r2'),
+                from_hydroevent=hydroevent,
             )
             calibration_hydrographs.append(hyd)
 
@@ -653,6 +777,7 @@ for model in kanawha_data:
     for planfile, p in model['plans'].items():
         calibration_hydrographs = []
         for hydrograph in p.get('hydrographs', []):
+            hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
             hyd = Hydrograph(
                 title=hydrograph.get('title'),
                 description=hydrograph.get('description'),
@@ -664,6 +789,7 @@ for model in kanawha_data:
                 rsr=hydrograph.get('rsr'),
                 pbias=hydrograph.get('pbias'),
                 r2=hydrograph.get('r2'),
+                from_hydroevent=hydroevent,
             )
             calibration_hydrographs.append(hyd)
         plan = RasPlan(
@@ -678,10 +804,13 @@ for model in kanawha_data:
 
     creators = []
     for person in model.get('creators', []):
+        org = ORGS.get(person.get('org', '').lower())
         person = Person(
             name=person.get('name'),
             email=person.get('email'),
+            organization=org,
         )
+        person.add(g)
         creators.append(person)
 
     ras_version = model.get('ras_version', '6.3.1')
@@ -700,14 +829,14 @@ for model in kanawha_data:
         projection=proj_albers,
         vertical_datum='NAVD88',
     )
-    ras_model.to_rdf(g, base_uri=kanawha)
+    ras_model.to_rdf(g, base_uri=kanawha_models)
 
 
 print(g.serialize(format='turtle'))
 with open('./kanawha.ttl', 'w') as out:
     out.write(g.serialize(format='turtle'))
-print('Gages:')
-print(gages_lookup.keys(), len(gages_lookup.keys()))
+# print('Gages:')
+# print(gages_lookup.keys(), len(gages_lookup.keys()))
 
 
 # with open('./kanawha.jsonld', 'w') as out:

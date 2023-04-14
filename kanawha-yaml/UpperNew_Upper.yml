@@ -2,6 +2,7 @@ description: ''
 creators:
   - name: Michelle Terry
     email: michelle.terry@aecom.com
+    org: aecom
 ras_version: 6.3.1
 modified: 12/8/2022 13:17
 flows:
@@ -11,24 +12,28 @@ flows:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 1/11/1995 0:00
       end_datetime:   1/19/1995 0:00
+      event: jan_1995
   UpperNew_Upper.u02:
     title: Nov2003
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 11/16/2003 0:00
       end_datetime: 11/23/2003 0:00
+      event: nov_2003
   UpperNew_Upper.u03:
     title: Jan1996
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 1/15/1996 0:00
       end_datetime: 1/23/1996 0:00
+      event: jan_1996
   UpperNew_Upper.u04:
     title: Jun2016
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/3/2016 12:00
+      event: jun_2016
   UpperNew_Upper.u05:
     title: RestartFile
 geometries:
@@ -63,6 +68,7 @@ plans:
         rsr:   0.21
         pbias: -5.26
         r2:    0.97
+        event: jan_1995
 
       - from_streamgage: "03164000"
         start_datetime: 1/11/1995 0:00
@@ -71,6 +77,7 @@ plans:
         rsr:   0.34
         pbias: 20.77
         r2:    0.91
+        event: jan_1995
 
   UpperNew_Upper.p02:
     description: null
@@ -85,6 +92,7 @@ plans:
         rsr:   0.18
         pbias: -7.82
         r2:    0.97
+        event: nov_2003
       - from_streamgage: "03164000"
         start_datetime: 11/16/2003 0:00
         end_datetime:   11/23/2003 0:00
@@ -92,6 +100,7 @@ plans:
         rsr:   0.62
         pbias: 44.00
         r2:    0.80
+        event: nov_2003
   UpperNew_Upper.p03:
     description: null
     flow: u03
@@ -105,6 +114,7 @@ plans:
         rsr:   0.48
         pbias: -2.61
         r2:    0.79
+        event:  jan_1996
       - from_streamgage: "03164000"
         start_datetime: 1/15/1996 0:00
         end_datetime:   1/23/1996 0:00
@@ -112,6 +122,7 @@ plans:
         rsr:   1.16
         pbias: 56.75
         r2:    0.33
+        event:  jan_1996
   UpperNew_Upper.p04:
     description: null
     flow: u04
@@ -125,6 +136,7 @@ plans:
         rsr:   1.49
         pbias: -8.08
         r2:    0.02
+        event: jun_2016
       - from_streamgage: "03164000"
         start_datetime: 6/20/2016 12:00
         end_datetime:   7/3/2016 12:00
@@ -132,4 +144,5 @@ plans:
         rsr:   2.87
         pbias: 58.76
         r2:    0.14
+        event: jun_2016
 title: UpperNew_Upper

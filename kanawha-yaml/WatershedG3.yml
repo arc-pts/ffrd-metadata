@@ -2,10 +2,13 @@ description: 2D rain-on-mesh BLE model of the third of nine Greenbrier River bas
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name: Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name: Jon Bartlotti
     email: jonathan.bartlotti@wsp.com
+    org: wsp
 modified: 11/14/2022 18:30
 connected_models:
   - model: Kanawha_G2.prj
@@ -20,6 +23,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
 
   WatershedG3.u02:
     title: Jan-1996
@@ -28,6 +32,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1996
 
   WatershedG3.u03:
     title: Nov-2003
@@ -36,6 +41,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
 
   WatershedG3.u04:
     title: Jun-2016
@@ -44,6 +50,7 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
+      event: jun_2016
 
   WatershedG3.u05:
     title: Jan-1995 IC
@@ -149,6 +156,7 @@ plans:
         rsr: 0.93227
         pbias: 35.16
         r2: 0.61693
+        event: jan_1995
 
   WatershedG3.p06:
     flow: u02
@@ -164,6 +172,7 @@ plans:
         rsr: 0.68716
         pbias: 35.098
         r2: 0.91635
+        event: jan_1996
 
   WatershedG3.p07:
     flow: u03
@@ -179,6 +188,7 @@ plans:
         rsr: 0.60257
         pbias: 45.403
         r2: 0.9099
+        event: nov_2003
 
   WatershedG3.p08:
     flow: u04
@@ -194,4 +204,5 @@ plans:
         rsr: 0.19314
         pbias: 13.292
         r2: 0.98257
+        event: jun_2016
 title: Watershed G3

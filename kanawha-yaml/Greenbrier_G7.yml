@@ -2,10 +2,13 @@ description: '2D rain-on-mesh BLE model of the 7th of nine Greenbrier River basi
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name: Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name: Dami George
     email: dami.george@wsp.com
+    org: wsp
 flows:
   Greenbrier_G7.u01:
     title: JAN1995 IC
@@ -14,36 +17,42 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
   Greenbrier_G7.u03:
     title: NOV2003 IC
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
+      event: nov_2003
   Greenbrier_G7.u04:
     title: JUN2016 Cal
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
+      event: jun_2016
   Greenbrier_G7.u05:
     title: JAN1995 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
+      event: jan_1995
   Greenbrier_G7.u06:
     title: JAN1996 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
+      event: jan_1996
   Greenbrier_G7.u07:
     title: NOV2003 Cal
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
+      event: nov_2003
 geometries:
   Greenbrier_G7.g01:
     title: Greenbrier_G7_LiDAR

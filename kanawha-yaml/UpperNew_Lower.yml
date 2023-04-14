@@ -2,8 +2,10 @@ description: '2D rain-on-mesh BLE model of the New River Basin in Wythe and Carr
 creators:
   - name: Elizabeth Vande Krol
     email: elizabeth.vandekrol@aecom.com
+    org: aecom
   - name: Reuben Cozmyer
     email: reuben.cozmyer@aecom.com
+    org: aecom
 ras_version: 6.3.1
 modified: 1/1/2023 13:15
 flows:
@@ -20,24 +22,28 @@ flows:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 1/5/1995 14:00
       end_datetime:   1/29/1995 12:00
+      event: jan_1995
   UpperNew_Lower.u03:
     title: Jan1996
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 1/19/1996 5:00
       end_datetime:   2/2/1996 4:00
+      event: jan_1996
   UpperNew_Lower.u04:
     title: Nov2003
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 11/6/2003 13:00
       end_datetime:   11/28/2003 10:00
+      event: nov_2003
   UpperNew_Lower.u05:
     title: Jun2016
     hyetograph:
       description: Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)
       start_datetime: 6/20/2016 13:00
       end_datetime:   7/4/2016 10:00
+      event: jun_2016
 geometries:
   UpperNew_Lower.g03:
     title: Simplified
@@ -78,6 +84,7 @@ plans:
         rsr:   0.276
         pbias: 3.959
         r2:    0.978
+        event: jan_1995
 
   UpperNew_Lower.p03:
     description: 'Start time had to change from 14JAN1996 1200 to 19JAN1996 0500 due
@@ -97,6 +104,7 @@ plans:
         rsr:   0.834
         pbias: 9.689
         r2:    0.326
+        event: jan_1996
   UpperNew_Lower.p04:
     description: null
     flow: u04
@@ -110,6 +118,7 @@ plans:
         rsr:   0.555
         pbias: 26.041
         r2:    0.984
+        event: nov_2003
 
       - from_streamgage: "03165500"
         start_datetime: 11/6/2003 13:00
@@ -118,6 +127,7 @@ plans:
         rsr:   0.48
         pbias: 7.498
         r2:    0.935
+        event: nov_2003
 
   UpperNew_Lower.p07:
     description: null
@@ -132,6 +142,7 @@ plans:
         rsr:   1.302
         pbias: 5.316
         r2:    0.049
+        event: jun_2016
 
       - from_streamgage: "03165500"
         start_datetime: 6/20/2016 13:00
@@ -140,4 +151,5 @@ plans:
         rsr:   0.723
         pbias: 0.42
         r2:    0.723
+        event: jun_2016
 title: UpperNew_Lower

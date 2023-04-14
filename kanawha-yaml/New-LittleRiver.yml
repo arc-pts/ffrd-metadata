@@ -2,8 +2,10 @@ description: ''
 creators:
   - name: Ryan Pohl
     email: ryan.pohl@aecom.com
+    org: aecom
   - name: Reuben Cozmyer
     email: reuben.cozmyer@aecom.com
+    org: aecom
 ras_version: 6.3.0
 modified: 1/25/2023 23:59
 flows:
@@ -13,18 +15,21 @@ flows:
       description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
       start_datetime: 6/20/2016 12:00
       end_datetime:   7/4/2016 00:00
+      event: jun_2016
   New-LittleRiver.u07:
     title: JAN1996_HMS
     hyetograph:
       description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
       start_datetime: 1/14/1996 12:00
       end_datetime:   2/7/1996 12:00
+      event: jan_1996
   New-LittleRiver.u08:
     title: NOV2003_HMS
     hyetograph:
       description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
       start_datetime: 11/6/2003 12:00
       end_datetime:   11/28/2003 12:00
+      event: nov_2003
   New-LittleRiver.u09:
     title: restart_file
     hyetograph:
@@ -32,12 +37,14 @@ flows:
       start_datetime: 11/18/2003 00:00
       end_datetime:   11/22/2003 00:00
       spatially_varied: false
+      event: nov_2003
   New-LittleRiver.u10:
     title: JAN1995_HMS
     hyetograph:
       description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
       start_datetime: 1/5/1995 14:00
       end_datetime:   1/29/1995 11:00
+      event: jan_1995
 geometries:
   New-LittleRiver.g01:
     title: New_Little_River
@@ -70,6 +77,7 @@ plans:
         rsr:   1.14
         pbias: 19.55
         r2: 0.01
+        event: jun_2016
 
       - from_streamgage: "03170000"
         hydrograph_type: Stage
@@ -79,6 +87,7 @@ plans:
         rsr:   0.81
         pbias: 14.11
         r2: 0.64
+        event: jun_2016
 
   New-LittleRiver.p06:
     description: "with rating curve at dam and initial condition\nbigger channels\
@@ -96,6 +105,7 @@ plans:
         rsr:   0.79
         pbias: 9.42
         r2: 0.39
+        event: nov_2003
 
       - from_streamgage: "03170000"
         hydrograph_type: Stage
@@ -105,6 +115,7 @@ plans:
         rsr:   0.25
         pbias: 5.13
         r2:    0.94
+        event: nov_2003
 
   New-LittleRiver.p07:
     description: null
@@ -120,6 +131,7 @@ plans:
         rsr:   0.66
         pbias: 1.31
         r2:    0.56
+        event: jan_1996
 
       - from_streamgage: "03170000"
         hydrograph_type: Stage
@@ -129,6 +141,7 @@ plans:
         rsr:   0.32
         pbias: -2.86
         r2:    0.95
+        event: jan_1996
 
   New-LittleRiver.p17:
     description: null
@@ -150,6 +163,7 @@ plans:
         rsr:   0.65
         pbias: 9.25
         r2:    0.58
+        event: jan_1995
 
       - from_streamgage: "03170000"
         hydrograph_type: Stage
@@ -159,5 +173,6 @@ plans:
         rsr:   0.22
         pbias: -5.96
         r2:    0.96
+        event: jan_1995
 
 title: New-Little River

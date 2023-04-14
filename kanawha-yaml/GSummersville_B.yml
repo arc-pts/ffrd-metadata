@@ -5,8 +5,10 @@ modified: 10/20/2022 21:43
 creators:
   - name:  Daniyal Siddiqui 
     email: daniyal.siddiqui@mbakerintl.com
+    org: baker
   - name:  Mark McBroom
     email: mmcbroom@mbakerintl.com
+    org: baker
 flows:
   GSummersville_B.u01:
     title: GauleeSummersville_FloodPlain_Nov2003
@@ -15,6 +17,7 @@ flows:
       start_datetime: 11/6/2003 13:00
       end_datetime:   11/28/2003 12:00
       spatially_varied: true
+      event: nov_2003
 
   GSummersville_B.u03:
     title: GauleeSummersville_FloodPlain_Jan1995
@@ -23,6 +26,7 @@ flows:
       start_datetime:  1/5/1995 12:00
       end_datetime:    1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
 
   GSummersville_B.u05:
     title: GauleeSummersville_FloodPlain_Jan1996
@@ -31,6 +35,7 @@ flows:
       start_datetime: 1/14/1996 13:00
       end_datetime:   2/7/1996 10:00
       spatially_varied: true
+      event: jan_1996
 
   GSummersville_B.u07:
     title: GauleeSummersville_FloodPlain_Jun2016
@@ -39,6 +44,7 @@ flows:
       start_datetime: 6/20/2016 13:00
       end_datetime:   7/4/2016 12:00
       spatially_varied: true
+      event: jun_2016
 
 geometries:
   GSummersville_B.g01:
@@ -78,6 +84,7 @@ plans:
         rsr:   1.02
         pbias: 1.29
         r2:    0.66
+        event: jan_1996
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: Stage
@@ -87,6 +94,7 @@ plans:
         rsr:   0.64
         pbias: -0.20
         r2:    0.74
+        event: jan_1996
 
       - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
         hydrograph_type: Stage
@@ -96,6 +104,7 @@ plans:
         rsr:   1.33
         pbias: -0.17
         r2:    0.60
+        event:  jan_1996
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Stage
@@ -105,6 +114,7 @@ plans:
         rsr:   2.22
         pbias: -0.12
         r2:    0.70
+        event: jan_1996
   GSummersville_B.p02:
     description: null
     flow: u01
@@ -119,6 +129,7 @@ plans:
         rsr:    0.653
         pbias:  1.181
         r2:     0.607
+        event: nov_2003
 
       - from_streamgage: 01389100 # Gauley River Near Craigsville, WV
         hydrograph_type: "Stage"
@@ -128,6 +139,7 @@ plans:
         rsr:    0.48
         pbias:  0.05
         r2:     0.87
+        event: nov_2003
 
       - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
         hydrograph_type: Stage
@@ -137,6 +149,7 @@ plans:
         rsr:    0.75
         pbias:  -0.13
         r2:     0.91
+        event: nov_2003
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Stage
@@ -146,6 +159,7 @@ plans:
         rsr:    1.19
         pbias:  -0.07
         r2:     0.91
+        event: nov_2003
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: Flow
@@ -155,6 +169,7 @@ plans:
         rsr:    0.35
         pbias:  22.28
         r2:     0.90
+        event: nov_2003
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Flow
@@ -164,6 +179,7 @@ plans:
         rsr:    0.22
         pbias:  31.76
         r2:     0.98
+        event: nov_2003
 
       - from_streamgage: 03186500 # Williams River at Dyer, WV
         hydrograph_type: Flow
@@ -173,6 +189,8 @@ plans:
         rsr:    0.37
         pbias:  26.08
         r2:     0.96
+        event: nov_2003
+
   GSummersville_B.p11:
     description: null
     flow: u07
@@ -187,6 +205,7 @@ plans:
         rsr:   0.34
         pbias: -0.11
         r2:    0.93
+        event: jun_2016
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: Stage
@@ -196,6 +215,7 @@ plans:
         rsr:   0.31
         pbias: -0.01
         r2:    0.91
+        event: jun_2016
 
       - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
         hydrograph_type: Stage
@@ -205,6 +225,7 @@ plans:
         rsr:   0.50
         pbias: -0.08
         r2:    0.83
+        event: jun_2016
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Stage
@@ -214,6 +235,7 @@ plans:
         rsr:   1.53
         pbias: -0.10
         r2:    0.84
+        event: jun_2016
 
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
@@ -224,6 +246,7 @@ plans:
         rsr:   0.2
         pbias: -5.06
         r2:    0.96
+        event: jun_2016
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Flow
@@ -233,6 +256,7 @@ plans:
         rsr:   0.53
         pbias: 1.20
         r2:    0.87
+        event: jun_2016
 
       - from_streamgage: 03186500 # Williams River at Dyer, WV
         hydrograph_type: Flow
@@ -242,6 +266,7 @@ plans:
         rsr:   0.19
         pbias: -4.63
         r2:    0.96
+        event: jun_2016
 
       - from_streamgage: 03188900 # Laurel Creek Near Fenwick, WV
         hydrograph_type: Flow
@@ -251,6 +276,7 @@ plans:
         rsr:   0.3
         pbias: 16.09
         r2:    0.92
+        event: jun_2016
   GSummersville_B.p12:
     description: null
     flow: u03
@@ -265,6 +291,7 @@ plans:
         rsr:   1.05
         pbias: -0.27
         r2:    0.98
+        event: jan_1995
 
       - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: Stage
@@ -274,6 +301,7 @@ plans:
         rsr:   0.34
         pbias: 0.03
         r2:    0.98
+        event: jan_1995
 
       - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
         hydrograph_type: Stage
@@ -283,6 +311,7 @@ plans:
         rsr:   1.18
         pbias: -0.08
         r2:    0.76
+        event: jan_1995
 
       - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
         hydrograph_type: Stage
@@ -292,4 +321,5 @@ plans:
         rsr:   2.03
         pbias: -0.07
         r2:    0.89
+        event: jan_1995
 title: GauleySummersville_BLE_FEMA
