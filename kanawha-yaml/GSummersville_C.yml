@@ -50,11 +50,9 @@ geometries:
   GSummersville_C.g01:
     title: GauleySummersville_Existing
     roughness:
-      landuse:
-        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      landuse: baker_landuse
     precip_losses:
-      landuse:
-        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      landuse: baker_landuse
       soils: ssurgo
     structures: wv_clearinghouse
     mesh2d:
@@ -78,7 +76,7 @@ plans:
     geom: g01
     title: Unsteady_MultiHazard_Nov2003
     hydrographs:
-      - from_streamgage: "?USACE" # Summersville Lake / USACE
+      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
         hydrograph_type: "Stage"
         start_datetime: 1/1/1985 11:00
         end_datetime:   12/31/2021 11:00
@@ -88,7 +86,7 @@ plans:
         r2: 0.90
         event: nov_2003
 
-      - from_streamgage: 01389100 # Gauley River Near Craigsville, WV
+      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
         hydrograph_type: "Stage"
         start_datetime: 12/1/1994 00:30
         end_datetime:   7/31/2016 22:30
@@ -153,7 +151,7 @@ plans:
     geom: g01
     title: Unsteady_MultiHazard_Jun2016
     hydrographs:
-      - from_streamgage: "?USACE" # Summersville Lake / USACE
+      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
         hydrograph_type: Stage
         start_datetime: 1/1/1985 11:00
         end_datetime:   12/31/2021 11:00
@@ -243,7 +241,7 @@ plans:
     geom: g01
     title: Unsteady_MultiHazard_Jan1995
     hydrographs:
-      - from_streamgage: "?USACE" # Summersville Lake / USACE
+      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
         hydrograph_type: Stage
         start_datetime: 1/1/1985 11:00
         end_datetime:   12/31/2021 11:00
@@ -293,7 +291,7 @@ plans:
     geom: g01
     title: Unsteady_MultiHazard_Jan1996
     hydrographs:
-      - from_streamgage: "?USACE" # Summersville Lake / USACE
+      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
         hydrograph_type: Stage
         start_datetime: 1/1/1985 11:00
         end_datetime:   12/31/2021 11:00

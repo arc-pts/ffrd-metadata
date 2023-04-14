@@ -47,11 +47,9 @@ geometries:
   GauleyLower_BLE_FEM.g01:
     title: Gauley_Lower
     roughness:
-      landuse:
-        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      landuse: baker_landuse
     precip_losses:
-      landuse:
-        description: National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022
+      landuse: baker_landuse
       soils: ssurgo
     structures: wv_clearinghouse
     terrain:

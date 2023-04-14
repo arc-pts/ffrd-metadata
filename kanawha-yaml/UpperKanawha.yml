@@ -116,6 +116,7 @@ plans:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: London L&D Pool
+        from_streamgage: USACE_London_LD_Pool
         description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
         hydrograph_type: "Stage"
         nse:    -180.7
@@ -127,6 +128,7 @@ plans:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: London L&D Tailwater
+        from_streamgage: USACE_London_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.96292
@@ -138,6 +140,7 @@ plans:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: Marmet L&D Pool 
+        from_streamgage: USACE_Marmet_LD_Pool
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.43975
@@ -149,6 +152,7 @@ plans:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: Marmet L&D Tailwater
+        from_streamgage: USACE_Marmet_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.92097
@@ -170,6 +174,7 @@ plans:
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: London L&D Pool
+        from_streamgage: USACE_London_LD_Pool
         description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
         hydrograph_type: "Stage"
         nse:    -50.493
@@ -181,6 +186,7 @@ plans:
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: London L&D Tailwater
+        from_streamgage: USACE_London_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.94446
@@ -192,6 +198,7 @@ plans:
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: Marmet L&D Pool 
+        from_streamgage: USACE_Marmet_LD_Pool
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.83132
@@ -203,6 +210,7 @@ plans:
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: Marmet L&D Tailwater
+        from_streamgage: USACE_Marmet_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.80228

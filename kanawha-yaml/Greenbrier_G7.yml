@@ -57,12 +57,10 @@ geometries:
   Greenbrier_G7.g01:
     title: Greenbrier_G7_LiDAR
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -79,12 +77,10 @@ geometries:
   Greenbrier_G7.g02:
     title: LiDAR_G7_2016
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -101,8 +97,7 @@ geometries:
   Greenbrier_G7.g03:
     title: LiDAR_G7_1996
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse:  wsp_landuse
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:

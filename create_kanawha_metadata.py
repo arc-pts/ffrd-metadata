@@ -19,47 +19,28 @@ g.bind("rascat", RASCAT_URI)
 
 RASCAT = Namespace(RASCAT_URI)
 
-kanawha_models = Namespace("http://example.ffrd.fema.gov/kanawha/models/")
 ffrd_people = Namespace("http://example.ffrd.fema.gov/people/")
 ffrd_orgs = Namespace("http://example.ffrd.fema.gov/orgs/")
-kanawha_events = Namespace("http://example.ffrd.fema.gov/kanawha/events/")
-usgs_gages = URIRef("https://waterdata.usgs.gov/monitoring-location/")
-
-g.bind("kanawha_models", kanawha_models)
 g.bind("ffrd_people", ffrd_people)
 g.bind("ffrd_orgs", ffrd_orgs)
+
+kanawha_models = Namespace("http://example.ffrd.fema.gov/kanawha/models/")
+kanawha_events = Namespace("http://example.ffrd.fema.gov/kanawha/events/")
+kanawha_calibration = Namespace("http://example.ffrd.fema.gov/kanawha/calibration/")
+kanawha_misc = Namespace("http://example.ffrd.fema.gov/kanawha/misc/")
+g.bind("kanawha_models", kanawha_models)
 g.bind("kanawha_events", kanawha_events)
+g.bind("kanawha_calibration", kanawha_calibration)
+g.bind("kanawha_misc", kanawha_misc)
+
+usgs_gages = URIRef("https://waterdata.usgs.gov/monitoring-location/")
+usace_kanawha_gages = URIRef("https://www.lrh-wc.usace.army.mil/wm/?river/kanawha#")
 g.bind("usgs_gages", usgs_gages)
-
-
-@dataclass
-class Mesh2D:
-    nominal_cell_size: float
-    breaklines_min_cell_size: Optional[float]
-    breaklines_max_cell_size: Optional[float]
-    refinement_regions_min_cell_size: Optional[float]
-    refinement_regions_max_cell_size: Optional[float]
-    cell_count: int
-
-    def add_bnode(self, g: Graph):
-        mesh2d = BNode()
-        g.add((mesh2d, RDF.type, RASCAT.Mesh2D))
-        g.add((mesh2d, RASCAT.nominalCellSize, Literal(self.nominal_cell_size)))
-        if self.breaklines_min_cell_size is not None:
-            g.add((mesh2d, RASCAT.breaklinesMinCellSize, Literal(self.breaklines_min_cell_size)))
-        if self.breaklines_max_cell_size is not None:
-            g.add((mesh2d, RASCAT.breaklinesMaxCellSize, Literal(self.breaklines_max_cell_size)))
-        if self.refinement_regions_min_cell_size is not None:
-            g.add((mesh2d, RASCAT.refinementRegionsMinCellSize, Literal(self.refinement_regions_min_cell_size)))
-        if self.refinement_regions_max_cell_size is not None:
-            g.add((mesh2d, RASCAT.refinementRegionsMaxCellSize, Literal(self.refinement_regions_max_cell_size)))
-        g.add((mesh2d, RASCAT.cellCount, Literal(self.cell_count)))
-        return mesh2d
+g.bind("usace_kanawha_gages", usace_kanawha_gages)
 
 
 def clean_name(name: str):
     return name.replace(' ', '_')
-
 
 @dataclass
 class Organization:
@@ -147,6 +128,31 @@ class DcatDataset:
             else:
                 for relation in self.relation:
                     g.add((uri, DCTERMS.relation, URIRef(relation)))
+
+@dataclass
+class Mesh2D(DcatDataset):
+    nominal_cell_size: float
+    breaklines_min_cell_size: Optional[float]
+    breaklines_max_cell_size: Optional[float]
+    refinement_regions_min_cell_size: Optional[float]
+    refinement_regions_max_cell_size: Optional[float]
+    cell_count: int
+
+    def add(self, g: Graph, model_geom: str):
+        mesh2d = BNode()
+        # mesh2d = URIRef(model_geom + 'mesh2d')
+        g.add((mesh2d, RDF.type, RASCAT.Mesh2D))
+        g.add((mesh2d, RASCAT.nominalCellSize, Literal(self.nominal_cell_size)))
+        if self.breaklines_min_cell_size is not None:
+            g.add((mesh2d, RASCAT.breaklinesMinCellSize, Literal(self.breaklines_min_cell_size)))
+        if self.breaklines_max_cell_size is not None:
+            g.add((mesh2d, RASCAT.breaklinesMaxCellSize, Literal(self.breaklines_max_cell_size)))
+        if self.refinement_regions_min_cell_size is not None:
+            g.add((mesh2d, RASCAT.refinementRegionsMinCellSize, Literal(self.refinement_regions_min_cell_size)))
+        if self.refinement_regions_max_cell_size is not None:
+            g.add((mesh2d, RASCAT.refinementRegionsMaxCellSize, Literal(self.refinement_regions_max_cell_size)))
+        g.add((mesh2d, RASCAT.cellCount, Literal(self.cell_count)))
+        return mesh2d
 
 
 @dataclass
@@ -288,9 +294,24 @@ class Hydrograph(Hydrodata):
     pbias: Optional[float] = None
     rsr: Optional[float] = None
     r2: Optional[float] = None
+    uri: Optional[str] = None
+    clean_name: Optional[str] = None
 
-    def add_bnode(self, g: Graph):
-        hydrograph = BNode()
+    def get_title(self, model_prefix: str = '') -> str:
+        gage_id = self.from_streamgage.id
+        title = f'{gage_id}_{self.hydrograph_type.value}_{self.from_hydroevent.clean_name}'
+        if model_prefix:
+            title = f'{model_prefix}_{title}'
+        return title
+
+    def add(self, g: Graph, model_prefix: str = ''):
+        if self.uri is not None:
+            hydrograph = URIRef(self.uri)
+        else:
+            if self.clean_name is None:
+                hydrograph = kanawha_calibration[clean_name(self.get_title(model_prefix))]
+            else:
+                hydrograph =  kanawha_calibration[self.clean_name]
         g.add((hydrograph, RDF.type, RASCAT.Hydrograph))
         g.add((hydrograph, RASCAT.hydrographType, Literal(self.hydrograph_type.value)))
         super().add_hydrodata_terms(g, hydrograph)
@@ -349,12 +370,15 @@ class Terrain(DcatDataset):
     bathymetry: Optional[Bathymetry] = None
     modifications: Optional[TerrainModifications] = None
 
-    def add_bnode(self, g: Graph):
-        terrain = BNode()
+    # def add_bnode(self, g: Graph):
+    def add(self, g: Graph, model_geom: str):
+        # terrain = BNode()
+        terrain = URIRef(f'{model_geom}.terrain')
         g.add((terrain, RDF.type, RASCAT.Terrain))
         g.add((terrain, RASCAT.dem, self.dem.uri))
         if self.bathymetry:
-            bathymetry = BNode()
+            # bathymetry = BNode()
+            bathymetry = URIRef(f'{model_geom}.bathymetry')
             g.add((bathymetry, RDF.type, RASCAT.Bathymetry))
             if self.bathymetry.uri:
                 g.add((terrain, RASCAT.hasBathymetry, self.bathymetry.uri))
@@ -525,10 +549,10 @@ class RasModel(DcatDataset):
             g.add((model, RASCAT.hasGeometry, geometry_uri))
             g.add((geometry_uri, RDF.type, RASCAT.RasGeometry))
             if geometry.mesh2d is not None:
-                mesh2d = geometry.mesh2d.add_bnode(g)
+                mesh2d = geometry.mesh2d.add(g, geometry_uri)
                 g.add((geometry_uri, RASCAT.hasMesh2D, mesh2d))
             if geometry.terrain is not None:
-                terrain = geometry.terrain.add_bnode(g)
+                terrain = geometry.terrain.add(g, geometry_uri)
                 g.add((geometry_uri, RASCAT.hasTerrain, terrain))
             if geometry.roughness is not None:
                 roughness = geometry.roughness.add_bnode(g)
@@ -567,14 +591,14 @@ class RasModel(DcatDataset):
             g.add((plan_uri, RASCAT.hasUnsteadyFlow, self.rasfile_uri(plan.flow.ext, base_uri)))
             if plan.calibration_hydrographs:
                 for hydrograph in plan.calibration_hydrographs:
-                    hyd_bnode = hydrograph.add_bnode(g)
-                    g.add((plan_uri, RASCAT.hasCalibrationHydrograph, hyd_bnode))
+                    hyd = hydrograph.add(g, model_prefix=os.path.splitext(self.filename)[0])
+                    g.add((plan_uri, RASCAT.hasCalibrationHydrograph, hyd))
             plan.add_dcat_terms(g, plan_uri)
 
 with open('./streamgages.yml', 'r') as streamgages_yml:
     streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
 
-gages_lookup = {}
+GAGES = {}
 for streamgage in streamgages:
     gage = Streamgage(
         name=streamgage.get('title'),
@@ -582,7 +606,8 @@ for streamgage in streamgages:
         owner=streamgage.get('owner', 'USGS'),
         uri=streamgage.get('link'),
     )
-    gages_lookup[streamgage['identifier']] = gage
+    GAGES[streamgage['identifier']] = gage
+    # print(gage)
     gage.to_rdf(g)
 
 kanawha_data: List[dict] = []
@@ -612,6 +637,30 @@ nlcd = LanduseLandcover(
 )
 g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
 nlcd.add_dcat_terms(g, nlcd.uri)
+
+wsp_landuse = LanduseLandcover(
+    URIRef('wsp_landuse', kanawha_misc),
+    title="WSP (ARC) ML-based land use",
+    description="Custom machine learning land cover analysis of NAIP 2022 imagery",
+    creators=[ARC, WSP]
+)
+g.add((wsp_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
+wsp_landuse.add_dcat_terms(g, wsp_landuse.uri)
+
+baker_landuse = LanduseLandcover(
+    URIRef('baker_landuse', kanawha_misc),
+    title="Baker (ARC) ML-based land use",
+    description="National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022",
+    creators=[ARC, BAKER]
+)
+g.add((baker_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
+baker_landuse.add_dcat_terms(g, baker_landuse.uri)
+
+LANDUSE = {
+    'nlcd': nlcd,
+    'wsp_landuse': wsp_landuse,
+    'baker_landuse': baker_landuse,
+}
 
 ssurgo = Soils(
     URIRef('https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo'),
@@ -653,7 +702,7 @@ for model in kanawha_data:
                 description=hydrograph.get('description'),
                 start_datetime=hydrograph.get('start_datetime'),
                 end_datetime=hydrograph.get('end_datetime'),
-                from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
+                from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
                 hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
                 nse=hydrograph.get('nse'),
                 rsr=hydrograph.get('rsr'),
@@ -707,8 +756,8 @@ for model in kanawha_data:
         roughness = geom.get('roughness')
         if roughness is not None:
             landuse = roughness.get('landuse')
-            if landuse == 'nlcd':
-                landuse = nlcd
+            if type(landuse) is str:
+                landuse = LANDUSE[landuse]
             elif landuse is not None:
                 landuse = LanduseLandcover(
                     title=landuse.get('title'),
@@ -725,8 +774,8 @@ for model in kanawha_data:
         precip_losses = geom.get('precip_losses')
         if precip_losses is not None:
             landuse = precip_losses.get('landuse')
-            if landuse == 'nlcd':
-                landuse = nlcd
+            if type(landuse) is str:
+                landuse = LANDUSE[landuse]
             elif landuse is not None:
                 landuse = LanduseLandcover(
                     title=landuse.get('title'),
@@ -777,13 +826,14 @@ for model in kanawha_data:
     for planfile, p in model['plans'].items():
         calibration_hydrographs = []
         for hydrograph in p.get('hydrographs', []):
+            # print(hydrograph)
             hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
             hyd = Hydrograph(
                 title=hydrograph.get('title'),
                 description=hydrograph.get('description'),
                 start_datetime=hydrograph.get('start_datetime'),
                 end_datetime=hydrograph.get('end_datetime'),
-                from_streamgage=gages_lookup.get(hydrograph.get('from_streamgage')),
+                from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
                 hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
                 nse=hydrograph.get('nse'),
                 rsr=hydrograph.get('rsr'),
@@ -836,7 +886,7 @@ print(g.serialize(format='turtle'))
 with open('./kanawha.ttl', 'w') as out:
     out.write(g.serialize(format='turtle'))
 # print('Gages:')
-# print(gages_lookup.keys(), len(gages_lookup.keys()))
+# print(GAGES.keys(), len(GAGES.keys()))
 
 
 # with open('./kanawha.jsonld', 'w') as out:

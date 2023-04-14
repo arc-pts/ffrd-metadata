@@ -93,12 +93,10 @@ geometries:
   Kanawha_G2.g01:
     title: LiDAR_G2
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -115,12 +113,10 @@ geometries:
   Kanawha_G2.g02:
     title: LiDAR_G2_2016
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -137,8 +133,7 @@ geometries:
   Kanawha_G2.g03:
     title: LiDAR_G2_1996
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:

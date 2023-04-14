@@ -55,11 +55,9 @@ geometries:
   ElkMiddle.g01:
     title: ElkMiddle
     roughness:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
     precip_losses:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -76,11 +74,9 @@ geometries:
   ElkMiddle.g02:
     title: ElkMiddle_1996
     roughness:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
     precip_losses:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
       soils:
         uri: https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo
     mesh2d:

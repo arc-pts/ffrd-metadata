@@ -24,6 +24,26 @@
   owner: USACE
   link: https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug
 
+- identifier: USACE_London_LD_Pool
+  title: London L&D Pool
+  owner: USACE
+  link: https://www.lrh-wc.usace.army.mil/wm/?river/kanawha#London%20L&D%20Pool
+
+- identifier: USACE_London_LD_Tailwater
+  title: London L&D Tailwater
+  owner: USACE
+  link: https://www.lrh-wc.usace.army.mil/wm/?river/kanawha#London%20L&D%20Tailwater
+
+- identifier: USACE_Marmet_LD_Pool
+  title: Marmet L&D Pool
+  owner: USACE
+  link: https://www.lrh-wc.usace.army.mil/wm/?river/kanawha#Marmet%20L&D%20Pool
+
+- identifier: USACE_Marmet_LD_Tailwater
+  title: Marmet L&D Tailwater
+  owner: USACE
+  link: https://www.lrh-wc.usace.army.mil/wm/?river/kanawha#Marmet%20L&D%20Tailwater
+
 - identifier: 03189100
   title: Gauley River Near Craigsville, WV
 
@@ -45,7 +65,7 @@
 - identifier: 03182888
   title: Dry Creek at Tuckahoe, WV
 
-- identifier: 03183500
+- identifier: 03184000
   title: Greenbrier River at Hilldale, WV
 
 - identifier: "03177710"
@@ -86,3 +106,9 @@
 
 - identifier: "03164000"
   title: New River Near Galax, VA
+
+- identifier: "03188900"
+  title: Laurel Creek Near Fenwick, WV
+
+- identifier: 03183500
+  title: Greenbrier River at Alderson, WV

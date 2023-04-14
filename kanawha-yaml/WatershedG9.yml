@@ -54,12 +54,10 @@ geometries:
   WatershedG9.g01:
     title: LiDAR
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -76,12 +74,10 @@ geometries:
   WatershedG9.g02:
     title: LiDAR_2016
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -98,8 +94,7 @@ geometries:
   WatershedG9.g03:
     title: LiDAR_1996
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
