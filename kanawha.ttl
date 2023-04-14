@@ -512,7 +512,7 @@ kanawha_models:WatershedG9.prj a rascat:RasModel ;
     rascat:status "Final" ;
     rascat:verticalDatum "NAVD88" .
 
-kanawha_calibration:BasinG6_03182888_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:BasinG6_03182888_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2023-03-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03182888 ;
@@ -523,7 +523,7 @@ kanawha_calibration:BasinG6_03182888_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5.9411e-01 ;
     rascat:startDateTime "2007-10-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:BluestoneLocal_03177120_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:BluestoneLocal_03177120_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03177120 ;
@@ -534,7 +534,7 @@ kanawha_calibration:BluestoneLocal_03177120_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.14e+00 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03179800 ;
@@ -545,7 +545,7 @@ kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 2.53e-01 ;
     rascat:startDateTime "1995-01-12T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03179800 ;
@@ -556,7 +556,7 @@ kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 3.6e-01 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:BluestoneLocal_03179800_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:BluestoneLocal_03179800_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03179800 ;
@@ -567,7 +567,7 @@ kanawha_calibration:BluestoneLocal_03179800_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.11e+00 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:BluestoneLocal_03179800_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:BluestoneLocal_03179800_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-27T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03179800 ;
@@ -578,7 +578,7 @@ kanawha_calibration:BluestoneLocal_03179800_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 2.3e-01 ;
     rascat:startDateTime "2003-11-07T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03177710 ;
@@ -588,7 +588,7 @@ kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 6.6e-01 ;
     rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-06T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03177710 ;
@@ -599,7 +599,7 @@ kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 3.3e-01 ;
     rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03177710_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03177710_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03177710 ;
@@ -610,7 +610,7 @@ kanawha_calibration:Bluestone_Upper_03177710_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.09e+00 ;
     rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03179000 ;
@@ -620,7 +620,7 @@ kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 3.9e-01 ;
     rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-06T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03179000 ;
@@ -631,7 +631,7 @@ kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 4.2e-01 ;
     rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03179000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03179000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03179000 ;
@@ -642,7 +642,7 @@ kanawha_calibration:Bluestone_Upper_03179000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 9.9e-01 ;
     rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Bluestone_Upper_03179000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:Bluestone_Upper_03179000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03179000 ;
@@ -652,7 +652,7 @@ kanawha_calibration:Bluestone_Upper_03179000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 2.7e-01 ;
     rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198350_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198350_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03198350 ;
@@ -663,7 +663,7 @@ kanawha_calibration:CoalRiver_03198350_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 6.5e-01 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198350_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198350_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03198350 ;
@@ -674,7 +674,7 @@ kanawha_calibration:CoalRiver_03198350_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.2e-01 ;
     rascat:startDateTime "2003-01-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198500_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198500_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-25T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03198500 ;
@@ -685,7 +685,7 @@ kanawha_calibration:CoalRiver_03198500_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 9.5e-01 ;
     rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198500_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198500_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03198500 ;
@@ -696,7 +696,7 @@ kanawha_calibration:CoalRiver_03198500_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.67e+00 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03198500 ;
@@ -707,7 +707,7 @@ kanawha_calibration:CoalRiver_03198500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 8e-01 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03198500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03198500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03198500 ;
@@ -718,7 +718,7 @@ kanawha_calibration:CoalRiver_03198500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.9e-01 ;
     rascat:startDateTime "2003-01-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03200500_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03200500_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-25T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03200500 ;
@@ -729,7 +729,7 @@ kanawha_calibration:CoalRiver_03200500_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 8.4e-01 ;
     rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03200500_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03200500_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03200500 ;
@@ -740,7 +740,7 @@ kanawha_calibration:CoalRiver_03200500_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 5.1e-01 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03200500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03200500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03200500 ;
@@ -751,7 +751,7 @@ kanawha_calibration:CoalRiver_03200500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 9.6e-01 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:CoalRiver_03200500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:CoalRiver_03200500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03200500 ;
@@ -762,7 +762,7 @@ kanawha_calibration:CoalRiver_03200500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.6e-01 ;
     rascat:startDateTime "2003-01-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196500_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196500_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03196500 ;
@@ -773,7 +773,7 @@ kanawha_calibration:ElkMiddle_03196500_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 8.3896e-01 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196600_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196600_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03196600 ;
@@ -784,7 +784,7 @@ kanawha_calibration:ElkMiddle_03196600_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.3554e+00 ;
     rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196600_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196600_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03196600 ;
@@ -795,7 +795,7 @@ kanawha_calibration:ElkMiddle_03196600_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 7.8902e-01 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196600_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196600_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03196600 ;
@@ -806,7 +806,7 @@ kanawha_calibration:ElkMiddle_03196600_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.0997e+00 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196600_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196600_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-21T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03196600 ;
@@ -817,7 +817,7 @@ kanawha_calibration:ElkMiddle_03196600_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 8.2996e-01 ;
     rascat:startDateTime "2003-11-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196800_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196800_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03196800 ;
@@ -828,7 +828,7 @@ kanawha_calibration:ElkMiddle_03196800_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 6.2162e-01 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196800_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196800_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03196800 ;
@@ -839,7 +839,7 @@ kanawha_calibration:ElkMiddle_03196800_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.0726e+00 ;
     rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196800_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196800_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03196800 ;
@@ -850,7 +850,7 @@ kanawha_calibration:ElkMiddle_03196800_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 8.4782e-01 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196800_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196800_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03196800 ;
@@ -861,7 +861,7 @@ kanawha_calibration:ElkMiddle_03196800_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 6.2702e-01 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03196800_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03196800_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-21T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03196800 ;
@@ -872,7 +872,7 @@ kanawha_calibration:ElkMiddle_03196800_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.6328e-01 ;
     rascat:startDateTime "2003-11-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -883,7 +883,7 @@ kanawha_calibration:ElkMiddle_03197000_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 7.5204e-01 ;
     rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -894,7 +894,7 @@ kanawha_calibration:ElkMiddle_03197000_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 2.5266e-01 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-21T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -905,7 +905,7 @@ kanawha_calibration:ElkMiddle_03197000_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.0843e-01 ;
     rascat:startDateTime "2003-11-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -916,7 +916,7 @@ kanawha_calibration:ElkMiddle_03197000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.5419e+00 ;
     rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -927,7 +927,7 @@ kanawha_calibration:ElkMiddle_03197000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.4724e+00 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-06-30T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -938,7 +938,7 @@ kanawha_calibration:ElkMiddle_03197000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 4.7899e-01 ;
     rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:ElkMiddle_03197000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:ElkMiddle_03197000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-21T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03197000 ;
@@ -949,7 +949,7 @@ kanawha_calibration:ElkMiddle_03197000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 5.1156e-01 ;
     rascat:startDateTime "2003-11-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03186500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03186500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T17:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03186500 ;
@@ -960,7 +960,7 @@ kanawha_calibration:GSummersville_B_03186500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.9e-01 ;
     rascat:startDateTime "2016-04-30T18:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03186500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03186500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T22:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03186500 ;
@@ -971,7 +971,7 @@ kanawha_calibration:GSummersville_B_03186500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.7e-01 ;
     rascat:startDateTime "2003-10-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -982,7 +982,7 @@ kanawha_calibration:GSummersville_B_03187000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.18e+00 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -993,7 +993,7 @@ kanawha_calibration:GSummersville_B_03187000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.33e+00 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1004,7 +1004,7 @@ kanawha_calibration:GSummersville_B_03187000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5e-01 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1015,7 +1015,7 @@ kanawha_calibration:GSummersville_B_03187000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 7.5e-01 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T21:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1026,7 +1026,7 @@ kanawha_calibration:GSummersville_B_03187500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5.3e-01 ;
     rascat:startDateTime "2016-05-01T00:15:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T21:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1037,7 +1037,7 @@ kanawha_calibration:GSummersville_B_03187500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 2.2e-01 ;
     rascat:startDateTime "2003-10-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1048,7 +1048,7 @@ kanawha_calibration:GSummersville_B_03187500_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 2.03e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1059,7 +1059,7 @@ kanawha_calibration:GSummersville_B_03187500_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 2.22e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1070,7 +1070,7 @@ kanawha_calibration:GSummersville_B_03187500_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.53e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03187500_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03187500_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1081,7 +1081,7 @@ kanawha_calibration:GSummersville_B_03187500_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 1.19e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03188900_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03188900_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T21:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03188900 ;
@@ -1092,7 +1092,7 @@ kanawha_calibration:GSummersville_B_03188900_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 3e-01 ;
     rascat:startDateTime "2016-05-01T00:15:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T17:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1103,7 +1103,7 @@ kanawha_calibration:GSummersville_B_03189100_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 2e-01 ;
     rascat:startDateTime "2016-04-30T18:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T22:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1114,7 +1114,7 @@ kanawha_calibration:GSummersville_B_03189100_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.5e-01 ;
     rascat:startDateTime "2003-10-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1125,7 +1125,7 @@ kanawha_calibration:GSummersville_B_03189100_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 3.4e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1136,7 +1136,7 @@ kanawha_calibration:GSummersville_B_03189100_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 6.4e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1147,7 +1147,7 @@ kanawha_calibration:GSummersville_B_03189100_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 3.1e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_03189100_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_03189100_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1158,7 +1158,7 @@ kanawha_calibration:GSummersville_B_03189100_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 4.8e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1169,7 +1169,7 @@ kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1995 a rasc
     rascat:rsr 1.05e+00 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1180,7 +1180,7 @@ kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1996 a rasc
     rascat:rsr 1.02e+00 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1191,7 +1191,7 @@ kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jun2016 a rasc
     rascat:rsr 3.4e-01 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1202,7 +1202,7 @@ kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Nov2003 a rasc
     rascat:rsr 6.53e-01 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03186500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03186500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T17:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03186500 ;
@@ -1213,7 +1213,7 @@ kanawha_calibration:GSummersville_C_03186500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 2.5e-01 ;
     rascat:startDateTime "2016-04-30T18:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03186500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03186500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T22:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03186500 ;
@@ -1224,7 +1224,7 @@ kanawha_calibration:GSummersville_C_03186500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 3.5e-01 ;
     rascat:startDateTime "2003-10-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1235,7 +1235,7 @@ kanawha_calibration:GSummersville_C_03187000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1e+00 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1246,7 +1246,7 @@ kanawha_calibration:GSummersville_C_03187000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 7.1e-01 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1257,7 +1257,7 @@ kanawha_calibration:GSummersville_C_03187000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5.4e-01 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T23:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187000 ;
@@ -1268,7 +1268,7 @@ kanawha_calibration:GSummersville_C_03187000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 2.9e-01 ;
     rascat:startDateTime "1994-12-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T21:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1279,7 +1279,7 @@ kanawha_calibration:GSummersville_C_03187500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5.2e-01 ;
     rascat:startDateTime "2016-05-01T00:15:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T21:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1290,7 +1290,7 @@ kanawha_calibration:GSummersville_C_03187500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 4.5e-01 ;
     rascat:startDateTime "2003-10-01T01:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1301,7 +1301,7 @@ kanawha_calibration:GSummersville_C_03187500_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.01e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1312,7 +1312,7 @@ kanawha_calibration:GSummersville_C_03187500_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.59e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1323,7 +1323,7 @@ kanawha_calibration:GSummersville_C_03187500_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1e+00 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03187500_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03187500_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03187500 ;
@@ -1334,7 +1334,7 @@ kanawha_calibration:GSummersville_C_03187500_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 5.9e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03188900_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03188900_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T21:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03188900 ;
@@ -1345,7 +1345,7 @@ kanawha_calibration:GSummersville_C_03188900_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 3.4e-01 ;
     rascat:startDateTime "2016-05-01T00:15:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T17:45:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1356,7 +1356,7 @@ kanawha_calibration:GSummersville_C_03189100_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 2.9e-01 ;
     rascat:startDateTime "2016-04-30T18:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T22:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1367,7 +1367,7 @@ kanawha_calibration:GSummersville_C_03189100_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 4.4e-01 ;
     rascat:startDateTime "2003-10-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1378,7 +1378,7 @@ kanawha_calibration:GSummersville_C_03189100_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 7.1e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1389,7 +1389,7 @@ kanawha_calibration:GSummersville_C_03189100_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 6.7e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1400,7 +1400,7 @@ kanawha_calibration:GSummersville_C_03189100_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 4.1e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_03189100_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_03189100_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T22:30:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03189100 ;
@@ -1411,7 +1411,7 @@ kanawha_calibration:GSummersville_C_03189100_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 5.3e-01 ;
     rascat:startDateTime "1994-12-01T00:30:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1422,7 +1422,7 @@ kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1995 a rasc
     rascat:rsr 1.86e+00 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1433,7 +1433,7 @@ kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1996 a rasc
     rascat:rsr 1.1e+00 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1444,7 +1444,7 @@ kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jun2016 a rasc
     rascat:rsr 3.5e-01 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2021-12-31T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage <https://www.lrh-wc.usace.army.mil/wm/?basin/kan/sug> ;
@@ -1455,7 +1455,7 @@ kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Nov2003 a rasc
     rascat:rsr 3.5e-01 ;
     rascat:startDateTime "1985-01-01T11:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03190000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03190000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2022-06-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03190000 ;
@@ -1466,7 +1466,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03190000_Flow_Jun2016 a rascat:Hydrograp
     rascat:rsr 3.76e-01 ;
     rascat:startDateTime "2012-08-30T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03190000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03190000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03190000 ;
@@ -1477,7 +1477,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03190000_Stage_Jun2016 a rascat:Hydrogra
     rascat:rsr 2.959e-01 ;
     rascat:startDateTime "2014-04-02T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03191500 ;
@@ -1488,7 +1488,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Jun2016 a rascat:Hydrograp
     rascat:rsr 5.77e-01 ;
     rascat:startDateTime "2009-08-31T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03191500 ;
@@ -1499,7 +1499,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Nov2003 a rascat:Hydrograp
     rascat:rsr 6.53e-01 ;
     rascat:startDateTime "2009-08-31T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03191500_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03191500_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03191500 ;
@@ -1510,7 +1510,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03191500_Stage_Jun2016 a rascat:Hydrogra
     rascat:rsr 5.56e-01 ;
     rascat:startDateTime "2009-08-31T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2022-06-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1521,7 +1521,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1995 a rascat:Hydrograp
     rascat:rsr 2.18e-01 ;
     rascat:startDateTime "1928-10-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2022-06-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1532,7 +1532,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1996 a rascat:Hydrograp
     rascat:rsr 5.93e-01 ;
     rascat:startDateTime "1928-10-20T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-31T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1543,7 +1543,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jun2016 a rascat:Hydrograp
     rascat:rsr 2.95e-01 ;
     rascat:startDateTime "2016-04-30T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-31T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1554,7 +1554,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Nov2003 a rascat:Hydrograp
     rascat:rsr 6.38e-01 ;
     rascat:startDateTime "2003-09-30T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1565,7 +1565,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1995 a rascat:Hydrogra
     rascat:rsr 7.15e-01 ;
     rascat:startDateTime "1994-12-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1576,7 +1576,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1996 a rascat:Hydrogra
     rascat:rsr 4.15e-01 ;
     rascat:startDateTime "1994-12-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1587,7 +1587,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jun2016 a rascat:Hydrogra
     rascat:rsr 4.67e-01 ;
     rascat:startDateTime "1994-12-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-09-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03192000 ;
@@ -1598,7 +1598,7 @@ kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Nov2003 a rascat:Hydrogra
     rascat:rsr 6.12e-01 ;
     rascat:startDateTime "1994-12-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2022-01-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03183500 ;
@@ -1609,7 +1609,7 @@ kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.6907e+00 ;
     rascat:startDateTime "1900-01-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2022-01-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03183500 ;
@@ -1620,7 +1620,7 @@ kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.3993e+00 ;
     rascat:startDateTime "1900-01-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Greenbrier_G8_03183500_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:Greenbrier_G8_03183500_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03183500 ;
@@ -1631,7 +1631,7 @@ kanawha_calibration:Greenbrier_G8_03183500_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 3.7249e-01 ;
     rascat:startDateTime "2016-04-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Greenbrier_G8_03183500_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:Greenbrier_G8_03183500_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-12-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03183500 ;
@@ -1642,7 +1642,7 @@ kanawha_calibration:Greenbrier_G8_03183500_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 4.9232e-01 ;
     rascat:startDateTime "2003-09-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2022-06-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03180500 ;
@@ -1653,7 +1653,7 @@ kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.0849e+00 ;
     rascat:startDateTime "1943-04-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2022-06-26T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03180500 ;
@@ -1664,7 +1664,7 @@ kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 7.5269e-01 ;
     rascat:startDateTime "1943-04-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Kanawha_G1_03180500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:Kanawha_G1_03180500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03180500 ;
@@ -1675,7 +1675,7 @@ kanawha_calibration:Kanawha_G1_03180500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 7.3549e-01 ;
     rascat:startDateTime "2003-10-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:Kanawha_G1_03180500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:Kanawha_G1_03180500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2016-08-01T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03180500 ;
@@ -1686,7 +1686,7 @@ kanawha_calibration:Kanawha_G1_03180500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 8.2889e-01 ;
     rascat:startDateTime "2003-10-01T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-29T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03170000 ;
@@ -1697,7 +1697,7 @@ kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 2.2e-01 ;
     rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-07T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03170000 ;
@@ -1708,7 +1708,7 @@ kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 3.2e-01 ;
     rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03170000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03170000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03170000 ;
@@ -1719,7 +1719,7 @@ kanawha_calibration:New-LittleRiver_03170000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 8.1e-01 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03170000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03170000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03170000 ;
@@ -1730,7 +1730,7 @@ kanawha_calibration:New-LittleRiver_03170000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 2.5e-01 ;
     rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-29T11:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03171000 ;
@@ -1741,7 +1741,7 @@ kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 6.5e-01 ;
     rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-07T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03171000 ;
@@ -1752,7 +1752,7 @@ kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 6.6e-01 ;
     rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03171000_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03171000_Stage_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03171000 ;
@@ -1763,7 +1763,7 @@ kanawha_calibration:New-LittleRiver_03171000_Stage_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.14e+00 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:New-LittleRiver_03171000_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:New-LittleRiver_03171000_Stage_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03171000 ;
@@ -1774,7 +1774,7 @@ kanawha_calibration:New-LittleRiver_03171000_Stage_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 7.9e-01 ;
     rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Jun2016 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration." ;
     dcterms:title "London L&D Pool" ;
     rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
@@ -1787,7 +1787,7 @@ kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Jun2016 a rascat:Hyd
     rascat:rsr 1.348e+01 ;
     rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Nov2003 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration." ;
     dcterms:title "London L&D Pool" ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
@@ -1800,7 +1800,7 @@ kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Nov2003 a rascat:Hyd
     rascat:rsr 7.1759e+00 ;
     rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Jun2016 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "London L&D Tailwater" ;
     rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
@@ -1813,7 +1813,7 @@ kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Jun2016 a rasca
     rascat:rsr 1.9255e-01 ;
     rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Nov2003 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "London L&D Tailwater" ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
@@ -1826,7 +1826,7 @@ kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Nov2003 a rasca
     rascat:rsr 2.3567e-01 ;
     rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Jun2016 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "Marmet L&D Pool" ;
     rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
@@ -1839,7 +1839,7 @@ kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Jun2016 a rascat:Hyd
     rascat:rsr 7.485e-01 ;
     rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Nov2003 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "Marmet L&D Pool" ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
@@ -1852,7 +1852,7 @@ kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Nov2003 a rascat:Hyd
     rascat:rsr 4.1071e-01 ;
     rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Jun2016 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "Marmet L&D Tailwater" ;
     rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
@@ -1865,7 +1865,7 @@ kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Jun2016 a rasca
     rascat:rsr 2.8112e-01 ;
     rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Nov2003 a rascat:Calibration ;
     dcterms:description "Stage hydrograph provided by USACE." ;
     dcterms:title "Marmet L&D Tailwater" ;
     rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
@@ -1878,7 +1878,7 @@ kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Nov2003 a rasca
     rascat:rsr 4.4465e-01 ;
     rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03165500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03165500_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-04T10:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03165500 ;
@@ -1889,7 +1889,7 @@ kanawha_calibration:UpperNew_Lower_03165500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 7.23e-01 ;
     rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03165500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03165500_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-28T10:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03165500 ;
@@ -1900,7 +1900,7 @@ kanawha_calibration:UpperNew_Lower_03165500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 4.8e-01 ;
     rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03168000 ;
@@ -1911,7 +1911,7 @@ kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 2.76e-01 ;
     rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-02-02T04:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03168000 ;
@@ -1922,7 +1922,7 @@ kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 8.34e-01 ;
     rascat:startDateTime "1996-01-19T05:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03168000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03168000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-04T10:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03168000 ;
@@ -1933,7 +1933,7 @@ kanawha_calibration:UpperNew_Lower_03168000_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.302e+00 ;
     rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Lower_03168000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Lower_03168000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-28T10:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03168000 ;
@@ -1944,7 +1944,7 @@ kanawha_calibration:UpperNew_Lower_03168000_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 5.55e-01 ;
     rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-19T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03161000 ;
@@ -1955,7 +1955,7 @@ kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 2.1e-01 ;
     rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-23T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03161000 ;
@@ -1966,7 +1966,7 @@ kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 4.8e-01 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03161000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03161000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03161000 ;
@@ -1977,7 +1977,7 @@ kanawha_calibration:UpperNew_Upper_03161000_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.49e+00 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03161000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03161000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03161000 ;
@@ -1988,7 +1988,7 @@ kanawha_calibration:UpperNew_Upper_03161000_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 1.8e-01 ;
     rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "1995-01-19T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03164000 ;
@@ -1999,7 +1999,7 @@ kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 3.4e-01 ;
     rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "1996-01-23T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03164000 ;
@@ -2010,7 +2010,7 @@ kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.16e+00 ;
     rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03164000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03164000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2016-07-03T12:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03164000 ;
@@ -2021,7 +2021,7 @@ kanawha_calibration:UpperNew_Upper_03164000_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 2.87e+00 ;
     rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime .
 
-kanawha_calibration:UpperNew_Upper_03164000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:UpperNew_Upper_03164000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03164000 ;
@@ -2032,7 +2032,7 @@ kanawha_calibration:UpperNew_Upper_03164000_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 6.2e-01 ;
     rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG3_03182500_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG3_03182500_Flow_Jan1995 a rascat:Calibration ;
     dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in January 1995" ;
     rascat:endDateTime "2022-05-07T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
@@ -2044,7 +2044,7 @@ kanawha_calibration:WatershedG3_03182500_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 9.3227e-01 ;
     rascat:startDateTime "1930-11-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG3_03182500_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG3_03182500_Flow_Jan1996 a rascat:Calibration ;
     dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in January 1996" ;
     rascat:endDateTime "2022-05-07T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
@@ -2056,7 +2056,7 @@ kanawha_calibration:WatershedG3_03182500_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 6.8716e-01 ;
     rascat:startDateTime "1930-11-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG3_03182500_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG3_03182500_Flow_Jun2016 a rascat:Calibration ;
     dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in June 2016" ;
     rascat:endDateTime "2022-05-07T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
@@ -2068,7 +2068,7 @@ kanawha_calibration:WatershedG3_03182500_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 1.9314e-01 ;
     rascat:startDateTime "1930-11-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG3_03182500_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG3_03182500_Flow_Nov2003 a rascat:Calibration ;
     dcterms:description "Flooding at the Greenbrier River gage at Buckey, WV in November 2003" ;
     rascat:endDateTime "2022-05-07T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
@@ -2080,7 +2080,7 @@ kanawha_calibration:WatershedG3_03182500_Flow_Nov2003 a rascat:Hydrograph ;
     rascat:rsr 6.0257e-01 ;
     rascat:startDateTime "1930-11-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG9_03184000_Flow_Jan1995 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG9_03184000_Flow_Jan1995 a rascat:Calibration ;
     rascat:endDateTime "2022-02-05T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1995 ;
     rascat:fromStreamgage usgs_gages:03184000 ;
@@ -2091,7 +2091,7 @@ kanawha_calibration:WatershedG9_03184000_Flow_Jan1995 a rascat:Hydrograph ;
     rascat:rsr 1.5856e+00 ;
     rascat:startDateTime "1936-03-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG9_03184000_Flow_Jan1996 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG9_03184000_Flow_Jan1996 a rascat:Calibration ;
     rascat:endDateTime "2022-02-05T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jan1996 ;
     rascat:fromStreamgage usgs_gages:03184000 ;
@@ -2102,7 +2102,7 @@ kanawha_calibration:WatershedG9_03184000_Flow_Jan1996 a rascat:Hydrograph ;
     rascat:rsr 1.029e+00 ;
     rascat:startDateTime "1936-03-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG9_03184000_Flow_Jun2016 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG9_03184000_Flow_Jun2016 a rascat:Calibration ;
     rascat:endDateTime "2022-02-05T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Jun2016 ;
     rascat:fromStreamgage usgs_gages:03184000 ;
@@ -2113,7 +2113,7 @@ kanawha_calibration:WatershedG9_03184000_Flow_Jun2016 a rascat:Hydrograph ;
     rascat:rsr 5.2275e-01 ;
     rascat:startDateTime "1936-03-18T00:00:00"^^xsd:dateTime .
 
-kanawha_calibration:WatershedG9_03184000_Flow_Nov2003 a rascat:Hydrograph ;
+kanawha_calibration:WatershedG9_03184000_Flow_Nov2003 a rascat:Calibration ;
     rascat:endDateTime "2022-02-05T00:00:00"^^xsd:dateTime ;
     rascat:fromHydroEvent kanawha_events:Nov2003 ;
     rascat:fromStreamgage usgs_gages:03184000 ;
@@ -2187,7 +2187,7 @@ kanawha_models:BasinG6.p07 a rascat:RasPlan ;
 
 kanawha_models:BasinG6.p08 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:BasinG6_03182888_Stage_Jun2016 ;
+    rascat:hasCalibration kanawha_calibration:BasinG6_03182888_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:BasinG6.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:BasinG6.u06 .
 
@@ -2197,25 +2197,25 @@ kanawha_models:BluestoneLocal.g01.terrain a rascat:Terrain ;
 
 kanawha_models:BluestoneLocal.p01 a rascat:RasPlan ;
     dcterms:title "JAN1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:BluestoneLocal.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:BluestoneLocal.u01 .
 
 kanawha_models:BluestoneLocal.p02 a rascat:RasPlan ;
     dcterms:title "JAN1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:BluestoneLocal_03179800_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:BluestoneLocal.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:BluestoneLocal.u02 .
 
 kanawha_models:BluestoneLocal.p03 a rascat:RasPlan ;
     dcterms:title "NOV2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:BluestoneLocal_03179800_Stage_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:BluestoneLocal_03179800_Stage_Nov2003 ;
     rascat:hasGeometry kanawha_models:BluestoneLocal.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:BluestoneLocal.u03 .
 
 kanawha_models:BluestoneLocal.p04 a rascat:RasPlan ;
     dcterms:title "JUN2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:BluestoneLocal_03177120_Stage_Jun2016,
+    rascat:hasCalibration kanawha_calibration:BluestoneLocal_03177120_Stage_Jun2016,
         kanawha_calibration:BluestoneLocal_03179800_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:BluestoneLocal.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:BluestoneLocal.u04 .
@@ -2230,7 +2230,7 @@ kanawha_models:Bluestone_Upper.p15 a rascat:RasPlan ;
 Some  Breaklines and Terrain mods
 """ ;
     dcterms:title "Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1995,
+    rascat:hasCalibration kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1995,
         kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:Bluestone_Upper.g07 ;
     rascat:hasUnsteadyFlow kanawha_models:Bluestone_Upper.u07 .
@@ -2241,7 +2241,7 @@ kanawha_models:Bluestone_Upper.p16 a rascat:RasPlan ;
 Somebreaklines and terrain mods
 """ ;
     dcterms:title "Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1996,
+    rascat:hasCalibration kanawha_calibration:Bluestone_Upper_03177710_Stage_Jan1996,
         kanawha_calibration:Bluestone_Upper_03179000_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:Bluestone_Upper.g07 ;
     rascat:hasUnsteadyFlow kanawha_models:Bluestone_Upper.u08 .
@@ -2252,7 +2252,7 @@ kanawha_models:Bluestone_Upper.p17 a rascat:RasPlan ;
 100 ft stream refinement regions, 50 ft ref reg in towns
 Some Breaklines and terrain mods""" ;
     dcterms:title "Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Bluestone_Upper_03177710_Stage_Jun2016,
+    rascat:hasCalibration kanawha_calibration:Bluestone_Upper_03177710_Stage_Jun2016,
         kanawha_calibration:Bluestone_Upper_03179000_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:Bluestone_Upper.g07 ;
     rascat:hasUnsteadyFlow kanawha_models:Bluestone_Upper.u09 .
@@ -2263,7 +2263,7 @@ kanawha_models:Bluestone_Upper.p18 a rascat:RasPlan ;
 100ft stream refinement , 50ft ref  in towns
 Some breaklines and culvert terrain mods""" ;
     dcterms:title "Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Bluestone_Upper_03179000_Stage_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:Bluestone_Upper_03179000_Stage_Nov2003 ;
     rascat:hasGeometry kanawha_models:Bluestone_Upper.g07 ;
     rascat:hasUnsteadyFlow kanawha_models:Bluestone_Upper.u06 .
 
@@ -2272,7 +2272,7 @@ kanawha_models:CoalRiver.g01.terrain a rascat:Terrain ;
 
 kanawha_models:CoalRiver.p01 a rascat:RasPlan ;
     dcterms:title "Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:CoalRiver_03198350_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:CoalRiver_03198350_Flow_Nov2003,
         kanawha_calibration:CoalRiver_03198500_Flow_Nov2003,
         kanawha_calibration:CoalRiver_03200500_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:CoalRiver.g01 ;
@@ -2280,21 +2280,21 @@ kanawha_models:CoalRiver.p01 a rascat:RasPlan ;
 
 kanawha_models:CoalRiver.p02 a rascat:RasPlan ;
     dcterms:title "Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:CoalRiver_03198500_Flow_Jan1995,
+    rascat:hasCalibration kanawha_calibration:CoalRiver_03198500_Flow_Jan1995,
         kanawha_calibration:CoalRiver_03200500_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:CoalRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:CoalRiver.u02 .
 
 kanawha_models:CoalRiver.p03 a rascat:RasPlan ;
     dcterms:title "Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:CoalRiver_03198500_Flow_Jan1996,
+    rascat:hasCalibration kanawha_calibration:CoalRiver_03198500_Flow_Jan1996,
         kanawha_calibration:CoalRiver_03200500_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:CoalRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:CoalRiver.u03 .
 
 kanawha_models:CoalRiver.p04 a rascat:RasPlan ;
     dcterms:title "Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:CoalRiver_03198350_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:CoalRiver_03198350_Flow_Jun2016,
         kanawha_calibration:CoalRiver_03198500_Flow_Jun2016,
         kanawha_calibration:CoalRiver_03200500_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:CoalRiver.g01 ;
@@ -2314,7 +2314,7 @@ kanawha_models:ElkMiddle.g02.terrain a rascat:Terrain ;
 kanawha_models:ElkMiddle.p01 a rascat:RasPlan ;
     dcterms:description "November 2003.Calibrated to Queen Shoals Gage" ;
     dcterms:title "Unsteady_Mixed_Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:ElkMiddle_03196600_Stage_Nov2003,
+    rascat:hasCalibration kanawha_calibration:ElkMiddle_03196600_Stage_Nov2003,
         kanawha_calibration:ElkMiddle_03196800_Stage_Nov2003,
         kanawha_calibration:ElkMiddle_03197000_Flow_Nov2003,
         kanawha_calibration:ElkMiddle_03197000_Stage_Nov2003 ;
@@ -2323,7 +2323,7 @@ kanawha_models:ElkMiddle.p01 a rascat:RasPlan ;
 
 kanawha_models:ElkMiddle.p03 a rascat:RasPlan ;
     dcterms:title "Unsteady_Mixed_Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:ElkMiddle_03196600_Stage_Jan1996,
+    rascat:hasCalibration kanawha_calibration:ElkMiddle_03196600_Stage_Jan1996,
         kanawha_calibration:ElkMiddle_03196800_Stage_Jan1996,
         kanawha_calibration:ElkMiddle_03197000_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:ElkMiddle.g02 ;
@@ -2331,7 +2331,7 @@ kanawha_models:ElkMiddle.p03 a rascat:RasPlan ;
 
 kanawha_models:ElkMiddle.p04 a rascat:RasPlan ;
     dcterms:title "Unsteady_Mixed_Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:ElkMiddle_03196500_Stage_Jun2016,
+    rascat:hasCalibration kanawha_calibration:ElkMiddle_03196500_Stage_Jun2016,
         kanawha_calibration:ElkMiddle_03196600_Stage_Jun2016,
         kanawha_calibration:ElkMiddle_03196800_Flow_Jun2016,
         kanawha_calibration:ElkMiddle_03196800_Stage_Jun2016,
@@ -2342,7 +2342,7 @@ kanawha_models:ElkMiddle.p04 a rascat:RasPlan ;
 
 kanawha_models:ElkMiddle.p06 a rascat:RasPlan ;
     dcterms:title "Unsteady_Mixed_Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:ElkMiddle_03196600_Stage_Jan1995,
+    rascat:hasCalibration kanawha_calibration:ElkMiddle_03196600_Stage_Jan1995,
         kanawha_calibration:ElkMiddle_03196800_Stage_Jan1995,
         kanawha_calibration:ElkMiddle_03197000_Flow_Jan1995,
         kanawha_calibration:ElkMiddle_03197000_Stage_Jan1995 ;
@@ -2428,7 +2428,7 @@ kanawha_models:GSummersville_B.g01.terrain a rascat:Terrain ;
 
 kanawha_models:GSummersville_B.p01 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_B_03187000_Stage_Jan1996,
+    rascat:hasCalibration kanawha_calibration:GSummersville_B_03187000_Stage_Jan1996,
         kanawha_calibration:GSummersville_B_03187500_Stage_Jan1996,
         kanawha_calibration:GSummersville_B_03189100_Stage_Jan1996,
         kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1996 ;
@@ -2437,7 +2437,7 @@ kanawha_models:GSummersville_B.p01 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_B.p02 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_B_03186500_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:GSummersville_B_03186500_Flow_Nov2003,
         kanawha_calibration:GSummersville_B_03187000_Stage_Nov2003,
         kanawha_calibration:GSummersville_B_03187500_Flow_Nov2003,
         kanawha_calibration:GSummersville_B_03187500_Stage_Nov2003,
@@ -2449,7 +2449,7 @@ kanawha_models:GSummersville_B.p02 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_B.p11 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_B_03186500_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:GSummersville_B_03186500_Flow_Jun2016,
         kanawha_calibration:GSummersville_B_03187000_Stage_Jun2016,
         kanawha_calibration:GSummersville_B_03187500_Flow_Jun2016,
         kanawha_calibration:GSummersville_B_03187500_Stage_Jun2016,
@@ -2462,7 +2462,7 @@ kanawha_models:GSummersville_B.p11 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_B.p12 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_B_03187000_Stage_Jan1995,
+    rascat:hasCalibration kanawha_calibration:GSummersville_B_03187000_Stage_Jan1995,
         kanawha_calibration:GSummersville_B_03187500_Stage_Jan1995,
         kanawha_calibration:GSummersville_B_03189100_Stage_Jan1995,
         kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1995 ;
@@ -2479,7 +2479,7 @@ kanawha_models:GSummersville_C.g01.terrain a rascat:Terrain ;
 
 kanawha_models:GSummersville_C.p02 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_C_03186500_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:GSummersville_C_03186500_Flow_Nov2003,
         kanawha_calibration:GSummersville_C_03187000_Stage_Nov2003,
         kanawha_calibration:GSummersville_C_03187500_Flow_Nov2003,
         kanawha_calibration:GSummersville_C_03187500_Stage_Nov2003,
@@ -2491,7 +2491,7 @@ kanawha_models:GSummersville_C.p02 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_C.p03 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_C_03186500_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:GSummersville_C_03186500_Flow_Jun2016,
         kanawha_calibration:GSummersville_C_03187000_Stage_Jun2016,
         kanawha_calibration:GSummersville_C_03187500_Flow_Jun2016,
         kanawha_calibration:GSummersville_C_03187500_Stage_Jun2016,
@@ -2509,7 +2509,7 @@ kanawha_models:GSummersville_C.p04 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_C.p05 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_C_03187000_Stage_Jan1995,
+    rascat:hasCalibration kanawha_calibration:GSummersville_C_03187000_Stage_Jan1995,
         kanawha_calibration:GSummersville_C_03187500_Stage_Jan1995,
         kanawha_calibration:GSummersville_C_03189100_Stage_Jan1995,
         kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1995 ;
@@ -2523,7 +2523,7 @@ kanawha_models:GSummersville_C.p06 a rascat:RasPlan ;
 
 kanawha_models:GSummersville_C.p07 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GSummersville_C_03187000_Stage_Jan1996,
+    rascat:hasCalibration kanawha_calibration:GSummersville_C_03187000_Stage_Jan1996,
         kanawha_calibration:GSummersville_C_03187500_Stage_Jan1996,
         kanawha_calibration:GSummersville_C_03189100_Stage_Jan1996,
         kanawha_calibration:GSummersville_C_USACE_Summersville_Lake_Stage_Jan1996 ;
@@ -2540,7 +2540,7 @@ kanawha_models:GauleyLower_BLE_FEM.g01.terrain a rascat:Terrain ;
 
 kanawha_models:GauleyLower_BLE_FEM.p01 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Nov2003,
         kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Nov2003,
         kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Nov2003 ;
     rascat:hasGeometry kanawha_models:GauleyLower_BLE_FEM.g01 ;
@@ -2548,14 +2548,14 @@ kanawha_models:GauleyLower_BLE_FEM.p01 a rascat:RasPlan ;
 
 kanawha_models:GauleyLower_BLE_FEM.p02 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1995,
+    rascat:hasCalibration kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1995,
         kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:GauleyLower_BLE_FEM.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:GauleyLower_BLE_FEM.u03 .
 
 kanawha_models:GauleyLower_BLE_FEM.p03 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GauleyLower_BLE_FEM_03190000_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:GauleyLower_BLE_FEM_03190000_Flow_Jun2016,
         kanawha_calibration:GauleyLower_BLE_FEM_03190000_Stage_Jun2016,
         kanawha_calibration:GauleyLower_BLE_FEM_03191500_Flow_Jun2016,
         kanawha_calibration:GauleyLower_BLE_FEM_03191500_Stage_Jun2016,
@@ -2566,7 +2566,7 @@ kanawha_models:GauleyLower_BLE_FEM.p03 a rascat:RasPlan ;
 
 kanawha_models:GauleyLower_BLE_FEM.p06 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1996,
+    rascat:hasCalibration kanawha_calibration:GauleyLower_BLE_FEM_03192000_Flow_Jan1996,
         kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:GauleyLower_BLE_FEM.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:GauleyLower_BLE_FEM.u04 .
@@ -2661,25 +2661,25 @@ kanawha_models:Greenbrier_G8.p03 a rascat:RasPlan ;
 
 kanawha_models:Greenbrier_G8.p04 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Greenbrier_G8_03183500_Stage_Jun2016 ;
+    rascat:hasCalibration kanawha_calibration:Greenbrier_G8_03183500_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:Greenbrier_G8.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G8.u04 .
 
 kanawha_models:Greenbrier_G8.p05 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:Greenbrier_G8.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G8.u05 .
 
 kanawha_models:Greenbrier_G8.p06 a rascat:RasPlan ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:Greenbrier_G8_03183500_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:Greenbrier_G8.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G8.u06 .
 
 kanawha_models:Greenbrier_G8.p07 a rascat:RasPlan ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Greenbrier_G8_03183500_Stage_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:Greenbrier_G8_03183500_Stage_Nov2003 ;
     rascat:hasGeometry kanawha_models:Greenbrier_G8.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G8.u07 .
 
@@ -2736,25 +2736,25 @@ kanawha_models:Kanawha_G1.p04 a rascat:RasPlan ;
 
 kanawha_models:Kanawha_G1.p05 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:Kanawha_G1.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G1.u05 .
 
 kanawha_models:Kanawha_G1.p06 a rascat:RasPlan ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:Kanawha_G1_03180500_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:Kanawha_G1.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G1.u06 .
 
 kanawha_models:Kanawha_G1.p07 a rascat:RasPlan ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Kanawha_G1_03180500_Flow_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:Kanawha_G1_03180500_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:Kanawha_G1.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G1.u07 .
 
 kanawha_models:Kanawha_G1.p08 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:Kanawha_G1_03180500_Flow_Jun2016 ;
+    rascat:hasCalibration kanawha_calibration:Kanawha_G1_03180500_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:Kanawha_G1.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G1.u08 .
 
@@ -2832,7 +2832,7 @@ kanawha_models:New-LittleRiver.g01.terrain a rascat:Terrain ;
 
 kanawha_models:New-LittleRiver.p05 a rascat:RasPlan ;
     dcterms:title "JUN2016_HMS" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:New-LittleRiver_03170000_Stage_Jun2016,
+    rascat:hasCalibration kanawha_calibration:New-LittleRiver_03170000_Stage_Jun2016,
         kanawha_calibration:New-LittleRiver_03171000_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:New-LittleRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:New-LittleRiver.u05 .
@@ -2846,14 +2846,14 @@ lower channel Manning's n
 shifted baseflow
 restart file""" ;
     dcterms:title "NOV2003_HMS" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:New-LittleRiver_03170000_Stage_Nov2003,
+    rascat:hasCalibration kanawha_calibration:New-LittleRiver_03170000_Stage_Nov2003,
         kanawha_calibration:New-LittleRiver_03171000_Stage_Nov2003 ;
     rascat:hasGeometry kanawha_models:New-LittleRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:New-LittleRiver.u08 .
 
 kanawha_models:New-LittleRiver.p07 a rascat:RasPlan ;
     dcterms:title "JAN1996_HMS" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1996,
+    rascat:hasCalibration kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1996,
         kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:New-LittleRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:New-LittleRiver.u07 .
@@ -2865,7 +2865,7 @@ kanawha_models:New-LittleRiver.p17 a rascat:RasPlan ;
 
 kanawha_models:New-LittleRiver.p19 a rascat:RasPlan ;
     dcterms:title "JAN1995_HMS" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1995,
+    rascat:hasCalibration kanawha_calibration:New-LittleRiver_03170000_Stage_Jan1995,
         kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:New-LittleRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:New-LittleRiver.u10 .
@@ -2884,7 +2884,7 @@ kanawha_models:UpperKanawha.p01 a rascat:RasPlan ;
 Flow: June 2016 AORC gridded precipitation. Upstream inflow from USGS Kanawha Falls. Downstream time-stage translated to model outlet from USGS Charleston gage based on friction slope.
 Initial Conditions: Restart file from p.03""" ;
     dcterms:title "Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Jun2016,
+    rascat:hasCalibration kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Jun2016,
         kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Jun2016,
         kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Jun2016,
         kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Jun2016 ;
@@ -2896,7 +2896,7 @@ kanawha_models:UpperKanawha.p02 a rascat:RasPlan ;
 Flow: Nov 2003 AORC gridded precipitation. Upstream inflow from USGS Kanawha Falls. Downstream time-stage translated to model outlet from USGS Charleston gage based on friction slope.
 Initial Conditions: Restart file from p.04""" ;
     dcterms:title "Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Nov2003,
+    rascat:hasCalibration kanawha_calibration:UpperKanawha_USACE_London_LD_Pool_Stage_Nov2003,
         kanawha_calibration:UpperKanawha_USACE_London_LD_Tailwater_Stage_Nov2003,
         kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Pool_Stage_Nov2003,
         kanawha_calibration:UpperKanawha_USACE_Marmet_LD_Tailwater_Stage_Nov2003 ;
@@ -2936,7 +2936,7 @@ kanawha_models:UpperNew_Lower.p01 a rascat:RasPlan ;
 
 kanawha_models:UpperNew_Lower.p02 a rascat:RasPlan ;
     dcterms:title "Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:UpperNew_Lower.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Lower.u02 .
 
@@ -2945,20 +2945,20 @@ kanawha_models:UpperNew_Lower.p03 a rascat:RasPlan ;
 
 Start time had to change from 07FEB1996 1200 to 02FEB1996 0400 due to a gap in the Upper New - Galax gage record.""" ;
     dcterms:title "Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:UpperNew_Lower_03168000_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:UpperNew_Lower.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Lower.u03 .
 
 kanawha_models:UpperNew_Lower.p04 a rascat:RasPlan ;
     dcterms:title "Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Lower_03165500_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Lower_03165500_Flow_Nov2003,
         kanawha_calibration:UpperNew_Lower_03168000_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:UpperNew_Lower.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Lower.u04 .
 
 kanawha_models:UpperNew_Lower.p07 a rascat:RasPlan ;
     dcterms:title "Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Lower_03165500_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Lower_03165500_Flow_Jun2016,
         kanawha_calibration:UpperNew_Lower_03168000_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:UpperNew_Lower.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Lower.u05 .
@@ -2968,28 +2968,28 @@ kanawha_models:UpperNew_Upper.g01.terrain a rascat:Terrain ;
 
 kanawha_models:UpperNew_Upper.p01 a rascat:RasPlan ;
     dcterms:title "Jan1995" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1995,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1995,
         kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:UpperNew_Upper.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Upper.u01 .
 
 kanawha_models:UpperNew_Upper.p02 a rascat:RasPlan ;
     dcterms:title "Nov2003" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Upper_03161000_Flow_Nov2003,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Upper_03161000_Flow_Nov2003,
         kanawha_calibration:UpperNew_Upper_03164000_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:UpperNew_Upper.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Upper.u02 .
 
 kanawha_models:UpperNew_Upper.p03 a rascat:RasPlan ;
     dcterms:title "Jan1996" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1996,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Upper_03161000_Flow_Jan1996,
         kanawha_calibration:UpperNew_Upper_03164000_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:UpperNew_Upper.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Upper.u03 .
 
 kanawha_models:UpperNew_Upper.p04 a rascat:RasPlan ;
     dcterms:title "Jun2016" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:UpperNew_Upper_03161000_Flow_Jun2016,
+    rascat:hasCalibration kanawha_calibration:UpperNew_Upper_03161000_Flow_Jun2016,
         kanawha_calibration:UpperNew_Upper_03164000_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:UpperNew_Upper.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Upper.u04 .
@@ -3047,25 +3047,25 @@ kanawha_models:WatershedG3.p04 a rascat:RasPlan ;
 
 kanawha_models:WatershedG3.p05 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG3_03182500_Flow_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG3_03182500_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:WatershedG3.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG3.u01 .
 
 kanawha_models:WatershedG3.p06 a rascat:RasPlan ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG3_03182500_Flow_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG3_03182500_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:WatershedG3.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG3.u02 .
 
 kanawha_models:WatershedG3.p07 a rascat:RasPlan ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG3_03182500_Flow_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG3_03182500_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:WatershedG3.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG3.u03 .
 
 kanawha_models:WatershedG3.p08 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG3_03182500_Flow_Jun2016 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG3_03182500_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:WatershedG3.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG3.u04 .
 
@@ -3181,25 +3181,25 @@ kanawha_models:WatershedG9.p03 a rascat:RasPlan ;
 kanawha_models:WatershedG9.p04 a rascat:RasPlan ;
     dcterms:description "This plan is not utilized" ;
     dcterms:title "Jun-2016 Initial Conditions" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG9_03184000_Flow_Jun2016 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG9_03184000_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:WatershedG9.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG9.u04 .
 
 kanawha_models:WatershedG9.p05 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG9_03184000_Flow_Jan1995 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG9_03184000_Flow_Jan1995 ;
     rascat:hasGeometry kanawha_models:WatershedG9.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG9.u01 .
 
 kanawha_models:WatershedG9.p06 a rascat:RasPlan ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG9_03184000_Flow_Jan1996 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG9_03184000_Flow_Jan1996 ;
     rascat:hasGeometry kanawha_models:WatershedG9.g03 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG9.u02 .
 
 kanawha_models:WatershedG9.p07 a rascat:RasPlan ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasCalibrationHydrograph kanawha_calibration:WatershedG9_03184000_Flow_Nov2003 ;
+    rascat:hasCalibration kanawha_calibration:WatershedG9_03184000_Flow_Nov2003 ;
     rascat:hasGeometry kanawha_models:WatershedG9.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG9.u03 .
 
@@ -3213,84 +3213,87 @@ ffrd_orgs:Compass_JV a foaf:Organization ;
 
 ffrd_people:Andrew_Swynenberg a foaf:Person ;
     foaf:mbox "Andrew.Swynenberg@freese.com" ;
+    foaf:member ffrd_orgs:Freese ;
     foaf:name "Andrew Swynenberg" .
 
 ffrd_people:Britton_Wells a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "britton.wells@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Britton Wells" .
 
 ffrd_people:Courtney_Fournier a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "courtney.fournier@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Courtney Fournier" .
 
 ffrd_people:Dawit_Zeweldi a foaf:Person ;
     foaf:mbox "Dawit.Zeweldi@freese.com" ;
+    foaf:member ffrd_orgs:Freese ;
     foaf:name "Dawit Zeweldi" .
 
 ffrd_people:Elizabeth_Vande_Krol a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "elizabeth.vandekrol@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Elizabeth Vande Krol" .
 
 ffrd_people:John_Capobianco a foaf:Person ;
-    foaf:Organization ffrd_orgs:Baker ;
     foaf:mbox "John.Capobianco@mbakerintl.com" ;
+    foaf:member ffrd_orgs:Baker ;
     foaf:name "John Capobianco" .
 
 ffrd_people:Jon_Bartlotti a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "jonathan.bartlotti@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Jon Bartlotti" .
 
 ffrd_people:KC_Robinson a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "kc.robinson@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "KC Robinson" .
 
 ffrd_people:Kevan_Lee_Lum a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "kevan.leelum@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Kevan Lee Lum" .
 
 ffrd_people:Masoud_Meshkat a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "masoud.meshkat@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Masoud Meshkat" .
 
 ffrd_people:Matt_Lewis a foaf:Person ;
     foaf:mbox "Matt.Lewis@freese.com" ;
+    foaf:member ffrd_orgs:Freese ;
     foaf:name "Matt Lewis" .
 
 ffrd_people:Michelle_Terry a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "michelle.terry@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Michelle Terry" .
 
 ffrd_people:Pete_Williams a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "pete.williams@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Pete Williams" .
 
 ffrd_people:Ryan_Phol a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "ryan.pohl@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Ryan Phol" .
 
 ffrd_people:Ryan_Pohl a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "ryan.pohl@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Ryan Pohl" .
 
 ffrd_people:Sirui_Wen a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "sirui.wen@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Sirui Wen" .
 
 ffrd_people:Yacoub_Raheem a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "yacoub.raheem@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Yacoub Raheem" .
 
 usgs_gages:03177120 a rascat:Streamgage ;
@@ -4215,23 +4218,23 @@ kanawha_models:WatershedG9.g03 a rascat:RasGeometry ;
     rascat:hasTerrain kanawha_models:WatershedG9.g03.terrain .
 
 ffrd_people:Daniyal_Siddiqui a foaf:Person ;
-    foaf:Organization ffrd_orgs:Baker ;
     foaf:mbox "daniyal.siddiqui@mbakerintl.com" ;
+    foaf:member ffrd_orgs:Baker ;
     foaf:name "Daniyal Siddiqui" .
 
 ffrd_people:Jonathan_Bartlotti a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "jonathan.bartlotti@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Jonathan Bartlotti" .
 
 ffrd_people:Julianna_Villa a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "julianna.villa@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Julianna Villa" .
 
 ffrd_people:Reuben_Cozmyer a foaf:Person ;
-    foaf:Organization ffrd_orgs:AECOM ;
     foaf:mbox "reuben.cozmyer@aecom.com" ;
+    foaf:member ffrd_orgs:AECOM ;
     foaf:name "Reuben Cozmyer" .
 
 usgs_gages:03165500 a rascat:Streamgage ;
@@ -4545,14 +4548,19 @@ kanawha_models:WatershedG9.u04 a rascat:RasUnsteadyFlow ;
             rascat:spatiallyVaried true ;
             rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] .
 
+ffrd_orgs:Freese a foaf:Organization ;
+    foaf:homepage <https://www.freese.com/> ;
+    foaf:member ffrd_orgs:ARC_JV ;
+    foaf:name "Freese and Nichols" .
+
 ffrd_people:Dami_George a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "dami.george@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Dami George" .
 
 ffrd_people:Mark_McBroom a foaf:Person ;
-    foaf:Organization ffrd_orgs:Baker ;
     foaf:mbox "mmcbroom@mbakerintl.com" ;
+    foaf:member ffrd_orgs:Baker ;
     foaf:name "Mark McBroom" .
 
 usgs_gages:03177710 a rascat:Streamgage ;
@@ -4689,12 +4697,9 @@ kanawha_models:WatershedG3.g02 a rascat:RasGeometry ;
             rascat:hasLanduseLandcover kanawha_misc:wsp_landuse ] ;
     rascat:hasTerrain kanawha_models:WatershedG3.g02.terrain .
 
-ffrd_orgs:ARC_JV a foaf:Organization ;
-    foaf:name "ARC JV" .
-
 ffrd_orgs:Baker a foaf:Organization ;
-    foaf:Organization ffrd_orgs:ARC_JV ;
     foaf:homepage <https://mbakerintl.com/> ;
+    foaf:member ffrd_orgs:ARC_JV ;
     foaf:name "Michael Baker Intl" .
 
 usgs_gages:03161000 a rascat:Streamgage ;
@@ -4922,6 +4927,9 @@ kanawha_models:UpperNew_Upper.g01 a rascat:RasGeometry ;
             rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ] ;
     rascat:hasTerrain kanawha_models:UpperNew_Upper.g01.terrain .
 
+ffrd_orgs:ARC_JV a foaf:Organization ;
+    foaf:name "ARC JV" .
+
 usgs_gages:03196800 a rascat:Streamgage ;
     dcterms:identifier "03196800" ;
     dcterms:publisher "USGS" ;
@@ -5067,23 +5075,23 @@ usgs_gages:03192000 a rascat:Streamgage ;
     dcterms:title "Summersville Lake" .
 
 ffrd_orgs:AECOM a foaf:Organization ;
-    foaf:Organization ffrd_orgs:Compass_JV ;
     foaf:homepage <https://www.aecom.com/> ;
+    foaf:member ffrd_orgs:Compass_JV ;
     foaf:name "AECOM" .
 
 ffrd_people:Ben_Rufenacht a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "ben.rufenacht@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Ben Rufenacht" .
 
 ffrd_people:Josh_Hill a foaf:Person ;
-    foaf:Organization ffrd_orgs:WSP ;
     foaf:mbox "josh.hill@wsp.com" ;
+    foaf:member ffrd_orgs:WSP ;
     foaf:name "Josh Hill" .
 
 ffrd_orgs:WSP a foaf:Organization ;
-    foaf:Organization ffrd_orgs:ARC_JV ;
     foaf:homepage <https://www.wsp.com/> ;
+    foaf:member ffrd_orgs:ARC_JV ;
     foaf:name "WSP, Inc." .
 
 usgs_gages:03187500 a rascat:Streamgage ;

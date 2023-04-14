@@ -60,7 +60,7 @@ class Organization:
             g.add((organization, FOAF.homepage, URIRef(self.homepage)))
         if self.organization is not None:
             parent = self.organization.add(g)
-            g.add((organization, FOAF.Organization, parent))
+            g.add((organization, FOAF.member, parent))
         return organization
 
 ARC = Organization('ARC JV')
@@ -69,12 +69,12 @@ BAKER = Organization('Michael Baker Intl', homepage='https://mbakerintl.com/', o
 COMPASS = Organization('Compass JV')
 AECOM = Organization('AECOM', homepage='https://www.aecom.com/', organization=COMPASS)
 FREESE = Organization('Freese and Nichols', homepage='https://www.freese.com/', organization=ARC, clean_name='Freese')
-
 ORGS = {
     'wsp': WSP,
     'arc': ARC,
     'baker': BAKER,
     'aecom': AECOM,
+    'freese': FREESE,
 }
 for v in ORGS.values():
     v.add(g)
@@ -95,7 +95,7 @@ class Person:
         g.add((person, FOAF.mbox, Literal(self.email)))
         if self.organization is not None:
             organization = self.organization.add(g)
-            g.add((person, FOAF.Organization, organization))
+            g.add((person, FOAF.member, organization))
         return person
 
 
@@ -287,7 +287,7 @@ class HydrographType(Enum):
 
 
 @dataclass
-class Hydrograph(Hydrodata):
+class Calibration(Hydrodata):
     from_streamgage: Streamgage
     hydrograph_type: HydrographType = HydrographType.FLOW
     nse: Optional[float] = None
@@ -306,30 +306,30 @@ class Hydrograph(Hydrodata):
 
     def add(self, g: Graph, model_prefix: str = ''):
         if self.uri is not None:
-            hydrograph = URIRef(self.uri)
+            calibration = URIRef(self.uri)
         else:
             if self.clean_name is None:
-                hydrograph = kanawha_calibration[clean_name(self.get_title(model_prefix))]
+                calibration = kanawha_calibration[clean_name(self.get_title(model_prefix))]
             else:
-                hydrograph =  kanawha_calibration[self.clean_name]
-        g.add((hydrograph, RDF.type, RASCAT.Hydrograph))
-        g.add((hydrograph, RASCAT.hydrographType, Literal(self.hydrograph_type.value)))
-        super().add_hydrodata_terms(g, hydrograph)
+                calibration =  kanawha_calibration[self.clean_name]
+        g.add((calibration, RDF.type, RASCAT.Calibration))
+        g.add((calibration, RASCAT.hydrographType, Literal(self.hydrograph_type.value)))
+        super().add_hydrodata_terms(g, calibration)
         if self.from_streamgage:
-            g.add((hydrograph, RASCAT.fromStreamgage, self.from_streamgage.uri_ref()))
+            g.add((calibration, RASCAT.fromStreamgage, self.from_streamgage.uri_ref()))
         if self.nse:
-            g.add((hydrograph, RASCAT.nse, Literal(self.nse, datatype=XSD.double)))
+            g.add((calibration, RASCAT.nse, Literal(self.nse, datatype=XSD.double)))
         if self.pbias:
-            g.add((hydrograph, RASCAT.pbias, Literal(self.pbias, datatype=XSD.double)))
+            g.add((calibration, RASCAT.pbias, Literal(self.pbias, datatype=XSD.double)))
         if self.rsr:
-            g.add((hydrograph, RASCAT.rsr, Literal(self.rsr, datatype=XSD.double)))
+            g.add((calibration, RASCAT.rsr, Literal(self.rsr, datatype=XSD.double)))
         if self.r2:
-            g.add((hydrograph, RASCAT.r2, Literal(self.r2, datatype=XSD.double)))
+            g.add((calibration, RASCAT.r2, Literal(self.r2, datatype=XSD.double)))
         if self.from_hydroevent:
             hydroevent = self.from_hydroevent.add(g)
-            g.add((hydrograph, RASCAT.fromHydroEvent, hydroevent))
-        super().add_dcat_terms(g, hydrograph)
-        return hydrograph
+            g.add((calibration, RASCAT.fromHydroEvent, hydroevent))
+        super().add_dcat_terms(g, calibration)
+        return calibration
 
 
 @dataclass
@@ -478,7 +478,7 @@ class RasGeometry(DcatDataset):
 class RasUnsteadyFlow(DcatDataset):
     ext: str
     hyetograph: Optional[Hyetograph] = None
-    calibration_hydrographs: Optional[List[Hydrograph]] = None
+    # calibration_hydrographs: Optional[List[Hydrograph]] = None
 
 
 @dataclass
@@ -486,7 +486,7 @@ class RasPlan(DcatDataset):
     ext: str
     geometry: RasGeometry
     flow: RasUnsteadyFlow
-    calibration_hydrographs: Optional[List[Hydrograph]] = None
+    calibrations: Optional[List[Calibration]] = None
 
 
 class RasStatus(Enum):
@@ -578,10 +578,10 @@ class RasModel(DcatDataset):
                 hyeto_bnode = flow.hyetograph.add_bnode(g)
                 g.add((flow_uri, RASCAT.hasHyetograph, hyeto_bnode))
 
-            if flow.calibration_hydrographs:
-                for hydrograph in flow.calibration_hydrographs:
-                    hyd_bnode = hydrograph.add_bnode(g)
-                    g.add((flow_uri, RASCAT.hasCalibrationHydrograph, hyd_bnode))
+            # if flow.calibration_hydrographs:
+            #     for hydrograph in flow.calibration_hydrographs:
+            #         hyd_bnode = hydrograph.add_bnode(g)
+            #         g.add((flow_uri, RASCAT.hasCalibrationHydrograph, hyd_bnode))
 
         for plan in self.plans:
             plan_uri = self.rasfile_uri(plan.ext, base_uri)
@@ -589,10 +589,11 @@ class RasModel(DcatDataset):
             g.add((plan_uri, RDF.type, RASCAT.RasPlan))
             g.add((plan_uri, RASCAT.hasGeometry, self.rasfile_uri(plan.geometry.ext, base_uri)))
             g.add((plan_uri, RASCAT.hasUnsteadyFlow, self.rasfile_uri(plan.flow.ext, base_uri)))
-            if plan.calibration_hydrographs:
-                for hydrograph in plan.calibration_hydrographs:
-                    hyd = hydrograph.add(g, model_prefix=os.path.splitext(self.filename)[0])
-                    g.add((plan_uri, RASCAT.hasCalibrationHydrograph, hyd))
+            if plan.calibrations:
+                for calibration in plan.calibrations:
+                    calib = calibration.add(g, model_prefix=os.path.splitext(self.filename)[0])
+                    print(calib)
+                    g.add((plan_uri, RASCAT.hasCalibration, calib))
             plan.add_dcat_terms(g, plan_uri)
 
 with open('./streamgages.yml', 'r') as streamgages_yml:
@@ -694,29 +695,29 @@ for model in kanawha_data:
                 from_hydroevent=hydroevent,
             )
 
-        calibration_hydrographs = []
-        for hydrograph in f.get('hydrographs', []):
-            hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
-            hyd = Hydrograph(
-                title=hydrograph.get('title'),
-                description=hydrograph.get('description'),
-                start_datetime=hydrograph.get('start_datetime'),
-                end_datetime=hydrograph.get('end_datetime'),
-                from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
-                hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
-                nse=hydrograph.get('nse'),
-                rsr=hydrograph.get('rsr'),
-                pbias=hydrograph.get('pbias'),
-                r2=hydrograph.get('r2'),
-                from_hydroevent=hydroevent,
-            )
-            calibration_hydrographs.append(hyd)
+        # calibration_hydrographs = []
+        # for hydrograph in f.get('hydrographs', []):
+        #     hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
+        #     hyd = Hydrograph(
+        #         title=hydrograph.get('title'),
+        #         description=hydrograph.get('description'),
+        #         start_datetime=hydrograph.get('start_datetime'),
+        #         end_datetime=hydrograph.get('end_datetime'),
+        #         from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
+        #         hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
+        #         nse=hydrograph.get('nse'),
+        #         rsr=hydrograph.get('rsr'),
+        #         pbias=hydrograph.get('pbias'),
+        #         r2=hydrograph.get('r2'),
+        #         from_hydroevent=hydroevent,
+        #     )
+        #     calibration_hydrographs.append(hyd)
 
         flow = RasUnsteadyFlow(
             ext=get_ext(flowfile),
             title=f.get('title'),
             hyetograph=hyetograph,
-            calibration_hydrographs=calibration_hydrographs,
+            # calibration_hydrographs=calibration_hydrographs,
         )
         flows[flowfile] = flow
 
@@ -824,11 +825,11 @@ for model in kanawha_data:
 
     plans = {}
     for planfile, p in model['plans'].items():
-        calibration_hydrographs = []
+        calibrations = []
         for hydrograph in p.get('hydrographs', []):
             # print(hydrograph)
             hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
-            hyd = Hydrograph(
+            calib = Calibration(
                 title=hydrograph.get('title'),
                 description=hydrograph.get('description'),
                 start_datetime=hydrograph.get('start_datetime'),
@@ -841,14 +842,14 @@ for model in kanawha_data:
                 r2=hydrograph.get('r2'),
                 from_hydroevent=hydroevent,
             )
-            calibration_hydrographs.append(hyd)
+            calibrations.append(calib)
         plan = RasPlan(
             ext=get_ext(planfile),
             title=p.get('title'),
             description=p.get('description'),
             geometry=geometries[replace_ext(model_prj, p.get('geom'))],
             flow=flows[replace_ext(model_prj, p.get('flow'))],
-            calibration_hydrographs=calibration_hydrographs,
+            calibrations=calibrations,
         )
         plans[planfile] = plan
 

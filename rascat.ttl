@@ -307,14 +307,26 @@
         rdfs:domain :RasFlow ;
         rdfs:range :Hydrograph .
 
-:hasCalibrationHydrograph a owl:ObjectProperty ;
-        rdfs:comment "The hydrograph used as calibration data for a HEC-RAS model."@en ;
+
+### http://www.example.org/rascat#Calibration
+:Calibration a owl:Class ;
+        rdfs:comment "Class representing the calibration of a HEC-RAS model (i.e., Plan)."@en ;
+        rdfs:subClassOf :Hydrodata ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasCalibration a owl:ObjectProperty ;
+        rdfs:comment "Calibration associated with a HEC-RAS Plan."@en ;
         rdfs:domain :RasPlan ;
+        rdfs:range :Hydrograph .
+
+:hasObservedHydrograph a owl:ObjectProperty ;
+        rdfs:comment "The observed hydrograph used to calibrate a HEC-RAS model."@en ;
+        rdfs:domain :Calibration ;
         rdfs:range :Hydrograph .
 
 :calibrationMetric a owl:ObjectProperty ;
         rdfs:comment "A metric used to evaluate the calibration of a HEC-RAS model."@en ;
-        rdfs:domain :Hydrograph ;
+        rdfs:domain :Calibration ;
         rdfs:range xsd:double .
 
 :nse a owl:ObjectProperty ;
@@ -332,6 +344,7 @@
 :r2 a owl:ObjectProperty ;
         rdfs:subClassOf :calibrationMetric ;
         rdfs:comment "Coefficient of Determination"@en .
+
 
 ### http://www.example.org/rascat#Hyetograph
 :Hyetograph a owl:Class ;
