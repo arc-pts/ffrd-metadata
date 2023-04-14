@@ -596,299 +596,305 @@ class RasModel(DcatDataset):
                     g.add((plan_uri, RASCAT.hasCalibration, calib))
             plan.add_dcat_terms(g, plan_uri)
 
-with open('./streamgages.yml', 'r') as streamgages_yml:
-    streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
 
-GAGES = {}
-for streamgage in streamgages:
-    gage = Streamgage(
-        name=streamgage.get('title'),
-        id=streamgage.get('identifier'),
-        owner=streamgage.get('owner', 'USGS'),
-        uri=streamgage.get('link'),
-    )
-    GAGES[streamgage['identifier']] = gage
-    # print(gage)
-    gage.to_rdf(g)
+def main():
+    with open('./streamgages.yml', 'r') as streamgages_yml:
+        streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
 
-kanawha_data: List[dict] = []
-kanawha_yamls = os.listdir('./kanawha-yaml')
-for kanawha_yaml in kanawha_yamls:
-    with open(os.path.join('./kanawha-yaml', kanawha_yaml), 'r') as yml:
-        kanawha_data.append(yaml.load(yml, Loader=yaml.FullLoader))
-
-proj_albers = Projection(
-    'mmc_albers_ft.prj',
-    title='Albers Equal Area Conic (feet)',
-    description='Modified version of ESRI:102309, provided by USACE. Units are in feet, whereas EPSG:102309 is in meters.',
-)
-
-kanawha_dem = DEM(
-    URIRef('https://femahq.s3.amazonaws.com/kanawha/tiles/1m'),
-    title='Kanawha River Basin DEM',
-    description='Digital Elevation Model for the Kanawha River Basin, based on USGS 3DEP data.',
-)
-g.add((kanawha_dem.uri, RDF.type, RASCAT.DEM))
-kanawha_dem.add_dcat_terms(g, kanawha_dem.uri)
-
-nlcd = LanduseLandcover(
-    URIRef('https://www.mrlc.gov/data/nlcd-2019-land-cover-conus'),
-    title='NLCD 2019',
-    description='National Land Cover Database 2019 (CONUS)',
-)
-g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
-nlcd.add_dcat_terms(g, nlcd.uri)
-
-wsp_landuse = LanduseLandcover(
-    URIRef('wsp_landuse', kanawha_misc),
-    title="WSP (ARC) ML-based land use",
-    description="Custom machine learning land cover analysis of NAIP 2022 imagery",
-    creators=[ARC, WSP]
-)
-g.add((wsp_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
-wsp_landuse.add_dcat_terms(g, wsp_landuse.uri)
-
-baker_landuse = LanduseLandcover(
-    URIRef('baker_landuse', kanawha_misc),
-    title="Baker (ARC) ML-based land use",
-    description="National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022",
-    creators=[ARC, BAKER]
-)
-g.add((baker_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
-baker_landuse.add_dcat_terms(g, baker_landuse.uri)
-
-LANDUSE = {
-    'nlcd': nlcd,
-    'wsp_landuse': wsp_landuse,
-    'baker_landuse': baker_landuse,
-}
-
-ssurgo = Soils(
-    URIRef('https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo'),
-    title='SSURGO',
-    description='USDA / NRCS Soil Survey Geographic Database (SSURGO)',
-)
-g.add((ssurgo.uri, RDF.type, RASCAT.Soils))
-ssurgo.add_dcat_terms(g, ssurgo.uri)
-
-wv_clearinghouse = Structures(
-    URIRef('http://data.wvgis.wvu.edu/pub/Clearinghouse/hazards/WV_HEC_RAS_Model/'),
-    title='WV State GIS Data Clearinghouse - HEC-RAS Models',
-    description='Structures pulled from existing 1D HEC-RAS models where available.',
-)
-g.add((wv_clearinghouse.uri, RDF.type, RASCAT.Structures))
-wv_clearinghouse.add_dcat_terms(g, wv_clearinghouse.uri)
-
-for model in kanawha_data:
-    model_prj = model['model']
-
-    flows = {}
-    for flowfile, f in model['flows'].items():
-        hyetograph = f.get('hyetograph')
-        if hyetograph is not None:
-            hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
-            hyetograph = Hyetograph(
-                start_datetime=hyetograph.get('start_datetime'),
-                end_datetime=hyetograph.get('end_datetime'),
-                description=hyetograph.get('description'),
-                spatially_varied=hyetograph.get('spatially_varied', True),
-                from_hydroevent=hydroevent,
-            )
-
-        # calibration_hydrographs = []
-        # for hydrograph in f.get('hydrographs', []):
-        #     hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
-        #     hyd = Hydrograph(
-        #         title=hydrograph.get('title'),
-        #         description=hydrograph.get('description'),
-        #         start_datetime=hydrograph.get('start_datetime'),
-        #         end_datetime=hydrograph.get('end_datetime'),
-        #         from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
-        #         hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
-        #         nse=hydrograph.get('nse'),
-        #         rsr=hydrograph.get('rsr'),
-        #         pbias=hydrograph.get('pbias'),
-        #         r2=hydrograph.get('r2'),
-        #         from_hydroevent=hydroevent,
-        #     )
-        #     calibration_hydrographs.append(hyd)
-
-        flow = RasUnsteadyFlow(
-            ext=get_ext(flowfile),
-            title=f.get('title'),
-            hyetograph=hyetograph,
-            # calibration_hydrographs=calibration_hydrographs,
+    GAGES = {}
+    for streamgage in streamgages:
+        gage = Streamgage(
+            name=streamgage.get('title'),
+            id=streamgage.get('identifier'),
+            owner=streamgage.get('owner', 'USGS'),
+            uri=streamgage.get('link'),
         )
-        flows[flowfile] = flow
+        GAGES[streamgage['identifier']] = gage
+        # print(gage)
+        gage.to_rdf(g)
 
-    geometries = {}
-    for geomfile, geom in model['geometries'].items():
-        mesh2d = geom.get('mesh2d')
-        if mesh2d is not None:
-            mesh2d = Mesh2D(
-                nominal_cell_size=mesh2d.get('nominal_cell_size'),
-                breaklines_min_cell_size=mesh2d.get('breaklines_min_cell_size'),
-                breaklines_max_cell_size=mesh2d.get('breaklines_max_cell_size'),
-                refinement_regions_min_cell_size=mesh2d.get('refinement_regions_min_cell_size'),
-                refinement_regions_max_cell_size=mesh2d.get('refinement_regions_max_cell_size'),
-                cell_count=mesh2d.get('cell_count'),
+    kanawha_data: List[dict] = []
+    kanawha_yamls = os.listdir('./kanawha-yaml')
+    for kanawha_yaml in kanawha_yamls:
+        with open(os.path.join('./kanawha-yaml', kanawha_yaml), 'r') as yml:
+            kanawha_data.append(yaml.load(yml, Loader=yaml.FullLoader))
+
+    proj_albers = Projection(
+        'mmc_albers_ft.prj',
+        title='Albers Equal Area Conic (feet)',
+        description='Modified version of ESRI:102309, provided by USACE. Units are in feet, whereas EPSG:102309 is in meters.',
+    )
+
+    kanawha_dem = DEM(
+        URIRef('https://femahq.s3.amazonaws.com/kanawha/tiles/1m'),
+        title='Kanawha River Basin DEM',
+        description='Digital Elevation Model for the Kanawha River Basin, based on USGS 3DEP data.',
+    )
+    g.add((kanawha_dem.uri, RDF.type, RASCAT.DEM))
+    kanawha_dem.add_dcat_terms(g, kanawha_dem.uri)
+
+    nlcd = LanduseLandcover(
+        URIRef('https://www.mrlc.gov/data/nlcd-2019-land-cover-conus'),
+        title='NLCD 2019',
+        description='National Land Cover Database 2019 (CONUS)',
+    )
+    g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
+    nlcd.add_dcat_terms(g, nlcd.uri)
+
+    wsp_landuse = LanduseLandcover(
+        URIRef('wsp_landuse', kanawha_misc),
+        title="WSP (ARC) ML-based land use",
+        description="Custom machine learning land cover analysis of NAIP 2022 imagery",
+        creators=[ARC, WSP]
+    )
+    g.add((wsp_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
+    wsp_landuse.add_dcat_terms(g, wsp_landuse.uri)
+
+    baker_landuse = LanduseLandcover(
+        URIRef('baker_landuse', kanawha_misc),
+        title="Baker (ARC) ML-based land use",
+        description="National Agriculture Imagery Program (NAIP) imagery processed using machine learning tools. Pulled August 2022",
+        creators=[ARC, BAKER]
+    )
+    g.add((baker_landuse.uri, RDF.type, RASCAT.LanduseLandcover))
+    baker_landuse.add_dcat_terms(g, baker_landuse.uri)
+
+    LANDUSE = {
+        'nlcd': nlcd,
+        'wsp_landuse': wsp_landuse,
+        'baker_landuse': baker_landuse,
+    }
+
+    ssurgo = Soils(
+        URIRef('https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo'),
+        title='SSURGO',
+        description='USDA / NRCS Soil Survey Geographic Database (SSURGO)',
+    )
+    g.add((ssurgo.uri, RDF.type, RASCAT.Soils))
+    ssurgo.add_dcat_terms(g, ssurgo.uri)
+
+    wv_clearinghouse = Structures(
+        URIRef('http://data.wvgis.wvu.edu/pub/Clearinghouse/hazards/WV_HEC_RAS_Model/'),
+        title='WV State GIS Data Clearinghouse - HEC-RAS Models',
+        description='Structures pulled from existing 1D HEC-RAS models where available.',
+    )
+    g.add((wv_clearinghouse.uri, RDF.type, RASCAT.Structures))
+    wv_clearinghouse.add_dcat_terms(g, wv_clearinghouse.uri)
+
+    for model in kanawha_data:
+        model_prj = model['model']
+
+        flows = {}
+        for flowfile, f in model['flows'].items():
+            hyetograph = f.get('hyetograph')
+            if hyetograph is not None:
+                hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
+                hyetograph = Hyetograph(
+                    start_datetime=hyetograph.get('start_datetime'),
+                    end_datetime=hyetograph.get('end_datetime'),
+                    description=hyetograph.get('description'),
+                    spatially_varied=hyetograph.get('spatially_varied', True),
+                    from_hydroevent=hydroevent,
+                )
+
+            # calibration_hydrographs = []
+            # for hydrograph in f.get('hydrographs', []):
+            #     hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
+            #     hyd = Hydrograph(
+            #         title=hydrograph.get('title'),
+            #         description=hydrograph.get('description'),
+            #         start_datetime=hydrograph.get('start_datetime'),
+            #         end_datetime=hydrograph.get('end_datetime'),
+            #         from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
+            #         hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
+            #         nse=hydrograph.get('nse'),
+            #         rsr=hydrograph.get('rsr'),
+            #         pbias=hydrograph.get('pbias'),
+            #         r2=hydrograph.get('r2'),
+            #         from_hydroevent=hydroevent,
+            #     )
+            #     calibration_hydrographs.append(hyd)
+
+            flow = RasUnsteadyFlow(
+                ext=get_ext(flowfile),
+                title=f.get('title'),
+                hyetograph=hyetograph,
+                # calibration_hydrographs=calibration_hydrographs,
             )
+            flows[flowfile] = flow
 
-        terrain = geom.get('terrain')
-        if terrain is not None:
-            bathymetry = terrain.get('bathymetry')
-            if bathymetry is not None:
-                bathymetry = Bathymetry(
-                    title=bathymetry.get('title'),
-                    description=bathymetry.get('description'),
-                    uri=bathymetry.get('uri'),
+        geometries = {}
+        for geomfile, geom in model['geometries'].items():
+            mesh2d = geom.get('mesh2d')
+            if mesh2d is not None:
+                mesh2d = Mesh2D(
+                    nominal_cell_size=mesh2d.get('nominal_cell_size'),
+                    breaklines_min_cell_size=mesh2d.get('breaklines_min_cell_size'),
+                    breaklines_max_cell_size=mesh2d.get('breaklines_max_cell_size'),
+                    refinement_regions_min_cell_size=mesh2d.get('refinement_regions_min_cell_size'),
+                    refinement_regions_max_cell_size=mesh2d.get('refinement_regions_max_cell_size'),
+                    cell_count=mesh2d.get('cell_count'),
                 )
-            modifications = terrain.get('modifications')
-            if modifications is not None:
-                modifications = TerrainModifications(
-                    title=modifications.get('title'),
-                    description=modifications.get('description'),
-                    uri=modifications.get('uri'),
-                )
-            terrain = Terrain(dem=kanawha_dem, bathymetry=bathymetry, modifications=modifications)
-        else:
-            terrain = Terrain(dem=kanawha_dem)
 
-        roughness = geom.get('roughness')
-        if roughness is not None:
-            landuse = roughness.get('landuse')
-            if type(landuse) is str:
-                landuse = LANDUSE[landuse]
-            elif landuse is not None:
-                landuse = LanduseLandcover(
-                    title=landuse.get('title'),
-                    description=landuse.get('description'),
-                    uri=landuse.get('uri'),
-                )
-            roughness = Roughness(
-                title=roughness.get('title'),
-                description=roughness.get('description'),
-                uri=roughness.get('uri'),
-                landuse=landuse,
-            )
-
-        precip_losses = geom.get('precip_losses')
-        if precip_losses is not None:
-            landuse = precip_losses.get('landuse')
-            if type(landuse) is str:
-                landuse = LANDUSE[landuse]
-            elif landuse is not None:
-                landuse = LanduseLandcover(
-                    title=landuse.get('title'),
-                    description=landuse.get('description'),
-                    uri=landuse.get('uri'),
-                )
-            soils = precip_losses.get('soils')
-            if soils == 'ssurgo':
-                soils = ssurgo
-            elif soils is not None:
-                soils = Soils(
-                    title=soils.get('title'),
-                    description=soils.get('description'),
-                    uri=soils.get('uri'),
-                )
-            precip_losses = PrecipLosses(
-                title=precip_losses.get('title'),
-                description=precip_losses.get('description'),
-                landuse=landuse,
-                soils=soils,
-            )
-
-        structures = geom.get('structures')
-        if structures is not None:
-            if structures == 'wv_clearinghouse':
-                structures = wv_clearinghouse
+            terrain = geom.get('terrain')
+            if terrain is not None:
+                bathymetry = terrain.get('bathymetry')
+                if bathymetry is not None:
+                    bathymetry = Bathymetry(
+                        title=bathymetry.get('title'),
+                        description=bathymetry.get('description'),
+                        uri=bathymetry.get('uri'),
+                    )
+                modifications = terrain.get('modifications')
+                if modifications is not None:
+                    modifications = TerrainModifications(
+                        title=modifications.get('title'),
+                        description=modifications.get('description'),
+                        uri=modifications.get('uri'),
+                    )
+                terrain = Terrain(dem=kanawha_dem, bathymetry=bathymetry, modifications=modifications)
             else:
-                structures = Structures(
-                    title=structures.get('title'),
-                    description=structures.get('description'),
-                    uri=structures.get('uri'),
-                    relation=structures.get('relation'),
+                terrain = Terrain(dem=kanawha_dem)
+
+            roughness = geom.get('roughness')
+            if roughness is not None:
+                landuse = roughness.get('landuse')
+                if type(landuse) is str:
+                    landuse = LANDUSE[landuse]
+                elif landuse is not None:
+                    landuse = LanduseLandcover(
+                        title=landuse.get('title'),
+                        description=landuse.get('description'),
+                        uri=landuse.get('uri'),
+                    )
+                roughness = Roughness(
+                    title=roughness.get('title'),
+                    description=roughness.get('description'),
+                    uri=roughness.get('uri'),
+                    landuse=landuse,
                 )
 
-        geometry = RasGeometry(
-            ext=get_ext(geomfile),
-            title=geom.get('title'),
-            description=geom.get('description'),
-            mesh2d=mesh2d,
-            terrain=terrain,
-            roughness=roughness,
-            precip_losses=precip_losses,
-            structures=structures,
-        )
-        geometries[geomfile] = geometry
+            precip_losses = geom.get('precip_losses')
+            if precip_losses is not None:
+                landuse = precip_losses.get('landuse')
+                if type(landuse) is str:
+                    landuse = LANDUSE[landuse]
+                elif landuse is not None:
+                    landuse = LanduseLandcover(
+                        title=landuse.get('title'),
+                        description=landuse.get('description'),
+                        uri=landuse.get('uri'),
+                    )
+                soils = precip_losses.get('soils')
+                if soils == 'ssurgo':
+                    soils = ssurgo
+                elif soils is not None:
+                    soils = Soils(
+                        title=soils.get('title'),
+                        description=soils.get('description'),
+                        uri=soils.get('uri'),
+                    )
+                precip_losses = PrecipLosses(
+                    title=precip_losses.get('title'),
+                    description=precip_losses.get('description'),
+                    landuse=landuse,
+                    soils=soils,
+                )
 
-    plans = {}
-    for planfile, p in model['plans'].items():
-        calibrations = []
-        for hydrograph in p.get('hydrographs', []):
-            # print(hydrograph)
-            hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
-            calib = Calibration(
-                title=hydrograph.get('title'),
-                description=hydrograph.get('description'),
-                start_datetime=hydrograph.get('start_datetime'),
-                end_datetime=hydrograph.get('end_datetime'),
-                from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
-                hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
-                nse=hydrograph.get('nse'),
-                rsr=hydrograph.get('rsr'),
-                pbias=hydrograph.get('pbias'),
-                r2=hydrograph.get('r2'),
-                from_hydroevent=hydroevent,
+            structures = geom.get('structures')
+            if structures is not None:
+                if structures == 'wv_clearinghouse':
+                    structures = wv_clearinghouse
+                else:
+                    structures = Structures(
+                        title=structures.get('title'),
+                        description=structures.get('description'),
+                        uri=structures.get('uri'),
+                        relation=structures.get('relation'),
+                    )
+
+            geometry = RasGeometry(
+                ext=get_ext(geomfile),
+                title=geom.get('title'),
+                description=geom.get('description'),
+                mesh2d=mesh2d,
+                terrain=terrain,
+                roughness=roughness,
+                precip_losses=precip_losses,
+                structures=structures,
             )
-            calibrations.append(calib)
-        plan = RasPlan(
-            ext=get_ext(planfile),
-            title=p.get('title'),
-            description=p.get('description'),
-            geometry=geometries[replace_ext(model_prj, p.get('geom'))],
-            flow=flows[replace_ext(model_prj, p.get('flow'))],
-            calibrations=calibrations,
+            geometries[geomfile] = geometry
+
+        plans = {}
+        for planfile, p in model['plans'].items():
+            calibrations = []
+            for hydrograph in p.get('hydrographs', []):
+                # print(hydrograph)
+                hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
+                calib = Calibration(
+                    title=hydrograph.get('title'),
+                    description=hydrograph.get('description'),
+                    start_datetime=hydrograph.get('start_datetime'),
+                    end_datetime=hydrograph.get('end_datetime'),
+                    from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
+                    hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
+                    nse=hydrograph.get('nse'),
+                    rsr=hydrograph.get('rsr'),
+                    pbias=hydrograph.get('pbias'),
+                    r2=hydrograph.get('r2'),
+                    from_hydroevent=hydroevent,
+                )
+                calibrations.append(calib)
+            plan = RasPlan(
+                ext=get_ext(planfile),
+                title=p.get('title'),
+                description=p.get('description'),
+                geometry=geometries[replace_ext(model_prj, p.get('geom'))],
+                flow=flows[replace_ext(model_prj, p.get('flow'))],
+                calibrations=calibrations,
+            )
+            plans[planfile] = plan
+
+        creators = []
+        for person in model.get('creators', []):
+            org = ORGS.get(person.get('org', '').lower())
+            person = Person(
+                name=person.get('name'),
+                email=person.get('email'),
+                organization=org,
+            )
+            person.add(g)
+            creators.append(person)
+
+        ras_version = model.get('ras_version', '6.3.1')
+
+        ras_model = RasModel(
+            filename=model.get('model'),
+            title=model.get('title'),
+            description=model.get('description'),
+            ras_version=ras_version,
+            status=RasStatus.FINAL,
+            geometries=geometries.values(),
+            flows=flows.values(),
+            plans=plans.values(),
+            creators=creators,
+            modified=model.get('modified'),
+            projection=proj_albers,
+            vertical_datum='NAVD88',
         )
-        plans[planfile] = plan
-
-    creators = []
-    for person in model.get('creators', []):
-        org = ORGS.get(person.get('org', '').lower())
-        person = Person(
-            name=person.get('name'),
-            email=person.get('email'),
-            organization=org,
-        )
-        person.add(g)
-        creators.append(person)
-
-    ras_version = model.get('ras_version', '6.3.1')
-
-    ras_model = RasModel(
-        filename=model.get('model'),
-        title=model.get('title'),
-        description=model.get('description'),
-        ras_version=ras_version,
-        status=RasStatus.FINAL,
-        geometries=geometries.values(),
-        flows=flows.values(),
-        plans=plans.values(),
-        creators=creators,
-        modified=model.get('modified'),
-        projection=proj_albers,
-        vertical_datum='NAVD88',
-    )
-    ras_model.to_rdf(g, base_uri=kanawha_models)
+        ras_model.to_rdf(g, base_uri=kanawha_models)
 
 
-print(g.serialize(format='turtle'))
-with open('./kanawha.ttl', 'w') as out:
-    out.write(g.serialize(format='turtle'))
-# print('Gages:')
-# print(GAGES.keys(), len(GAGES.keys()))
+    print(g.serialize(format='turtle'))
+    with open('./kanawha.ttl', 'w') as out:
+        out.write(g.serialize(format='turtle'))
+    # print('Gages:')
+    # print(GAGES.keys(), len(GAGES.keys()))
 
 
-# with open('./kanawha.jsonld', 'w') as out:
-#     out.write(g.serialize(format='json-ld', indent=2))
+    # with open('./kanawha.jsonld', 'w') as out:
+    #     out.write(g.serialize(format='json-ld', indent=2))
+
+
+if __name__ == '__main__':
+    main()
