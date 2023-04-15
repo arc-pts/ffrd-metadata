@@ -2296,7 +2296,8 @@ kanawha_models:BasinG6.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 228618 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -2311,8 +2312,12 @@ kanawha_models:BasinG6.g01.roughness a rascat:Roughness ;
 kanawha_models:BasinG6.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:BasinG6.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -2320,7 +2325,8 @@ kanawha_models:BasinG6.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 228618 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -2335,8 +2341,12 @@ kanawha_models:BasinG6.g02.roughness a rascat:Roughness ;
 kanawha_models:BasinG6.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:BasinG6.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -2344,7 +2354,8 @@ kanawha_models:BasinG6.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 228618 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -2357,8 +2368,12 @@ kanawha_models:BasinG6.g03.roughness a rascat:Roughness ;
 kanawha_models:BasinG6.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:BasinG6.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.p01 a rascat:RasPlan ;
     dcterms:description "Plan was not utilized" ;
@@ -2417,7 +2432,8 @@ kanawha_models:BluestoneLocal.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 417852 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 50 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -2430,8 +2446,12 @@ kanawha_models:BluestoneLocal.g01.roughness a rascat:Roughness ;
 
 kanawha_models:BluestoneLocal.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments and other terrain features that artificially block flow." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:BluestoneLocal.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BluestoneLocal.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments and other terrain features that artificially block flow." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.p01 a rascat:RasPlan ;
     dcterms:title "JAN1995" ;
@@ -2468,7 +2488,8 @@ kanawha_models:Bluestone_Upper.g07.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 318361 ;
     rascat:nominalCellSize 400 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.g07.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -2481,8 +2502,12 @@ kanawha_models:Bluestone_Upper.g07.roughness a rascat:Roughness ;
 
 kanawha_models:Bluestone_Upper.g07.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments and dam/berm embankments. LiDAR-processed DEM was hydroflattened by provider." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Bluestone_Upper.g07.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Bluestone_Upper.g07.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments and dam/berm embankments. LiDAR-processed DEM was hydroflattened by provider." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.p15 a rascat:RasPlan ;
     dcterms:description """Jan 5-29, 1995 (UTC) using excess precip from Corps HMS model plus baseflow
@@ -2537,7 +2562,8 @@ kanawha_models:CoalRiver.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 332739 ;
     rascat:nominalCellSize 500 ;
     rascat:refinementRegionsMaxCellSize 50 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -2549,7 +2575,8 @@ kanawha_models:CoalRiver.g01.roughness a rascat:Roughness ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.g01.terrain a rascat:Terrain ;
-    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> .
+    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.p01 a rascat:RasPlan ;
     dcterms:title "Nov2003" ;
@@ -2595,7 +2622,8 @@ kanawha_models:ElkMiddle.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 761035 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 150 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover kanawha_misc:wsp_landuse ;
@@ -2609,8 +2637,12 @@ kanawha_models:ElkMiddle.g01.roughness a rascat:Roughness ;
 kanawha_models:ElkMiddle.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_models:ElkMiddle.g01.bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments. Hydroflattened major rivers" ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:ElkMiddle.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:ElkMiddle.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments. Hydroflattened major rivers" ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 100 ;
@@ -2618,7 +2650,8 @@ kanawha_models:ElkMiddle.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 761035 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 150 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g02.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover kanawha_misc:wsp_landuse ;
@@ -2630,7 +2663,8 @@ kanawha_models:ElkMiddle.g02.roughness a rascat:Roughness ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g02.terrain a rascat:Terrain ;
-    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> .
+    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.p01 a rascat:RasPlan ;
     dcterms:description "November 2003.Calibrated to Queen Shoals Gage" ;
@@ -2680,7 +2714,8 @@ kanawha_models:G5.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 230930 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -2695,8 +2730,12 @@ kanawha_models:G5.g01.roughness a rascat:Roughness ;
 kanawha_models:G5.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:G5.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -2704,7 +2743,8 @@ kanawha_models:G5.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 230930 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -2719,8 +2759,12 @@ kanawha_models:G5.g02.roughness a rascat:Roughness ;
 kanawha_models:G5.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:G5.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -2728,7 +2772,8 @@ kanawha_models:G5.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 230930 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -2741,8 +2786,12 @@ kanawha_models:G5.g03.roughness a rascat:Roughness ;
 kanawha_models:G5.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:G5.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.p01 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Initial Conditions" ;
@@ -2808,7 +2857,8 @@ kanawha_models:GSummersville_B.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 587360 ;
     rascat:nominalCellSize 500 ;
     rascat:refinementRegionsMaxCellSize 200 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -2822,8 +2872,12 @@ kanawha_models:GSummersville_B.g01.roughness a rascat:Roughness ;
 kanawha_models:GSummersville_B.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_models:GSummersville_B.g01.bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road and dam/berm embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:GSummersville_B.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_B.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road and dam/berm embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.p01 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Jan1996" ;
@@ -2882,7 +2936,8 @@ kanawha_models:GSummersville_C.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 954995 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 200 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover kanawha_misc:baker_landuse ;
@@ -2896,8 +2951,12 @@ kanawha_models:GSummersville_C.g01.roughness a rascat:Roughness ;
 kanawha_models:GSummersville_C.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_models:GSummersville_C.g01.bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road and dam/berm embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:GSummersville_C.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_C.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road and dam/berm embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.p02 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Nov2003" ;
@@ -2968,7 +3027,8 @@ kanawha_models:GauleyLower_BLE_FEM.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 1088388 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 50 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover kanawha_misc:baker_landuse ;
@@ -2982,8 +3042,12 @@ kanawha_models:GauleyLower_BLE_FEM.g01.roughness a rascat:Roughness ;
 kanawha_models:GauleyLower_BLE_FEM.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_models:GauleyLower_BLE_FEM.g01.bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road and dam/berm embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:GauleyLower_BLE_FEM.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GauleyLower_BLE_FEM.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road and dam/berm embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.p01 a rascat:RasPlan ;
     dcterms:title "Unsteady_MultiHazard_Nov2003" ;
@@ -3028,7 +3092,8 @@ kanawha_models:Greenbrier_G7.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 250141 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3043,8 +3108,12 @@ kanawha_models:Greenbrier_G7.g01.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G7.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G7.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
@@ -3052,7 +3121,8 @@ kanawha_models:Greenbrier_G7.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 250141 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3067,8 +3137,12 @@ kanawha_models:Greenbrier_G7.g02.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G7.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G7.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
@@ -3076,7 +3150,8 @@ kanawha_models:Greenbrier_G7.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 250141 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3089,8 +3164,12 @@ kanawha_models:Greenbrier_G7.g03.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G7.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G7.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.p01 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Initial Conditions" ;
@@ -3134,7 +3213,8 @@ kanawha_models:Greenbrier_G8.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 291713 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3149,8 +3229,12 @@ kanawha_models:Greenbrier_G8.g01.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G8.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G8.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
@@ -3158,7 +3242,8 @@ kanawha_models:Greenbrier_G8.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 291713 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3173,8 +3258,12 @@ kanawha_models:Greenbrier_G8.g02.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G8.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G8.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
@@ -3182,7 +3271,8 @@ kanawha_models:Greenbrier_G8.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 291713 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3195,8 +3285,12 @@ kanawha_models:Greenbrier_G8.g03.roughness a rascat:Roughness ;
 kanawha_models:Greenbrier_G8.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Greenbrier_G8.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.p01 a rascat:RasPlan ;
     dcterms:title "Jan-1995 Initial Conditions" ;
@@ -3248,7 +3342,8 @@ kanawha_models:Kanawha_G1.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 206812 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3263,8 +3358,12 @@ kanawha_models:Kanawha_G1.g01.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G1.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G1.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3272,7 +3371,8 @@ kanawha_models:Kanawha_G1.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 206812 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3287,8 +3387,12 @@ kanawha_models:Kanawha_G1.g02.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G1.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G1.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3296,7 +3400,8 @@ kanawha_models:Kanawha_G1.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 206812 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3309,8 +3414,12 @@ kanawha_models:Kanawha_G1.g03.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G1.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G1.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.p01 a rascat:RasPlan ;
     dcterms:description "This plan was not utilized" ;
@@ -3374,7 +3483,8 @@ kanawha_models:Kanawha_G2.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 318146 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3389,8 +3499,12 @@ kanawha_models:Kanawha_G2.g01.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G2.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G2.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3398,7 +3512,8 @@ kanawha_models:Kanawha_G2.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 318146 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3413,8 +3528,12 @@ kanawha_models:Kanawha_G2.g02.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G2.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G2.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3422,7 +3541,8 @@ kanawha_models:Kanawha_G2.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 318146 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3435,8 +3555,12 @@ kanawha_models:Kanawha_G2.g03.roughness a rascat:Roughness ;
 kanawha_models:Kanawha_G2.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:Kanawha_G2.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.p01 a rascat:RasPlan ;
     dcterms:description "This plan was not utilized" ;
@@ -3494,7 +3618,8 @@ kanawha_models:New-LittleRiver.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 100 ;
     rascat:breaklinesMinCellSize 50 ;
     rascat:cellCount 517580 ;
-    rascat:nominalCellSize 200 .
+    rascat:nominalCellSize 200 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -3507,8 +3632,12 @@ kanawha_models:New-LittleRiver.g01.roughness a rascat:Roughness ;
 
 kanawha_models:New-LittleRiver.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments and other terrain features that artificially block flow." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:New-LittleRiver.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments and other terrain features that artificially block flow." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.p05 a rascat:RasPlan ;
     dcterms:title "JUN2016_HMS" ;
@@ -3566,7 +3695,8 @@ kanawha_models:UpperKanawha.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 537254 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 50 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -3585,8 +3715,12 @@ kanawha_models:UpperKanawha.g01.structures a rascat:Structures ;
 kanawha_models:UpperKanawha.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_models:UpperKanawha.g01.bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments, and to create connectivity for major culvert systems in populated areas" ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:UpperKanawha.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments, and to create connectivity for major culvert systems in populated areas" ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.p01 a rascat:RasPlan ;
     dcterms:description """Geometry: Upper Kanawha BLE geometry. Includes Marmet and London L&D. Gate operations from Kanawha CWMS. 
@@ -3645,7 +3779,8 @@ kanawha_models:UpperNew_Lower.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
     rascat:breaklinesMinCellSize 50 ;
     rascat:cellCount 800701 ;
-    rascat:nominalCellSize 1000 .
+    rascat:nominalCellSize 1000 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.g03.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -3663,7 +3798,8 @@ kanawha_models:UpperNew_Lower.g03.structures a rascat:Structures ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.g03.terrain a rascat:Terrain ;
-    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> .
+    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.p01 a rascat:RasPlan ;
     dcterms:title "Restart" ;
@@ -3710,7 +3846,8 @@ kanawha_models:UpperNew_Upper.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 1064723 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 50 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.g01.precip_losses a rascat:PrecipLosses ;
     rascat:hasLanduseLandcover <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> ;
@@ -3722,7 +3859,8 @@ kanawha_models:UpperNew_Upper.g01.roughness a rascat:Roughness ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.g01.terrain a rascat:Terrain ;
-    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> .
+    rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.p01 a rascat:RasPlan ;
     dcterms:title "Jan1995" ;
@@ -3766,7 +3904,8 @@ kanawha_models:WatershedG3.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 411065 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3781,8 +3920,12 @@ kanawha_models:WatershedG3.g01.roughness a rascat:Roughness ;
 kanawha_models:WatershedG3.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG3.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3790,7 +3933,8 @@ kanawha_models:WatershedG3.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 411065 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3805,8 +3949,12 @@ kanawha_models:WatershedG3.g02.roughness a rascat:Roughness ;
 kanawha_models:WatershedG3.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG3.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3814,7 +3962,8 @@ kanawha_models:WatershedG3.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 411065 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3827,8 +3976,12 @@ kanawha_models:WatershedG3.g03.roughness a rascat:Roughness ;
 kanawha_models:WatershedG3.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG3.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.p01 a rascat:RasPlan ;
     dcterms:description "This plan was not utilized" ;
@@ -3892,7 +4045,8 @@ kanawha_models:WatershedG4.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 319443 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -3907,8 +4061,12 @@ kanawha_models:WatershedG4.g01.roughness a rascat:Roughness ;
 kanawha_models:WatershedG4.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG4.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3916,7 +4074,8 @@ kanawha_models:WatershedG4.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 319443 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -3931,8 +4090,12 @@ kanawha_models:WatershedG4.g02.roughness a rascat:Roughness ;
 kanawha_models:WatershedG4.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG4.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -3940,7 +4103,8 @@ kanawha_models:WatershedG4.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 319443 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -3953,8 +4117,12 @@ kanawha_models:WatershedG4.g03.roughness a rascat:Roughness ;
 kanawha_models:WatershedG4.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG4.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.p01 a rascat:RasPlan ;
     dcterms:description "This plan was not utilized" ;
@@ -4014,7 +4182,8 @@ kanawha_models:WatershedG9.g01.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 273560 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g01.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 2003 storm event" ;
@@ -4029,8 +4198,12 @@ kanawha_models:WatershedG9.g01.roughness a rascat:Roughness ;
 kanawha_models:WatershedG9.g01.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG9.g01.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.g01.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g02.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -4038,7 +4211,8 @@ kanawha_models:WatershedG9.g02.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 273560 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g02.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Calibrated CN Losses for 1995 and 2016 storm event" ;
@@ -4053,8 +4227,12 @@ kanawha_models:WatershedG9.g02.roughness a rascat:Roughness ;
 kanawha_models:WatershedG9.g02.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG9.g02.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.g02.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
@@ -4062,7 +4240,8 @@ kanawha_models:WatershedG9.g03.mesh2d a rascat:Mesh2D ;
     rascat:cellCount 273560 ;
     rascat:nominalCellSize 200 ;
     rascat:refinementRegionsMaxCellSize 100 ;
-    rascat:refinementRegionsMinCellSize 50 .
+    rascat:refinementRegionsMinCellSize 50 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g03.precip_losses a rascat:PrecipLosses ;
     dcterms:description "Losses determined from USACE HEC-HMS model for 1996 event" ;
@@ -4075,8 +4254,12 @@ kanawha_models:WatershedG9.g03.roughness a rascat:Roughness ;
 kanawha_models:WatershedG9.g03.terrain a rascat:Terrain ;
     rascat:dem <https://femahq.s3.amazonaws.com/kanawha/tiles/1m> ;
     rascat:hasBathymetry kanawha_misc:greenbrier_riskmap_bathymetry ;
-    rascat:hasTerrainModifications [ dcterms:description "Cuts made through road embankments." ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] .
+    rascat:hasTerrainModifications kanawha_models:WatershedG9.g03.terrain.modifications ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.g03.terrain.modifications a rascat:TerrainModifications ;
+    dcterms:description "Cuts made through road embankments." ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.p01 a rascat:RasPlan ;
     dcterms:description "This plan is not utilized" ;
