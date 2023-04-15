@@ -51,7 +51,7 @@ geometries:
     precip_losses:
       landuse: baker_landuse
       soils: ssurgo
-    structures: wv_clearinghouse
+    structures: wv_clearinghouse_structures
     terrain:
       modifications:
         description: Cuts made through road and dam/berm embankments.

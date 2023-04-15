@@ -1,6 +1,6 @@
 import dateutil.parser
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
-from rdflib.namespace import DCAT, RDF, FOAF, DCTERMS, XSD
+from rdflib.namespace import DCAT, RDF, FOAF, DCTERMS, XSD, RDFS
 import yaml
 
 from datetime import datetime, date, time
@@ -39,6 +39,9 @@ g.bind("usgs_gages", usgs_gages)
 g.bind("usace_kanawha_gages", usace_kanawha_gages)
 
 
+EXAMPLE_URL_COMMENT = "URL not currently available. A placeholder is used for demonstration purposes."
+
+
 def clean_name(name: str):
     return name.replace(' ', '_')
 
@@ -48,9 +51,12 @@ class Organization:
     clean_name: Optional[str] = None
     homepage: Optional[str] = None
     organization: Optional['Organization'] = None
+    uri: Optional[URIRef] = None
 
     def add(self, g: Graph):
-        if self.clean_name is None:
+        if self.uri is not None:
+            organization = self.uri
+        elif self.clean_name is None:
             organization = ffrd_orgs[clean_name(self.name)]
         else:
             organization = ffrd_orgs[self.clean_name]
@@ -61,14 +67,18 @@ class Organization:
         if self.organization is not None:
             parent = self.organization.add(g)
             g.add((organization, FOAF.member, parent))
+        if not self.uri:
+            g.add((organization, RDFS.comment, Literal(EXAMPLE_URL_COMMENT)))
         return organization
 
 ARC = Organization('ARC JV')
 WSP = Organization('WSP, Inc.', homepage='https://www.wsp.com/', organization=ARC, clean_name='WSP')
 BAKER = Organization('Michael Baker Intl', homepage='https://mbakerintl.com/', organization=ARC, clean_name='Baker')
-COMPASS = Organization('Compass JV')
-AECOM = Organization('AECOM', homepage='https://www.aecom.com/', organization=COMPASS)
 FREESE = Organization('Freese and Nichols', homepage='https://www.freese.com/', organization=ARC, clean_name='Freese')
+COMPASS = Organization('Compass PTS JV')
+AECOM = Organization('AECOM', homepage='https://www.aecom.com/', organization=COMPASS)
+STARR = Organization('STARR II', homepage='https://starr-team.com/')
+DEWBERRY = Organization('Dewberry', homepage='https://www.dewberry.com/', organization=STARR)
 ORGS = {
     'wsp': WSP,
     'arc': ARC,
@@ -93,6 +103,7 @@ class Person:
         g.add((person, RDF.type, FOAF.Person))
         g.add((person, FOAF.name, Literal(self.name)))
         g.add((person, FOAF.mbox, Literal(self.email)))
+        g.add((person, RDFS.comment, Literal(EXAMPLE_URL_COMMENT)))
         if self.organization is not None:
             organization = self.organization.add(g)
             g.add((person, FOAF.member, organization))
@@ -106,6 +117,8 @@ class DcatDataset:
     description: Optional[str] = None
     modified: Optional[datetime|str] = None
     relation: Optional[str|List[str]] = None
+    comment: Optional[str] = None
+    real_url: bool = False
 
     def __post_init__(self):
         if isinstance(self.modified, str):
@@ -128,6 +141,10 @@ class DcatDataset:
             else:
                 for relation in self.relation:
                     g.add((uri, DCTERMS.relation, URIRef(relation)))
+        if not self.real_url:
+            g.add((uri, RDFS.comment, Literal(EXAMPLE_URL_COMMENT)))
+        if self.comment is not None:
+            g.add((uri, RDFS.comment, Literal(self.comment)))
 
 @dataclass
 class Mesh2D(DcatDataset):
@@ -139,8 +156,7 @@ class Mesh2D(DcatDataset):
     cell_count: int
 
     def add(self, g: Graph, model_geom: str):
-        mesh2d = BNode()
-        # mesh2d = URIRef(model_geom + 'mesh2d')
+        mesh2d = URIRef(model_geom + '.mesh2d')
         g.add((mesh2d, RDF.type, RASCAT.Mesh2D))
         g.add((mesh2d, RASCAT.nominalCellSize, Literal(self.nominal_cell_size)))
         if self.breaklines_min_cell_size is not None:
@@ -217,8 +233,7 @@ class HydroEvent(DcatDataset):
         g.add((hydroevent, DCTERMS.title, Literal(self.title)))
         g.add((hydroevent, RASCAT.startDateTime, Literal(self.start_datetime)))
         g.add((hydroevent, RASCAT.endDateTime, Literal(self.end_datetime)))
-        if self.description is not None:
-            g.add((hydroevent, DCTERMS.description, Literal(self.description)))
+        self.add_dcat_terms(g, hydroevent)
         return hydroevent
 
 
@@ -378,13 +393,13 @@ class Terrain(DcatDataset):
         g.add((terrain, RASCAT.dem, self.dem.uri))
         if self.bathymetry:
             # bathymetry = BNode()
-            bathymetry = URIRef(f'{model_geom}.bathymetry')
-            g.add((bathymetry, RDF.type, RASCAT.Bathymetry))
             if self.bathymetry.uri:
                 g.add((terrain, RASCAT.hasBathymetry, self.bathymetry.uri))
             else:
+                bathymetry = URIRef(f'{model_geom}.bathymetry')
+                g.add((bathymetry, RDF.type, RASCAT.Bathymetry))
                 g.add((terrain, RASCAT.hasBathymetry, bathymetry))
-            self.bathymetry.add_dcat_terms(g, bathymetry)
+                self.bathymetry.add_dcat_terms(g, bathymetry)
         if self.modifications:
             terrain_modifications = BNode()
             if self.modifications.uri:
@@ -404,6 +419,23 @@ class LanduseLandcover(DcatDataset):
 class Roughness(DcatDataset):
     uri: Optional[str] = None
     landuse: Optional[LanduseLandcover] = None
+
+    def add(self, g: Graph, model_geom: str):
+        if self.uri:
+            roughness = URIRef(self.uri)
+        else:
+            roughness = URIRef(f'{model_geom}.roughness')
+        g.add((roughness, RDF.type, RASCAT.Roughness))
+        if self.landuse:
+            if self.landuse.uri:
+                g.add((roughness, RASCAT.hasLanduseLandcover, URIRef(self.landuse.uri)))
+            else:
+                landuse = URIRef(f'{model_geom}.landuse')
+                g.add((landuse, RDF.type, RASCAT.LanduseLandcover))
+                g.add((roughness, RASCAT.hasLanduseLandcover, landuse))
+                self.landuse.add_dcat_terms(g, landuse)
+        super().add_dcat_terms(g, roughness)
+        return roughness
 
     def add_bnode(self, g: Graph):
         roughness = BNode()
@@ -429,6 +461,32 @@ class Soils(DcatDataset):
 class PrecipLosses(DcatDataset):
     landuse: Optional[LanduseLandcover] = None
     soils: Optional[Soils] = None
+    uri: Optional[str] = None
+
+    def add(self, g: Graph, model_geom: str):
+        if self.uri:
+            precip_losses = URIRef(self.uri)
+        else:
+            precip_losses = URIRef(f'{model_geom}.precip_losses')
+        g.add((precip_losses, RDF.type, RASCAT.PrecipLosses))
+        if self.landuse:
+            if self.landuse.uri:
+                g.add((precip_losses, RASCAT.hasLanduseLandcover, URIRef(self.landuse.uri)))
+            else:
+                landuse = URIRef(f'{model_geom}.landuse')
+                g.add((landuse, RDF.type, RASCAT.LanduseLandcover))
+                g.add((precip_losses, RASCAT.hasLanduseLandcover, landuse))
+                self.landuse.add_dcat_terms(g, landuse)
+        if self.soils:
+            if self.soils.uri:
+                g.add((precip_losses, RASCAT.hasSoils, URIRef(self.soils.uri)))
+            else:
+                soils = URIRef(f'{model_geom}.soils')
+                g.add((soils, RDF.type, RASCAT.Soils))
+                g.add((precip_losses, RASCAT.hasSoils, soils))
+                self.soils.add_dcat_terms(g, soils)
+        super().add_dcat_terms(g, precip_losses)
+        return precip_losses
 
     def add_bnode(self, g: Graph):
         precip_losses = BNode()
@@ -457,6 +515,16 @@ class PrecipLosses(DcatDataset):
 class Structures(DcatDataset):
     uri: Optional[str] = None
 
+    def add(self, g: Graph, model_geom: str):
+        if self.uri:
+            structures = URIRef(self.uri)
+        else:
+            structures = URIRef(f'{model_geom}.structures')
+        g.add((structures, RDF.type, RASCAT.Structures))
+        g.add((URIRef(model_geom), RASCAT.hasStructures, structures))
+        super().add_dcat_terms(g, structures)
+        return structures
+
     def add_bnode(self, g: Graph):
         structures = BNode()
         g.add((structures, RDF.type, RASCAT.Structures))
@@ -478,7 +546,6 @@ class RasGeometry(DcatDataset):
 class RasUnsteadyFlow(DcatDataset):
     ext: str
     hyetograph: Optional[Hyetograph] = None
-    # calibration_hydrographs: Optional[List[Hydrograph]] = None
 
 
 @dataclass
@@ -555,17 +622,14 @@ class RasModel(DcatDataset):
                 terrain = geometry.terrain.add(g, geometry_uri)
                 g.add((geometry_uri, RASCAT.hasTerrain, terrain))
             if geometry.roughness is not None:
-                roughness = geometry.roughness.add_bnode(g)
+                roughness = geometry.roughness.add(g, geometry_uri)
                 g.add((geometry_uri, RASCAT.hasRoughness, roughness))
             if geometry.precip_losses is not None:
-                precip_losses = geometry.precip_losses.add_bnode(g)
+                precip_losses = geometry.precip_losses.add(g, geometry_uri)
                 g.add((geometry_uri, RASCAT.hasPrecipLosses, precip_losses))
             if geometry.structures is not None:
-                if geometry.structures.uri:
-                    g.add((geometry_uri, RASCAT.hasStructures, URIRef(geometry.structures.uri)))
-                else:
-                    structures = geometry.structures.add_bnode(g)
-                    g.add((geometry_uri, RASCAT.hasStructures, structures))
+                structures = geometry.structures.add(g, geometry_uri)
+                g.add((geometry_uri, RASCAT.hasStructures, structures))
             geometry.add_dcat_terms(g, geometry_uri)
 
         for flow in self.flows:
@@ -578,11 +642,6 @@ class RasModel(DcatDataset):
                 hyeto_bnode = flow.hyetograph.add_bnode(g)
                 g.add((flow_uri, RASCAT.hasHyetograph, hyeto_bnode))
 
-            # if flow.calibration_hydrographs:
-            #     for hydrograph in flow.calibration_hydrographs:
-            #         hyd_bnode = hydrograph.add_bnode(g)
-            #         g.add((flow_uri, RASCAT.hasCalibrationHydrograph, hyd_bnode))
-
         for plan in self.plans:
             plan_uri = self.rasfile_uri(plan.ext, base_uri)
             g.add((model, RASCAT.hasPlan, plan_uri))
@@ -592,7 +651,6 @@ class RasModel(DcatDataset):
             if plan.calibrations:
                 for calibration in plan.calibrations:
                     calib = calibration.add(g, model_prefix=os.path.splitext(self.filename)[0])
-                    print(calib)
                     g.add((plan_uri, RASCAT.hasCalibration, calib))
             plan.add_dcat_terms(g, plan_uri)
 
@@ -610,7 +668,6 @@ def main():
             uri=streamgage.get('link'),
         )
         GAGES[streamgage['identifier']] = gage
-        # print(gage)
         gage.to_rdf(g)
 
     kanawha_data: List[dict] = []
@@ -629,6 +686,9 @@ def main():
         URIRef('https://femahq.s3.amazonaws.com/kanawha/tiles/1m'),
         title='Kanawha River Basin DEM',
         description='Digital Elevation Model for the Kanawha River Basin, based on USGS 3DEP data.',
+        comment="Data access via AWS S3. Contact STARR II / Dewberry for more information.",
+        real_url=True,
+        creators=[Person("Seth Lawler", "slawler@dewberry.com", DEWBERRY)]
     )
     g.add((kanawha_dem.uri, RDF.type, RASCAT.DEM))
     kanawha_dem.add_dcat_terms(g, kanawha_dem.uri)
@@ -637,6 +697,7 @@ def main():
         URIRef('https://www.mrlc.gov/data/nlcd-2019-land-cover-conus'),
         title='NLCD 2019',
         description='National Land Cover Database 2019 (CONUS)',
+        real_url=True
     )
     g.add((nlcd.uri, RDF.type, RASCAT.LanduseLandcover))
     nlcd.add_dcat_terms(g, nlcd.uri)
@@ -669,17 +730,30 @@ def main():
         URIRef('https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo'),
         title='SSURGO',
         description='USDA / NRCS Soil Survey Geographic Database (SSURGO)',
+        real_url=True
     )
     g.add((ssurgo.uri, RDF.type, RASCAT.Soils))
     ssurgo.add_dcat_terms(g, ssurgo.uri)
 
-    wv_clearinghouse = Structures(
-        URIRef('http://data.wvgis.wvu.edu/pub/Clearinghouse/hazards/WV_HEC_RAS_Model/'),
-        title='WV State GIS Data Clearinghouse - HEC-RAS Models',
+    wv_clearinghouse_structures = Structures(
+        URIRef('http://data.wvgis.wvu.edu/pub/Clearinghouse/hazards/WV_HEC_RAS_Model/#structures'),
+        title='WV State GIS Data Clearinghouse - HEC-RAS Models (structures)',
         description='Structures pulled from existing 1D HEC-RAS models where available.',
+        real_url=True
     )
-    g.add((wv_clearinghouse.uri, RDF.type, RASCAT.Structures))
-    wv_clearinghouse.add_dcat_terms(g, wv_clearinghouse.uri)
+    g.add((wv_clearinghouse_structures.uri, RDF.type, RASCAT.Structures))
+    wv_clearinghouse_structures.add_dcat_terms(g, wv_clearinghouse_structures.uri)
+
+    greenbrier_riskmap_bathymetry = Bathymetry(
+        URIRef('greenbrier_riskmap_bathymetry', kanawha_misc),
+        title='Greenbrier River bathymetry from active Risk MAP projects',
+        description='Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area',
+    )
+    g.add((greenbrier_riskmap_bathymetry.uri, RDF.type, RASCAT.Bathymetry))
+    greenbrier_riskmap_bathymetry.add_dcat_terms(g, greenbrier_riskmap_bathymetry.uri)
+    BATHYMETRY = {
+        'gb_bath': greenbrier_riskmap_bathymetry,
+    }
 
     for model in kanawha_data:
         model_prj = model['model']
@@ -697,29 +771,10 @@ def main():
                     from_hydroevent=hydroevent,
                 )
 
-            # calibration_hydrographs = []
-            # for hydrograph in f.get('hydrographs', []):
-            #     hydroevent = HYDROEVENTS.get(hydrograph.get('event'))
-            #     hyd = Hydrograph(
-            #         title=hydrograph.get('title'),
-            #         description=hydrograph.get('description'),
-            #         start_datetime=hydrograph.get('start_datetime'),
-            #         end_datetime=hydrograph.get('end_datetime'),
-            #         from_streamgage=GAGES.get(hydrograph.get('from_streamgage')),
-            #         hydrograph_type=HydrographType(hydrograph.get('hydrograph_type', 'Flow')),
-            #         nse=hydrograph.get('nse'),
-            #         rsr=hydrograph.get('rsr'),
-            #         pbias=hydrograph.get('pbias'),
-            #         r2=hydrograph.get('r2'),
-            #         from_hydroevent=hydroevent,
-            #     )
-            #     calibration_hydrographs.append(hyd)
-
             flow = RasUnsteadyFlow(
                 ext=get_ext(flowfile),
                 title=f.get('title'),
                 hyetograph=hyetograph,
-                # calibration_hydrographs=calibration_hydrographs,
             )
             flows[flowfile] = flow
 
@@ -739,7 +794,9 @@ def main():
             terrain = geom.get('terrain')
             if terrain is not None:
                 bathymetry = terrain.get('bathymetry')
-                if bathymetry is not None:
+                if type(bathymetry) is str:
+                    bathymetry = BATHYMETRY[bathymetry]
+                elif bathymetry is not None:
                     bathymetry = Bathymetry(
                         title=bathymetry.get('title'),
                         description=bathymetry.get('description'),
@@ -803,8 +860,8 @@ def main():
 
             structures = geom.get('structures')
             if structures is not None:
-                if structures == 'wv_clearinghouse':
-                    structures = wv_clearinghouse
+                if structures == 'wv_clearinghouse_structures':
+                    structures = wv_clearinghouse_structures
                 else:
                     structures = Structures(
                         title=structures.get('title'),
@@ -888,13 +945,6 @@ def main():
     print(g.serialize(format='turtle'))
     with open('./kanawha.ttl', 'w') as out:
         out.write(g.serialize(format='turtle'))
-    # print('Gages:')
-    # print(GAGES.keys(), len(GAGES.keys()))
-
-
-    # with open('./kanawha.jsonld', 'w') as out:
-    #     out.write(g.serialize(format='json-ld', indent=2))
-
 
 if __name__ == '__main__':
     main()

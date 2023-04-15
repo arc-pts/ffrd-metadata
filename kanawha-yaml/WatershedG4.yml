@@ -57,8 +57,7 @@ geometries:
       landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -77,8 +76,7 @@ geometries:
       landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -95,8 +93,7 @@ geometries:
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:

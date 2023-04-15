@@ -54,7 +54,7 @@ geometries:
     precip_losses:
       landuse: nlcd
       soils: ssurgo
-    structures: wv_clearinghouse
+    structures: wv_clearinghouse_structures
     terrain:
       bathymetry:
         description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.

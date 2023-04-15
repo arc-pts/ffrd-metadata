@@ -54,7 +54,7 @@ geometries:
     precip_losses:
       landuse: baker_landuse
       soils: ssurgo
-    structures: wv_clearinghouse
+    structures: wv_clearinghouse_structures
     mesh2d:
       nominal_cell_size: 200
       breaklines_min_cell_size: 50
