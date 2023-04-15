@@ -168,6 +168,7 @@ class Mesh2D(DcatDataset):
         if self.refinement_regions_max_cell_size is not None:
             g.add((mesh2d, RASCAT.refinementRegionsMaxCellSize, Literal(self.refinement_regions_max_cell_size)))
         g.add((mesh2d, RASCAT.cellCount, Literal(self.cell_count)))
+        super().add_dcat_terms(g, mesh2d)
         return mesh2d
 
 
@@ -401,12 +402,15 @@ class Terrain(DcatDataset):
                 g.add((terrain, RASCAT.hasBathymetry, bathymetry))
                 self.bathymetry.add_dcat_terms(g, bathymetry)
         if self.modifications:
-            terrain_modifications = BNode()
+            # terrain_modifications = BNode()
             if self.modifications.uri:
                 g.add((terrain, RASCAT.hasTerrainModifications, self.modifications.uri))
             else:
+                terrain_modifications = URIRef(f'{model_geom}.terrain.modifications')
+                g.add((terrain_modifications, RDF.type, RASCAT.TerrainModifications))
                 g.add((terrain, RASCAT.hasTerrainModifications, terrain_modifications))
-            self.modifications.add_dcat_terms(g, terrain_modifications)
+                self.modifications.add_dcat_terms(g, terrain_modifications)
+        super().add_dcat_terms(g, terrain)
         return terrain
 
 
