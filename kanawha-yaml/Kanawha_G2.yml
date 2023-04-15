@@ -9,10 +9,13 @@ modified: 11/14/2022 18:59
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name: Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name: Julianna Villa
     email: julianna.villa@wsp.com
+    org: wsp
 flows:
   Kanawha_G2.u01:
     title: Jan-1995 Initial Conditions
@@ -21,6 +24,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
 
   Kanawha_G2.u02:
     title: Jan-1996 Initial Conditions
@@ -29,6 +33,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1996
 
   Kanawha_G2.u03:
     title: Nov-2003 Initial Conditions
@@ -37,6 +42,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
 
   Kanawha_G2.u04:
     title: Jun-2016 Initial Conditions
@@ -45,6 +51,7 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
+      event: jun_2016
 
   Kanawha_G2.u05:
     title: Jan-1995 Calibration
@@ -53,6 +60,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
 
   Kanawha_G2.u06:
     title: Jan-1996 Calibration
@@ -61,6 +69,7 @@ flows:
       start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       spatially_varied: true
+      event: jan_1996
 
   Kanawha_G2.u07:
     title: Nov-2003 Calibration
@@ -69,6 +78,7 @@ flows:
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       spatially_varied: true
+      event: nov_2003
 
   Kanawha_G2.u08:
     title: Jun-2016 Calibration
@@ -77,21 +87,19 @@ flows:
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       spatially_varied: true
+      event: jun_2016
 
 geometries:
   Kanawha_G2.g01:
     title: LiDAR_G2
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -104,16 +112,13 @@ geometries:
   Kanawha_G2.g02:
     title: LiDAR_G2_2016
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -126,13 +131,11 @@ geometries:
   Kanawha_G2.g03:
     title: LiDAR_G2_1996
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:

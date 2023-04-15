@@ -94,9 +94,6 @@
 #################################################################
 # Geometry
 #################################################################
-# Questions
-# - how many Terrains can a single Geometry have?
-# - how many Roughnesses can a single Geometry have?
 
 ###  http://www.example.org/rascat#RasGeometry
 :RasGeometry a owl:Class ;
@@ -104,83 +101,97 @@
         rdfs:subClassOf dcat:Dataset .
 
 :hasTerrain a owl:ObjectProperty ;
+        rdfs:comment "A HEC-RAS Terrain associated with a parent RasGeometry."@en ;
         rdfs:domain :RasGeometry ;
         rdfs:range :Terrain .
       
 :hasRoughness a owl:ObjectProperty ;
+        rdfs:comment "Roughness (e.g., Manning's 'n') data associated with a parent RasGeometry."@en ;
         rdfs:domain :RasGeometry ;
         rdfs:range :Roughness .
 
 :hasPrecipLosses a owl:ObjectProperty ;
+        rdfs:comment "Precipitation loss base data associated with a parent RasGeometry."@en ;
         rdfs:domain :RasGeometry ;
         rdfs:range :PrecipLosses .
 
 :hasMesh2D a owl:ObjectProperty ;
+        rdfs:comment "A HEC-RAS 2D mesh associated with a parent RasGeometry."@en ;
         rdfs:domain :RasGeometry ;
         rdfs:range :Mesh2D .
 
 :hasStructures a owl:ObjectProperty ;
+        rdfs:comment "Structure data associated with a RasGeometry."@en ;
         rdfs:domain :RasGeometry ;
         rdfs:range :Structures .
 
 ### http://www.example.org/rascat#Terrain
 :Terrain a owl:Class ;
+        rdfs:comment "A HEC-RAS Terrain."@en ;
         rdfs:subClassOf dcat:Dataset ;
         owl:equivalentClass [ a owl:Restriction ;
                 owl:onProperty :hasDEM ;
                 owl:minCardinality 1 ] .
 
 :hasDEM a owl:ObjectProperty ;
+        rdfs:comment "A Digital Elevation Model (DEM) associated with a parent HEC-RAS Terrain."
         rdfs:domain :Terrain ;
         rdfs:range :DEM .
 
 :hasBathymetry a owl:ObjectProperty ;
+        rdfs:comment "Bathymetry data associated with a parent HEC-RAS Terrain."
         rdfs:domain :Terrain ;
         rdfs:range :Bathymetry .
 
 :hasTerrainModifications a owl:ObjectProperty ;
+        rdfs:comment "Information about modifications to the terrain associated with a parent HEC-RAS Terrain."
         rdfs:domain :Terrain ;
         rdfs:range :TerrainModifications .
 
 ### http://www.example.org/rascat#DEM
 :DEM a owl:Class ;
+        rdfs:comment "A Digital Elevation Model (DEM)."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 ### http://www.example.org/rascat#Bathymetry
 :Bathymetry a owl:Class ;
+        rdfs:comment "Bathymetry data."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 ### http://www.example.org/rascat#TerrainModifications
 :TerrainModifications a owl:Class ;
+        rdfs:comment "Information about modifications to the terrain."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 ### http://www.example.org/rascat#Roughness
 :Roughness a owl:Class ;
+        rdfs:comment "Roughness (e.g., Manning's 'n') data."@en ;
         rdfs:subClassOf dcat:Dataset .
-
-:hasRoughness a owl:ObjectProperty ;
-        rdfs:domain :RasGeometry ;
-        rdfs:range :Roughness .
 
 ### http://www.example.org/rascat#LanduseLandcover
 :LanduseLandcover a owl:Class ;
+        rdfs:comment "Land use / land cover data."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 :hasLanduseLandcover a owl:ObjectProperty ;
+        rdfs:comment "Land use / land cover data associated with a parent HEC-RAS Roughness or PrecipLosses."@en ;
         rdfs:domain :Roughness ;
         rdfs:domain :PrecipLosses ;
         rdfs:range :LanduseLandcover .
 
 ### http://www.example.org/rascat#PrecipLosses
 :PrecipLosses a owl:Class ;
+        rdfs:comment "Precipitation loss base data."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 :hasSoils a owl:ObjectProperty ;
+        rdfs:comment "Soils data associated with HEC-RAS PrecipLosses."@en ;
         rdfs:domain :PrecipLosses ;
         rdfs:range :Soils .
 
 ### http://www.example.org/rascat#Soils
 :Soils a owl:Class ;
+        rdfs:comment "Soils data."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 ### http://www.example.org/rascat#Mesh2D
@@ -247,12 +258,13 @@
 
 ### http://www.example.org/rascat#RasUnsteadyFlow
 :RasUnsteadyFlow a owl:Class ;
-        rdfs:comment "A HEC-RAS Unsteady Flow file. (e.g., *.u01)"@en;
+        rdfs:comment "A HEC-RAS Unsteady Flow file. (e.g., *.u01)"@en ;
         rdfs:subClassOf :RasFlow ;
         rdfs:subClassOf dcat:Dataset .
 
 ### http://www.example.org/rascat#Hydrodata
 :Hydrodata a owl:Class ;
+        rdfs:comment "Class representing generic hydrologic data."@en ;
         rdfs:subClassOf dcat:Dataset ;
         owl:equivalentClass [ a owl:Restriction ;
                 owl:onProperty :startDateTime ;
@@ -267,67 +279,76 @@
                 owl:onProperty :fromHydroEvent ;
                 owl:maxCardinality 1 ] .
 
+:startDateTime a owl:ObjectProperty ;
+        rdfs:comment "The start date and time of the hydrologic data."@en ;
+        rdfs:subClassOf dcat:startDate;
+        rdfs:domain :HydroData ;
+        rdfs:range xsd:dateTime .
+
+:endDateTime a owl:ObjectProperty ;
+        rdfs:comment "The end date and time of the hydrologic data."@en
+        rdfs:subClassOf dcat:endDate;
+        rdfs:domain :HydroData ;
+        rdfs:range xsd:dateTime .
+
 ### http://www.example.org/rascat#Hydrograph
 :Hydrograph a owl:Class ;
+        rdfs:comment "Class representing a hydrograph."@en ;
         rdfs:subClassOf :Hydrodata ;
         rdfs:subClassOf dcat:Dataset .
 
 :hydrographType a owl:ObjectProperty ;
+        rdfs:comment "The type of hydrograph - Flow or Stage."@en ;
         rdfs:domain :RasModel ;
         rdfs:range [ owl:oneOf ("Flow" "Stage") ] .
 
-:startDateTime a owl:ObjectProperty ;
-        rdfs:subClassOf dcat:startDate;
-        rdfs:domain :HydroEvent ;
-        rdfs:domain :Hyetograph ;
-        rdfs:domain :Hydrograph ;
-        rdfs:range xsd:dateTime .
-
-:endDateTime a owl:ObjectProperty ;
-        rdfs:subClassOf dcat:endDate;
-        rdfs:domain :HydroEvent ;
-        rdfs:domain :Hyetograph ;
-        rdfs:domain :Hydrograph ;
-        rdfs:range xsd:dateTime .
-
 :hasInflowHydrograph a owl:ObjectProperty ;
+        rdfs:comment "The hydrograph used as inflow for a HEC-RAS model."@en ;
         rdfs:domain :RasFlow ;
         rdfs:range :Hydrograph .
 
-:hasCalibrationHydrograph a owl:ObjectProperty ;
+
+### http://www.example.org/rascat#Calibration
+:Calibration a owl:Class ;
+        rdfs:comment "Class representing the calibration of a HEC-RAS model (i.e., Plan)."@en ;
+        rdfs:subClassOf :Hydrodata ;
+        rdfs:subClassOf dcat:Dataset .
+
+:hasCalibration a owl:ObjectProperty ;
+        rdfs:comment "Calibration associated with a HEC-RAS Plan."@en ;
         rdfs:domain :RasPlan ;
         rdfs:range :Hydrograph .
 
-:hasValidationHydrograph a owl:ObjectProperty ;
-        rdfs:domain :RasUnsteadyFlow ;
-        rdfs:range :Hydrograph .
-
 :hasObservedHydrograph a owl:ObjectProperty ;
-        rdfs:domain :RasUnsteadyFlow ;
+        rdfs:comment "The observed hydrograph used to calibrate a HEC-RAS model."@en ;
+        rdfs:domain :Calibration ;
         rdfs:range :Hydrograph .
 
 :calibrationMetric a owl:ObjectProperty ;
-        rdfs:domain :Hydrograph ;
+        rdfs:comment "A metric used to evaluate the calibration of a HEC-RAS model."@en ;
+        rdfs:domain :Calibration ;
         rdfs:range xsd:double .
 
 :nse a owl:ObjectProperty ;
         rdfs:subClassOf :calibrationMetric ;
-        rdfs:comment "Nash-Sutcliffe Efficiency" .
+        rdfs:comment "Nash-Sutcliffe Efficiency"@en .
 
 :pbias a owl:ObjectProperty ;
         rdfs:subClassOf :calibrationMetric ;
-        rdfs:comment "Percent Bias" .
+        rdfs:comment "Percent Bias"@en .
 
 :rsr a owl:ObjectProperty ;
         rdfs:subClassOf :calibrationMetric ;
-        rdfs:comment "Root Mean Square Error Standard Deviation Ratio" .
+        rdfs:comment "Root Mean Square Error Standard Deviation Ratio"@en .
 
 :r2 a owl:ObjectProperty ;
         rdfs:subClassOf :calibrationMetric ;
-        rdfs:comment "Coefficient of Determination" .
+        rdfs:comment "Coefficient of Determination"@en .
+
 
 ### http://www.example.org/rascat#Hyetograph
 :Hyetograph a owl:Class ;
+        rdfs:comment "Class representing a hyetograph."@en ;
         rdfs:subClassOf :Hydrodata;
         rdfs:subClassOf dcat:Dataset ;
         owl:equivalentClass [ a owl:Restriction ;
@@ -335,27 +356,33 @@
                 owl:cardinality 1 ] .
 
 :fromHydroEvent a owl:ObjectProperty ;
+        rdfs:comment "The real-world hydrologic event used to generate the hyetograph."@en ;
         rdfs:domain :Hyetograph ;
         rdfs:range :HydroEvent .
 
 :isSpatiallyVaried a owl:ObjectProperty ;
+        rdfs:comment "Indicates whether the hyetograph is spatially varied. Non-spatially varied hyetographs apply over the full domain of a 2D mesh."@en ;
         rdfs:domain :Hyetograph ;
         rdfs:range xsd:boolean .
 
 :hasHyetograph a owl:ObjectProperty ;
+        rdfs:comment "The hyetograph used as inflow for a HEC-RAS model."@en ;
         rdfs:domain :RasUnsteadyFlow ;
         rdfs:range :Hyetograph .
 
 ### http://www.example.org/rascat#Streamgage
 :Streamgage a owl:Class ;
+        rdfs:comment "Class representing a streamgage."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 :fromStreamgage a owl:ObjectProperty ;
+        rdfs:comment "The streamgage from which a hydrograph was obtained."@en ;
         rdfs:domain :Hydrograph ;
         rdfs:range :Streamgage .
 
 ### http://www.example.org/rascat#HydroEvent
 :HydroEvent a owl:Class ;
+        rdfs:comment "Class representing a real-world hydrologic event (e.g., a storm event)."@en ;
         rdfs:subClassOf dcat:Dataset .
 
 ###  Generated by the OWL API (version 4.5.24.2023-01-14T21:28:32Z) https://github.com/owlcs/owlapi

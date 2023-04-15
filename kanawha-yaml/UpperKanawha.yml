@@ -14,10 +14,13 @@ description: 'Watershed: Upper Kanawha River
 creators:
   - name:  Dawit Zeweldi
     email: Dawit.Zeweldi@freese.com
+    org: freese
   - name:  Andrew Swynenberg
     email: Andrew.Swynenberg@freese.com
+    org: freese
   - name:  Matt Lewis
     email: Matt.Lewis@freese.com
+    org: freese
 flows:
   UpperKanawha.u01:
     title: Jan1996
@@ -27,6 +30,7 @@ flows:
       start_datetime: 1996-01-17 06:00:00
       end_datetime:   1996-02-04 06:00:00
       spatially_varied: true
+      event: jan_1996
 
   UpperKanawha.u02:
     title: Jan1996_InitialConditions
@@ -35,6 +39,7 @@ flows:
       start_datetime: 1996-01-15 00:00:00
       end_datetime:   1996-01-17 06:00:00
       spatially_varied: true
+      event: jan_1996
 
   UpperKanawha.u07:
     title: Nov2003_InitialConditions
@@ -43,6 +48,7 @@ flows:
       start_datetime: 2003-11-03 00:00:00
       end_datetime:   2003-11-12 00:00:00
       spatially_varied: true
+      event: nov_2003
 
   UpperKanawha.u08:
     title: Nov2003
@@ -51,6 +57,7 @@ flows:
       start_datetime: 2003-11-12 00:00:00
       end_datetime:   2003-11-24 00:00:00
       spatially_varied: true
+      event: nov_2003
 
   UpperKanawha.u09:
     title: Jun2016_InitialConditions
@@ -59,6 +66,7 @@ flows:
       start_datetime: 2016-06-07 00:00:00
       end_datetime:   2016-06-22 00:00:00
       spatially_varied: true
+      event: jun_2016
 
   UpperKanawha.u11:
     title: Jun2016
@@ -67,6 +75,7 @@ flows:
       start_datetime: 2016-06-22 00:00:00
       end_datetime:   2016-06-28 00:00:00
       spatially_varied: true
+      event: jun_2016
 geometries:
   UpperKanawha.g01:
     title: UpperKanawha
@@ -107,42 +116,50 @@ plans:
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: London L&D Pool
+        from_streamgage: USACE_London_LD_Pool
         description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
         hydrograph_type: "Stage"
         nse:    -180.7
         rsr:    13.48
         pbias:  -0.2696
         r2:     0.0079179
+        event: jun_2016
 
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: London L&D Tailwater
+        from_streamgage: USACE_London_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.96292
         rsr:    0.19255
         pbias:  -0.13638
         r2:     0.98229
+        event: jun_2016
 
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: Marmet L&D Pool 
+        from_streamgage: USACE_Marmet_LD_Pool
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.43975
         rsr:    0.7485
         pbias:  0.07278
         r2:     0.57783
+        event: jun_2016
 
       - start_datetime: 2016-06-22 00:00:00
         end_datetime:   2016-06-28 00:00:00
         title: Marmet L&D Tailwater
+        from_streamgage: USACE_Marmet_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.92097
         rsr:    0.28112
         pbias:  0.12004
         r2:     0.92979
+        event: jun_2016
 
   UpperKanawha.p02:
     description: "Geometry: Upper Kanawha BLE geometry. Includes Marmet and London\
@@ -157,42 +174,50 @@ plans:
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: London L&D Pool
+        from_streamgage: USACE_London_LD_Pool
         description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
         hydrograph_type: "Stage"
         nse:    -50.493
         rsr:    7.1759
         pbias:  -0.18653
         r2:     0.22156
+        event: nov_2003
 
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: London L&D Tailwater
+        from_streamgage: USACE_London_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.94446
         rsr:    0.23567
         pbias:  -0.14871
         r2:     0.98069
+        event: nov_2003
 
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: Marmet L&D Pool 
+        from_streamgage: USACE_Marmet_LD_Pool
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.83132
         rsr:    0.41071
         pbias:  0.023509
         r2:     0.92922
+        event: nov_2003
 
       - start_datetime: 2003-11-12 00:00:00
         end_datetime:   2003-11-24 00:00:00
         title: Marmet L&D Tailwater
+        from_streamgage: USACE_Marmet_LD_Tailwater
         description: Stage hydrograph provided by USACE.
         hydrograph_type: "Stage"
         nse:    0.80228
         rsr:    0.44465
         pbias:  0.061883
         r2:     0.8096
+        event: nov_2003
   UpperKanawha.p03:
     description: null
     flow: u09

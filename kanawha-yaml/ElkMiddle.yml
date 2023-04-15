@@ -7,13 +7,13 @@ modified: 10/19/2022 19:55
 creators:
   - name: "Kevan Lee Lum"
     email: "kevan.leelum@wsp.com"
-    organization: "ARC"
+    org: WSP
   - name: "Britton Wells"
     email: "britton.wells@wsp.com"
-    organization: "ARC"
+    org: WSP
   - name: "Masoud Meshkat"
     email: "masoud.meshkat@wsp.com"
-    organization: "ARC"
+    org: WSP
 flows:
   ElkMiddle.u02:
     title: ElkMiddle_Nov2003
@@ -22,6 +22,7 @@ flows:
       start_datetime: 2003-11-06 12:00:00
       end_datetime: 2003-11-28 12:00:00
       spatially_varied: true
+      event: nov_2003
 
   ElkMiddle.u04:
     title: ElkMiddle_Jan1995
@@ -30,6 +31,7 @@ flows:
       start_datetime: 1995-01-05 12:00:00
       end_datetime:   1995-01-29 12:00:00
       spatially_varied: true
+      event: jan_1995
 
   ElkMiddle.u05:
     title: ElkMiddle_Jan1996
@@ -38,6 +40,7 @@ flows:
       start_datetime: 1996-01-14 12:00:00
       end_datetime:   1996-02-07 11:00:00
       spatially_varied: true
+      event: jan_1996
 
   ElkMiddle.u06:
     title: ElkMiddle_Jun2016
@@ -46,16 +49,15 @@ flows:
       start_datetime: 2016-06-20 12:00:00
       end_datetime:   2016-07-04 12:00:00
       spatially_varied: true
+      event: jun_2016
 
 geometries:
   ElkMiddle.g01:
     title: ElkMiddle
     roughness:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
     precip_losses:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
       bathymetry:
@@ -72,11 +74,9 @@ geometries:
   ElkMiddle.g02:
     title: ElkMiddle_1996
     roughness:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
     precip_losses:
-      landuse:
-        description: Remote Sensing Data processed by WSP
+      landuse: wsp_landuse
       soils:
         uri: https://www.nrcs.usda.gov/resources/data-and-reports/soil-survey-geographic-database-ssurgo
     mesh2d:
@@ -102,6 +102,7 @@ plans:
         rsr:    0.82996
         pbias:  -0.16572
         r2:     0.7701
+        event: nov_2003
 
       - start_datetime: 2003-11-11
         end_datetime: 2003-11-21
@@ -111,6 +112,7 @@ plans:
         rsr:    0.36328
         pbias:  -0.13772
         r2:     0.93277
+        event: nov_2003
 
       - start_datetime: 2003-11-11
         end_datetime: 2003-11-21
@@ -120,6 +122,7 @@ plans:
         rsr:    0.30843
         pbias:  13.164
         r2:     0.92731
+        event: nov_2003
 
       - start_datetime: 2003-11-11
         end_datetime: 2003-11-21
@@ -129,6 +132,7 @@ plans:
         rsr:    0.51156
         pbias:  0.24529
         r2:     0.90156
+        event: nov_2003
   ElkMiddle.p03:
     description: null
     flow: u05
@@ -143,6 +147,7 @@ plans:
         rsr:    0.78902
         pbias:  0.1821
         r2:     0.65615
+        event: jan_1996
 
       - start_datetime: 1996-01-15
         end_datetime:   1996-01-22
@@ -152,6 +157,7 @@ plans:
         rsr:    0.84782
         pbias:  0.35148
         r2:     0.61136
+        event: jan_1996
 
       - start_datetime: 1996-01-15
         end_datetime:   1996-01-22
@@ -161,6 +167,7 @@ plans:
         rsr:    1.4724
         pbias:  0.78082
         r2:     0.61415
+        event: jan_1996
   ElkMiddle.p04:
     description: null
     flow: u06
@@ -175,6 +182,7 @@ plans:
         rsr:    0.83896
         pbias:  -0.068283
         r2:     0.56463
+        event: jun_2016
 
       - start_datetime: 2016-06-20
         end_datetime:   2016-06-30
@@ -184,6 +192,7 @@ plans:
         rsr:    1.0997
         pbias:  -0.28261
         r2:     0.74283
+        event: jun_2016
 
 
       - start_datetime: 2016-06-20
@@ -194,6 +203,7 @@ plans:
         rsr:    0.62162
         pbias:  -28.881
         r2:     0.91515
+        event: jun_2016
 
       - start_datetime: 2016-06-20
         end_datetime:   2016-06-30
@@ -203,6 +213,7 @@ plans:
         rsr:    0.62702
         pbias:  -0.39992
         r2:     0.85544
+        event: jun_2016
 
       - start_datetime: 2016-06-20
         end_datetime:   2016-06-30
@@ -212,6 +223,7 @@ plans:
         rsr:    0.25266
         pbias:  -1.8492
         r2:     0.93743
+        event: jun_2016
 
       - start_datetime: 2016-06-20
         end_datetime:   2016-06-30
@@ -221,6 +233,7 @@ plans:
         rsr:    0.47899
         pbias:  0.12879
         r2:     0.81636
+        event: jun_2016
   ElkMiddle.p06:
     description: null
     flow: u04
@@ -235,6 +248,7 @@ plans:
         rsr:    1.3554
         pbias:  -0.11895
         r2:     0.6511
+        event: jan_1995
 
 
       - start_datetime: 1995-01-05
@@ -245,6 +259,7 @@ plans:
         rsr:    1.0726
         pbias:  -0.22115
         r2:     0.6714
+        event: jan_1995
 
 
       - start_datetime: 1995-01-05
@@ -255,6 +270,7 @@ plans:
         rsr:    0.75204
         pbias:  7.7577
         r2:     0.62639
+        event: jan_1995
 
 
       - start_datetime: 1995-01-05
@@ -265,4 +281,5 @@ plans:
         rsr:    1.5419
         pbias:  0.21848
         r2:     0.65966
+        event: jan_1995
 title: ElkMiddle

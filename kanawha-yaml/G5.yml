@@ -2,10 +2,13 @@ description: '2D rain-on-mesh BLE model of the 5th of nine Greenbrier River basi
 creators:
   - name: Josh Hill
     email: josh.hill@wsp.com
+    org: wsp
   - name: Ben Rufenacht
     email: ben.rufenacht@wsp.com
+    org: wsp
   - name: Dami George
     email: dami.george@wsp.com
+    org: wsp
 connected_models:
   - model: WatershedG4.prj
     direction: upstream
@@ -19,6 +22,7 @@ flows:
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       spatially_varied: true
+      event: jan_1995
   G5.u05:
     title: Jan-1996 Initial Conditions
   G5.u06:
@@ -27,50 +31,53 @@ flows:
       description: Gridded precipitation data from the January 1995 event
       start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
+      event: jan_1995
   G5.u07:
     title: Nov-2003 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
+      event: nov_2003
   G5.u08:
     title: Nov-2003 Calibration
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
+      event: nov_2003
   G5.u09:
     title: Jun-2016 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
+      event: jun_2016
   G5.u10:
     title: Jun-2016 Calibration
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
+      event: jun_2016
   G5.u11:
     title: Jan-1996 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
       start_datetime: 1/5/1996 12:00
       end_datetime: 1/29/1996 12:00
+      event: jan_1996
 geometries:
   G5.g01:
     title: GreenbrierBasinG5_LiDAR
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -83,16 +90,13 @@ geometries:
   G5.g02:
     title: LiDAR_G5_2016
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
       soils: ssurgo
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
@@ -105,13 +109,11 @@ geometries:
   G5.g03:
     title: LiDAR_G5_1996
     roughness:
-      landuse: 
-        description: Custom land cover analysis of NAIP 2022 imagery
+      landuse: wsp_landuse
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
-      bathymetry:
-        description: Channel data pulled from ongoing 1D HEC-RAS models for the Greenbrier River from ongiong WSP FEMA Risk MAP studies in the area.
+      bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
     mesh2d:
