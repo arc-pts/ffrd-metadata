@@ -1,178 +1,190 @@
-description: ''
 creators:
-  - name: Ryan Pohl
-    email: ryan.pohl@aecom.com
-    org: aecom
-  - name: Reuben Cozmyer
-    email: reuben.cozmyer@aecom.com
-    org: aecom
-ras_version: 6.3.0
-modified: 1/25/2023 23:59
+- email: ryan.pohl@aecom.com
+  name: Ryan Pohl
+  org: aecom
+- email: reuben.cozmyer@aecom.com
+  name: Reuben Cozmyer
+  org: aecom
+description: ''
 flows:
   New-LittleRiver.u05:
-    title: JUN2016_HMS
     hyetograph:
-      description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format
-      start_datetime: 6/20/2016 12:00
-      end_datetime:   7/4/2016 00:00
+      description: June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS
+        format
+      end_datetime: 7/4/2016 00:00
       event: jun_2016
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
+      2016 - CALIBRATION/
+    title: JUN2016_HMS
   New-LittleRiver.u07:
-    title: JAN1996_HMS
     hyetograph:
-      description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format
-      start_datetime: 1/14/1996 12:00
-      end_datetime:   2/7/1996 12:00
+      description: January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS
+        format
+      end_datetime: 2/7/1996 12:00
       event: jan_1996
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: JAN1996_HMS
   New-LittleRiver.u08:
-    title: NOV2003_HMS
     hyetograph:
-      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format
+      description: November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS
+        format
+      end_datetime: 11/28/2003 12:00
+      event: nov_2003
       start_datetime: 11/6/2003 12:00
-      end_datetime:   11/28/2003 12:00
-      event: nov_2003
+    met_dss_file: Nov2003_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
+      2003 - CALIBRATION/
+    title: NOV2003_HMS
   New-LittleRiver.u09:
-    title: restart_file
     hyetograph:
-      description: Small precip event run to fill in some local depressions. Hypothetical flat event for priming the model; total depth roughly equal to 2 yr 4 hr event
-      start_datetime: 11/18/2003 00:00
-      end_datetime:   11/22/2003 00:00
-      spatially_varied: false
+      description: Small precip event run to fill in some local depressions. Hypothetical
+        flat event for priming the model; total depth roughly equal to 2 yr 4 hr event
+      end_datetime: 11/22/2003 00:00
       event: nov_2003
+      spatially_varied: false
+      start_datetime: 11/18/2003 00:00
+    met_dss_file: Nov2003_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
+      2003 - CALIBRATION/
+    title: restart_file
   New-LittleRiver.u10:
-    title: JAN1995_HMS
     hyetograph:
-      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format
-      start_datetime: 1/5/1995 14:00
-      end_datetime:   1/29/1995 11:00
+      description: January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS
+        format
+      end_datetime: 1/29/1995 11:00
       event: jan_1995
+      start_datetime: 1/5/1995 14:00
+    met_dss_file: Jan1995_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN
+      1995 - CALIBRATION/
+    title: JAN1995_HMS
 geometries:
   New-LittleRiver.g01:
-    title: New_Little_River
-    roughness:
-      landuse: nlcd
+    mesh2d:
+      breaklines_max_cell_size: 100
+      breaklines_min_cell_size: 50
+      cell_count: 517580
+      nominal_cell_size: 200
     precip_losses:
       landuse: nlcd
       soils: ssurgo
+    roughness:
+      landuse: nlcd
     terrain:
       modifications:
-        description: Cuts made through road embankments and other terrain features that artificially block flow.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 100
-      cell_count: 517580
+        description: Cuts made through road embankments and other terrain features
+          that artificially block flow.
+    title: New_Little_River
 model: New-LittleRiver.prj
+modified: 1/25/2023 23:59
 plans:
   New-LittleRiver.p05:
     description: null
     flow: u05
     geom: g01
-    title: JUN2016_HMS
     hydrographs:
-      - from_streamgage: "03171000"
-        hydrograph_type: Stage
-        start_datetime: 6/20/2016 12:00
-        end_datetime:   7/4/2016 00:00
-        nse:   -0.31
-        rsr:   1.14
-        pbias: 19.55
-        r2: 0.01
-        event: jun_2016
-
-      - from_streamgage: "03170000"
-        hydrograph_type: Stage
-        start_datetime: 6/20/2016 12:00
-        end_datetime:   7/4/2016 00:00
-        nse:   0.35
-        rsr:   0.81
-        pbias: 14.11
-        r2: 0.64
-        event: jun_2016
-
+    - end_datetime: 7/4/2016 00:00
+      event: jun_2016
+      from_streamgage: '03171000'
+      hydrograph_type: Stage
+      nse: -0.31
+      pbias: 19.55
+      r2: 0.01
+      rsr: 1.14
+      start_datetime: 6/20/2016 12:00
+    - end_datetime: 7/4/2016 00:00
+      event: jun_2016
+      from_streamgage: '03170000'
+      hydrograph_type: Stage
+      nse: 0.35
+      pbias: 14.11
+      r2: 0.64
+      rsr: 0.81
+      start_datetime: 6/20/2016 12:00
+    title: JUN2016_HMS
   New-LittleRiver.p06:
     description: "with rating curve at dam and initial condition\nbigger channels\
       \ \nlower overland Manning's n values\nsmaller channel Manning's n polygons\n\
       lower channel Manning's n \nshifted baseflow\nrestart file"
     flow: u08
     geom: g01
-    title: NOV2003_HMS
     hydrographs:
-      - from_streamgage: "03171000"
-        hydrograph_type: Stage
-        start_datetime: 11/6/2003 12:00
-        end_datetime:   11/28/2003 12:00
-        nse:   0.38
-        rsr:   0.79
-        pbias: 9.42
-        r2: 0.39
-        event: nov_2003
-
-      - from_streamgage: "03170000"
-        hydrograph_type: Stage
-        start_datetime: 11/6/2003 12:00
-        end_datetime:   11/28/2003 12:00
-        nse:   0.94
-        rsr:   0.25
-        pbias: 5.13
-        r2:    0.94
-        event: nov_2003
-
+    - end_datetime: 11/28/2003 12:00
+      event: nov_2003
+      from_streamgage: '03171000'
+      hydrograph_type: Stage
+      nse: 0.38
+      pbias: 9.42
+      r2: 0.39
+      rsr: 0.79
+      start_datetime: 11/6/2003 12:00
+    - end_datetime: 11/28/2003 12:00
+      event: nov_2003
+      from_streamgage: '03170000'
+      hydrograph_type: Stage
+      nse: 0.94
+      pbias: 5.13
+      r2: 0.94
+      rsr: 0.25
+      start_datetime: 11/6/2003 12:00
+    title: NOV2003_HMS
   New-LittleRiver.p07:
     description: null
     flow: u07
     geom: g01
-    title: JAN1996_HMS
     hydrographs:
-      - from_streamgage: "03171000"
-        hydrograph_type: Stage
-        start_datetime: 1/14/1996 12:00
-        end_datetime:   2/7/1996 12:00
-        nse:   0.56
-        rsr:   0.66
-        pbias: 1.31
-        r2:    0.56
-        event: jan_1996
-
-      - from_streamgage: "03170000"
-        hydrograph_type: Stage
-        start_datetime: 1/14/1996 12:00
-        end_datetime:   2/7/1996 12:00
-        nse:   0.90
-        rsr:   0.32
-        pbias: -2.86
-        r2:    0.95
-        event: jan_1996
-
+    - end_datetime: 2/7/1996 12:00
+      event: jan_1996
+      from_streamgage: '03171000'
+      hydrograph_type: Stage
+      nse: 0.56
+      pbias: 1.31
+      r2: 0.56
+      rsr: 0.66
+      start_datetime: 1/14/1996 12:00
+    - end_datetime: 2/7/1996 12:00
+      event: jan_1996
+      from_streamgage: '03170000'
+      hydrograph_type: Stage
+      nse: 0.9
+      pbias: -2.86
+      r2: 0.95
+      rsr: 0.32
+      start_datetime: 1/14/1996 12:00
+    title: JAN1996_HMS
   New-LittleRiver.p17:
     description: null
     flow: u09
     geom: g01
     title: restart_file
-
   New-LittleRiver.p19:
     description: null
     flow: u10
     geom: g01
-    title: JAN1995_HMS
     hydrographs:
-      - from_streamgage: "03171000"
-        hydrograph_type: Stage
-        start_datetime: 1/5/1995 14:00
-        end_datetime:   1/29/1995 11:00
-        nse:   0.57
-        rsr:   0.65
-        pbias: 9.25
-        r2:    0.58
-        event: jan_1995
-
-      - from_streamgage: "03170000"
-        hydrograph_type: Stage
-        start_datetime: 1/5/1995 14:00
-        end_datetime:   1/29/1995 11:00
-        nse:   0.95
-        rsr:   0.22
-        pbias: -5.96
-        r2:    0.96
-        event: jan_1995
-
+    - end_datetime: 1/29/1995 11:00
+      event: jan_1995
+      from_streamgage: '03171000'
+      hydrograph_type: Stage
+      nse: 0.57
+      pbias: 9.25
+      r2: 0.58
+      rsr: 0.65
+      start_datetime: 1/5/1995 14:00
+    - end_datetime: 1/29/1995 11:00
+      event: jan_1995
+      from_streamgage: '03170000'
+      hydrograph_type: Stage
+      nse: 0.95
+      pbias: -5.96
+      r2: 0.96
+      rsr: 0.22
+      start_datetime: 1/5/1995 14:00
+    title: JAN1995_HMS
+ras_version: 6.3.0
 title: New-Little River

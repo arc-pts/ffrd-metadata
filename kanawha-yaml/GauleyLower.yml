@@ -1,221 +1,220 @@
-description: ''
 creators:
-  - name:  John Capobianco
-    email: John.Capobianco@mbakerintl.com
-    org: baker
-  - name:  Mark McBroom
-    email: mmcbroom@mbakerintl.com
-    org: baker
+- email: John.Capobianco@mbakerintl.com
+  name: John Capobianco
+  org: baker
+- email: mmcbroom@mbakerintl.com
+  name: Mark McBroom
+  org: baker
+description: ''
 flows:
   GauleyLower_BLE_FEM.u01:
-    title: GauleyLower_Floodplain_Nov2003
     hyetograph:
       description: November 2003 applied precipitation
-      start_datetime: 2003-11-06 00:00:00
-      end_datetime:   2003-11-23 00:00:00
-      spatially_varied: true
+      end_datetime: 2003-11-23 00:00:00
       event: nov_2003
-
+      spatially_varied: true
+      start_datetime: 2003-11-06 00:00:00
+    met_dss_file: Nov2003_corrected_AORC_precip.dss
+    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30SEP2003:2300/30SEP2003:2400/AORC
+      CORRECTED/
+    title: GauleyLower_Floodplain_Nov2003
   GauleyLower_BLE_FEM.u02:
-    title: GauleyLower_Floodplain_Jun2016
     hyetograph:
       description: June 2016 applied precipitation
-      start_datetime: 2016-06-20 12:00:00
-      end_datetime:   2016-06-20 00:00:00
-      spatially_varied: true
+      end_datetime: 2016-06-20 00:00:00
       event: jun_2016
-
+      spatially_varied: true
+      start_datetime: 2016-06-20 12:00:00
+    met_dss_file: Jun2016_corrected_AORC_precip.dss
+    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30APR2016:2300/30APR2016:2400/AORC
+      CORRECTED/
+    title: GauleyLower_Floodplain_Jun2016
   GauleyLower_BLE_FEM.u03:
-    title: GauleyLower_FloodPlain_Jan1995
     hyetograph:
       description: January 1995 applied precipitation
-      start_datetime: 1995-01-05 12:00:00
-      end_datetime:   1995-01-23 12:00:00
-      spatially_varied: true
+      end_datetime: 1995-01-23 12:00:00
       event: jan_1995
-
+      spatially_varied: true
+      start_datetime: 1995-01-05 12:00:00
+    met_dss_file: Jan1995_corrected_AORC_precip.dss
+    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1994:2300/30NOV1994:2400/AORC
+      CORRECTED/
+    title: GauleyLower_FloodPlain_Jan1995
   GauleyLower_BLE_FEM.u04:
-    title: GauleyLower_FloodPlain_Jan1996
     hyetograph:
       description: January 1996 applied precipitation
-      start_datetime: 1996-01-14 00:00:00
-      end_datetime:   1996-01-22 00:00:00
-      spatially_varied: true
+      end_datetime: 1996-01-22 00:00:00
       event: jan_1996
-
+      spatially_varied: true
+      start_datetime: 1996-01-14 00:00:00
+    met_dss_file: Jan1996_corrected_AORC_precip.dss
+    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1995:2300/30NOV1995:2400/AORC
+      CORRECTED/
+    title: GauleyLower_FloodPlain_Jan1996
 geometries:
   GauleyLower_BLE_FEM.g01:
-    title: Gauley_Lower
-    roughness:
-      landuse: baker_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 50
+      cell_count: 1088388
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
     precip_losses:
       landuse: baker_landuse
       soils: ssurgo
+    roughness:
+      landuse: baker_landuse
     structures: wv_clearinghouse_structures
     terrain:
+      bathymetry:
+        description: Channel data assumed from USGS rating curves at gages 03189100
+          & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided
+          by USACE.
       modifications:
         description: Cuts made through road and dam/berm embankments.
-      bathymetry:
-        description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 50
-      cell_count: 1088388
+    title: Gauley_Lower
 model: GauleyLower_BLE_FEM.prj
 plans:
   GauleyLower_BLE_FEM.p01:
     description: null
     flow: u01
     geom: g01
-    title: Unsteady_MultiHazard_Nov2003
     hydrographs:
-      - start_datetime: 2009-08-31 15:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03191500" # Peters Creek Near Lockwood, WV
-        hydrograph_type: "Flow"
-        nse:    0.574
-        rsr:    0.653
-        pbias:  1.181
-        r2:     0.607
-        event: nov_2003
-
-      - start_datetime: 2003-09-30 00:00:00
-        end_datetime:   2003-12-31 00:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Flow"
-        nse:    0.593
-        rsr:    0.638
-        pbias:  16.551
-        r2:     0.666
-        event: nov_2003
-
-      - start_datetime: 1994-12-01 05:00:00
-        end_datetime:   2016-09-01 05:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Stage"
-        nse:    0.625
-        rsr:    0.612
-        pbias:  -0.182
-        r2:     0.784
-        event: nov_2003
+    - end_datetime: 2016-08-01 05:00:00
+      event: nov_2003
+      from_streamgage: 03191500
+      hydrograph_type: Flow
+      nse: 0.574
+      pbias: 1.181
+      r2: 0.607
+      rsr: 0.653
+      start_datetime: 2009-08-31 15:00:00
+    - end_datetime: 2003-12-31 00:00:00
+      event: nov_2003
+      from_streamgage: 03192000
+      hydrograph_type: Flow
+      nse: 0.593
+      pbias: 16.551
+      r2: 0.666
+      rsr: 0.638
+      start_datetime: 2003-09-30 00:00:00
+    - end_datetime: 2016-09-01 05:00:00
+      event: nov_2003
+      from_streamgage: 03192000
+      hydrograph_type: Stage
+      nse: 0.625
+      pbias: -0.182
+      r2: 0.784
+      rsr: 0.612
+      start_datetime: 1994-12-01 05:00:00
+    title: Unsteady_MultiHazard_Nov2003
   GauleyLower_BLE_FEM.p02:
     description: null
     flow: u03
     geom: g01
-    title: Unsteady_MultiHazard_Jan1995
     hydrographs:
-      - start_datetime: 1928-10-20 00:00:00
-        end_datetime:   2022-06-26 00:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Flow"
-        nse:    0.952
-        rsr:    0.218
-        pbias:  -1.5726
-        r2:     0.962
-        event: jan_1995
-
-      - start_datetime: 1994-12-01 05:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Stage"
-        nse:    0.488
-        rsr:    0.715
-        pbias:  -0.195
-        r2:     0.959
-        event: jan_1995
-
+    - end_datetime: 2022-06-26 00:00:00
+      event: jan_1995
+      from_streamgage: 03192000
+      hydrograph_type: Flow
+      nse: 0.952
+      pbias: -1.5726
+      r2: 0.962
+      rsr: 0.218
+      start_datetime: 1928-10-20 00:00:00
+    - end_datetime: 2016-08-01 05:00:00
+      event: jan_1995
+      from_streamgage: 03192000
+      hydrograph_type: Stage
+      nse: 0.488
+      pbias: -0.195
+      r2: 0.959
+      rsr: 0.715
+      start_datetime: 1994-12-01 05:00:00
+    title: Unsteady_MultiHazard_Jan1995
   GauleyLower_BLE_FEM.p03:
     description: null
     flow: u02
     geom: g01
-    title: Unsteady_MultiHazard_Jun2016
     hydrographs:
-      - start_datetime: 2009-08-31 15:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03191500" # Peters Creek Near Lockwood, WV
-        hydrograph_type: "Flow"
-        nse:    0.667
-        rsr:    0.577
-        pbias:  12.6
-        r2:     0.670
-        event: jun_2016
-
-      - start_datetime: 2016-04-30 00:00:00
-        end_datetime:   2016-07-31 23:45:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Flow"
-        nse:    0.913
-        rsr:    0.295
-        pbias:  1.5
-        r2:     0.918
-        event: jun_2016
-
-      - start_datetime: 1994-12-01 05:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Stage"
-        nse:    0.782
-        rsr:    0.467
-        pbias:  -0.201
-        r2:     0.876
-        event: jun_2016
-
-      - start_datetime: 2012-08-30 10:30:00
-        end_datetime:   2022-06-26 23:30:00
-        from_streamgage: "03190000" # Meadow River at Nallen, WV
-        hydrograph_type: "Flow"
-        nse:    0.859
-        rsr:    0.376
-        pbias:  -11.652
-        r2:     0.878
-        event: jun_2016
-
-      - start_datetime: 2009-08-31 15:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03191500" # Peters Creek Near Lockwood, WV
-        hydrograph_type: "Stage"
-        nse:    0.691
-        rsr:    0.556
-        pbias:  0.031
-        r2:     0.896
-        event: jun_2016
-
-      - start_datetime: 2014-04-02 18:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03190000" # Meadow River at Nallen, WV
-        hydrograph_type: "Stage"
-        nse:    0.912
-        rsr:    0.2959
-        pbias:  -0.074
-        r2:     0.953
-        event: jun_2016
+    - end_datetime: 2016-08-01 05:00:00
+      event: jun_2016
+      from_streamgage: 03191500
+      hydrograph_type: Flow
+      nse: 0.667
+      pbias: 12.6
+      r2: 0.67
+      rsr: 0.577
+      start_datetime: 2009-08-31 15:00:00
+    - end_datetime: 2016-07-31 23:45:00
+      event: jun_2016
+      from_streamgage: 03192000
+      hydrograph_type: Flow
+      nse: 0.913
+      pbias: 1.5
+      r2: 0.918
+      rsr: 0.295
+      start_datetime: 2016-04-30 00:00:00
+    - end_datetime: 2016-08-01 05:00:00
+      event: jun_2016
+      from_streamgage: 03192000
+      hydrograph_type: Stage
+      nse: 0.782
+      pbias: -0.201
+      r2: 0.876
+      rsr: 0.467
+      start_datetime: 1994-12-01 05:00:00
+    - end_datetime: 2022-06-26 23:30:00
+      event: jun_2016
+      from_streamgage: 03190000
+      hydrograph_type: Flow
+      nse: 0.859
+      pbias: -11.652
+      r2: 0.878
+      rsr: 0.376
+      start_datetime: 2012-08-30 10:30:00
+    - end_datetime: 2016-08-01 05:00:00
+      event: jun_2016
+      from_streamgage: 03191500
+      hydrograph_type: Stage
+      nse: 0.691
+      pbias: 0.031
+      r2: 0.896
+      rsr: 0.556
+      start_datetime: 2009-08-31 15:00:00
+    - end_datetime: 2016-08-01 05:00:00
+      event: jun_2016
+      from_streamgage: 03190000
+      hydrograph_type: Stage
+      nse: 0.912
+      pbias: -0.074
+      r2: 0.953
+      rsr: 0.2959
+      start_datetime: 2014-04-02 18:00:00
+    title: Unsteady_MultiHazard_Jun2016
   GauleyLower_BLE_FEM.p06:
     description: null
     flow: u04
     geom: g01
-    title: Unsteady_MultiHazard_Jan1996
     hydrographs:
-      - start_datetime: 1928-10-20 00:00:00
-        end_datetime:   2022-06-26 00:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Flow"
-        nse:    0.649
-        rsr:    0.593
-        pbias:  24.806
-        r2:     0.785
-        event: jan_1996
-        
-      - start_datetime: 1994-12-01 05:00:00
-        end_datetime:   2016-08-01 05:00:00
-        from_streamgage: "03192000" # Gauley River Above Belva, WV
-        hydrograph_type: "Stage"
-        nse:    0.828
-        rsr:    0.415
-        pbias:  -0.096
-        r2:     0.875
-        event: jan_1996
-
+    - end_datetime: 2022-06-26 00:00:00
+      event: jan_1996
+      from_streamgage: 03192000
+      hydrograph_type: Flow
+      nse: 0.649
+      pbias: 24.806
+      r2: 0.785
+      rsr: 0.593
+      start_datetime: 1928-10-20 00:00:00
+    - end_datetime: 2016-08-01 05:00:00
+      event: jan_1996
+      from_streamgage: 03192000
+      hydrograph_type: Stage
+      nse: 0.828
+      pbias: -0.096
+      r2: 0.875
+      rsr: 0.415
+      start_datetime: 1994-12-01 05:00:00
+    title: Unsteady_MultiHazard_Jan1996
 title: GauleyLower_BLE-C_FEMA

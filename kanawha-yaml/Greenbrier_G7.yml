@@ -1,114 +1,128 @@
-description: '2D rain-on-mesh BLE model of the 7th of nine Greenbrier River basins in south-central West Virginia.'
 creators:
-  - name: Josh Hill
-    email: josh.hill@wsp.com
-    org: wsp
-  - name: Ben Rufenacht
-    email: ben.rufenacht@wsp.com
-    org: wsp
-  - name: Dami George
-    email: dami.george@wsp.com
-    org: wsp
+- email: josh.hill@wsp.com
+  name: Josh Hill
+  org: wsp
+- email: ben.rufenacht@wsp.com
+  name: Ben Rufenacht
+  org: wsp
+- email: dami.george@wsp.com
+  name: Dami George
+  org: wsp
+description: 2D rain-on-mesh BLE model of the 7th of nine Greenbrier River basins
+  in south-central West Virginia.
 flows:
   Greenbrier_G7.u01:
-    title: JAN1995 IC
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: JAN1995 IC
   Greenbrier_G7.u03:
-    title: NOV2003 IC
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: NOV2003 IC
   Greenbrier_G7.u04:
-    title: JUN2016 Cal
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       event: jun_2016
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
+    title: JUN2016 Cal
   Greenbrier_G7.u05:
-    title: JAN1995 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: JAN1995 Cal
   Greenbrier_G7.u06:
-    title: JAN1996 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       event: jan_1996
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: JAN1996 Cal
   Greenbrier_G7.u07:
-    title: NOV2003 Cal
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: NOV2003 Cal
 geometries:
   Greenbrier_G7.g01:
-    title: Greenbrier_G7_LiDAR
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 100
+      cell_count: 250141
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 250141
+    title: Greenbrier_G7_LiDAR
   Greenbrier_G7.g02:
-    title: LiDAR_G7_2016
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 100
+      cell_count: 250141
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 250141
+    title: LiDAR_G7_2016
   Greenbrier_G7.g03:
-    title: LiDAR_G7_1996
-    roughness:
-      landuse:  wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 100
+      cell_count: 250141
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Losses determined from USACE HEC-HMS model for 1996 event
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 250141
+    title: LiDAR_G7_1996
 model: Greenbrier_G7.prj
 plans:
   Greenbrier_G7.p01:

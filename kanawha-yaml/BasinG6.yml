@@ -1,132 +1,148 @@
-description: '2D rain-on-mesh BLE model of the 6th of nine Greenbrier River basins in south-central West Virginia.'
-creators:
-  - name: Josh Hill
-    email: josh.hill@wsp.com
-    org: wsp
-  - name: Ben Rufenacht
-    email: ben.rufenacht@wsp.com
-    org: wsp
-  - name: Dami George
-    email: dami.george@wsp.com
-    org: wsp
 connected_models:
-  - model: G5.prj
-    direction: upstream
-  - model: Greenbrier_G7.prj
-    direction: downstream
+- direction: upstream
+  model: G5.prj
+- direction: downstream
+  model: Greenbrier_G7.prj
+creators:
+- email: josh.hill@wsp.com
+  name: Josh Hill
+  org: wsp
+- email: ben.rufenacht@wsp.com
+  name: Ben Rufenacht
+  org: wsp
+- email: dami.george@wsp.com
+  name: Dami George
+  org: wsp
+description: 2D rain-on-mesh BLE model of the 6th of nine Greenbrier River basins
+  in south-central West Virginia.
 flows:
   BasinG6.u01:
-    title: Jan-1995
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/
+    title: Jan-1995
   BasinG6.u02:
+    hyetograph:
+      description: Gridded precipitation data from the January 1995 event
+      end_datetime: 1/29/1995 12:00
+      event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/
     title: Jan-1995 Inital Conditions
-    hyetograph: 
-      description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
-      end_datetime: 1/29/1995 12:00
-      spatially_varied: true
-      event: jan_1995
   BasinG6.u03:
-    title: Jan-1995 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/
+    title: Jan-1995 Calibration
   BasinG6.u04:
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      end_datetime: 11/28/2003 11:00
+      event: nov_2003
+      spatially_varied: true
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
     title: Nov-2003 Initial Conditions
-    hyetograph:
-      description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
-      end_datetime: 11/28/2003 11:00
-      spatially_varied: true
-      event: nov_2003
   BasinG6.u05:
-    title: Nov-2003 Calibration
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
-      spatially_varied: true
       event: nov_2003
+      spatially_varied: true
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC CORRECTED/
+    title: Nov-2003 Calibration
   BasinG6.u06:
-    title: Jun-2016 Calibration
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
-      spatially_varied: true
       event: jun_2016
+      spatially_varied: true
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
+    title: Jun-2016 Calibration
   BasinG6.u07:
-    title: Jan-1996 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
-      spatially_varied: true
       event: jan_1996
+      spatially_varied: true
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1300/14JAN1996:1400/RUN:JAN
+      1996 - CALIBRATION/
+    title: Jan-1996 Calibration
 geometries:
   BasinG6.g01:
-    title: GreenbrierBasinG6_LiDAR
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 228618
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 228618
+    title: GreenbrierBasinG6_LiDAR
   BasinG6.g02:
-    title: LiDAR_G6_2016
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 228618
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
       landuse: wsp_landuse
       soils: ssurgo
-    terrain:
-      bathymetry: gb_bath
-      modifications:
-        description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 228618
-  BasinG6.g03:
-    title: LiDAR_G6_1996
     roughness:
       landuse: wsp_landuse
-    precip_losses:
-      description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
+    title: LiDAR_G6_2016
+  BasinG6.g03:
     mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
       breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
+      breaklines_min_cell_size: 50
       cell_count: 228618
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    roughness:
+      landuse: wsp_landuse
+    terrain:
+      bathymetry: gb_bath
+      modifications:
+        description: Cuts made through road embankments.
+    title: LiDAR_G6_1996
 model: BasinG6.prj
 plans:
   BasinG6.p01:
@@ -168,15 +184,15 @@ plans:
     description: null
     flow: u06
     geom: g02
-    title: Jun-2016 Calibration
     hydrographs:
-      - from_streamgage: 03182888 # Dry Creek at Tuckahoe, WV
-        hydrograph_type: "Stage"
-        start_datetime: 10/1/2007 0:00
-        end_datetime: 3/24/2023 0:00
-        nse: 0.64704
-        rsr: 0.59411
-        pbias: -0.11989
-        r2: 0.90879
-        event: jun_2016
+    - end_datetime: 3/24/2023 0:00
+      event: jun_2016
+      from_streamgage: 03182888
+      hydrograph_type: Stage
+      nse: 0.64704
+      pbias: -0.11989
+      r2: 0.90879
+      rsr: 0.59411
+      start_datetime: 10/1/2007 0:00
+    title: Jun-2016 Calibration
 title: BasinG6

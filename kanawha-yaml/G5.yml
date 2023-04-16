@@ -1,128 +1,146 @@
-description: '2D rain-on-mesh BLE model of the 5th of nine Greenbrier River basins in south-central West Virginia.'
-creators:
-  - name: Josh Hill
-    email: josh.hill@wsp.com
-    org: wsp
-  - name: Ben Rufenacht
-    email: ben.rufenacht@wsp.com
-    org: wsp
-  - name: Dami George
-    email: dami.george@wsp.com
-    org: wsp
 connected_models:
-  - model: WatershedG4.prj
-    direction: upstream
-  - model: BasinG6.prj
-    direction: downstream
+- direction: upstream
+  model: WatershedG4.prj
+- direction: downstream
+  model: BasinG6.prj
+creators:
+- email: josh.hill@wsp.com
+  name: Josh Hill
+  org: wsp
+- email: ben.rufenacht@wsp.com
+  name: Ben Rufenacht
+  org: wsp
+- email: dami.george@wsp.com
+  name: Dami George
+  org: wsp
+description: 2D rain-on-mesh BLE model of the 5th of nine Greenbrier River basins
+  in south-central West Virginia.
 flows:
   G5.u01:
-    title: Jan-1995 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/07JAN1995:0000/07JAN1995:0100/AORC CORRECTED/
+    title: Jan-1995 Initial Conditions
   G5.u05:
+    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/16JAN1996:0000/16JAN1996:0100/AORC CORRECTED/
     title: Jan-1996 Initial Conditions
   G5.u06:
-    title: Jan-1995 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/
+    title: Jan-1995 Calibration
   G5.u07:
+    hyetograph:
+      description: Gridded precipitation data from the November 2003 event
+      end_datetime: 11/28/2003 11:00
+      event: nov_2003
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
     title: Nov-2003 Initial Conditions
-    hyetograph:
-      description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
-      end_datetime: 11/28/2003 11:00
-      event: nov_2003
   G5.u08:
-    title: Nov-2003 Calibration
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC CORRECTED/
+    title: Nov-2003 Calibration
   G5.u09:
+    hyetograph:
+      description: Gridded precipitation data from the June 2016 event
+      end_datetime: 7/4/2016 11:00
+      event: jun_2016
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
     title: Jun-2016 Initial Conditions
-    hyetograph:
-      description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
-      end_datetime: 7/4/2016 11:00
-      event: jun_2016
   G5.u10:
-    title: Jun-2016 Calibration
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       event: jun_2016
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
+    title: Jun-2016 Calibration
   G5.u11:
-    title: Jan-1996 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/5/1996 12:00
       end_datetime: 1/29/1996 12:00
       event: jan_1996
+      start_datetime: 1/5/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: Jan-1996 Calibration
 geometries:
   G5.g01:
-    title: GreenbrierBasinG5_LiDAR
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 230930
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 230930
+    title: GreenbrierBasinG5_LiDAR
   G5.g02:
-    title: LiDAR_G5_2016
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 230930
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
       landuse: wsp_landuse
       soils: ssurgo
-    terrain:
-      bathymetry: gb_bath
-      modifications:
-        description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 230930
-  G5.g03:
-    title: LiDAR_G5_1996
     roughness:
       landuse: wsp_landuse
-    precip_losses:
-      description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
+    title: LiDAR_G5_2016
+  G5.g03:
     mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
       breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
+      breaklines_min_cell_size: 50
       cell_count: 230930
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    roughness:
+      landuse: wsp_landuse
+    terrain:
+      bathymetry: gb_bath
+      modifications:
+        description: Cuts made through road embankments.
+    title: LiDAR_G5_1996
 model: G5.prj
 plans:
   G5.p01:
