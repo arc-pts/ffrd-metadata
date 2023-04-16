@@ -3,6 +3,7 @@ from IPython.display import HTML
 import json
 import re
 import requests
+from typing import Union, List, Dict, Any
 
 
 def get_ld_json(url: str) -> dict:
@@ -12,10 +13,7 @@ def get_ld_json(url: str) -> dict:
     return json.loads("".join(soup.find("script", {"type": "application/ld+json"}).contents))
 
 
-def stylized_json(data: dict) -> HTML:
-    # json_data = json.dumps(data)
-    # data = json.loads(json_data)
-
+def stylized_json(data: Union[List[Any], Dict[Any, Any]]) -> HTML:
     # Define a regular expression to match URLs
     url_regex = re.compile(r'https?://[^\s<>"]+|www\.[^\s<>"]+')
 

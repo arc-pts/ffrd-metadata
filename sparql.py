@@ -9,10 +9,11 @@ class FFRDMeta:
             "kanawha_models",
         ]
         self.vocabularies = ["owl", "rdf", "rdfs", "xsd", "xml", "dcterms", "foaf", "rascat"]
+        self.rascat_ttl = "http://raw.githubusercontent.com/arc-pts/ffrd-metadata/main/rascat.ttl#"
 
     def query_creator(self, model_creator: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         SELECT DISTINCT ?title ?description ?model
@@ -26,7 +27,7 @@ class FFRDMeta:
 
     def query_org(self, org_name: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX foaf: <http://xmlns.com/foaf/0.1/>
         SELECT DISTINCT ?title ?description ?model ?orgName ?jvName
@@ -45,7 +46,7 @@ class FFRDMeta:
 
     def query_cell_count(self, cell_count: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         SELECT ?title ?description ?model ?geometry ?cellCount
         WHERE {{
@@ -61,12 +62,12 @@ class FFRDMeta:
         """
 
     def query_lulc(self) -> str:
-        return """
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
         SELECT ?landuseDesc (GROUP_CONCAT(DISTINCT ?title; separator=", ") as ?titles)
-        WHERE {
+        WHERE {{
             ?model a rascat:RasModel .
             ?model dcterms:title ?title .
             ?model dcterms:description ?description .
@@ -74,13 +75,13 @@ class FFRDMeta:
             ?geom rascat:hasRoughness ?rough .
             ?rough rascat:hasLanduseLandcover ?landuse .
             ?landuse dcterms:description ?landuseDesc .
-        }
+        }}
         GROUP BY ?landuseDesc
         """
 
     def query_gage(self, gage: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
         SELECT DISTINCT ?model ?gage ?gageID
@@ -96,7 +97,7 @@ class FFRDMeta:
 
     def query_gages(self, model: str) -> str:
         return f"""
-        PREFIX rascat: <http://raw.githubusercontent.com/arc-pts/ffrd-metadata/main/rascat.ttl#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
         PREFIX kanawha_models: <http://example.ffrd.fema.gov/kanawha/models/>
@@ -113,7 +114,7 @@ class FFRDMeta:
 
     def query_calibration(self, limit: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
         SELECT ?title ?description ?model ?flow ?gage ?nse ?flowTitle ?gageTitle ?hydroType ?plan ?planTitle
