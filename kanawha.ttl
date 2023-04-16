@@ -109,7 +109,7 @@ kanawha_models:ElkMiddle.prj a rascat:RasModel ;
         ffrd_people:Kevan_Lee_Lum,
         ffrd_people:Masoud_Meshkat ;
     dcterms:description """Elk Middle watershed, Kanawha Basin, WV
-INNOVATION PROJECT #2 – 2D RAS FFRD PILOT
+INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
 Technical Advisement to FY21 IRWA with USACE
 RAS 6.3 Rain-On-Mesh. 
 Horizontal Datum: USA_Contiguous_Albers_Equal_Area_Conic_USGS_version
