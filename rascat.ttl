@@ -262,6 +262,11 @@
         rdfs:subClassOf :RasFlow ;
         rdfs:subClassOf dcat:Dataset .
 
+### http://www.example.org/rascat#HecDssFile
+:HecDssFile a owl:Class ;
+        rdfs:comment "A HEC-DSS file."@en ;
+        rdfs:subClassOf dcat:Dataset .
+
 ### http://www.example.org/rascat#Hydrodata
 :Hydrodata a owl:Class ;
         rdfs:comment "Class representing generic hydrologic data."@en ;
@@ -290,6 +295,16 @@
         rdfs:subClassOf dcat:endDate;
         rdfs:domain :HydroData ;
         rdfs:range xsd:dateTime .
+
+:hecDssFile a owl:ObjectProperty ;
+        rdfs:comment "The HEC-DSS file containing the hydrologic data."@en ;
+        rdfs:domain :HydroData ;
+        rdfs:range :HecDssFile .
+
+:hecDssPath a owl:ObjectProperty ;
+        rdfs:comment "The HEC-DSS internal path to the hydrologic data."@en ;
+        rdfs:domain :HydroData ;
+        rdfs:range xsd:string .
 
 ### http://www.example.org/rascat#Hydrograph
 :Hydrograph a owl:Class ;

@@ -8,7 +8,7 @@ creators:
 - email: masoud.meshkat@wsp.com
   name: Masoud Meshkat
   org: WSP
-description: "Elk Middle watershed, Kanawha Basin, WV\nINNOVATION PROJECT #2 -\
+description: "Elk Middle watershed, Kanawha Basin, WV\nINNOVATION PROJECT #2 \u2013\
   \ 2D RAS FFRD PILOT\nTechnical Advisement to FY21 IRWA with USACE\nRAS 6.3 Rain-On-Mesh.\
   \ \nHorizontal Datum: USA_Contiguous_Albers_Equal_Area_Conic_USGS_version\nVertical\
   \ Datum: North American Vertical Datum 1988 (NAVD 88)\nUnits: Feet\nFirm: Wood EIS\n\
@@ -19,41 +19,44 @@ flows:
       description: November 2003 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2003-11-28 12:00:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2003-11-06 12:00:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
     title: ElkMiddle_Nov2003
   ElkMiddle.u04:
     hyetograph:
       description: January 1995 Corrected AORC Precipitation, provided by USACE
       end_datetime: 1995-01-29 12:00:00
       event: jan_1995
+      met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1995-01-05 12:00:00
-    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
     title: ElkMiddle_Jan1995
   ElkMiddle.u05:
     hyetograph:
       description: January 1996 Corrected AORC Precipitation, provided by USACE
       end_datetime: 1996-02-07 11:00:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       spatially_varied: true
       start_datetime: 1996-01-14 12:00:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: ElkMiddle_Jan1996
   ElkMiddle.u06:
     hyetograph:
       description: June 2016 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2016-07-04 12:00:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2016-06-20 12:00:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
     title: ElkMiddle_Jun2016
 geometries:
   ElkMiddle.g01:

@@ -21,69 +21,77 @@ flows:
       description: Gridded precipitation data from the January 1995 event
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/07JAN1995:0000/07JAN1995:0100/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1/5/1995 12:00
-    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/07JAN1995:0000/07JAN1995:0100/AORC CORRECTED/
     title: Jan-1995 Initial Conditions
   G5.u05:
-    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/16JAN1996:0000/16JAN1996:0100/AORC CORRECTED/
+    hyetograph:
+      met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/16JAN1996:0000/16JAN1996:0100/AORC
+        CORRECTED/
     title: Jan-1996 Initial Conditions
   G5.u06:
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC
+        CORRECTED/
       start_datetime: 1/5/1995 12:00
-    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/
     title: Jan-1995 Calibration
   G5.u07:
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC
+        CORRECTED/
       start_datetime: 11/6/2003 12:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
     title: Nov-2003 Initial Conditions
   G5.u08:
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC
+        CORRECTED/
       start_datetime: 11/6/2003 12:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC CORRECTED/
     title: Nov-2003 Calibration
   G5.u09:
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       end_datetime: 7/4/2016 11:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC
+        CORRECTED/
       start_datetime: 6/20/2016 12:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
     title: Jun-2016 Initial Conditions
   G5.u10:
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       end_datetime: 7/4/2016 11:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC
+        CORRECTED/
       start_datetime: 6/20/2016 12:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
     title: Jun-2016 Calibration
   G5.u11:
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
       end_datetime: 1/29/1996 12:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       start_datetime: 1/5/1996 12:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: Jan-1996 Calibration
 geometries:
   G5.g01:

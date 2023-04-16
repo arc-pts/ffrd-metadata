@@ -19,41 +19,44 @@ flows:
       description: Gridded precipitation data from the January 1995 event
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1/5/1995 12:00
-    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
     title: Jan-1995
   WatershedG9.u02:
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
       end_datetime: 2/7/1996 11:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       spatially_varied: true
       start_datetime: 1/14/1996 12:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: Jan-1996
   WatershedG9.u03:
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
       end_datetime: 11/28/2003 11:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 11/6/2003 12:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
     title: Nov-2003
   WatershedG9.u04:
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
       end_datetime: 7/4/2016 11:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 6/20/2016 12:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
     title: Jun-2016
 geometries:
   WatershedG9.g01:

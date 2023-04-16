@@ -27,10 +27,12 @@ g.bind("ffrd_orgs", ffrd_orgs)
 kanawha_models = Namespace("http://example.ffrd.fema.gov/kanawha/models/")
 kanawha_events = Namespace("http://example.ffrd.fema.gov/kanawha/events/")
 kanawha_calibration = Namespace("http://example.ffrd.fema.gov/kanawha/calibration/")
+kanawha_dss = Namespace("http://example.ffrd.fema.gov/kanawha/dss/")
 kanawha_misc = Namespace("http://example.ffrd.fema.gov/kanawha/misc/")
 g.bind("kanawha_models", kanawha_models)
 g.bind("kanawha_events", kanawha_events)
 g.bind("kanawha_calibration", kanawha_calibration)
+g.bind("kanawha_dss", kanawha_dss)
 g.bind("kanawha_misc", kanawha_misc)
 
 usgs_gages = URIRef("https://waterdata.usgs.gov/monitoring-location/")
@@ -273,24 +275,53 @@ for v in HYDROEVENTS.values():
 
 
 @dataclass(kw_only=True)
+class HecDssFile(DcatDataset):
+    uri: Optional[str] = None
+
+    def add(self, g: Graph):
+        if self.uri is not None:
+            hec_dss_file = URIRef(self.uri)
+        else:
+            hec_dss_file = BNode()
+        g.add((hec_dss_file, RDF.type, RASCAT.HecDssFile))
+        self.add_dcat_terms(g, hec_dss_file)
+        return hec_dss_file
+
+
+@dataclass(kw_only=True)
 class Hydrodata(DcatDataset):
-    start_datetime: datetime | date | str
-    end_datetime: datetime | date | str
+    start_datetime: Optional[datetime | date | str] = None
+    end_datetime: Optional[datetime | date | str] = None
     from_hydroevent: Optional[HydroEvent] = None
+    hec_dss_file: Optional[HecDssFile] = None
+    hec_dss_path: Optional[str] = None
 
     def __post_init__(self):
-        self.start_datetime = to_datetime(self.start_datetime)
-        self.end_datetime = to_datetime(self.end_datetime)
+        if self.start_datetime:
+            self.start_datetime = to_datetime(self.start_datetime)
+        if self.end_datetime:
+            self.end_datetime = to_datetime(self.end_datetime)
 
     def add_hydrodata_terms(self, g: Graph, uri: URIRef):
-        g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((uri, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.start_datetime:
+            g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
+        if self.end_datetime:
+            g.add((uri, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.from_hydroevent is not None:
+            hydroevent = self.from_hydroevent.add(g)
+            g.add((uri, RASCAT.fromHydroEvent, hydroevent))
+        if self.hec_dss_file:
+            g.add((uri, RASCAT.hecDssFile, self.hec_dss_file.uri))
+        if self.hec_dss_path:
+            g.add((uri, RASCAT.hecDssPath, Literal(self.hec_dss_path)))
 
     def add_bnode(self, g: Graph):
         hydrodata = BNode()
         g.add((hydrodata, RDF.type, RASCAT.Hydrodata))
-        g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.start_datetime:
+            g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
+        if self.end_datetime:
+            g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
         if self.from_hydroevent is not None:
             hydroevent = self.from_hydroevent.add(g)
             g.add((hydrodata, RASCAT.fromHydroEvent, hydroevent))
@@ -352,16 +383,20 @@ class Calibration(Hydrodata):
 class Hyetograph(Hydrodata):
     spatially_varied: bool = True
 
+    def add(self, g: Graph, flow_uri: str = ''):
+        hyetograph = URIRef(flow_uri + '.hyetograph')
+        g.add((hyetograph, RDF.type, RASCAT.Hyetograph))
+        g.add((hyetograph, RASCAT.spatiallyVaried, Literal(self.spatially_varied)))
+        super().add_hydrodata_terms(g, hyetograph)
+        super().add_dcat_terms(g, hyetograph)
+        return hyetograph
+
     def add_bnode(self, g: Graph):
         hyetograph = BNode()
         g.add((hyetograph, RDF.type, RASCAT.Hyetograph))
-        g.add((hyetograph, DCTERMS.description, Literal(self.description)))
-        g.add((hyetograph, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((hyetograph, RASCAT.endDateTime, Literal(self.end_datetime)))
         g.add((hyetograph, RASCAT.spatiallyVaried, Literal(self.spatially_varied)))
-        if self.from_hydroevent:
-            hydroevent = self.from_hydroevent.add(g)
-            g.add((hyetograph, RASCAT.fromHydroEvent, hydroevent))
+        super().add_hydrodata_terms(g, hyetograph)
+        super().add_dcat_terms(g, hyetograph)
         return hyetograph
 
 
@@ -643,8 +678,12 @@ class RasModel(DcatDataset):
             flow.add_dcat_terms(g, flow_uri)
 
             if flow.hyetograph is not None:
-                hyeto_bnode = flow.hyetograph.add_bnode(g)
-                g.add((flow_uri, RASCAT.hasHyetograph, hyeto_bnode))
+                hyetograph = flow.hyetograph.add(g, flow_uri)
+                g.add((flow_uri, RASCAT.hasHyetograph, hyetograph))
+
+                if flow.hyetograph.hec_dss_file is not None:
+                    hec_dss_file = flow.hyetograph.hec_dss_file.add(g)
+                    g.add((hyetograph, RASCAT.hecDssFile, hec_dss_file))
 
         for plan in self.plans:
             plan_uri = self.rasfile_uri(plan.ext, base_uri)
@@ -767,12 +806,23 @@ def main():
             hyetograph = f.get('hyetograph')
             if hyetograph is not None:
                 hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
+                met_dss_file = hyetograph.get('met_dss_file')
+                met_dss_path = hyetograph.get('met_dss_path')
+                if met_dss_file is not None:
+                    hec_dss = HecDssFile(
+                        uri=URIRef(met_dss_file, kanawha_dss),
+                    )
+                    hec_dss.add(g)
+                else:
+                    hec_dss = None
                 hyetograph = Hyetograph(
                     start_datetime=hyetograph.get('start_datetime'),
                     end_datetime=hyetograph.get('end_datetime'),
                     description=hyetograph.get('description'),
                     spatially_varied=hyetograph.get('spatially_varied', True),
                     from_hydroevent=hydroevent,
+                    hec_dss_file=hec_dss,
+                    hec_dss_path=met_dss_path,
                 )
 
             flow = RasUnsteadyFlow(
