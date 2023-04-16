@@ -274,13 +274,15 @@ for v in HYDROEVENTS.values():
 
 @dataclass(kw_only=True)
 class Hydrodata(DcatDataset):
-    start_datetime: datetime | date | str
-    end_datetime: datetime | date | str
+    start_datetime: Optional[datetime | date | str] = None
+    end_datetime: Optional[datetime | date | str] = None
     from_hydroevent: Optional[HydroEvent] = None
 
     def __post_init__(self):
-        self.start_datetime = to_datetime(self.start_datetime)
-        self.end_datetime = to_datetime(self.end_datetime)
+        if self.start_datetime:
+            self.start_datetime = to_datetime(self.start_datetime)
+        if self.end_datetime:
+            self.end_datetime = to_datetime(self.end_datetime)
 
     def add_hydrodata_terms(self, g: Graph, uri: URIRef):
         g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
@@ -289,8 +291,10 @@ class Hydrodata(DcatDataset):
     def add_bnode(self, g: Graph):
         hydrodata = BNode()
         g.add((hydrodata, RDF.type, RASCAT.Hydrodata))
-        g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.start_datetime:
+            g.add((hydrodata, RASCAT.startDateTime, Literal(self.start_datetime)))
+        if self.end_datetime:
+            g.add((hydrodata, RASCAT.endDateTime, Literal(self.end_datetime)))
         if self.from_hydroevent is not None:
             hydroevent = self.from_hydroevent.add(g)
             g.add((hydrodata, RASCAT.fromHydroEvent, hydroevent))
@@ -767,6 +771,7 @@ def main():
             hyetograph = f.get('hyetograph')
             if hyetograph is not None:
                 hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
+                print(model['title'])
                 hyetograph = Hyetograph(
                     start_datetime=hyetograph.get('start_datetime'),
                     end_datetime=hyetograph.get('end_datetime'),

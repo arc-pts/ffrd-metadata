@@ -10,10 +10,10 @@ flows:
         with PRISM data)
       end_datetime: 1/19/1995 0:00
       event: jan_1995
+      met_dss_file: Jan1995_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1300/RUN:JAN
+        1995 - CALIBRATION/
       start_datetime: 1/11/1995 0:00
-    met_dss_file: Jan1995_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1300/RUN:JAN
-      1995 - CALIBRATION/
     title: Jan1995
   UpperNew_Upper.u02:
     hyetograph:
@@ -21,10 +21,10 @@ flows:
         with PRISM data)
       end_datetime: 11/23/2003 0:00
       event: nov_2003
+      met_dss_file: Nov2003_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
+        2003 - CALIBRATION/
       start_datetime: 11/16/2003 0:00
-    met_dss_file: Nov2003_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
-      2003 - CALIBRATION/
     title: Nov2003
   UpperNew_Upper.u03:
     hyetograph:
@@ -32,10 +32,10 @@ flows:
         with PRISM data)
       end_datetime: 1/23/1996 0:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       start_datetime: 1/15/1996 0:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: Jan1996
   UpperNew_Upper.u04:
     hyetograph:
@@ -43,15 +43,16 @@ flows:
         with PRISM data)
       end_datetime: 7/3/2016 12:00
       event: jun_2016
+      met_dss_file: Jun2016_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
+        2016 - CALIBRATION/
       start_datetime: 6/20/2016 12:00
-    met_dss_file: Jun2016_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
-      2016 - CALIBRATION/
     title: Jun2016
   UpperNew_Upper.u05:
-    met_dss_file: Jun2016_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
-      2016 - CALIBRATION/
+    hyetograph:
+      met_dss_file: Jun2016_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
+        2016 - CALIBRATION/
     title: RestartFile
 geometries:
   UpperNew_Upper.g01:

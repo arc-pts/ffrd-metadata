@@ -10,11 +10,11 @@ flows:
         format
       end_datetime: 1/24/1995 00:00
       event: jan_1995
+      met_dss_file: Jan1995_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN
+        1995 - CALIBRATION/
       spatially_varied: true
       start_datetime: 1/12/1995 00:00
-    met_dss_file: Jan1995_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN
-      1995 - CALIBRATION/
     title: JAN1995
   BluestoneLocal.u02:
     hyetograph:
@@ -22,11 +22,11 @@ flows:
         format
       end_datetime: 1/30/1996 00:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       spatially_varied: true
       start_datetime: 1/15/1996 00:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: JAN1996
   BluestoneLocal.u03:
     hyetograph:
@@ -34,11 +34,11 @@ flows:
         format
       end_datetime: 11/27/2003 00:00
       event: nov_2003
+      met_dss_file: Nov2003_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
+        2003 - CALIBRATION/
       spatially_varied: true
       start_datetime: 11/7/2003 00:00
-    met_dss_file: Nov2003_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
-      2003 - CALIBRATION/
     title: NOV2003
   BluestoneLocal.u04:
     hyetograph:
@@ -46,11 +46,11 @@ flows:
         format
       end_datetime: 7/3/2016 00:00
       event: jun_2016
+      met_dss_file: Jun2016_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
+        2016 - CALIBRATION/
       spatially_varied: true
       start_datetime: 6/20/2016 12:00
-    met_dss_file: Jun2016_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
-      2016 - CALIBRATION/
     title: JUN2016
 geometries:
   BluestoneLocal.g01:

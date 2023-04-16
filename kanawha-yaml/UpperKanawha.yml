@@ -29,60 +29,66 @@ flows:
       description: January 1996 Corrected AORC Precipitation, provided by USACE
       end_datetime: 1996-02-04 06:00:00
       event: jan_1996
+      met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1996-01-17 06:00:00
-    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
     title: Jan1996
   UpperKanawha.u02:
     hyetograph:
       description: January 1996 Corrected AORC Precipitation, provided by USACE
       end_datetime: 1996-01-17 06:00:00
       event: jan_1996
+      met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1996-01-15 00:00:00
-    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
     title: Jan1996_InitialConditions
   UpperKanawha.u07:
     hyetograph:
       description: November 2003 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2003-11-12 00:00:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2003-11-03 00:00:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
     title: Nov2003_InitialConditions
   UpperKanawha.u08:
     hyetograph:
       description: November 2003 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2003-11-24 00:00:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2003-11-12 00:00:00
-    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
     title: Nov2003
   UpperKanawha.u09:
     hyetograph:
       description: June 2016 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2016-06-22 00:00:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2016-06-07 00:00:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
     title: Jun2016_InitialConditions
   UpperKanawha.u11:
     hyetograph:
       description: June 2016 Corrected AORC Precipitation, provided by USACE
       end_datetime: 2016-06-28 00:00:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+      met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2016-06-22 00:00:00
-    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
-    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
     title: Jun2016
 geometries:
   UpperKanawha.g01:

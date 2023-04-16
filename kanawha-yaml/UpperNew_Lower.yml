@@ -12,10 +12,10 @@ flows:
     hyetograph:
       description: restart file
       end_datetime: 1/5/2000 12:00
+      met_dss_file: null
+      met_dss_path: null
       spatially_varied: false
       start_datetime: 1/1/2000 00:00
-    met_dss_file: null
-    met_dss_path: null
     title: Restart
   UpperNew_Lower.u02:
     hyetograph:
@@ -23,10 +23,10 @@ flows:
         with PRISM data)
       end_datetime: 1/29/1995 12:00
       event: jan_1995
+      met_dss_file: Jan1995_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN
+        1995 - CALIBRATION/
       start_datetime: 1/5/1995 14:00
-    met_dss_file: Jan1995_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN
-      1995 - CALIBRATION/
     title: Jan1995
   UpperNew_Lower.u03:
     hyetograph:
@@ -34,10 +34,10 @@ flows:
         with PRISM data)
       end_datetime: 2/2/1996 4:00
       event: jan_1996
+      met_dss_file: Jan1996_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+        1996 - CALIBRATION/
       start_datetime: 1/19/1996 5:00
-    met_dss_file: Jan1996_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
-      1996 - CALIBRATION/
     title: Jan1996
   UpperNew_Lower.u04:
     hyetograph:
@@ -45,10 +45,10 @@ flows:
         with PRISM data)
       end_datetime: 11/28/2003 10:00
       event: nov_2003
+      met_dss_file: Nov2003_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
+        2003 - CALIBRATION/
       start_datetime: 11/6/2003 13:00
-    met_dss_file: Nov2003_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV
-      2003 - CALIBRATION/
     title: Nov2003
   UpperNew_Lower.u05:
     hyetograph:
@@ -56,10 +56,10 @@ flows:
         with PRISM data)
       end_datetime: 7/4/2016 10:00
       event: jun_2016
+      met_dss_file: Jun2016_KanawhaHMS.dss
+      met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
+        2016 - CALIBRATION/
       start_datetime: 6/20/2016 13:00
-    met_dss_file: Jun2016_KanawhaHMS.dss
-    met_dss_path: //KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE
-      2016 - CALIBRATION/
     title: Jun2016
 geometries:
   UpperNew_Lower.g03:

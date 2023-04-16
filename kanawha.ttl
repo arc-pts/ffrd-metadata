@@ -108,7 +108,7 @@ kanawha_models:ElkMiddle.prj a rascat:RasModel ;
         ffrd_people:Kevan_Lee_Lum,
         ffrd_people:Masoud_Meshkat ;
     dcterms:description """Elk Middle watershed, Kanawha Basin, WV
-INNOVATION PROJECT #2 - 2D RAS FFRD PILOT
+INNOVATION PROJECT #2 – 2D RAS FFRD PILOT
 Technical Advisement to FY21 IRWA with USACE
 RAS 6.3 Rain-On-Mesh. 
 Horizontal Datum: USA_Contiguous_Albers_Equal_Area_Conic_USGS_version
@@ -2845,6 +2845,11 @@ kanawha_models:G5.p14 a rascat:RasPlan ;
 
 kanawha_models:G5.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Initial Conditions" ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            dcterms:description "None" ;
+            rascat:endDateTime "None" ;
+            rascat:spatiallyVaried true ;
+            rascat:startDateTime "None" ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.g01.bathymetry a rascat:Bathymetry ;
@@ -3334,6 +3339,11 @@ kanawha_models:Greenbrier_G8.p07 a rascat:RasPlan ;
 
 kanawha_models:Greenbrier_G8.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996" ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            dcterms:description "None" ;
+            rascat:endDateTime "None" ;
+            rascat:spatiallyVaried true ;
+            rascat:startDateTime "None" ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g01.mesh2d a rascat:Mesh2D ;
@@ -3896,6 +3906,11 @@ kanawha_models:UpperNew_Upper.p04 a rascat:RasPlan ;
 
 kanawha_models:UpperNew_Upper.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "RestartFile" ;
+    rascat:hasHyetograph [ a rascat:Hyetograph ;
+            dcterms:description "None" ;
+            rascat:endDateTime "None" ;
+            rascat:spatiallyVaried true ;
+            rascat:startDateTime "None" ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g01.mesh2d a rascat:Mesh2D ;

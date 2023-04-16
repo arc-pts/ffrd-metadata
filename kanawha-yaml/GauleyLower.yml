@@ -12,44 +12,44 @@ flows:
       description: November 2003 applied precipitation
       end_datetime: 2003-11-23 00:00:00
       event: nov_2003
+      met_dss_file: Nov2003_corrected_AORC_precip.dss
+      met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30SEP2003:2300/30SEP2003:2400/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2003-11-06 00:00:00
-    met_dss_file: Nov2003_corrected_AORC_precip.dss
-    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30SEP2003:2300/30SEP2003:2400/AORC
-      CORRECTED/
     title: GauleyLower_Floodplain_Nov2003
   GauleyLower_BLE_FEM.u02:
     hyetograph:
       description: June 2016 applied precipitation
       end_datetime: 2016-06-20 00:00:00
       event: jun_2016
+      met_dss_file: Jun2016_corrected_AORC_precip.dss
+      met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30APR2016:2300/30APR2016:2400/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 2016-06-20 12:00:00
-    met_dss_file: Jun2016_corrected_AORC_precip.dss
-    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30APR2016:2300/30APR2016:2400/AORC
-      CORRECTED/
     title: GauleyLower_Floodplain_Jun2016
   GauleyLower_BLE_FEM.u03:
     hyetograph:
       description: January 1995 applied precipitation
       end_datetime: 1995-01-23 12:00:00
       event: jan_1995
+      met_dss_file: Jan1995_corrected_AORC_precip.dss
+      met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1994:2300/30NOV1994:2400/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1995-01-05 12:00:00
-    met_dss_file: Jan1995_corrected_AORC_precip.dss
-    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1994:2300/30NOV1994:2400/AORC
-      CORRECTED/
     title: GauleyLower_FloodPlain_Jan1995
   GauleyLower_BLE_FEM.u04:
     hyetograph:
       description: January 1996 applied precipitation
       end_datetime: 1996-01-22 00:00:00
       event: jan_1996
+      met_dss_file: Jan1996_corrected_AORC_precip.dss
+      met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1995:2300/30NOV1995:2400/AORC
+        CORRECTED/
       spatially_varied: true
       start_datetime: 1996-01-14 00:00:00
-    met_dss_file: Jan1996_corrected_AORC_precip.dss
-    met_dss_path: /SHG/KANAWHA RIVER/PRECIPITATION/30NOV1995:2300/30NOV1995:2400/AORC
-      CORRECTED/
     title: GauleyLower_FloodPlain_Jan1996
 geometries:
   GauleyLower_BLE_FEM.g01:
