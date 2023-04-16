@@ -2846,10 +2846,8 @@ kanawha_models:G5.p14 a rascat:RasPlan ;
 kanawha_models:G5.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Initial Conditions" ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "None" ;
-            rascat:endDateTime "None" ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "None" ] ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.g01.bathymetry a rascat:Bathymetry ;
@@ -3340,10 +3338,8 @@ kanawha_models:Greenbrier_G8.p07 a rascat:RasPlan ;
 kanawha_models:Greenbrier_G8.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996" ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "None" ;
-            rascat:endDateTime "None" ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "None" ] ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g01.mesh2d a rascat:Mesh2D ;
@@ -3907,10 +3903,8 @@ kanawha_models:UpperNew_Upper.p04 a rascat:RasPlan ;
 kanawha_models:UpperNew_Upper.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "RestartFile" ;
     rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "None" ;
-            rascat:endDateTime "None" ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "None" ] ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g01.mesh2d a rascat:Mesh2D ;
@@ -4484,7 +4478,8 @@ kanawha_models:BasinG6.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u03 a rascat:RasUnsteadyFlow ;
@@ -4494,7 +4489,8 @@ kanawha_models:BasinG6.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u04 a rascat:RasUnsteadyFlow ;
@@ -4504,7 +4500,8 @@ kanawha_models:BasinG6.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u05 a rascat:RasUnsteadyFlow ;
@@ -4514,7 +4511,8 @@ kanawha_models:BasinG6.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u06 a rascat:RasUnsteadyFlow ;
@@ -4524,7 +4522,8 @@ kanawha_models:BasinG6.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u07 a rascat:RasUnsteadyFlow ;
@@ -4534,7 +4533,8 @@ kanawha_models:BasinG6.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u01 a rascat:RasUnsteadyFlow ;
@@ -4544,7 +4544,8 @@ kanawha_models:BluestoneLocal.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-24T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-12T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-12T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u02 a rascat:RasUnsteadyFlow ;
@@ -4554,7 +4555,8 @@ kanawha_models:BluestoneLocal.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-01-30T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u03 a rascat:RasUnsteadyFlow ;
@@ -4564,7 +4566,8 @@ kanawha_models:BluestoneLocal.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-27T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-07T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-07T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u04 a rascat:RasUnsteadyFlow ;
@@ -4574,7 +4577,8 @@ kanawha_models:BluestoneLocal.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u06 a rascat:RasUnsteadyFlow ;
@@ -4584,7 +4588,8 @@ kanawha_models:Bluestone_Upper.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u07 a rascat:RasUnsteadyFlow ;
@@ -4594,7 +4599,8 @@ kanawha_models:Bluestone_Upper.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u08 a rascat:RasUnsteadyFlow ;
@@ -4604,7 +4610,8 @@ kanawha_models:Bluestone_Upper.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-06T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u09 a rascat:RasUnsteadyFlow ;
@@ -4614,7 +4621,8 @@ kanawha_models:Bluestone_Upper.u09 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u01 a rascat:RasUnsteadyFlow ;
@@ -4624,7 +4632,8 @@ kanawha_models:CoalRiver.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u02 a rascat:RasUnsteadyFlow ;
@@ -4634,7 +4643,8 @@ kanawha_models:CoalRiver.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-25T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u03 a rascat:RasUnsteadyFlow ;
@@ -4644,7 +4654,8 @@ kanawha_models:CoalRiver.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-01T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u04 a rascat:RasUnsteadyFlow ;
@@ -4654,7 +4665,8 @@ kanawha_models:CoalRiver.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g02 a rascat:RasGeometry ;
@@ -4672,7 +4684,8 @@ kanawha_models:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
@@ -4682,7 +4695,8 @@ kanawha_models:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
@@ -4692,7 +4706,8 @@ kanawha_models:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
@@ -4702,7 +4717,8 @@ kanawha_models:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g03 a rascat:RasGeometry ;
@@ -4720,7 +4736,8 @@ kanawha_models:G5.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u07 a rascat:RasUnsteadyFlow ;
@@ -4730,7 +4747,8 @@ kanawha_models:G5.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u08 a rascat:RasUnsteadyFlow ;
@@ -4740,7 +4758,8 @@ kanawha_models:G5.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u09 a rascat:RasUnsteadyFlow ;
@@ -4750,7 +4769,8 @@ kanawha_models:G5.u09 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u10 a rascat:RasUnsteadyFlow ;
@@ -4760,7 +4780,8 @@ kanawha_models:G5.u10 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u11 a rascat:RasUnsteadyFlow ;
@@ -4770,7 +4791,8 @@ kanawha_models:G5.u11 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
@@ -4780,7 +4802,8 @@ kanawha_models:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u03 a rascat:RasUnsteadyFlow ;
@@ -4790,7 +4813,8 @@ kanawha_models:GSummersville_B.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
@@ -4800,7 +4824,8 @@ kanawha_models:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
@@ -4810,7 +4835,8 @@ kanawha_models:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
@@ -4820,7 +4846,8 @@ kanawha_models:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
@@ -4830,7 +4857,8 @@ kanawha_models:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
@@ -4840,7 +4868,8 @@ kanawha_models:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u02 a rascat:RasUnsteadyFlow ;
@@ -4850,7 +4879,8 @@ kanawha_models:GauleyLower_BLE_FEM.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u03 a rascat:RasUnsteadyFlow ;
@@ -4860,7 +4890,8 @@ kanawha_models:GauleyLower_BLE_FEM.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-23T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u04 a rascat:RasUnsteadyFlow ;
@@ -4870,7 +4901,8 @@ kanawha_models:GauleyLower_BLE_FEM.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g03 a rascat:RasGeometry ;
@@ -4888,7 +4920,8 @@ kanawha_models:Greenbrier_G7.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u03 a rascat:RasUnsteadyFlow ;
@@ -4898,7 +4931,8 @@ kanawha_models:Greenbrier_G7.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u04 a rascat:RasUnsteadyFlow ;
@@ -4908,7 +4942,8 @@ kanawha_models:Greenbrier_G7.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u05 a rascat:RasUnsteadyFlow ;
@@ -4918,7 +4953,8 @@ kanawha_models:Greenbrier_G7.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u06 a rascat:RasUnsteadyFlow ;
@@ -4928,7 +4964,8 @@ kanawha_models:Greenbrier_G7.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u07 a rascat:RasUnsteadyFlow ;
@@ -4938,7 +4975,8 @@ kanawha_models:Greenbrier_G7.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g03 a rascat:RasGeometry ;
@@ -4956,7 +4994,8 @@ kanawha_models:Greenbrier_G8.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u03 a rascat:RasUnsteadyFlow ;
@@ -4966,7 +5005,8 @@ kanawha_models:Greenbrier_G8.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u04 a rascat:RasUnsteadyFlow ;
@@ -4976,7 +5016,8 @@ kanawha_models:Greenbrier_G8.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u05 a rascat:RasUnsteadyFlow ;
@@ -4986,7 +5027,8 @@ kanawha_models:Greenbrier_G8.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u06 a rascat:RasUnsteadyFlow ;
@@ -4996,7 +5038,8 @@ kanawha_models:Greenbrier_G8.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u07 a rascat:RasUnsteadyFlow ;
@@ -5006,7 +5049,8 @@ kanawha_models:Greenbrier_G8.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u01 a rascat:RasUnsteadyFlow ;
@@ -5016,7 +5060,8 @@ kanawha_models:Kanawha_G1.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u02 a rascat:RasUnsteadyFlow ;
@@ -5026,7 +5071,8 @@ kanawha_models:Kanawha_G1.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u03 a rascat:RasUnsteadyFlow ;
@@ -5036,7 +5082,8 @@ kanawha_models:Kanawha_G1.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u04 a rascat:RasUnsteadyFlow ;
@@ -5046,7 +5093,8 @@ kanawha_models:Kanawha_G1.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u05 a rascat:RasUnsteadyFlow ;
@@ -5056,7 +5104,8 @@ kanawha_models:Kanawha_G1.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u06 a rascat:RasUnsteadyFlow ;
@@ -5066,7 +5115,8 @@ kanawha_models:Kanawha_G1.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u07 a rascat:RasUnsteadyFlow ;
@@ -5076,7 +5126,8 @@ kanawha_models:Kanawha_G1.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u08 a rascat:RasUnsteadyFlow ;
@@ -5086,7 +5137,8 @@ kanawha_models:Kanawha_G1.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g03 a rascat:RasGeometry ;
@@ -5104,7 +5156,8 @@ kanawha_models:Kanawha_G2.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u02 a rascat:RasUnsteadyFlow ;
@@ -5114,7 +5167,8 @@ kanawha_models:Kanawha_G2.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u03 a rascat:RasUnsteadyFlow ;
@@ -5124,7 +5178,8 @@ kanawha_models:Kanawha_G2.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u04 a rascat:RasUnsteadyFlow ;
@@ -5134,7 +5189,8 @@ kanawha_models:Kanawha_G2.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u05 a rascat:RasUnsteadyFlow ;
@@ -5144,7 +5200,8 @@ kanawha_models:Kanawha_G2.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u06 a rascat:RasUnsteadyFlow ;
@@ -5154,7 +5211,8 @@ kanawha_models:Kanawha_G2.u06 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u07 a rascat:RasUnsteadyFlow ;
@@ -5164,7 +5222,8 @@ kanawha_models:Kanawha_G2.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u08 a rascat:RasUnsteadyFlow ;
@@ -5174,7 +5233,8 @@ kanawha_models:Kanawha_G2.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u05 a rascat:RasUnsteadyFlow ;
@@ -5184,7 +5244,8 @@ kanawha_models:New-LittleRiver.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u07 a rascat:RasUnsteadyFlow ;
@@ -5194,7 +5255,8 @@ kanawha_models:New-LittleRiver.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u08 a rascat:RasUnsteadyFlow ;
@@ -5204,7 +5266,8 @@ kanawha_models:New-LittleRiver.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u09 a rascat:RasUnsteadyFlow ;
@@ -5214,7 +5277,8 @@ kanawha_models:New-LittleRiver.u09 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-22T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried false ;
-            rascat:startDateTime "2003-11-18T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-18T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u10 a rascat:RasUnsteadyFlow ;
@@ -5224,7 +5288,8 @@ kanawha_models:New-LittleRiver.u10 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u01 a rascat:RasUnsteadyFlow ;
@@ -5234,7 +5299,8 @@ kanawha_models:UpperKanawha.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-04T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-17T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u02 a rascat:RasUnsteadyFlow ;
@@ -5244,7 +5310,8 @@ kanawha_models:UpperKanawha.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u07 a rascat:RasUnsteadyFlow ;
@@ -5254,7 +5321,8 @@ kanawha_models:UpperKanawha.u07 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-03T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-03T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u08 a rascat:RasUnsteadyFlow ;
@@ -5264,7 +5332,8 @@ kanawha_models:UpperKanawha.u08 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u09 a rascat:RasUnsteadyFlow ;
@@ -5274,7 +5343,8 @@ kanawha_models:UpperKanawha.u09 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-07T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-07T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
@@ -5284,7 +5354,8 @@ kanawha_models:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u01 a rascat:RasUnsteadyFlow ;
@@ -5293,7 +5364,8 @@ kanawha_models:UpperNew_Lower.u01 a rascat:RasUnsteadyFlow ;
             dcterms:description "restart file" ;
             rascat:endDateTime "2000-01-05T12:00:00"^^xsd:dateTime ;
             rascat:spatiallyVaried false ;
-            rascat:startDateTime "2000-01-01T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2000-01-01T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u02 a rascat:RasUnsteadyFlow ;
@@ -5303,7 +5375,8 @@ kanawha_models:UpperNew_Lower.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u03 a rascat:RasUnsteadyFlow ;
@@ -5313,7 +5386,8 @@ kanawha_models:UpperNew_Lower.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-02T04:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-19T05:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-19T05:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u04 a rascat:RasUnsteadyFlow ;
@@ -5323,7 +5397,8 @@ kanawha_models:UpperNew_Lower.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T10:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u05 a rascat:RasUnsteadyFlow ;
@@ -5333,7 +5408,8 @@ kanawha_models:UpperNew_Lower.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T10:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u01 a rascat:RasUnsteadyFlow ;
@@ -5343,7 +5419,8 @@ kanawha_models:UpperNew_Upper.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-19T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u02 a rascat:RasUnsteadyFlow ;
@@ -5353,7 +5430,8 @@ kanawha_models:UpperNew_Upper.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u03 a rascat:RasUnsteadyFlow ;
@@ -5363,7 +5441,8 @@ kanawha_models:UpperNew_Upper.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-01-23T00:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u04 a rascat:RasUnsteadyFlow ;
@@ -5373,7 +5452,8 @@ kanawha_models:UpperNew_Upper.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-03T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u01 a rascat:RasUnsteadyFlow ;
@@ -5383,7 +5463,8 @@ kanawha_models:WatershedG3.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u05 a rascat:RasUnsteadyFlow ;
@@ -5481,7 +5562,8 @@ kanawha_models:BasinG6.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u01 a rascat:RasUnsteadyFlow ;
@@ -5491,7 +5573,8 @@ kanawha_models:G5.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
@@ -5501,7 +5584,8 @@ kanawha_models:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u05 a rascat:RasUnsteadyFlow ;
@@ -5511,7 +5595,8 @@ kanawha_models:GSummersville_C.u05 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T13:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T13:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g01 a rascat:RasGeometry ;
@@ -5569,7 +5654,8 @@ kanawha_models:WatershedG3.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u03 a rascat:RasUnsteadyFlow ;
@@ -5579,7 +5665,8 @@ kanawha_models:WatershedG3.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u04 a rascat:RasUnsteadyFlow ;
@@ -5589,7 +5676,8 @@ kanawha_models:WatershedG3.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g02 a rascat:RasGeometry ;
@@ -5607,7 +5695,8 @@ kanawha_models:WatershedG4.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u02 a rascat:RasUnsteadyFlow ;
@@ -5617,7 +5706,8 @@ kanawha_models:WatershedG4.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u03 a rascat:RasUnsteadyFlow ;
@@ -5627,7 +5717,8 @@ kanawha_models:WatershedG4.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u04 a rascat:RasUnsteadyFlow ;
@@ -5637,7 +5728,8 @@ kanawha_models:WatershedG4.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g02 a rascat:RasGeometry ;
@@ -5655,7 +5747,8 @@ kanawha_models:WatershedG9.u01 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1995 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u02 a rascat:RasUnsteadyFlow ;
@@ -5665,7 +5758,8 @@ kanawha_models:WatershedG9.u02 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jan1996 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u03 a rascat:RasUnsteadyFlow ;
@@ -5675,7 +5769,8 @@ kanawha_models:WatershedG9.u03 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Nov2003 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u04 a rascat:RasUnsteadyFlow ;
@@ -5685,7 +5780,8 @@ kanawha_models:WatershedG9.u04 a rascat:RasUnsteadyFlow ;
             rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
             rascat:fromHydroEvent kanawha_events:Jun2016 ;
             rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ] ;
+            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 ffrd_orgs:Freese a foaf:Organization ;

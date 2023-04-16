@@ -285,8 +285,13 @@ class Hydrodata(DcatDataset):
             self.end_datetime = to_datetime(self.end_datetime)
 
     def add_hydrodata_terms(self, g: Graph, uri: URIRef):
-        g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((uri, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.start_datetime:
+            g.add((uri, RASCAT.startDateTime, Literal(self.start_datetime)))
+        if self.end_datetime:
+            g.add((uri, RASCAT.endDateTime, Literal(self.end_datetime)))
+        if self.from_hydroevent is not None:
+            hydroevent = self.from_hydroevent.add(g)
+            g.add((uri, RASCAT.fromHydroEvent, hydroevent))
 
     def add_bnode(self, g: Graph):
         hydrodata = BNode()
@@ -359,13 +364,9 @@ class Hyetograph(Hydrodata):
     def add_bnode(self, g: Graph):
         hyetograph = BNode()
         g.add((hyetograph, RDF.type, RASCAT.Hyetograph))
-        g.add((hyetograph, DCTERMS.description, Literal(self.description)))
-        g.add((hyetograph, RASCAT.startDateTime, Literal(self.start_datetime)))
-        g.add((hyetograph, RASCAT.endDateTime, Literal(self.end_datetime)))
         g.add((hyetograph, RASCAT.spatiallyVaried, Literal(self.spatially_varied)))
-        if self.from_hydroevent:
-            hydroevent = self.from_hydroevent.add(g)
-            g.add((hyetograph, RASCAT.fromHydroEvent, hydroevent))
+        super().add_hydrodata_terms(g, hyetograph)
+        super().add_dcat_terms(g, hyetograph)
         return hyetograph
 
 
@@ -771,12 +772,12 @@ def main():
             hyetograph = f.get('hyetograph')
             if hyetograph is not None:
                 hydroevent = HYDROEVENTS.get(hyetograph.get('event'))
-                print(model['title'])
                 hyetograph = Hyetograph(
                     start_datetime=hyetograph.get('start_datetime'),
                     end_datetime=hyetograph.get('end_datetime'),
                     description=hyetograph.get('description'),
                     spatially_varied=hyetograph.get('spatially_varied', True),
+
                     from_hydroevent=hydroevent,
                 )
 
