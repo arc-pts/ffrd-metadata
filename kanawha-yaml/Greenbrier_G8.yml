@@ -1,126 +1,142 @@
-description: '2D rain-on-mesh BLE model of the 8th of nine Greenbrier River basins in south-central West Virginia.'
-creators:
-  - name:  Josh Hill
-    email: josh.hill@wsp.com
-    org: wsp
-  - name:  Ben Rufenacht
-    email: ben.rufenacht@wsp.com
-    org: wsp
-  - name:  Sirui Wen
-    email: sirui.wen@wsp.com
-    org: wsp
 connected_models:
-  - model: Greenbrier_G7.prj
-    direction: upstream
-  - model: WatershedG9.prj
-    direction: downstream
+- direction: upstream
+  model: Greenbrier_G7.prj
+- direction: downstream
+  model: WatershedG9.prj
+creators:
+- email: josh.hill@wsp.com
+  name: Josh Hill
+  org: wsp
+- email: ben.rufenacht@wsp.com
+  name: Ben Rufenacht
+  org: wsp
+- email: sirui.wen@wsp.com
+  name: Sirui Wen
+  org: wsp
+description: 2D rain-on-mesh BLE model of the 8th of nine Greenbrier River basins
+  in south-central West Virginia.
 flows:
   Greenbrier_G8.u01:
-    title: JAN1995 IC
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: JAN1995 IC
   Greenbrier_G8.u02:
+    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
     title: JAN1996
   Greenbrier_G8.u03:
-    title: NOV2003 IC
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
-      spatially_varied: true
       event: nov_2003
+      spatially_varied: true
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: NOV2003 IC
   Greenbrier_G8.u04:
-    title: JUN2016 Calibration
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
-      spatially_varied: true
       event: jun_2016
+      spatially_varied: true
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
+    title: JUN2016 Calibration
   Greenbrier_G8.u05:
-    title: JAN1995 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
-      spatially_varied: true
       event: jan_1995
+      spatially_varied: true
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: JAN1995 Cal
   Greenbrier_G8.u06:
-    title: JAN1996 Cal
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
-      spatially_varied: true
       event: jan_1996
+      spatially_varied: true
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: JAN1996 Cal
   Greenbrier_G8.u07:
-    title: NOV2003 Cal
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
-      spatially_varied: true
       event: nov_2003
+      spatially_varied: true
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: NOV2003 Cal
 geometries:
   Greenbrier_G8.g01:
-    title: Greenbrier_G8_LiDAR
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 100
+      cell_count: 291713
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 291713
+    title: Greenbrier_G8_LiDAR
   Greenbrier_G8.g02:
-    title: LiDAR_G8_2016
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 100
+      cell_count: 291713
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
       landuse: wsp_landuse
       soils: ssurgo
-    terrain:
-      bathymetry: gb_bath
-      modifications:
-        description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 291713
-  Greenbrier_G8.g03:
-    title: LiDAR_G8_1996
     roughness:
       landuse: wsp_landuse
-    precip_losses:
-      description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
+    title: LiDAR_G8_2016
+  Greenbrier_G8.g03:
     mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 100
       breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
+      breaklines_min_cell_size: 100
       cell_count: 291713
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    roughness:
+      landuse: wsp_landuse
+    terrain:
+      bathymetry: gb_bath
+      modifications:
+        description: Cuts made through road embankments.
+    title: LiDAR_G8_1996
 model: Greenbrier_G8.prj
 plans:
   Greenbrier_G8.p01:
@@ -137,60 +153,60 @@ plans:
     description: null
     flow: u04
     geom: g02
-    title: Jun-2016 Calibration
     hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 4/1/2016 0:00
-        end_datetime: 7/1/2016 0:00
-        nse: 0.86125
-        rsr: 0.37249
-        pbias: 22.797
-        r2: 0.90781
-        event: jun_2016
+    - end_datetime: 7/1/2016 0:00
+      event: jun_2016
+      from_streamgage: 03183500
+      hydrograph_type: Stage
+      nse: 0.86125
+      pbias: 22.797
+      r2: 0.90781
+      rsr: 0.37249
+      start_datetime: 4/1/2016 0:00
+    title: Jun-2016 Calibration
   Greenbrier_G8.p05:
     description: null
     flow: u05
     geom: g02
-    title: Jan-1995 Calibration
     hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 1/1/1900 0:00
-        end_datetime: 1/1/2022 0:00
-        nse: -1.8586
-        rsr: 1.6907
-        pbias: 40.89
-        r2: 0.42492
-        event: jan_1995
+    - end_datetime: 1/1/2022 0:00
+      event: jan_1995
+      from_streamgage: 03183500
+      hydrograph_type: Stage
+      nse: -1.8586
+      pbias: 40.89
+      r2: 0.42492
+      rsr: 1.6907
+      start_datetime: 1/1/1900 0:00
+    title: Jan-1995 Calibration
   Greenbrier_G8.p06:
     description: null
     flow: u06
     geom: g03
-    title: Jan-1996 Calibration
     hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 1/1/1900 0:00
-        end_datetime: 1/1/2022 0:00
-        nse: -0.95796
-        rsr: 1.3993
-        pbias: 58.67
-        r2: 0.54692
-        event: jan_1996
+    - end_datetime: 1/1/2022 0:00
+      event: jan_1996
+      from_streamgage: 03183500
+      hydrograph_type: Stage
+      nse: -0.95796
+      pbias: 58.67
+      r2: 0.54692
+      rsr: 1.3993
+      start_datetime: 1/1/1900 0:00
+    title: Jan-1996 Calibration
   Greenbrier_G8.p07:
     description: null
     flow: u07
     geom: g01
-    title: Nov-2003 Calibration
     hydrographs:
-      - from_streamgage: 03183500
-        hydrograph_type: Stage
-        start_datetime: 9/1/2003 0:00
-        end_datetime: 12/1/2003 0:00
-        nse: 0.75762
-        rsr: 0.49232
-        pbias: 30.033
-        r2: 0.9363
-        event: nov_2003
+    - end_datetime: 12/1/2003 0:00
+      event: nov_2003
+      from_streamgage: 03183500
+      hydrograph_type: Stage
+      nse: 0.75762
+      pbias: 30.033
+      r2: 0.9363
+      rsr: 0.49232
+      start_datetime: 9/1/2003 0:00
+    title: Nov-2003 Calibration
 title: Greenbrier_G8

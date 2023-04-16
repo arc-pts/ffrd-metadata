@@ -1,141 +1,151 @@
-description: '2D rain-on-mesh BLE model of the first of nine Greenbrier River basins in south-central West Virginia.'
-modified: 11/14/2022 18:59
 connected_models:
-  - model: Kanawha_G2.prj
-    direction: downstream
+- direction: downstream
+  model: Kanawha_G2.prj
 creators:
-  - name: Josh Hill
-    email: josh.hill@wsp.com
-    org: wsp
-  - name: Ben Rufenacht
-    email: ben.rufenacht@wsp.com
-    org: wsp
-  - name: Julianna Villa
-    email: julianna.villa@wsp.com
-    org: wsp
+- email: josh.hill@wsp.com
+  name: Josh Hill
+  org: wsp
+- email: ben.rufenacht@wsp.com
+  name: Ben Rufenacht
+  org: wsp
+- email: julianna.villa@wsp.com
+  name: Julianna Villa
+  org: wsp
+description: 2D rain-on-mesh BLE model of the first of nine Greenbrier River basins
+  in south-central West Virginia.
 flows:
   Kanawha_G1.u01:
-    title: Jan-1995 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
+      event: jan_1995
       spatially_varied: true
-      event: jan_1995
-
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: Jan-1995 Initial Conditions
   Kanawha_G1.u02:
-    title: Jan-1996 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       event: jan_1996
-
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
+    title: Jan-1996 Initial Conditions
   Kanawha_G1.u03:
-    title: Nov-2003 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       event: nov_2003
-
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: Nov-2003 Initial Conditions
   Kanawha_G1.u04:
-    title: Jun-2016 Initial Conditions
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       event: jun_2016
-
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
+    title: Jun-2016 Initial Conditions
   Kanawha_G1.u05:
-    title: Jan-1995 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1995 event
-      start_datetime: 1/5/1995 12:00
       end_datetime: 1/29/1995 12:00
       event: jan_1995
-
+      start_datetime: 1/5/1995 12:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: Jan-1995 Calibration
   Kanawha_G1.u06:
-    title: Jan-1996 Calibration
     hyetograph:
       description: Gridded precipitation data from the January 1996 event
-      start_datetime: 1/14/1996 12:00
       end_datetime: 2/7/1996 11:00
       event: jan_1996
-
+      start_datetime: 1/14/1996 12:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: Jan-1996 Calibration
   Kanawha_G1.u07:
-    title: Nov-2003 Calibration
     hyetograph:
       description: Gridded precipitation data from the November 2003 event
-      start_datetime: 11/6/2003 12:00
       end_datetime: 11/28/2003 11:00
       event: nov_2003
-
+      start_datetime: 11/6/2003 12:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: Nov-2003 Calibration
   Kanawha_G1.u08:
-    title: Jun-2016 Calibration
     hyetograph:
       description: Gridded precipitation data from the June 2016 event
-      start_datetime: 6/20/2016 12:00
       end_datetime: 7/4/2016 11:00
       event: jun_2016
-
+      start_datetime: 6/20/2016 12:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
+    title: Jun-2016 Calibration
 geometries:
   Kanawha_G1.g01:
-    title: LiDAR_G1
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 206812
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 2003 storm event
       landuse: wsp_landuse
       soils: ssurgo
+    roughness:
+      landuse: wsp_landuse
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 206812
+    title: LiDAR_G1
   Kanawha_G1.g02:
-    title: LiDAR_G1_2016
-    roughness:
-      landuse: wsp_landuse
+    mesh2d:
+      breaklines_max_cell_size: 50
+      breaklines_min_cell_size: 50
+      cell_count: 206812
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
     precip_losses:
       description: Calibrated CN Losses for 1995 and 2016 storm event
       landuse: wsp_landuse
       soils: ssurgo
-    terrain:
-      bathymetry: gb_bath
-      modifications:
-        description: Cuts made through road embankments.
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
-      cell_count: 206812
-  Kanawha_G1.g03:
-    title: LiDAR_G1_1996
     roughness:
       landuse: wsp_landuse
-    precip_losses:
-      description: Losses determined from USACE HEC-HMS model for 1996 event
     terrain:
       bathymetry: gb_bath
       modifications:
         description: Cuts made through road embankments.
+    title: LiDAR_G1_2016
+  Kanawha_G1.g03:
     mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
       breaklines_max_cell_size: 50
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 100
+      breaklines_min_cell_size: 50
       cell_count: 206812
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 100
+      refinement_regions_min_cell_size: 50
+    precip_losses:
+      description: Losses determined from USACE HEC-HMS model for 1996 event
+    roughness:
+      landuse: wsp_landuse
+    terrain:
+      bathymetry: gb_bath
+      modifications:
+        description: Cuts made through road embankments.
+    title: LiDAR_G1_1996
 model: Kanawha_G1.prj
+modified: 11/14/2022 18:59
 plans:
   Kanawha_G1.p01:
     description: This plan was not utilized
@@ -161,60 +171,60 @@ plans:
     description: null
     flow: u05
     geom: g02
-    title: Jan-1995 Calibration
     hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 4/1/1943 0:00
-        end_datetime: 6/26/2022 0:00
-        nse: -0.17704
-        rsr: 1.0849
-        pbias: 32.361
-        r2: 0.89384
-        event: jan_1995
+    - end_datetime: 6/26/2022 0:00
+      event: jan_1995
+      from_streamgage: 03180500
+      hydrograph_type: Flow
+      nse: -0.17704
+      pbias: 32.361
+      r2: 0.89384
+      rsr: 1.0849
+      start_datetime: 4/1/1943 0:00
+    title: Jan-1995 Calibration
   Kanawha_G1.p06:
     description: null
     flow: u06
     geom: g03
-    title: Jan-1996 Calibration
     hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 4/1/1943 0:00
-        end_datetime: 6/26/2022 0:00
-        nse: 0.43346
-        rsr: 0.75269
-        pbias: 22.303
-        r2: 0.9242
-        event: jan_1996
+    - end_datetime: 6/26/2022 0:00
+      event: jan_1996
+      from_streamgage: 03180500
+      hydrograph_type: Flow
+      nse: 0.43346
+      pbias: 22.303
+      r2: 0.9242
+      rsr: 0.75269
+      start_datetime: 4/1/1943 0:00
+    title: Jan-1996 Calibration
   Kanawha_G1.p07:
     description: null
     flow: u07
     geom: g01
-    title: Nov-2003 Calibration
     hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 10/1/2003 0:00
-        end_datetime: 8/1/2016 0:00
-        nse: 0.31295
-        rsr: 0.82889
-        pbias: 31.036
-        r2: 0.81655
-        event: nov_2003
+    - end_datetime: 8/1/2016 0:00
+      event: nov_2003
+      from_streamgage: 03180500
+      hydrograph_type: Flow
+      nse: 0.31295
+      pbias: 31.036
+      r2: 0.81655
+      rsr: 0.82889
+      start_datetime: 10/1/2003 0:00
+    title: Nov-2003 Calibration
   Kanawha_G1.p08:
     description: null
     flow: u08
     geom: g02
-    title: Jun-2016 Calibration
     hydrographs:
-      - from_streamgage: 03180500 # Greenbrier River at Durbin, WV
-        hydrograph_type: "Flow"
-        start_datetime: 10/1/2003 0:00
-        end_datetime: 8/1/2016 0:00
-        nse: 0.45906
-        rsr: 0.73549
-        pbias: 26.618
-        r2: 0.73227
-        event: jun_2016
+    - end_datetime: 8/1/2016 0:00
+      event: jun_2016
+      from_streamgage: 03180500
+      hydrograph_type: Flow
+      nse: 0.45906
+      pbias: 26.618
+      r2: 0.73227
+      rsr: 0.73549
+      start_datetime: 10/1/2003 0:00
+    title: Jun-2016 Calibration
 title: Kanawha_G1

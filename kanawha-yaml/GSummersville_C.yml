@@ -1,235 +1,229 @@
-description: "2D rain-on-mesh BLE model of the Gauley River subbasin upstream of Summerville, West Virginia.\
-\ INNOVATION PROJECT #2 - 2D RAS FFRD PILOT\
-\ Technical Advisement to FY21 IRWA with USACE"
-modified: 10/25/2022 20:07
 creators:
-  - name:  Daniyal Siddiqui 
-    email: daniyal.siddiqui@mbakerintl.com
-    org: baker
-  - name:  Mark McBroom
-    email: mmcbroom@mbakerintl.com
-    org: baker
+- email: daniyal.siddiqui@mbakerintl.com
+  name: Daniyal Siddiqui
+  org: baker
+- email: mmcbroom@mbakerintl.com
+  name: Mark McBroom
+  org: baker
+description: '2D rain-on-mesh BLE model of the Gauley River subbasin upstream of Summerville,
+  West Virginia. INNOVATION PROJECT #2 - 2D RAS FFRD PILOT Technical Advisement to
+  FY21 IRWA with USACE'
 flows:
   GSummersville_C.u03:
-    title: GauleeSummersville_FloodPlain_Nov2003
     hyetograph:
       description: November 2003 applied precipitation, provided by USACE
-      start_datetime: 11/6/2003 13:00
-      end_datetime:   11/28/2003 12:00
-      spatially_varied: true
+      end_datetime: 11/28/2003 12:00
       event: nov_2003
-
+      spatially_varied: true
+      start_datetime: 11/6/2003 13:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/
+    title: GauleeSummersville_FloodPlain_Nov2003
   GSummersville_C.u04:
-    title: GauleeSummersville_FloodPlain_Jun2016
     hyetograph:
       description: June 2016 applied precipitation, provided by USACE
-      start_datetime: 6/20/2016 13:00
-      end_datetime:   7/4/2016 12:00
-      spatially_varied: true
+      end_datetime: 7/4/2016 12:00
       event: jun_2016
-
+      spatially_varied: true
+      start_datetime: 6/20/2016 13:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/
+    title: GauleeSummersville_FloodPlain_Jun2016
   GSummersville_C.u05:
-    title: GauleeSummersville_FloodPlain_Jan1995
     hyetograph:
       description: January 1995 applied precipitation, provided by USACE
-      start_datetime: 1/5/1995 13:00
-      end_datetime:   1/29/1995 12:00
-      spatially_varied: true
+      end_datetime: 1/29/1995 12:00
       event: jan_1995
-
-  GSummersville_C.u06:
-    title: GauleeSummersville_FloodPlain_Jan1996
-    hyetograph:
-      description: January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff.
-      start_datetime: 1/14/1996 13:00
-      end_datetime:   2/7/1996 10:00
       spatially_varied: true
+      start_datetime: 1/5/1995 13:00
+    met_dss_file: Jan1995_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/
+    title: GauleeSummersville_FloodPlain_Jan1995
+  GSummersville_C.u06:
+    hyetograph:
+      description: January 1996 excess precipitation. USACE-provided HMS excess precip
+        to include snowmelt runoff.
+      end_datetime: 2/7/1996 10:00
       event: jan_1996
-
+      spatially_varied: true
+      start_datetime: 1/14/1996 13:00
+    met_dss_file: Jan1996_KanawhaHMS.dss
+    met_dss_path: //KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN
+      1996 - CALIBRATION/
+    title: GauleeSummersville_FloodPlain_Jan1996
 geometries:
   GSummersville_C.g01:
-    title: GauleySummersville_Existing
-    roughness:
-      landuse: baker_landuse
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 50
+      cell_count: 954995
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 200
+      refinement_regions_min_cell_size: 50
     precip_losses:
       landuse: baker_landuse
       soils: ssurgo
+    roughness:
+      landuse: baker_landuse
     structures: wv_clearinghouse_structures
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 200
-      cell_count: 954995
     terrain:
       bathymetry:
-        description: Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE.
+        description: Channel data assumed from USGS rating curves at gages 03189100
+          & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided
+          by USACE.
       modifications:
         description: Cuts made through road and dam/berm embankments.
-
+    title: GauleySummersville_Existing
 model: GSummersville_C.prj
+modified: 10/25/2022 20:07
 plans:
   GSummersville_C.p02:
     description: null
     flow: u03
     geom: g01
-    title: Unsteady_MultiHazard_Nov2003
     hydrographs:
-      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
-        hydrograph_type: "Stage"
-        start_datetime: 1/1/1985 11:00
-        end_datetime:   12/31/2021 11:00
-        nse: 0.88
-        rsr: 0.35
-        pbias: 0.03
-        r2: 0.90
-        event: nov_2003
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: "Stage"
-        start_datetime: 12/1/1994 00:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.72
-        rsr: 0.53
-        pbias: 0.05
-        r2: 0.86
-        event: nov_2003
-
-      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 1:00
-        end_datetime:   7/31/2016 23:00
-        nse: 0.92
-        rsr: 0.29
-        pbias: 0.01
-        r2: 0.92
-        event: nov_2003
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.66
-        rsr: 0.59
-        pbias: -0.02
-        r2: 0.89
-        event: nov_2003
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: Flow
-        start_datetime: 10/1/2003 00:30
-        end_datetime:   12/31/2003 22:00
-        nse: 0.81
-        rsr: 0.44
-        pbias: 41.4
-        r2: 0.88
-        event: nov_2003
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Flow
-        start_datetime: 10/1/2003 1:00
-        end_datetime:   12/31/2003 21:00
-        nse: 0.8
-        rsr: 0.45
-        pbias: 50.39
-        r2: 0.88
-        event: nov_2003
-
-      - from_streamgage: 03186500 # Williams River at Dyer, WV
-        hydrograph_type: Flow
-        start_datetime: 10/1/2003 00:30
-        end_datetime:   12/31/2003 22:00
-        nse: 0.88
-        rsr: 0.35
-        pbias: 32.56
-        r2: 0.95
-        event: nov_2003
+    - end_datetime: 12/31/2021 11:00
+      event: nov_2003
+      from_streamgage: USACE_Summersville_Lake
+      hydrograph_type: Stage
+      nse: 0.88
+      pbias: 0.03
+      r2: 0.9
+      rsr: 0.35
+      start_datetime: 1/1/1985 11:00
+    - end_datetime: 7/31/2016 22:30
+      event: nov_2003
+      from_streamgage: 03189100
+      hydrograph_type: Stage
+      nse: 0.72
+      pbias: 0.05
+      r2: 0.86
+      rsr: 0.53
+      start_datetime: 12/1/1994 00:30
+    - end_datetime: 7/31/2016 23:00
+      event: nov_2003
+      from_streamgage: 03187000
+      hydrograph_type: Stage
+      nse: 0.92
+      pbias: 0.01
+      r2: 0.92
+      rsr: 0.29
+      start_datetime: 12/1/1994 1:00
+    - end_datetime: 7/31/2016 22:30
+      event: nov_2003
+      from_streamgage: 03187500
+      hydrograph_type: Stage
+      nse: 0.66
+      pbias: -0.02
+      r2: 0.89
+      rsr: 0.59
+      start_datetime: 12/1/1994 0:30
+    - end_datetime: 12/31/2003 22:00
+      event: nov_2003
+      from_streamgage: 03189100
+      hydrograph_type: Flow
+      nse: 0.81
+      pbias: 41.4
+      r2: 0.88
+      rsr: 0.44
+      start_datetime: 10/1/2003 00:30
+    - end_datetime: 12/31/2003 21:00
+      event: nov_2003
+      from_streamgage: 03187500
+      hydrograph_type: Flow
+      nse: 0.8
+      pbias: 50.39
+      r2: 0.88
+      rsr: 0.45
+      start_datetime: 10/1/2003 1:00
+    - end_datetime: 12/31/2003 22:00
+      event: nov_2003
+      from_streamgage: 03186500
+      hydrograph_type: Flow
+      nse: 0.88
+      pbias: 32.56
+      r2: 0.95
+      rsr: 0.35
+      start_datetime: 10/1/2003 00:30
+    title: Unsteady_MultiHazard_Nov2003
   GSummersville_C.p03:
     description: null
     flow: u04
     geom: g01
-    title: Unsteady_MultiHazard_Jun2016
     hydrographs:
-      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
-        hydrograph_type: Stage
-        start_datetime: 1/1/1985 11:00
-        end_datetime:   12/31/2021 11:00
-        nse: 0.87
-        rsr: 0.35
-        pbias: 0.28
-        r2: 0.99
-        event: jun_2016
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.84
-        rsr: 0.41
-        pbias: 0.01
-        r2: 0.86
-        event: jun_2016
-
-      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 1:00
-        end_datetime:   7/31/2016 23:00
-        nse: 0.70
-        rsr: 0.54
-        pbias: 0.05
-        r2: 0.74
-        event: jun_2016
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.01
-        rsr: 1.00
-        pbias: -0.06
-        r2: 0.77
-        event: jun_2016
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: Flow
-        start_datetime: 4/30/2016 18:00
-        end_datetime:   7/31/2016 17:45
-        nse: 0.92
-        rsr: 0.29
-        pbias: 18.49
-        r2: 0.93
-        event: jun_2016
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Flow
-        start_datetime: 5/1/2016 0:15
-        end_datetime:   7/31/2016 21:45
-        nse: 0.72
-        rsr: 0.52
-        pbias: 17.55
-        r2: 0.82
-        event: jun_2016
-
-      - from_streamgage: 03186500 # Williams River at Dyer, WV
-        hydrograph_type: Flow
-        start_datetime: 4/30/2016 18:00
-        end_datetime:   7/31/2016 17:30
-        nse: 0.94
-        rsr: 0.25
-        pbias: 14.03
-        r2: 0.94
-        event: jun_2016
-
-      - from_streamgage: 03188900 # Laurel Creek Near Fenwick, WV
-        hydrograph_type: Flow
-        start_datetime: 5/1/2016 0:15
-        end_datetime:   7/31/2016 21:45
-        nse: 0.88
-        rsr: 0.34
-        pbias: 15.99
-        r2: 0.89
-        event: jun_2016
+    - end_datetime: 12/31/2021 11:00
+      event: jun_2016
+      from_streamgage: USACE_Summersville_Lake
+      hydrograph_type: Stage
+      nse: 0.87
+      pbias: 0.28
+      r2: 0.99
+      rsr: 0.35
+      start_datetime: 1/1/1985 11:00
+    - end_datetime: 7/31/2016 22:30
+      event: jun_2016
+      from_streamgage: 03189100
+      hydrograph_type: Stage
+      nse: 0.84
+      pbias: 0.01
+      r2: 0.86
+      rsr: 0.41
+      start_datetime: 12/1/1994 0:30
+    - end_datetime: 7/31/2016 23:00
+      event: jun_2016
+      from_streamgage: 03187000
+      hydrograph_type: Stage
+      nse: 0.7
+      pbias: 0.05
+      r2: 0.74
+      rsr: 0.54
+      start_datetime: 12/1/1994 1:00
+    - end_datetime: 7/31/2016 22:30
+      event: jun_2016
+      from_streamgage: 03187500
+      hydrograph_type: Stage
+      nse: 0.01
+      pbias: -0.06
+      r2: 0.77
+      rsr: 1.0
+      start_datetime: 12/1/1994 0:30
+    - end_datetime: 7/31/2016 17:45
+      event: jun_2016
+      from_streamgage: 03189100
+      hydrograph_type: Flow
+      nse: 0.92
+      pbias: 18.49
+      r2: 0.93
+      rsr: 0.29
+      start_datetime: 4/30/2016 18:00
+    - end_datetime: 7/31/2016 21:45
+      event: jun_2016
+      from_streamgage: 03187500
+      hydrograph_type: Flow
+      nse: 0.72
+      pbias: 17.55
+      r2: 0.82
+      rsr: 0.52
+      start_datetime: 5/1/2016 0:15
+    - end_datetime: 7/31/2016 17:30
+      event: jun_2016
+      from_streamgage: 03186500
+      hydrograph_type: Flow
+      nse: 0.94
+      pbias: 14.03
+      r2: 0.94
+      rsr: 0.25
+      start_datetime: 4/30/2016 18:00
+    - end_datetime: 7/31/2016 21:45
+      event: jun_2016
+      from_streamgage: 03188900
+      hydrograph_type: Flow
+      nse: 0.88
+      pbias: 15.99
+      r2: 0.89
+      rsr: 0.34
+      start_datetime: 5/1/2016 0:15
+    title: Unsteady_MultiHazard_Jun2016
   GSummersville_C.p04:
     description: null
     flow: u03
@@ -239,47 +233,44 @@ plans:
     description: null
     flow: u05
     geom: g01
-    title: Unsteady_MultiHazard_Jan1995
     hydrographs:
-      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
-        hydrograph_type: Stage
-        start_datetime: 1/1/1985 11:00
-        end_datetime:   12/31/2021 11:00
-        nse: -2.46
-        rsr: 1.86
-        pbias: 0.41
-        r2: 0.82
-        event: jan_1995
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.49
-        rsr: 0.71
-        pbias: 0.03
-        r2: 0.77
-        event: jan_1995
-
-      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 1:00
-        end_datetime:   7/31/2016 23:00
-        nse: -0.01
-        rsr: 1.00
-        pbias: 0.06
-        r2: 0.57
-        event: jan_1995
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: -0.03
-        rsr: 1.01
-        pbias: -0.03
-        r2: 0.73
-        event: jan_1995
+    - end_datetime: 12/31/2021 11:00
+      event: jan_1995
+      from_streamgage: USACE_Summersville_Lake
+      hydrograph_type: Stage
+      nse: -2.46
+      pbias: 0.41
+      r2: 0.82
+      rsr: 1.86
+      start_datetime: 1/1/1985 11:00
+    - end_datetime: 7/31/2016 22:30
+      event: jan_1995
+      from_streamgage: 03189100
+      hydrograph_type: Stage
+      nse: 0.49
+      pbias: 0.03
+      r2: 0.77
+      rsr: 0.71
+      start_datetime: 12/1/1994 0:30
+    - end_datetime: 7/31/2016 23:00
+      event: jan_1995
+      from_streamgage: 03187000
+      hydrograph_type: Stage
+      nse: -0.01
+      pbias: 0.06
+      r2: 0.57
+      rsr: 1.0
+      start_datetime: 12/1/1994 1:00
+    - end_datetime: 7/31/2016 22:30
+      event: jan_1995
+      from_streamgage: 03187500
+      hydrograph_type: Stage
+      nse: -0.03
+      pbias: -0.03
+      r2: 0.73
+      rsr: 1.01
+      start_datetime: 12/1/1994 0:30
+    title: Unsteady_MultiHazard_Jan1995
   GSummersville_C.p06:
     description: null
     flow: u05
@@ -289,45 +280,42 @@ plans:
     description: null
     flow: u06
     geom: g01
-    title: Unsteady_MultiHazard_Jan1996
     hydrographs:
-      - from_streamgage: "USACE_Summersville_Lake" # Summersville Lake / USACE
-        hydrograph_type: Stage
-        start_datetime: 1/1/1985 11:00
-        end_datetime:   12/31/2021 11:00
-        nse: -0.21
-        rsr: 1.10
-        pbias: 1.40
-        r2: 0.64
-        event: jan_1996
-
-      - from_streamgage: 03189100 # Gauley River Near Craigsville, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: 0.55
-        rsr: 0.67
-        pbias: -0.04
-        r2: 0.73
-        event: jan_1996
-
-      - from_streamgage: 03187000 # Gauley River at Camden ON Gauley, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 1:00
-        end_datetime:   7/31/2016 23:00
-        nse: 0.49
-        rsr: 0.71
-        pbias: -0.06
-        r2: 0.66
-        event: jan_1996
-
-      - from_streamgage: 03187500 # Cranberry River Near Richwood, WV
-        hydrograph_type: Stage
-        start_datetime: 12/1/1994 0:30
-        end_datetime:   7/31/2016 22:30
-        nse: -1.53
-        rsr: 1.59
-        pbias: -0.08
-        r2: 0.70
-        event: jan_1996
+    - end_datetime: 12/31/2021 11:00
+      event: jan_1996
+      from_streamgage: USACE_Summersville_Lake
+      hydrograph_type: Stage
+      nse: -0.21
+      pbias: 1.4
+      r2: 0.64
+      rsr: 1.1
+      start_datetime: 1/1/1985 11:00
+    - end_datetime: 7/31/2016 22:30
+      event: jan_1996
+      from_streamgage: 03189100
+      hydrograph_type: Stage
+      nse: 0.55
+      pbias: -0.04
+      r2: 0.73
+      rsr: 0.67
+      start_datetime: 12/1/1994 0:30
+    - end_datetime: 7/31/2016 23:00
+      event: jan_1996
+      from_streamgage: 03187000
+      hydrograph_type: Stage
+      nse: 0.49
+      pbias: -0.06
+      r2: 0.66
+      rsr: 0.71
+      start_datetime: 12/1/1994 1:00
+    - end_datetime: 7/31/2016 22:30
+      event: jan_1996
+      from_streamgage: 03187500
+      hydrograph_type: Stage
+      nse: -1.53
+      pbias: -0.08
+      r2: 0.7
+      rsr: 1.59
+      start_datetime: 12/1/1994 0:30
+    title: Unsteady_MultiHazard_Jan1996
 title: GauleySummersville_BLE-C_FEMA

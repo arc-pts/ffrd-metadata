@@ -1,3 +1,13 @@
+creators:
+- email: Dawit.Zeweldi@freese.com
+  name: Dawit Zeweldi
+  org: freese
+- email: Andrew.Swynenberg@freese.com
+  name: Andrew Swynenberg
+  org: freese
+- email: Matt.Lewis@freese.com
+  name: Matt Lewis
+  org: freese
 description: 'Watershed: Upper Kanawha River
 
   Vertical Datum: NAVD 88
@@ -11,96 +21,95 @@ description: 'Watershed: Upper Kanawha River
   Model Version: HEC-RAS v6.3
 
   Date: September 30, 2022'
-creators:
-  - name:  Dawit Zeweldi
-    email: Dawit.Zeweldi@freese.com
-    org: freese
-  - name:  Andrew Swynenberg
-    email: Andrew.Swynenberg@freese.com
-    org: freese
-  - name:  Matt Lewis
-    email: Matt.Lewis@freese.com
-    org: freese
 flows:
   UpperKanawha.u01:
-    title: Jan1996
-    description: January 1996 run not used for calibration/validation due to lack of data
-    hyetograph: 
+    description: January 1996 run not used for calibration/validation due to lack
+      of data
+    hyetograph:
       description: January 1996 Corrected AORC Precipitation, provided by USACE
+      end_datetime: 1996-02-04 06:00:00
+      event: jan_1996
+      spatially_varied: true
       start_datetime: 1996-01-17 06:00:00
-      end_datetime:   1996-02-04 06:00:00
-      spatially_varied: true
-      event: jan_1996
-
+    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
+    title: Jan1996
   UpperKanawha.u02:
-    title: Jan1996_InitialConditions
-    hyetograph: 
+    hyetograph:
       description: January 1996 Corrected AORC Precipitation, provided by USACE
-      start_datetime: 1996-01-15 00:00:00
-      end_datetime:   1996-01-17 06:00:00
-      spatially_varied: true
+      end_datetime: 1996-01-17 06:00:00
       event: jan_1996
-
+      spatially_varied: true
+      start_datetime: 1996-01-15 00:00:00
+    met_dss_file: Jan1996_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/
+    title: Jan1996_InitialConditions
   UpperKanawha.u07:
-    title: Nov2003_InitialConditions
     hyetograph:
       description: November 2003 Corrected AORC Precipitation, provided by USACE
+      end_datetime: 2003-11-12 00:00:00
+      event: nov_2003
+      spatially_varied: true
       start_datetime: 2003-11-03 00:00:00
-      end_datetime:   2003-11-12 00:00:00
-      spatially_varied: true
-      event: nov_2003
-
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
+    title: Nov2003_InitialConditions
   UpperKanawha.u08:
-    title: Nov2003
     hyetograph:
       description: November 2003 Corrected AORC Precipitation, provided by USACE
-      start_datetime: 2003-11-12 00:00:00
-      end_datetime:   2003-11-24 00:00:00
-      spatially_varied: true
+      end_datetime: 2003-11-24 00:00:00
       event: nov_2003
-
+      spatially_varied: true
+      start_datetime: 2003-11-12 00:00:00
+    met_dss_file: Nov2003_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/
+    title: Nov2003
   UpperKanawha.u09:
-    title: Jun2016_InitialConditions
     hyetograph:
       description: June 2016 Corrected AORC Precipitation, provided by USACE
+      end_datetime: 2016-06-22 00:00:00
+      event: jun_2016
+      spatially_varied: true
       start_datetime: 2016-06-07 00:00:00
-      end_datetime:   2016-06-22 00:00:00
-      spatially_varied: true
-      event: jun_2016
-
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
+    title: Jun2016_InitialConditions
   UpperKanawha.u11:
-    title: Jun2016
     hyetograph:
       description: June 2016 Corrected AORC Precipitation, provided by USACE
-      start_datetime: 2016-06-22 00:00:00
-      end_datetime:   2016-06-28 00:00:00
-      spatially_varied: true
+      end_datetime: 2016-06-28 00:00:00
       event: jun_2016
+      spatially_varied: true
+      start_datetime: 2016-06-22 00:00:00
+    met_dss_file: Jun2016_corrected_AORC_precipitation.dss
+    met_dss_path: /SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/
+    title: Jun2016
 geometries:
   UpperKanawha.g01:
-    title: UpperKanawha
-    structures:
-      title: USACE Kanawaha CWMS Model
-      description: London/Marmet L&D Structures and Gate operations copied from USACE CWMS Model
-    roughness:
-      landuse: nlcd
+    mesh2d:
+      breaklines_max_cell_size: 200
+      breaklines_min_cell_size: 50
+      cell_count: 537254
+      nominal_cell_size: 200
+      refinement_regions_max_cell_size: 50
+      refinement_regions_min_cell_size: 50
     precip_losses:
       landuse: nlcd
       soils: ssurgo
+    roughness:
+      landuse: nlcd
+    structures:
+      description: London/Marmet L&D Structures and Gate operations copied from USACE
+        CWMS Model
+      title: USACE Kanawaha CWMS Model
     terrain:
       bathymetry:
-        title: USACE Kanawaha CWMS Model
         description: Channel data merged into base LiDAR through GIS mosaic process
+        title: USACE Kanawaha CWMS Model
       modifications:
-        description: Cuts made through road embankments, and to create connectivity for major culvert systems in populated areas
-    mesh2d:
-      nominal_cell_size: 200
-      breaklines_min_cell_size: 50
-      breaklines_max_cell_size: 200
-      refinement_regions_min_cell_size: 50
-      refinement_regions_max_cell_size: 50
-      cell_count: 537254
-
+        description: Cuts made through road embankments, and to create connectivity
+          for major culvert systems in populated areas
+    title: UpperKanawha
 model: UpperKanawha.prj
 plans:
   UpperKanawha.p01:
@@ -111,56 +120,53 @@ plans:
       \ Conditions: Restart file from p.03"
     flow: u11
     geom: g01
-    title: Jun2016
     hydrographs:
-      - start_datetime: 2016-06-22 00:00:00
-        end_datetime:   2016-06-28 00:00:00
-        title: London L&D Pool
-        from_streamgage: USACE_London_LD_Pool
-        description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
-        hydrograph_type: "Stage"
-        nse:    -180.7
-        rsr:    13.48
-        pbias:  -0.2696
-        r2:     0.0079179
-        event: jun_2016
-
-      - start_datetime: 2016-06-22 00:00:00
-        end_datetime:   2016-06-28 00:00:00
-        title: London L&D Tailwater
-        from_streamgage: USACE_London_LD_Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.96292
-        rsr:    0.19255
-        pbias:  -0.13638
-        r2:     0.98229
-        event: jun_2016
-
-      - start_datetime: 2016-06-22 00:00:00
-        end_datetime:   2016-06-28 00:00:00
-        title: Marmet L&D Pool 
-        from_streamgage: USACE_Marmet_LD_Pool
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.43975
-        rsr:    0.7485
-        pbias:  0.07278
-        r2:     0.57783
-        event: jun_2016
-
-      - start_datetime: 2016-06-22 00:00:00
-        end_datetime:   2016-06-28 00:00:00
-        title: Marmet L&D Tailwater
-        from_streamgage: USACE_Marmet_LD_Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.92097
-        rsr:    0.28112
-        pbias:  0.12004
-        r2:     0.92979
-        event: jun_2016
-
+    - description: Stage hydrograph provided by USACE. Pool hydrograph provided remained
+        flat during event and was disregarded from calibration.
+      end_datetime: 2016-06-28 00:00:00
+      event: jun_2016
+      from_streamgage: USACE_London_LD_Pool
+      hydrograph_type: Stage
+      nse: -180.7
+      pbias: -0.2696
+      r2: 0.0079179
+      rsr: 13.48
+      start_datetime: 2016-06-22 00:00:00
+      title: London L&D Pool
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2016-06-28 00:00:00
+      event: jun_2016
+      from_streamgage: USACE_London_LD_Tailwater
+      hydrograph_type: Stage
+      nse: 0.96292
+      pbias: -0.13638
+      r2: 0.98229
+      rsr: 0.19255
+      start_datetime: 2016-06-22 00:00:00
+      title: London L&D Tailwater
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2016-06-28 00:00:00
+      event: jun_2016
+      from_streamgage: USACE_Marmet_LD_Pool
+      hydrograph_type: Stage
+      nse: 0.43975
+      pbias: 0.07278
+      r2: 0.57783
+      rsr: 0.7485
+      start_datetime: 2016-06-22 00:00:00
+      title: Marmet L&D Pool
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2016-06-28 00:00:00
+      event: jun_2016
+      from_streamgage: USACE_Marmet_LD_Tailwater
+      hydrograph_type: Stage
+      nse: 0.92097
+      pbias: 0.12004
+      r2: 0.92979
+      rsr: 0.28112
+      start_datetime: 2016-06-22 00:00:00
+      title: Marmet L&D Tailwater
+    title: Jun2016
   UpperKanawha.p02:
     description: "Geometry: Upper Kanawha BLE geometry. Includes Marmet and London\
       \ L&D. Gate operations from Kanawha CWMS. \nFlow: Nov 2003 AORC gridded precipitation.\
@@ -169,55 +175,53 @@ plans:
       \ Conditions: Restart file from p.04"
     flow: u08
     geom: g01
-    title: Nov2003
     hydrographs:
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: London L&D Pool
-        from_streamgage: USACE_London_LD_Pool
-        description: Stage hydrograph provided by USACE. Pool hydrograph provided remained flat during event and was disregarded from calibration.
-        hydrograph_type: "Stage"
-        nse:    -50.493
-        rsr:    7.1759
-        pbias:  -0.18653
-        r2:     0.22156
-        event: nov_2003
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: London L&D Tailwater
-        from_streamgage: USACE_London_LD_Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.94446
-        rsr:    0.23567
-        pbias:  -0.14871
-        r2:     0.98069
-        event: nov_2003
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: Marmet L&D Pool 
-        from_streamgage: USACE_Marmet_LD_Pool
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.83132
-        rsr:    0.41071
-        pbias:  0.023509
-        r2:     0.92922
-        event: nov_2003
-
-      - start_datetime: 2003-11-12 00:00:00
-        end_datetime:   2003-11-24 00:00:00
-        title: Marmet L&D Tailwater
-        from_streamgage: USACE_Marmet_LD_Tailwater
-        description: Stage hydrograph provided by USACE.
-        hydrograph_type: "Stage"
-        nse:    0.80228
-        rsr:    0.44465
-        pbias:  0.061883
-        r2:     0.8096
-        event: nov_2003
+    - description: Stage hydrograph provided by USACE. Pool hydrograph provided remained
+        flat during event and was disregarded from calibration.
+      end_datetime: 2003-11-24 00:00:00
+      event: nov_2003
+      from_streamgage: USACE_London_LD_Pool
+      hydrograph_type: Stage
+      nse: -50.493
+      pbias: -0.18653
+      r2: 0.22156
+      rsr: 7.1759
+      start_datetime: 2003-11-12 00:00:00
+      title: London L&D Pool
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2003-11-24 00:00:00
+      event: nov_2003
+      from_streamgage: USACE_London_LD_Tailwater
+      hydrograph_type: Stage
+      nse: 0.94446
+      pbias: -0.14871
+      r2: 0.98069
+      rsr: 0.23567
+      start_datetime: 2003-11-12 00:00:00
+      title: London L&D Tailwater
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2003-11-24 00:00:00
+      event: nov_2003
+      from_streamgage: USACE_Marmet_LD_Pool
+      hydrograph_type: Stage
+      nse: 0.83132
+      pbias: 0.023509
+      r2: 0.92922
+      rsr: 0.41071
+      start_datetime: 2003-11-12 00:00:00
+      title: Marmet L&D Pool
+    - description: Stage hydrograph provided by USACE.
+      end_datetime: 2003-11-24 00:00:00
+      event: nov_2003
+      from_streamgage: USACE_Marmet_LD_Tailwater
+      hydrograph_type: Stage
+      nse: 0.80228
+      pbias: 0.061883
+      r2: 0.8096
+      rsr: 0.44465
+      start_datetime: 2003-11-12 00:00:00
+      title: Marmet L&D Tailwater
+    title: Nov2003
   UpperKanawha.p03:
     description: null
     flow: u09
