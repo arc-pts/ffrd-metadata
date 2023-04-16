@@ -1,4 +1,11 @@
+python_version>=3.10 # dataclass kw_only no available until 3.10
+beautifulsoup4==4.11.1
+folium==0.14.0
+ipython==8.4.0
 isodate==0.6.1
+jupyter==1.0.0
+nbconvert==7.2.6
+papermill==2.4.0
 pyparsing==3.0.9
 PyYAML==6.0
 rdflib==6.3.2
