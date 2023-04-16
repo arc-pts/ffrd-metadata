@@ -9,7 +9,7 @@ from enum import Enum
 import os
 from typing import List, Optional, Union
 
-RASCAT_URI = "http://www.example.org/rascat/0.1#"
+RASCAT_URI = "http://raw.githubusercontent.com/arc-pts/ffrd-metadata/main/rascat.ttl#"
 
 g = Graph()
 

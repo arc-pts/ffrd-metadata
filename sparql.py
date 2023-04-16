@@ -96,7 +96,7 @@ class FFRDMeta:
 
     def query_gages(self, model: str) -> str:
         return f"""
-        PREFIX rascat: <http://www.example.org/rascat/0.1#>
+        PREFIX rascat: <http://raw.githubusercontent.com/arc-pts/ffrd-metadata/main/rascat.ttl#>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
         PREFIX kanawha_models: <http://example.ffrd.fema.gov/kanawha/models/>
