@@ -3,6 +3,7 @@
 @prefix ffrd_people: <http://example.ffrd.fema.gov/people/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix kanawha_calibration: <http://example.ffrd.fema.gov/kanawha/calibration/> .
+@prefix kanawha_dss: <http://example.ffrd.fema.gov/kanawha/dss/> .
 @prefix kanawha_events: <http://example.ffrd.fema.gov/kanawha/events/> .
 @prefix kanawha_misc: <http://example.ffrd.fema.gov/kanawha/misc/> .
 @prefix kanawha_models: <http://example.ffrd.fema.gov/kanawha/models/> .
@@ -2290,6 +2291,18 @@ kanawha_calibration:WatershedG9_03184000_Flow_Nov2003 a rascat:Calibration ;
     rascat:startDateTime "1936-03-18T00:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_dss:Jan1995_corrected_AORC_precip.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Jan1996_corrected_AORC_precip.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Jun2016_corrected_AORC_precip.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Nov2003_corrected_AORC_precip.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:BasinG6.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -2426,6 +2439,76 @@ kanawha_models:BasinG6.p08 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:BasinG6.u06 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:BasinG6.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BasinG6.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1300/14JAN1996:1400/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:BluestoneLocal.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 100 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -2480,6 +2563,46 @@ kanawha_models:BluestoneLocal.p04 a rascat:RasPlan ;
         kanawha_calibration:BluestoneLocal_03179800_Stage_Jun2016 ;
     rascat:hasGeometry kanawha_models:BluestoneLocal.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:BluestoneLocal.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BluestoneLocal.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1995-01-24T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-12T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BluestoneLocal.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1996-01-30T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BluestoneLocal.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2003-11-27T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-07T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:BluestoneLocal.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.g07.mesh2d a rascat:Mesh2D ;
@@ -2556,6 +2679,46 @@ Some breaklines and culvert terrain mods""" ;
     rascat:hasUnsteadyFlow kanawha_models:Bluestone_Upper.u06 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:Bluestone_Upper.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Bluestone_Upper.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Bluestone_Upper.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January to February 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1996-02-06T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Bluestone_Upper.u09.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June to July 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:CoalRiver.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 500 ;
     rascat:breaklinesMinCellSize 100 ;
@@ -2610,6 +2773,46 @@ kanawha_models:CoalRiver.p04 a rascat:RasPlan ;
         kanawha_calibration:CoalRiver_03200500_Flow_Jun2016 ;
     rascat:hasGeometry kanawha_models:CoalRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:CoalRiver.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:CoalRiver.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:CoalRiver.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1995-01-25T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:CoalRiver.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1996-02-01T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:CoalRiver.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g01.bathymetry a rascat:Bathymetry ;
@@ -2706,6 +2909,46 @@ kanawha_models:ElkMiddle.p06 a rascat:RasPlan ;
         kanawha_calibration:ElkMiddle_03197000_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:ElkMiddle.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:ElkMiddle.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:ElkMiddle.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2003-11-28T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:ElkMiddle.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "1995-01-29T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:ElkMiddle.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "1996-02-07T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:ElkMiddle.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g01.mesh2d a rascat:Mesh2D ;
@@ -2843,11 +3086,85 @@ kanawha_models:G5.p14 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:G5.u10 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:G5.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/07JAN1995:0000/07JAN1995:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:G5.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            rascat:spatiallyVaried true ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u05.hyetograph ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u05.hyetograph a rascat:Hyetograph ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/16JAN1996:0000/16JAN1996:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/15JAN1995:0000/15JAN1995:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/19NOV2003:0000/19NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u09.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u10.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:G5.u11.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-05T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.g01.bathymetry a rascat:Bathymetry ;
@@ -2927,6 +3244,46 @@ kanawha_models:GSummersville_B.p12 a rascat:RasPlan ;
         kanawha_calibration:GSummersville_B_USACE_Summersville_Lake_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:GSummersville_B.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:GSummersville_B.u03 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_B.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_B.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_B.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff." ;
+    rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_B.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.g01.bathymetry a rascat:Bathymetry ;
@@ -3020,6 +3377,46 @@ kanawha_models:GSummersville_C.p07 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:GSummersville_C.u06 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:GSummersville_C.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_C.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_C.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 applied precipitation, provided by USACE" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GSummersville_C.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff." ;
+    rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:GauleyLower_BLE_FEM.g01.bathymetry a rascat:Bathymetry ;
     dcterms:description "Channel data assumed from USGS rating curves at gages 03189100 & 03186500. Summersville Lake pulled from 2003 Sedimentation Survey provided by USACE." ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
@@ -3087,6 +3484,46 @@ kanawha_models:GauleyLower_BLE_FEM.p06 a rascat:RasPlan ;
         kanawha_calibration:GauleyLower_BLE_FEM_03192000_Stage_Jan1996 ;
     rascat:hasGeometry kanawha_models:GauleyLower_BLE_FEM.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:GauleyLower_BLE_FEM.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GauleyLower_BLE_FEM.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 applied precipitation" ;
+    rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precip.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA RIVER/PRECIPITATION/30SEP2003:2300/30SEP2003:2400/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GauleyLower_BLE_FEM.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 applied precipitation" ;
+    rascat:endDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precip.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA RIVER/PRECIPITATION/30APR2016:2300/30APR2016:2400/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GauleyLower_BLE_FEM.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 applied precipitation" ;
+    rascat:endDateTime "1995-01-23T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precip.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA RIVER/PRECIPITATION/30NOV1994:2300/30NOV1994:2400/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:GauleyLower_BLE_FEM.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 applied precipitation" ;
+    rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precip.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA RIVER/PRECIPITATION/30NOV1995:2300/30NOV1995:2400/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g01.mesh2d a rascat:Mesh2D ;
@@ -3208,6 +3645,66 @@ kanawha_models:Greenbrier_G7.p07 a rascat:RasPlan ;
     dcterms:title "Nov-2003 Calibration" ;
     rascat:hasGeometry kanawha_models:Greenbrier_G7.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G7.u07 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G7.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g01.mesh2d a rascat:Mesh2D ;
@@ -3335,11 +3832,75 @@ kanawha_models:Greenbrier_G8.p07 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:Greenbrier_G8.u07 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:Greenbrier_G8.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:Greenbrier_G8.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            rascat:spatiallyVaried true ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u02.hyetograph ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u02.hyetograph a rascat:Hyetograph ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Greenbrier_G8.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.g01.mesh2d a rascat:Mesh2D ;
@@ -3483,6 +4044,86 @@ kanawha_models:Kanawha_G1.p08 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G1.u08 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:Kanawha_G1.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G1.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:Kanawha_G2.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -3620,6 +4261,86 @@ kanawha_models:Kanawha_G2.p08 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:Kanawha_G2.u08 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:Kanawha_G2.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/03JUL2016:1500/03JUL2016:1600/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u06.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:Kanawha_G2.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:New-LittleRiver.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 100 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -3688,6 +4409,56 @@ kanawha_models:New-LittleRiver.p19 a rascat:RasPlan ;
         kanawha_calibration:New-LittleRiver_03171000_Stage_Jan1995 ;
     rascat:hasGeometry kanawha_models:New-LittleRiver.g01 ;
     rascat:hasUnsteadyFlow kanawha_models:New-LittleRiver.u10 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1996-02-07T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.u09.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Small precip event run to fill in some local depressions. Hypothetical flat event for priming the model; total depth roughly equal to 2 yr 4 hr event" ;
+    rascat:endDateTime "2003-11-22T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried false ;
+    rascat:startDateTime "2003-11-18T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:New-LittleRiver.u10.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
+    rascat:endDateTime "1995-01-29T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.g01.bathymetry a rascat:Bathymetry ;
@@ -3781,6 +4552,66 @@ kanawha_models:UpperKanawha.p06 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:UpperKanawha.u02 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:UpperKanawha.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "1996-02-04T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/14JAN1996:1200/14JAN1996:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.u07.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-03T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.u08.hyetograph a rascat:Hyetograph ;
+    dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/12NOV2003:0000/12NOV2003:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.u09.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-07T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperKanawha.u11.hyetograph a rascat:Hyetograph ;
+    dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
+    rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/21JUN2016:0000/21JUN2016:0100/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:UpperNew_Lower.g03.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 200 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -3846,6 +4677,53 @@ kanawha_models:UpperNew_Lower.p07 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Lower.u05 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:UpperNew_Lower.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "restart file" ;
+    rascat:endDateTime "2000-01-05T12:00:00"^^xsd:dateTime ;
+    rascat:spatiallyVaried false ;
+    rascat:startDateTime "2000-01-01T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Lower.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1400/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Lower.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "1996-02-02T04:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-19T05:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Lower.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "2003-11-28T10:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Lower.u05.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "2016-07-04T10:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:UpperNew_Upper.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 100 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -3900,11 +4778,55 @@ kanawha_models:UpperNew_Upper.p04 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:UpperNew_Upper.u04 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:UpperNew_Upper.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "1995-01-19T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1995/INCREMENTAL EXCESS PRECIP/05JAN1995:1300/05JAN1995:1300/RUN:JAN 1995 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Upper.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2003/INCREMENTAL EXCESS PRECIP/06NOV2003:1200/06NOV2003:1300/RUN:NOV 2003 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Upper.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "1996-01-23T00:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Upper.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
+    rascat:endDateTime "2016-07-03T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:UpperNew_Upper.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "RestartFile" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            rascat:spatiallyVaried true ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Upper.u05.hyetograph ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:UpperNew_Upper.u05.hyetograph a rascat:Hyetograph ;
+    rascat:hecDssFile kanawha_dss:Jun2016_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 2016/INCREMENTAL EXCESS PRECIP/20JUN2016:1200/20JUN2016:1300/RUN:JUNE 2016 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.g01.mesh2d a rascat:Mesh2D ;
@@ -4048,6 +4970,46 @@ kanawha_models:WatershedG3.p08 a rascat:RasPlan ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG3.u04 ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
+kanawha_models:WatershedG3.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG3.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:WatershedG4.g01.mesh2d a rascat:Mesh2D ;
     rascat:breaklinesMaxCellSize 50 ;
     rascat:breaklinesMinCellSize 50 ;
@@ -4183,6 +5145,46 @@ kanawha_models:WatershedG4.p08 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
     rascat:hasGeometry kanawha_models:WatershedG4.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG4.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG4.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g01.mesh2d a rascat:Mesh2D ;
@@ -4323,6 +5325,46 @@ kanawha_models:WatershedG9.p08 a rascat:RasPlan ;
     dcterms:title "Jun-2016 Calibration" ;
     rascat:hasGeometry kanawha_models:WatershedG9.g02 ;
     rascat:hasUnsteadyFlow kanawha_models:WatershedG9.u04 ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.u01.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1995 event" ;
+    rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1995 ;
+    rascat:hecDssFile kanawha_dss:Jan1995_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/05JAN1995:1200/05JAN1995:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.u02.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the January 1996 event" ;
+    rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jan1996 ;
+    rascat:hecDssFile kanawha_dss:Jan1996_KanawhaHMS.dss ;
+    rascat:hecDssPath "//KANAWHACWMS - 1996/INCREMENTAL EXCESS PRECIP/14JAN1996:1200/14JAN1996:1300/RUN:JAN 1996 - CALIBRATION/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.u03.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the November 2003 event" ;
+    rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Nov2003 ;
+    rascat:hecDssFile kanawha_dss:Nov2003_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/06NOV2003:1200/06NOV2003:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_models:WatershedG9.u04.hyetograph a rascat:Hyetograph ;
+    dcterms:description "Gridded precipitation data from the June 2016 event" ;
+    rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
+    rascat:fromHydroEvent kanawha_events:Jun2016 ;
+    rascat:hecDssFile kanawha_dss:Jun2016_corrected_AORC_precipitation.dss ;
+    rascat:hecDssPath "/SHG/KANAWHA/PRECIPITATION/20JUN2016:1200/20JUN2016:1300/AORC CORRECTED/" ;
+    rascat:spatiallyVaried true ;
+    rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 ffrd_orgs:Compass_PTS_JV a foaf:Organization ;
@@ -4473,200 +5515,92 @@ kanawha_models:BasinG6.g03 a rascat:RasGeometry ;
 
 kanawha_models:BasinG6.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Inital Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BasinG6.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1995-01-24T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-12T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BluestoneLocal.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1996-01-30T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BluestoneLocal.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2003-11-27T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-07T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BluestoneLocal.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:BluestoneLocal.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "JUN2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BluestoneLocal.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003_ExessPrecip_Baseflow" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Bluestone_Upper.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1995_ExcessPrecip_Baseflow" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Bluestone_Upper.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996_ExcessPrecip_Baseflow" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January to February 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1996-02-06T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Bluestone_Upper.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Bluestone_Upper.u09 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016_ExcessPrecip_Baseflow" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June to July 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2016-07-03T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Bluestone_Upper.u09.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:CoalRiver.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1995-01-25T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-06T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:CoalRiver.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1996-02-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:CoalRiver.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:CoalRiver.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2016-07-01T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:CoalRiver.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.g02 a rascat:RasGeometry ;
@@ -4679,46 +5613,22 @@ kanawha_models:ElkMiddle.g02 a rascat:RasGeometry ;
 
 kanawha_models:ElkMiddle.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "ElkMiddle_Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2003-11-28T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:ElkMiddle.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "ElkMiddle_Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "1995-01-29T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:ElkMiddle.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "ElkMiddle_Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "1996-02-07T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:ElkMiddle.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:ElkMiddle.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "ElkMiddle_Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:ElkMiddle.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.g03 a rascat:RasGeometry ;
@@ -4731,178 +5641,82 @@ kanawha_models:G5.g03 a rascat:RasGeometry ;
 
 kanawha_models:G5.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u09 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u09.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u10 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u10.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u11 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u11.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_B.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_B.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff." ;
-            rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_B.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_B.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_B.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "2016-07-04T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_C.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 excess precipitation. USACE-provided HMS excess precip to include snowmelt runoff." ;
-            rascat:endDateTime "1996-02-07T10:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_C.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleyLower_Floodplain_Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 applied precipitation" ;
-            rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GauleyLower_BLE_FEM.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleyLower_Floodplain_Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 applied precipitation" ;
-            rascat:endDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GauleyLower_BLE_FEM.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleyLower_FloodPlain_Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 applied precipitation" ;
-            rascat:endDateTime "1995-01-23T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GauleyLower_BLE_FEM.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GauleyLower_BLE_FEM.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleyLower_FloodPlain_Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 applied precipitation" ;
-            rascat:endDateTime "1996-01-22T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GauleyLower_BLE_FEM.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g03 a rascat:RasGeometry ;
@@ -4915,68 +5729,32 @@ kanawha_models:Greenbrier_G7.g03 a rascat:RasGeometry ;
 
 kanawha_models:Greenbrier_G7.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995 IC" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003 IC" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "JUN2016 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G7.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.g03 a rascat:RasGeometry ;
@@ -4989,156 +5767,72 @@ kanawha_models:Greenbrier_G8.g03 a rascat:RasGeometry ;
 
 kanawha_models:Greenbrier_G8.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995 IC" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003 IC" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "JUN2016 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G8.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003 Cal" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Greenbrier_G8.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G1.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G1.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.g03 a rascat:RasGeometry ;
@@ -5151,320 +5845,147 @@ kanawha_models:Kanawha_G2.g03 a rascat:RasGeometry ;
 
 kanawha_models:Kanawha_G2.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u06 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u06.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Kanawha_G2.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016 Calibration" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:Kanawha_G2.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "JUN2016_HMS" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2016-07-04T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:New-LittleRiver.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1996_HMS" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1996-02-07T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:New-LittleRiver.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "NOV2003_HMS" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:New-LittleRiver.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u09 a rascat:RasUnsteadyFlow ;
     dcterms:title "restart_file" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Small precip event run to fill in some local depressions. Hypothetical flat event for priming the model; total depth roughly equal to 2 yr 4 hr event" ;
-            rascat:endDateTime "2003-11-22T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried false ;
-            rascat:startDateTime "2003-11-18T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:New-LittleRiver.u09.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:New-LittleRiver.u10 a rascat:RasUnsteadyFlow ;
     dcterms:title "JAN1995_HMS" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 gridded excess precipitation, from HEC-HMS in HEC-DSS format" ;
-            rascat:endDateTime "1995-01-29T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:New-LittleRiver.u10.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "1996-02-04T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996_InitialConditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1996 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "1996-01-17T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u07 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003_InitialConditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-03T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u07.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u08 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2003-11-24T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-12T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u08.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u09 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016_InitialConditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-07T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u09.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperKanawha.u11 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "June 2016 Corrected AORC Precipitation, provided by USACE" ;
-            rascat:endDateTime "2016-06-28T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-22T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperKanawha.u11.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Restart" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "restart file" ;
-            rascat:endDateTime "2000-01-05T12:00:00"^^xsd:dateTime ;
-            rascat:spatiallyVaried false ;
-            rascat:startDateTime "2000-01-01T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Lower.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T14:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Lower.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "1996-02-02T04:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-19T05:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Lower.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "2003-11-28T10:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Lower.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Lower.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "2016-07-04T10:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Lower.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "1995-01-19T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-11T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Upper.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "2003-11-23T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-16T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Upper.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "1996-01-23T00:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-15T00:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Upper.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:UpperNew_Upper.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Provided by USACE (AORC  gridded precipitation data, normalized with PRISM data)" ;
-            rascat:endDateTime "2016-07-03T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:UpperNew_Upper.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG3.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u05 a rascat:RasUnsteadyFlow ;
@@ -5557,46 +6078,22 @@ usgs_gages:03198350 a rascat:Streamgage ;
 
 kanawha_models:BasinG6.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:BasinG6.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:G5.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995 Initial Conditions" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:G5.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Nov2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "November 2003 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "2003-11-28T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_C.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.u05 a rascat:RasUnsteadyFlow ;
     dcterms:title "GauleeSummersville_FloodPlain_Jan1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "January 1995 applied precipitation, provided by USACE" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T13:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:GSummersville_C.u05.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:Greenbrier_G7.g01 a rascat:RasGeometry ;
@@ -5649,35 +6146,17 @@ kanawha_models:WatershedG3.g03 a rascat:RasGeometry ;
 
 kanawha_models:WatershedG3.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG3.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG3.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG3.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG3.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.g02 a rascat:RasGeometry ;
@@ -5690,46 +6169,22 @@ kanawha_models:WatershedG4.g02 a rascat:RasGeometry ;
 
 kanawha_models:WatershedG4.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG4.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG4.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG4.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG4.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG4.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.g02 a rascat:RasGeometry ;
@@ -5742,46 +6197,22 @@ kanawha_models:WatershedG9.g02 a rascat:RasGeometry ;
 
 kanawha_models:WatershedG9.u01 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1995" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1995 event" ;
-            rascat:endDateTime "1995-01-29T12:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1995 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1995-01-05T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG9.u01.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u02 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jan-1996" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the January 1996 event" ;
-            rascat:endDateTime "1996-02-07T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jan1996 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "1996-01-14T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG9.u02.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u03 a rascat:RasUnsteadyFlow ;
     dcterms:title "Nov-2003" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the November 2003 event" ;
-            rascat:endDateTime "2003-11-28T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Nov2003 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2003-11-06T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG9.u03.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:WatershedG9.u04 a rascat:RasUnsteadyFlow ;
     dcterms:title "Jun-2016" ;
-    rascat:hasHyetograph [ a rascat:Hyetograph ;
-            dcterms:description "Gridded precipitation data from the June 2016 event" ;
-            rascat:endDateTime "2016-07-04T11:00:00"^^xsd:dateTime ;
-            rascat:fromHydroEvent kanawha_events:Jun2016 ;
-            rascat:spatiallyVaried true ;
-            rascat:startDateTime "2016-06-20T12:00:00"^^xsd:dateTime ;
-            rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." ] ;
+    rascat:hasHyetograph kanawha_models:WatershedG9.u04.hyetograph ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 ffrd_orgs:Freese a foaf:Organization ;
@@ -5956,6 +6387,9 @@ usgs_gages:03200500 a rascat:Streamgage ;
     dcterms:publisher "USGS" ;
     dcterms:title "Coal River at Tornado, WV" .
 
+kanawha_dss:Jan1996_corrected_AORC_precipitation.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:BasinG6.g01 a rascat:RasGeometry ;
     dcterms:title "GreenbrierBasinG6_LiDAR" ;
     rascat:hasMesh2D kanawha_models:BasinG6.g01.mesh2d ;
@@ -6040,6 +6474,9 @@ usgs_gages:03196800 a rascat:Streamgage ;
     dcterms:publisher "USGS" ;
     dcterms:title "Elk River at Clay, WV" .
 
+kanawha_dss:Jan1995_KanawhaHMS.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
 kanawha_models:Kanawha_G2.g01 a rascat:RasGeometry ;
     dcterms:title "LiDAR_G2" ;
     rascat:hasMesh2D kanawha_models:Kanawha_G2.g01.mesh2d ;
@@ -6079,6 +6516,12 @@ kanawha_models:WatershedG9.g01 a rascat:RasGeometry ;
     rascat:hasPrecipLosses kanawha_models:WatershedG9.g01.precip_losses ;
     rascat:hasRoughness kanawha_models:WatershedG9.g01.roughness ;
     rascat:hasTerrain kanawha_models:WatershedG9.g01.terrain ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Jun2016_KanawhaHMS.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Nov2003_KanawhaHMS.dss a rascat:HecDssFile ;
     rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:GSummersville_C.g01 a rascat:RasGeometry ;
@@ -6156,6 +6599,18 @@ usgs_gages:03189100 a rascat:Streamgage ;
 <https://www.mrlc.gov/data/nlcd-2019-land-cover-conus> a rascat:LanduseLandcover ;
     dcterms:description "National Land Cover Database 2019 (CONUS)" ;
     dcterms:title "NLCD 2019" .
+
+kanawha_dss:Jan1996_KanawhaHMS.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Jun2016_corrected_AORC_precipitation.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Jan1995_corrected_AORC_precipitation.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
+
+kanawha_dss:Nov2003_corrected_AORC_precipitation.dss a rascat:HecDssFile ;
+    rdfs:comment "URL not currently available. A placeholder is used for demonstration purposes." .
 
 kanawha_models:mmc_albers_ft.prj a rascat:Projection ;
     dcterms:description "Modified version of ESRI:102309, provided by USACE. Units are in feet, whereas EPSG:102309 is in meters." ;
