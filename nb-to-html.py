@@ -48,7 +48,7 @@ def run(nb_name: str = "ffrd-metadata-demo-2", params: dict = {}, mill_dir: str 
     # Generate HTML and write it to a file
     html, _ = exporter.from_filename(dst_notebook)
     with open(dst_html, "w") as f:
-        f.write(html)
+        f.write(html.encode('utf-8').decode('ascii', 'ignore'))
 
     # Clean up as desired
     if remove_exec_nb:
