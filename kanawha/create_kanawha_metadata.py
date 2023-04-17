@@ -1,5 +1,6 @@
 import dateutil.parser
 from rdflib import Graph, Literal, BNode, Namespace, RDF, URIRef
+
 from rdflib.namespace import DCAT, RDF, FOAF, DCTERMS, XSD, RDFS
 import yaml
 
@@ -699,7 +700,9 @@ class RasModel(DcatDataset):
 
 
 def main():
-    with open('./streamgages.yml', 'r') as streamgages_yml:
+    script_dir = os.path.dirname(__file__)
+
+    with open(os.path.join(script_dir, './yaml/streamgages.yml'), 'r') as streamgages_yml:
         streamgages: List[dict] = yaml.load(streamgages_yml, Loader=yaml.FullLoader)
 
     GAGES = {}
@@ -714,9 +717,10 @@ def main():
         gage.to_rdf(g)
 
     kanawha_data: List[dict] = []
-    kanawha_yamls = os.listdir('./kanawha-yaml')
+    models_dir = os.path.join(script_dir, './yaml/models')
+    kanawha_yamls = os.listdir(models_dir)
     for kanawha_yaml in kanawha_yamls:
-        with open(os.path.join('./kanawha-yaml', kanawha_yaml), 'r') as yml:
+        with open(os.path.join(models_dir, kanawha_yaml), 'r') as yml:
             kanawha_data.append(yaml.load(yml, Loader=yaml.FullLoader))
 
     proj_albers = Projection(
@@ -995,10 +999,9 @@ def main():
         )
         ras_model.to_rdf(g, base_uri=kanawha_models)
 
-
-    print(g.serialize(format='turtle'))
-    with open('./kanawha.ttl', 'w') as out:
+    with open(os.path.join(script_dir, './kanawha.ttl'), 'w') as out:
         out.write(g.serialize(format='turtle'))
+
 
 if __name__ == '__main__':
     main()
