@@ -10,19 +10,24 @@ from nbconvert import get_exporter
 from nbconvert.preprocessors import TagRemovePreprocessor
 
 
-def run(nb_name: str = "ffrd-metadata-demo-2", params: dict = {}, mill_dir: str = "mill", remove_exec_nb: bool = False):
+def run(nb_name: str = "ffrd-metadata-demo", params: dict = {}, mill_dir: str = "../mill", remove_exec_nb: bool = False):
     """
     params, if passed, will collected stored params from the executed notebook
     This is useful if using papermill to run many notebooks in production
     and analytics from notebook outputs is desired
     """
 
-    # Create a tmp dir for processing (in an attempt to not make a mess....)
-    processing_dir = f"{mill_dir}"
+    dirname = os.path.dirname(__file__)
 
-    src_notebook = f"{nb_name}.ipynb"
-    dst_notebook = f"{processing_dir}/{src_notebook}"
-    dst_html = f"{processing_dir}/{nb_name}.html"
+    # Create a tmp dir for processing (in an attempt to not make a mess....)
+    processing_dir = os.path.join(dirname, f"{mill_dir}")
+
+    src_notebook_filename = f"{nb_name}.ipynb"
+    src_notebook = os.path.join(dirname, src_notebook_filename)
+    dst_notebook = os.path.join(dirname, processing_dir, src_notebook_filename)
+    # dst_notebook = f"{processing_dir}/{src_notebook}"
+    # dst_html = f"{processing_dir}/{nb_name}.html"
+    dst_html = os.path.join(dirname, processing_dir, f"{nb_name}.html")
 
     if not os.path.exists(processing_dir):
         os.makedirs(processing_dir)
