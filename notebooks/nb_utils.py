@@ -25,7 +25,12 @@ def stylized_json(data: Union[List[Any], Dict[Any, Any]]) -> HTML:
 
     # Define the CSS style
     css_style = """
-        .json-link {
+        .ffrd-json {
+            font-family: monospace;
+            white-space: pre;
+            background-color: 
+        }
+        .ffrd-json-link {
             color: #0000EE;
             text-decoration: none;
             border-bottom: 1px dashed #00aeff;
@@ -37,7 +42,7 @@ def stylized_json(data: Union[List[Any], Dict[Any, Any]]) -> HTML:
         <style>
             {css_style}
         </style>
-        <pre>
+        <div class="ffrd-json">
     """
 
     # Define the indentation level for each nested level
@@ -48,20 +53,24 @@ def stylized_json(data: Union[List[Any], Dict[Any, Any]]) -> HTML:
         html = ""
         if isinstance(data, dict):
             html += "{\n"
+            # html += "{<br>"
             for key, value in data.items():
                 key_html = f'<span style="color: {green}">{indentation * level}"{key}"</span>: '
                 value_html = build_html(value, level + 1)
                 html += key_html + value_html + ",\n"
+                # html += key_html + value_html + ",<br>"
             html += f"{indentation * (level - 1)}}}"
         elif isinstance(data, list):
             html += "[\n"
+            # html += "[<br>"
             for value in data:
                 value_html = build_html(value, level + 1)
                 html += f"{indentation * level}{value_html},\n"
+                # html += f"{indentation * level}{value_html},<br>"
             html += f"{indentation * (level - 1)}]"
         elif isinstance(data, str):
             html += url_regex.sub(
-                lambda match: f'<a class="json-link" href="{match.group(0)}">{match.group(0)}</a>',
+                lambda match: f'<a class="ffrd-json-link" href="{match.group(0)}">{match.group(0)}</a>',
                 f'<span style="color: {black}">"{data}"</span>',
             )
         else:
@@ -69,9 +78,9 @@ def stylized_json(data: Union[List[Any], Dict[Any, Any]]) -> HTML:
         return html
 
     # Build the HTML string for the JSON data
-    html_with_style += build_html(data, 1)
+    html_with_style += build_html(data, 2)
 
-    html_with_style += "</pre>"
+    html_with_style += "</div>"
 
     # Display the HTML string
     return HTML(html_with_style)

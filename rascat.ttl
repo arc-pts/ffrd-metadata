@@ -334,11 +334,6 @@
         rdfs:domain :RasPlan ;
         rdfs:range :Hydrograph .
 
-:hasObservedHydrograph a owl:ObjectProperty ;
-        rdfs:comment "The observed hydrograph used to calibrate a HEC-RAS model."@en ;
-        rdfs:domain :Calibration ;
-        rdfs:range :Hydrograph .
-
 :calibrationMetric a owl:ObjectProperty ;
         rdfs:comment "A metric used to evaluate the calibration of a HEC-RAS model."@en ;
         rdfs:domain :Calibration ;
