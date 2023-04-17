@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class FFRDMeta:
     def __init__(self):
         self.namespaces = [
@@ -156,4 +158,31 @@ class FFRDMeta:
         }}
         ORDER BY ASC(?nse)
         LIMIT {limit}
+        """
+
+    def query_hydroevents(self) -> str:
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
+        SELECT ?hydroEvent ?dt_start ?dt_end
+        WHERE {{
+            ?hydroEvent a rascat:HydroEvent .
+            ?hydroEvent rascat:startDateTime ?dt_start .
+            ?hydroEvent rascat:endDateTime ?dt_end .
+        }}
+        """
+    
+    def query_sst(self) -> str:
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
+        PREFIX dcat: <http://www.w3.org/ns/dcat#>
+        PREFIX dc: <http://purl.org/dc/terms/>
+        PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
+        SELECT ?dist ?url ?t
+        WHERE {{
+            ?ds dcat:distribution ?dist .
+            ?dist dcat:downloadURL ?url .
+            ?ds dc:temporal ?t .
+        }}
         """
