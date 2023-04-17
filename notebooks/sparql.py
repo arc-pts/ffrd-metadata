@@ -1,3 +1,5 @@
+from datetime import datetime
+
 class FFRDMeta:
     def __init__(self):
         self.namespaces = [
@@ -66,7 +68,7 @@ class FFRDMeta:
         PREFIX rascat: <{self.rascat_ttl}>
         PREFIX dcterms: <http://purl.org/dc/terms/>
         PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
-        SELECT ?landuseDesc (GROUP_CONCAT(DISTINCT ?title; separator=", ") as ?titles)
+        SELECT ?landuseDesc (GROUP_CONCAT(DISTINCT ?title; separator=", ") as ?titles) ?landuseTitle
         WHERE {{
             ?model a rascat:RasModel .
             ?model dcterms:title ?title .
@@ -75,6 +77,7 @@ class FFRDMeta:
             ?geom rascat:hasRoughness ?rough .
             ?rough rascat:hasLanduseLandcover ?landuse .
             ?landuse dcterms:description ?landuseDesc .
+            ?landuse dcterms:title ?landuseTitle .
         }}
         GROUP BY ?landuseDesc
         """
@@ -112,6 +115,25 @@ class FFRDMeta:
         }}
     """
 
+    def query_usgs_gages(self) -> str:
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
+        PREFIX kanawha_models: <http://example.ffrd.fema.gov/kanawha/models/>
+        SELECT DISTINCT ?model ?gage ?gageID
+        WHERE {{
+            ?model a rascat:RasModel .
+            ?model rascat:hasPlan ?plan .
+            ?plan rascat:hasCalibration ?calib .
+            ?calib rascat:fromStreamgage ?gage .
+            ?gage dcterms:identifier ?gageID .
+            ?gage dcterms:publisher ?owner .
+            FILTER (?owner = "USGS")
+            
+        }}
+    """
+
     def query_calibration(self, limit: str) -> str:
         return f"""
         PREFIX rascat: <{self.rascat_ttl}>
@@ -136,4 +158,31 @@ class FFRDMeta:
         }}
         ORDER BY ASC(?nse)
         LIMIT {limit}
+        """
+
+    def query_hydroevents(self) -> str:
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
+        PREFIX dcterms: <http://purl.org/dc/terms/>
+        PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
+        SELECT ?hydroEvent ?dt_start ?dt_end
+        WHERE {{
+            ?hydroEvent a rascat:HydroEvent .
+            ?hydroEvent rascat:startDateTime ?dt_start .
+            ?hydroEvent rascat:endDateTime ?dt_end .
+        }}
+        """
+    
+    def query_sst(self) -> str:
+        return f"""
+        PREFIX rascat: <{self.rascat_ttl}>
+        PREFIX dcat: <http://www.w3.org/ns/dcat#>
+        PREFIX dc: <http://purl.org/dc/terms/>
+        PREFIX usgs_gages: <https://waterdata.usgs.gov/monitoring-location/>
+        SELECT ?dist ?url ?t
+        WHERE {{
+            ?ds dcat:distribution ?dist .
+            ?dist dcat:downloadURL ?url .
+            ?ds dc:temporal ?t .
+        }}
         """
